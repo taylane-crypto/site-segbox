@@ -1,3 +1,6 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Segbox Design System</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -471,6 +474,11 @@ blockquote footer{margin-top:20px;display:flex;align-items:center;gap:12px;color
   html{scroll-behavior:auto}
 }
 
+
+/* mobile: nada mais largo que a tela (2026-09-28) */
+@media (max-width:900px){html,body{overflow-x:clip}.grid2>*,.grid>*,.story .grid>*,[class*="grid"]>*,.stack{min-width:0}.win{max-width:100%;overflow:hidden}.tbl{display:block;max-width:100%;overflow-x:auto}}
+
+.hint[hidden]{display:none!important}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
