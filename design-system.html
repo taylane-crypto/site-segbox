@@ -1,0 +1,1312 @@
+<title>Segbox Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500;600&family=Hanken+Grotesk:wght@500;600;700&display=swap">
+<style>
+/* GT Standard (Grilli Type) é fonte licenciada. Quando os arquivos existirem, basta colocar em fonts/ e o navegador passa a usá-la. */
+@font-face{font-family:'GT Standard';font-weight:400 700;font-display:swap;src:local('GT Standard'),local('GT-Standard'),url('fonts/GT-Standard-Medium.woff2') format('woff2')}
+
+:root{
+  color-scheme:light;
+  /* cor: base */
+  --ink-950:#09090B;--ink-900:#101013;--ink-800:#18181C;--ink-700:#232329;--ink-600:#34343C;--ink-400:#7C7C88;--ink-300:#A6A6B2;--ink-200:#CFCFD8;
+  --bone-50:#FBFAF8;--bone-100:#F6F4F1;--bone-200:#E8E6E3;--bone-300:#D3D0CB;
+  --coral:#FF5047;--ember:#FF8308;--indigo:#0B0B0D;--indigo-300:#FF8A80;
+  --ok:#3DDC97;--warn:#FFB020;--err:#FF6369;--info:#FF8A80;
+  /* cor: semântica (superfície ink é o padrão) */
+  --bg:var(--bone-100);--surface:#fff;--surface-2:var(--bone-200);
+  --fg:#0B0B0D;--fg-2:#565660;--fg-3:#7E7E88;
+  --line:rgba(0,0,0,.12);--line-strong:rgba(0,0,0,.3);
+  --accent:var(--coral);--on-accent:#0B0B0D;
+  --btn-bg:#0B0B0D;--btn-fg:var(--bone-100);
+  --ring:var(--indigo);
+  --danger:#D6303A;
+  --ok-t:#0E7A4B;--warn-t:#8A5A00;--info-t:var(--indigo);--label-accent:#C4352A;
+  /* vidro */
+  --glass:rgba(255,255,255,.58);--glass-line:rgba(255,255,255,.8);--glass-edge:rgba(20,20,40,.09);--blur:22px;
+  --glass-sh:0 1px 0 rgba(255,255,255,.9) inset,0 24px 48px -24px rgba(20,20,50,.28),0 0 0 1px var(--glass-edge);
+  /* tipografia */
+  --font-display:'GT Standard','Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
+  --font-body:'Geist',ui-sans-serif,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --font-mono:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  /* espaço (base 4) */
+  --s-1:4px;--s-2:8px;--s-3:12px;--s-4:16px;--s-5:24px;--s-6:32px;--s-7:48px;--s-8:64px;--s-9:96px;--s-10:144px;
+  /* raios */
+  --r-1:2px;--r-2:6px;--r-3:12px;--r-4:20px;
+  /* sombras */
+  --sh-1:0 1px 0 #fff inset,0 10px 30px -14px rgba(0,0,0,.25);
+  --sh-2:0 40px 80px -30px rgba(0,0,0,.28),0 0 0 1px var(--line);
+  /* movimento */
+  --ease-out:cubic-bezier(.23,1,.32,1);
+  --ease-in-out:cubic-bezier(.77,0,.175,1);
+  --ease-drawer:cubic-bezier(.32,.72,0,1);
+  --t-press:160ms;--t-fast:180ms;--t-base:240ms;--t-slow:420ms;
+}
+[data-surface="ink"]{--bg:var(--ink-950);--surface:var(--ink-900);--surface-2:var(--ink-800);--fg:#F4F3F0;--fg-2:var(--ink-300);--fg-3:var(--ink-400);--line:rgba(255,255,255,.12);--line-strong:rgba(255,255,255,.26);--accent:var(--coral);--on-accent:#0B0B0D;--btn-bg:var(--coral);--btn-fg:#0B0B0D;--ring:var(--indigo-300);--danger:var(--err);--ok-t:var(--ok);--warn-t:var(--warn);--info-t:var(--info);--label-accent:var(--coral);--sh-1:0 1px 0 rgba(255,255,255,.04) inset,0 8px 24px -12px rgba(0,0,0,.6);--sh-2:0 40px 80px -24px rgba(0,0,0,.7),0 0 0 1px var(--line)}
+[data-surface="paper"]{--bg:var(--bone-100);--surface:#fff;--surface-2:var(--bone-200);--fg:#0B0B0D;--fg-2:#565660;--fg-3:#7E7E88;--line:rgba(0,0,0,.12);--line-strong:rgba(0,0,0,.3);--accent:var(--coral);--on-accent:#0B0B0D;--btn-bg:#0B0B0D;--btn-fg:var(--bone-100);--ring:var(--indigo);--danger:#D6303A;--ok-t:#0E7A4B;--warn-t:#8A5A00;--info-t:var(--indigo);--label-accent:#C4352A;--sh-1:0 1px 0 #fff inset,0 10px 30px -14px rgba(0,0,0,.25);--sh-2:0 40px 80px -30px rgba(0,0,0,.28),0 0 0 1px var(--line)}
+[data-surface="signal"]{--bg:var(--coral);--surface:rgba(0,0,0,.08);--surface-2:rgba(0,0,0,.14);--fg:#0B0B0D;--fg-2:rgba(0,0,0,.72);--fg-3:rgba(0,0,0,.58);--line:rgba(0,0,0,.26);--line-strong:rgba(0,0,0,.6);--accent:#0B0B0D;--on-accent:var(--bone-100);--btn-bg:#0B0B0D;--btn-fg:var(--bone-100);--ring:#0B0B0D;--danger:#7A0A12;--ok-t:#0B0B0D;--warn-t:#0B0B0D;--info-t:#0B0B0D;--label-accent:#0B0B0D;--sh-1:none;--sh-2:0 30px 60px -30px rgba(0,0,0,.5),0 0 0 1px var(--line)}
+[data-surface="paper"]{--glass:rgba(255,255,255,.58);--glass-line:rgba(255,255,255,.8);--glass-edge:rgba(20,20,40,.09);--glass-sh:0 1px 0 rgba(255,255,255,.9) inset,0 24px 48px -24px rgba(20,20,50,.28),0 0 0 1px var(--glass-edge)}
+[data-surface="ink"]{--glass:rgba(30,30,40,.5);--glass-line:rgba(255,255,255,.16);--glass-edge:rgba(255,255,255,.05);--glass-sh:0 1px 0 rgba(255,255,255,.08) inset,0 24px 48px -24px rgba(0,0,0,.7),0 0 0 1px var(--glass-edge)}
+[data-surface="signal"]{--glass:rgba(255,255,255,.3);--glass-line:rgba(255,255,255,.55);--glass-edge:rgba(0,0,0,.12);--glass-sh:0 1px 0 rgba(255,255,255,.5) inset,0 24px 48px -24px rgba(90,10,0,.4),0 0 0 1px var(--glass-edge)}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,p{margin:0}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ring);outline-offset:3px;border-radius:var(--r-2)}
+code,.mono{font-family:var(--font-mono)}
+.label{font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
+.ico{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ============ TIPOGRAFIA ============ */
+.t-display-xl{font-family:var(--font-display);font-weight:600;font-size:clamp(3rem,9vw,6rem);line-height:.95;letter-spacing:-.045em}
+.t-display{font-family:var(--font-display);font-weight:600;font-size:clamp(2.4rem,6vw,4.5rem);line-height:1;letter-spacing:-.04em}
+.t-h1{font-family:var(--font-display);font-weight:600;font-size:clamp(2rem,4.4vw,3.5rem);line-height:1.04;letter-spacing:-.035em}
+.t-h2{font-family:var(--font-display);font-weight:600;font-size:clamp(1.6rem,3vw,2.5rem);line-height:1.08;letter-spacing:-.03em}
+.t-h3{font-family:var(--font-display);font-weight:600;font-size:1.75rem;line-height:1.15;letter-spacing:-.025em}
+.t-h4{font-family:var(--font-display);font-weight:600;font-size:1.25rem;line-height:1.25;letter-spacing:-.02em}
+.t-lead{font-size:1.125rem;line-height:1.55;color:var(--fg-2)}
+.t-body{font-size:1rem}
+.t-small{font-size:.875rem;color:var(--fg-2)}
+.t-code{font-family:var(--font-mono);font-size:.8125rem}
+.h-balance{text-wrap:balance}
+
+/* ============ BOTÕES ============ */
+.btn{
+  --h:44px;display:inline-flex;align-items:center;justify-content:center;gap:10px;height:var(--h);padding:0 18px;border-radius:var(--r-2);
+  border:1px solid transparent;background:var(--btn-bg);color:var(--btn-fg);cursor:pointer;text-decoration:none;white-space:nowrap;
+  font-family:var(--font-mono);font-size:12px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;
+  transition:transform var(--t-press) var(--ease-out),background var(--t-fast) ease,border-color var(--t-fast) ease,color var(--t-fast) ease,opacity var(--t-fast) ease;
+}
+.btn:hover,.btn.is-hover{filter:brightness(1.08)}
+.btn:active,.btn.is-active{transform:scale(.97)}
+.btn .ico{width:16px;height:16px;transition:transform var(--t-fast) var(--ease-out)}
+.btn:hover .ico-move,.btn.is-hover .ico-move{transform:translate(2px,-2px)}
+.btn.is-focus{outline:2px solid var(--ring);outline-offset:3px}
+.btn--secondary{background:transparent;color:var(--fg);border-color:var(--line-strong)}
+.btn--secondary:hover,.btn--secondary.is-hover{background:var(--surface-2);filter:none}
+.btn--ghost{background:transparent;color:var(--fg-2)}
+.btn--ghost:hover,.btn--ghost.is-hover{background:var(--surface-2);color:var(--fg);filter:none}
+.btn--danger{background:var(--danger);color:#fff}
+[data-surface="paper"] .btn--danger{color:#0B0B0D}
+[data-surface="signal"] .btn--danger{color:#fff}
+.btn--icon{width:var(--h);padding:0}
+.btn--sm{--h:34px;padding:0 12px;font-size:11px}
+.btn--lg{--h:52px;padding:0 24px;font-size:13px}
+.btn[disabled],.btn.is-disabled{opacity:.38;cursor:not-allowed;pointer-events:none}
+.btn.is-loading{pointer-events:none}
+.spin{width:14px;height:14px;border-radius:50%;border:2px solid currentColor;border-right-color:transparent;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.link-arrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:12px;letter-spacing:.09em;text-transform:uppercase;text-decoration:none;color:var(--fg);border-bottom:1px solid var(--line-strong);padding-bottom:3px;transition:border-color var(--t-fast) ease}
+.link-arrow:hover{border-color:var(--fg)}
+.link-arrow .ico{width:14px;height:14px;transition:transform var(--t-fast) var(--ease-out)}
+.link-arrow:hover .ico{transform:translate(2px,-2px)}
+
+/* ============ TAGS / BADGES ============ */
+.tag{display:inline-flex;align-items:center;gap:8px;height:24px;padding:0 8px;border-radius:var(--r-1);border:1px solid var(--line-strong);font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-2);white-space:nowrap}
+.tag--solid{background:var(--accent);color:var(--on-accent);border-color:transparent}
+.tag--boxed{border-style:dashed}
+.dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex:none}
+.tag--ok{color:var(--ok-t)}.tag--warn{color:var(--warn-t)}.tag--err{color:var(--danger)}.tag--info{color:var(--info-t)}
+.tag--live .dot{animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.25}}
+
+/* ============ CAMPOS ============ */
+.field{display:flex;flex-direction:column;gap:8px;min-width:0}
+.field>label,.field>.label{color:var(--fg-2)}
+.input,.select,.textarea{
+  width:100%;height:44px;padding:0 14px;border-radius:var(--r-2);background:var(--surface);color:var(--fg);border:1px solid var(--line);
+  font:inherit;font-size:15px;min-width:0;transition:border-color var(--t-fast) ease,box-shadow var(--t-fast) ease,background var(--t-fast) ease;
+}
+.input::placeholder,.textarea::placeholder{color:var(--fg-3)}
+.input:hover,.select:hover,.textarea:hover,.is-hover.input{border-color:var(--line-strong)}
+.input:focus,.select:focus,.textarea:focus,.input.is-focus{outline:none;border-color:var(--fg);box-shadow:0 0 0 3px color-mix(in srgb,var(--ring) 45%,transparent)}
+.input[disabled],.select[disabled],.textarea[disabled]{opacity:.4;cursor:not-allowed}
+.input.is-error,.textarea.is-error,.select.is-error{border-color:var(--danger)}
+.input.is-ok{border-color:var(--ok)}
+.hint{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--fg-3)}
+.hint.err{color:var(--danger)}
+.hint .ico{width:14px;height:14px}
+.textarea{height:auto;min-height:112px;padding:12px 14px;resize:vertical;line-height:1.5}
+.input-wrap{position:relative;display:flex;align-items:center}
+.input-wrap .input{padding-right:44px}
+.input-wrap.has-lead .input{padding-left:42px}
+.input-wrap .lead{position:absolute;left:14px;color:var(--fg-3);pointer-events:none}
+.input-wrap .trail{position:absolute;right:6px}
+.kbd{font-family:var(--font-mono);font-size:11px;padding:2px 6px;border:1px solid var(--line-strong);border-radius:4px;color:var(--fg-3)}
+.select{appearance:none;-webkit-appearance:none;padding-right:40px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237E7E88' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;background-size:18px}
+.select option{background:var(--surface);color:var(--fg)}
+.count{margin-left:auto;font-family:var(--font-mono);font-size:11px;color:var(--fg-3)}
+
+.check,.radio{display:flex;align-items:center;gap:12px;cursor:pointer;font-size:15px}
+.check input,.radio input{position:absolute;opacity:0;width:1px;height:1px}
+.check .box,.radio .box{width:20px;height:20px;border:1px solid var(--line-strong);background:var(--surface);display:grid;place-items:center;flex:none;transition:background var(--t-fast) ease,border-color var(--t-fast) ease,transform var(--t-press) var(--ease-out)}
+.check .box{border-radius:var(--r-1)}
+.radio .box{border-radius:50%}
+.check .box .ico{width:14px;height:14px;stroke-width:2.2;opacity:0;transform:scale(.7);transition:opacity var(--t-fast) ease,transform var(--t-fast) var(--ease-out)}
+.check input:checked+.box{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.check input:checked+.box .ico{opacity:1;transform:none}
+.radio .box::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--on-accent);transform:scale(0);transition:transform var(--t-fast) var(--ease-out)}
+.radio input:checked+.box{background:var(--accent);border-color:var(--accent)}
+.radio input:checked+.box::after{transform:scale(1)}
+.check:active .box,.radio:active .box{transform:scale(.92)}
+.check input:focus-visible+.box,.radio input:focus-visible+.box,.switch input:focus-visible+.track{outline:2px solid var(--ring);outline-offset:3px}
+.check input:disabled+.box,.radio input:disabled+.box,.switch input:disabled+.track{opacity:.4}
+.check:has(input:disabled),.radio:has(input:disabled),.switch:has(input:disabled){cursor:not-allowed;color:var(--fg-3)}
+.switch{display:flex;align-items:center;gap:12px;cursor:pointer;font-size:15px}
+.switch input{position:absolute;opacity:0;width:1px;height:1px}
+.switch .track{width:44px;height:26px;border-radius:999px;background:var(--surface-2);border:1px solid var(--line-strong);position:relative;transition:background var(--t-base) var(--ease-out),border-color var(--t-base) ease;flex:none}
+.switch .track::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:var(--fg);transition:transform var(--t-base) var(--ease-out),background var(--t-fast) ease}
+.switch input:checked+.track{background:var(--accent);border-color:var(--accent)}
+.switch input:checked+.track::after{transform:translateX(18px);background:var(--on-accent)}
+.range{-webkit-appearance:none;appearance:none;width:100%;height:24px;background:transparent;--p:40%;cursor:pointer}
+.range::-webkit-slider-runnable-track{height:4px;border-radius:2px;background:linear-gradient(to right,var(--accent) var(--p),var(--line-strong) var(--p))}
+.range::-moz-range-track{height:4px;border-radius:2px;background:var(--line-strong)}
+.range::-moz-range-progress{height:4px;border-radius:2px;background:var(--accent)}
+.range::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--fg);border:0;margin-top:-7px;box-shadow:0 0 0 4px var(--bg);transition:transform var(--t-press) var(--ease-out)}
+.range::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--fg);border:0}
+.range:active::-webkit-slider-thumb{transform:scale(1.12)}
+
+/* ============ TOOLTIP / DROPDOWN / ACCORDION / TABS ============ */
+.tip{position:fixed;z-index:200;pointer-events:none;padding:6px 10px;border-radius:var(--r-2);background:#0B0B0D;color:#F4F3F0;font-size:12px;font-weight:500;opacity:0;transform:translateY(4px) scale(.97);transition:opacity 125ms var(--ease-out),transform 125ms var(--ease-out);white-space:nowrap}
+.tip.on{opacity:1;transform:none}
+.tip.instant{transition-duration:0ms}
+.dd{position:relative;display:inline-block}
+.dd-menu{position:absolute;top:calc(100% + 8px);left:0;min-width:240px;z-index:40;padding:6px;border-radius:var(--r-3);background:var(--surface);border:1px solid var(--line-strong);box-shadow:var(--sh-1),0 24px 48px -16px rgba(0,0,0,.5);
+  opacity:0;visibility:hidden;transform:translateY(-4px) scale(.97);transform-origin:top left;transition:opacity var(--t-fast) var(--ease-out),transform var(--t-fast) var(--ease-out),visibility 0s var(--t-fast)}
+.dd.open .dd-menu{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+.dd-item{display:flex;align-items:flex-start;gap:12px;width:100%;padding:10px 12px;border-radius:var(--r-2);border:0;background:transparent;text-align:left;cursor:pointer;text-decoration:none;color:var(--fg)}
+.dd-item:hover,.dd-item:focus-visible{background:var(--surface-2)}
+.dd-item strong{display:block;font-weight:500;font-size:14px}
+.dd-item small{display:block;color:var(--fg-3);font-size:12.5px;line-height:1.4;margin-top:2px}
+.dd-item .ico{margin-top:2px;color:var(--fg-2)}
+.dd-sep{height:1px;background:var(--line);margin:6px 4px}
+.acc{border-top:1px solid var(--line)}
+.acc-item{border-bottom:1px solid var(--line)}
+.acc-h{display:grid;grid-template-columns:48px 1fr 24px;align-items:center;gap:8px;width:100%;padding:22px 0;background:transparent;border:0;cursor:pointer;text-align:left;font-family:var(--font-display);font-size:1.25rem;font-weight:600;letter-spacing:-.02em}
+.acc-h .n{font-family:var(--font-mono);font-size:12px;color:var(--fg-3);letter-spacing:.1em;font-weight:500}
+.acc-h .ico{transition:transform var(--t-base) var(--ease-out)}
+.acc-item.open .acc-h .ico{transform:rotate(45deg)}
+.acc-b{display:grid;grid-template-rows:0fr;transition:grid-template-rows var(--t-base) var(--ease-out)}
+.acc-item.open .acc-b{grid-template-rows:1fr}
+.acc-b>div{overflow:hidden}
+.acc-b p{padding:0 32px 24px 56px;color:var(--fg-2);max-width:64ch}
+.tabs{position:relative;display:flex;gap:4px;border-bottom:1px solid var(--line);overflow-x:auto}
+.tab{position:relative;padding:12px 16px;background:transparent;border:0;cursor:pointer;color:var(--fg-3);font-family:var(--font-mono);font-size:12px;letter-spacing:.09em;text-transform:uppercase;white-space:nowrap;transition:color var(--t-fast) ease}
+.tab:hover{color:var(--fg)}
+.tab[aria-selected="true"]{color:var(--fg)}
+.tab-ind{position:absolute;bottom:-1px;left:0;height:2px;width:0;background:var(--accent);transition:transform var(--t-base) var(--ease-in-out),width var(--t-base) var(--ease-in-out)}
+.panel{padding-top:20px;color:var(--fg-2);max-width:60ch}
+.panel[hidden]{display:none}
+.crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-3)}
+.crumbs a{text-decoration:none}.crumbs a:hover{color:var(--fg)}
+.crumbs [aria-current]{color:var(--fg)}
+.crumbs .ico{width:12px;height:12px}
+.pager{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.pager button{min-width:38px;height:38px;padding:0 10px;border-radius:var(--r-2);border:1px solid transparent;background:transparent;cursor:pointer;font-family:var(--font-mono);font-size:12px;color:var(--fg-2);transition:background var(--t-fast) ease,transform var(--t-press) var(--ease-out)}
+.pager button:hover{background:var(--surface-2)}
+.pager button:active{transform:scale(.95)}
+.pager button[aria-current="page"]{background:var(--fg);color:var(--bg)}
+.pager button[disabled]{opacity:.35;pointer-events:none}
+
+/* ============ ALERTA / TOAST / MODAL / DRAWER ============ */
+.alert{display:grid;grid-template-columns:20px 1fr auto;gap:12px;align-items:start;padding:14px 16px;border-radius:var(--r-3);border:1px solid var(--line-strong);background:var(--surface)}
+.alert strong{display:block;font-weight:500;font-size:14.5px}
+.alert p{font-size:13.5px;color:var(--fg-2);margin-top:2px}
+.alert--ok .ico:first-child{color:var(--ok-t)}.alert--warn .ico:first-child{color:var(--warn-t)}.alert--err{border-color:var(--danger)}.alert--err .ico:first-child{color:var(--danger)}.alert--info .ico:first-child{color:var(--info-t)}
+.toasts{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:300;display:flex;flex-direction:column;gap:8px;width:min(380px,calc(100% - 32px))}
+.toast{display:grid;grid-template-columns:20px 1fr auto;gap:12px;align-items:start;padding:14px 16px;border-radius:var(--r-3);background:#0B0B0D;color:#F4F3F0;box-shadow:0 24px 48px -12px rgba(0,0,0,.35);opacity:0;transform:translateY(12px) scale(.98);transition:opacity var(--t-base) var(--ease-out),transform var(--t-base) var(--ease-out)}
+.toast.in{opacity:1;transform:none}
+.toast p{font-size:14px;font-weight:500}
+.toast small{display:block;font-weight:400;color:#A6A6B2;margin-top:2px}
+.toast button{background:transparent;border:0;cursor:pointer;color:#A6A6B2;padding:0}
+.overlay{position:fixed;inset:0;z-index:150;display:grid;place-items:center;padding:16px;background:rgba(20,20,24,.38);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:opacity var(--t-base) var(--ease-out),visibility 0s var(--t-base)}
+.overlay.open{opacity:1;visibility:visible;transition-delay:0s}
+.modal{width:min(520px,100%);max-height:calc(100% - 32px);overflow:auto;padding:28px;border-radius:var(--r-4);background:var(--surface);color:var(--fg);border:1px solid var(--line-strong);box-shadow:var(--sh-2);transform:translateY(8px) scale(.96);transition:transform var(--t-base) var(--ease-out)}
+.overlay.open .modal{transform:none}
+.modal h3{margin-bottom:8px}
+.modal .actions{display:flex;justify-content:flex-end;gap:8px;margin-top:24px;flex-wrap:wrap}
+.overlay--drawer{place-items:stretch end;padding:0}
+.drawer{width:min(440px,100%);height:100%;overflow:auto;padding:28px;background:var(--surface);color:var(--fg);border-left:1px solid var(--line-strong);transform:translateX(100%);transition:transform var(--t-slow) var(--ease-drawer)}
+.overlay.open .drawer{transform:none}
+.drawer header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+
+/* ============ SITE: NAV ============ */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px;padding:0 20px;border:1px solid var(--line);border-radius:var(--r-3);background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);position:relative;z-index:10}
+.logo{display:inline-flex;align-items:center;line-height:0;text-decoration:none;color:inherit}
+.logo-svg{height:var(--logo-h,30px);width:auto;aspect-ratio:2000/530;fill:currentColor;overflow:visible;display:block}
+.logo-sq{fill:#FF5047;transform-box:fill-box;transform-origin:center}
+.logo--branco{color:#fff}.logo--branco .logo-sq{fill:#fff}
+.logo--cinza{color:#565660}
+.nav-links{display:flex;gap:2px;align-items:center}
+.nav-links .dd>button,.nav-links>a{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border:0;background:transparent;border-radius:var(--r-2);cursor:pointer;text-decoration:none;font-size:14.5px;color:var(--fg-2);transition:color var(--t-fast) ease,background var(--t-fast) ease}
+.nav-links .dd>button:hover,.nav-links>a:hover,.nav-links .dd.open>button{color:var(--fg);background:var(--surface-2)}
+.nav-links .dd>button .ico{width:14px;height:14px;transition:transform var(--t-fast) var(--ease-out)}
+.nav-links .dd.open>button .ico{transform:rotate(180deg)}
+.nav .menu-btn{display:none}
+
+/* ============ SITE: HERO SIGNAL ============ */
+.hero{position:relative;overflow:hidden;background:var(--bone-100);color:#0B0B0D;border:1px solid var(--line);padding:clamp(28px,5vw,48px);min-height:520px;display:flex;flex-direction:column;justify-content:space-between;border-radius:var(--r-4)}
+.hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.045) 0 1px,transparent 1px 4px);pointer-events:none}
+.hero-mark{position:absolute;right:-4%;bottom:-18%;width:78%;max-width:760px;opacity:.9;pointer-events:none}
+.hero-mark use,.hero-mark rect{fill:none;stroke:var(--coral);stroke-width:5}
+.hero>*{position:relative}
+.hero h2{max-width:14ch;margin-top:20px}
+.hero .lead{max-width:48ch;margin-top:20px;font-size:1.125rem;color:#565660}
+.hero .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero .btn--secondary{border-color:#0B0B0D;color:#0B0B0D}
+.hero .btn--secondary:hover{background:rgba(0,0,0,.06)}
+.hero-foot{display:flex;flex-wrap:wrap;gap:12px 28px;color:#565660}
+.hero--signal{background:var(--coral);border-color:transparent}
+.hero--signal::before{background:repeating-linear-gradient(0deg,rgba(0,0,0,.07) 0 1px,transparent 1px 4px)}
+.hero--signal .hero-mark{opacity:.5}
+.hero--signal .hero-mark use,.hero-mark rect{fill:none;stroke:var(--coral);stroke-width:5}
+.hero--signal .lead,.hero--signal .hero-foot{color:rgba(0,0,0,.72)}
+.hero--signal .btn--secondary:hover{background:rgba(0,0,0,.1)}
+
+/* ============ SITE: TICKER ============ */
+.ticker{border-block:1px solid var(--line);overflow:hidden;background:var(--bg)}
+.ticker .track{display:flex;gap:40px;width:max-content;padding-block:16px;animation:tick 40s linear infinite;color:var(--fg-2)}
+.ticker .track span{white-space:nowrap;display:inline-flex;gap:40px}
+.ticker .track span::after{content:"+";color:var(--fg-3)}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* ============ SITE: SEÇÃO / MANIFESTO / STATS ============ */
+.sec-head{display:grid;gap:16px;max-width:760px}
+.sec-head .label{color:var(--label-accent)}
+.manifesto{border-top:1px solid var(--line)}
+.m-row{display:grid;grid-template-columns:120px 1fr 1.3fr;gap:24px;padding:32px 0;border-bottom:1px solid var(--line);align-items:start;transition:background var(--t-base) ease,padding var(--t-base) var(--ease-out)}
+.m-row:hover{background:var(--surface);padding-inline:16px}
+.m-row .n{color:var(--fg-3)}
+.m-row p{color:var(--fg-2)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:var(--r-3);overflow:hidden}
+.stat{padding:28px 24px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:14px}
+.stat:last-child{border-right:0}
+.stat .label{color:var(--fg-3)}
+.stat b{font-family:var(--font-display);font-weight:600;font-size:clamp(2.2rem,4.6vw,3.6rem);letter-spacing:-.05em;line-height:1;font-variant-numeric:tabular-nums}
+.stat span:last-child{font-size:13.5px;color:var(--fg-2)}
+
+/* ============ SITE: CARDS ============ */
+.paths{display:grid;grid-template-columns:1.15fr 1fr;gap:12px}
+.card{position:relative;display:flex;flex-direction:column;gap:14px;padding:28px;border-radius:var(--r-3);background:var(--surface);border:1px solid var(--line);transition:border-color var(--t-base) ease,transform var(--t-base) var(--ease-out)}
+.card:hover{border-color:var(--line-strong)}
+.card p{color:var(--fg-2)}
+.card .sub{display:flex;justify-content:space-between;gap:16px;padding-top:14px;border-top:1px solid var(--line)}
+.card .sub strong{font-weight:500;display:block}
+.card .sub span{font-size:14px;color:var(--fg-3)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.corner{position:absolute;width:10px;height:10px;border:solid var(--fg-3);border-width:0}
+.corner.tl{top:-1px;left:-1px;border-width:1px 0 0 1px}.corner.tr{top:-1px;right:-1px;border-width:1px 1px 0 0}.corner.bl{bottom:-1px;left:-1px;border-width:0 0 1px 1px}.corner.br{bottom:-1px;right:-1px;border-width:0 1px 1px 0}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.step{padding:24px;border-radius:var(--r-3);border:1px solid var(--line);display:flex;flex-direction:column;gap:12px;background:var(--surface)}
+.step .label{color:var(--fg-3)}
+.step p{color:var(--fg-2);font-size:15px}
+.step .who{display:flex;align-items:center;gap:8px;color:var(--fg-2)}
+.case{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,64px);align-items:end}
+.nums div{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:20px 0;border-top:1px solid var(--line)}
+.nums div:last-child{border-bottom:1px solid var(--line)}
+.nums b{font-family:var(--font-display);font-weight:600;font-size:clamp(2.4rem,5.4vw,4rem);letter-spacing:-.05em;line-height:1;font-variant-numeric:tabular-nums}
+.nums span{color:var(--fg-2);text-align:right;max-width:20ch;font-size:14px}
+blockquote{margin:0}
+blockquote p{font-family:var(--font-display);font-weight:500;font-size:clamp(1.25rem,2.2vw,1.65rem);line-height:1.3;letter-spacing:-.02em;text-wrap:pretty}
+blockquote footer{margin-top:20px;display:flex;align-items:center;gap:12px;color:var(--fg-2);font-size:14px}
+.avatar{width:36px;height:36px;border-radius:50%;background:var(--surface-2);border:1px solid var(--line-strong);display:grid;place-items:center;font-family:var(--font-mono);font-size:11px;color:var(--fg-2);flex:none}
+.plist{border-top:1px solid var(--line)}
+.prow{display:grid;grid-template-columns:80px 1.1fr 2fr auto;gap:20px;align-items:center;padding:22px 0;border-bottom:1px solid var(--line);text-decoration:none;transition:background var(--t-base) ease,padding var(--t-base) var(--ease-out)}
+.prow:hover{background:var(--surface);padding-inline:16px}
+.prow .yr{color:var(--fg-3)}
+.prow p{color:var(--fg-2)}
+.prow .go{display:flex;align-items:center;gap:8px;color:var(--fg)}
+.prow .go .ico{width:16px;height:16px;transition:transform var(--t-fast) var(--ease-out)}
+.prow:hover .go .ico{transform:translate(2px,-2px)}
+.logos{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line);border-radius:var(--r-3);overflow:hidden}
+.logos div{height:84px;display:grid;place-items:center;border-right:1px solid var(--line);color:var(--fg-3);font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.logos div:last-child{border-right:0}
+.cta-band{position:relative;overflow:hidden;background:var(--coral);color:#0B0B0D;border-radius:var(--r-4);padding:clamp(28px,6vw,64px);display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-end}
+.cta-band::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.07) 0 1px,transparent 1px 4px);pointer-events:none}
+.cta-band>*{position:relative}
+.cta-band h3{max-width:16ch}
+.foot{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:32px;padding-top:40px;border-top:1px solid var(--line);color:var(--fg-2);font-size:14px}
+.foot h4{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-3);font-weight:500;margin-bottom:14px}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.foot a{text-decoration:none}.foot a:hover{color:var(--fg)}
+.foot .legal{grid-column:1/-1;padding-top:24px;border-top:1px solid var(--line);color:var(--fg-3);font-size:12.5px}
+
+/* janela de produto + terminal */
+.win{border-radius:var(--r-4);overflow:hidden;background:var(--surface);border:1px solid var(--line-strong);box-shadow:var(--sh-2)}
+.chrome{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.chrome span{width:10px;height:10px;border-radius:50%;background:var(--line-strong)}
+.chrome .url{margin-left:12px;padding:4px 12px;border-radius:6px;background:var(--surface-2);color:var(--fg-3);font-family:var(--font-mono);font-size:11.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.app{display:grid;grid-template-columns:170px 1fr;min-height:300px}
+.app aside{padding:16px 12px;border-right:1px solid var(--line);display:grid;gap:2px;align-content:start}
+.app aside .b{display:flex;align-items:center;gap:10px;padding:4px 8px 14px;font-weight:600;font-size:14px}
+.app aside .b i{width:22px;height:22px;border-radius:6px;background:linear-gradient(135deg,var(--coral),var(--ember))}
+.app aside a{padding:8px 10px;border-radius:var(--r-2);font-size:13px;color:var(--fg-3);text-decoration:none}
+.app aside a.on{background:var(--surface-2);color:var(--fg)}
+.app .main{padding:20px;display:grid;gap:16px;align-content:start;min-width:0}
+.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.thumb{aspect-ratio:4/5;border-radius:var(--r-3);border:1px solid var(--line);position:relative;overflow:hidden}
+.thumb:nth-child(1){background:linear-gradient(160deg,#FF5047,#FF8308)}.thumb:nth-child(2){background:linear-gradient(160deg,#1A1440,#0B0B0D)}.thumb:nth-child(3){background:linear-gradient(160deg,#FF8308,#F6F4F1)}.thumb:nth-child(4){background:linear-gradient(160deg,#0B0B0D,#FF5047)}
+.thumb .tag{position:absolute;left:8px;bottom:8px;background:rgba(9,9,11,.75);border-color:transparent;color:#F4F3F0;height:22px;font-size:10px}
+.term{border-radius:var(--r-3);overflow:hidden;background:#0B0B0D;border:1px solid var(--line-strong);font-family:var(--font-mono);font-size:13px;line-height:1.7;color:#E6E5E1}
+.term .bar{display:flex;justify-content:space-between;padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.12);color:#8B8B96;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.term pre{margin:0;padding:16px 14px;min-height:150px;white-space:pre-wrap;font:inherit}
+.term .p{color:#FF5047}.term .ok{color:#3DDC97}.term .d{color:#8B8B96}
+.term .cur{display:inline-block;width:8px;height:15px;background:#E6E5E1;vertical-align:-2px;animation:pulse 1s steps(1) infinite}
+.code-block{border-radius:var(--r-3);overflow:hidden;border:1px solid var(--line);background:var(--surface)}
+.code-block .bar{display:flex;justify-content:space-between;align-items:center;padding:8px 8px 8px 14px;border-bottom:1px solid var(--line)}
+.code-block pre{margin:0;padding:14px;overflow-x:auto;font-family:var(--font-mono);font-size:12.5px;line-height:1.7;color:var(--fg-2)}
+
+/* skeleton / empty */
+.skel{border-radius:var(--r-2);background:linear-gradient(100deg,var(--surface-2) 30%,var(--line-strong) 50%,var(--surface-2) 70%);background-size:200% 100%;animation:shine 1.4s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+.empty{display:grid;justify-items:center;gap:12px;text-align:center;padding:40px 24px;border:1px dashed var(--line-strong);border-radius:var(--r-3)}
+.empty .ico{width:28px;height:28px;color:var(--fg-3)}
+
+/* ============ CATÁLOGO (moldura) ============ */
+.cat-top{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px clamp(16px,3vw,32px);background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.seg{display:inline-flex;border:1px solid var(--line-strong);border-radius:var(--r-2);overflow:hidden}
+.seg button{padding:8px 14px;background:transparent;border:0;cursor:pointer;font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-2);transition:background var(--t-fast) ease,color var(--t-fast) ease}
+.seg button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.cat{display:grid;grid-template-columns:230px minmax(0,1fr);max-width:1440px;margin:0 auto}
+.cat-nav{position:sticky;top:57px;align-self:start;height:calc(100vh - 57px);overflow:auto;padding:24px 16px 48px clamp(16px,3vw,32px);border-right:1px solid var(--line);font-size:14px}
+.cat-nav h4{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-3);font-weight:500;margin:20px 0 8px}
+.cat-nav h4:first-child{margin-top:0}
+.cat-nav a{display:block;padding:5px 8px;border-radius:var(--r-2);color:var(--fg-2);text-decoration:none}
+.cat-nav a:hover{background:var(--surface-2);color:var(--fg)}
+.cat-main{padding:0 clamp(16px,3vw,40px) 120px;min-width:0}
+.part{padding-top:72px}
+.part>h2{font-family:var(--font-display);font-weight:600;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.04em;line-height:1;padding-bottom:24px;border-bottom:1px solid var(--line-strong);display:flex;align-items:baseline;justify-content:space-between;gap:16px}
+.part>h2 small{font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;color:var(--fg-3);font-weight:500}
+.spec{padding-top:48px}
+.spec>header{display:grid;gap:8px;margin-bottom:20px;max-width:70ch}
+.spec>header h3{font-family:var(--font-display);font-weight:600;font-size:1.5rem;letter-spacing:-.025em}
+.spec>header p{color:var(--fg-2);font-size:15px}
+.spec>header code{font-size:12px;color:var(--fg-3)}
+/* h-fade: titulo de dois tons; .h-fade-2 comeca na cor do texto e vai ao cinza na rolagem */
+.h-fade .h-fade-2{color:var(--fg-3)}
+.hf-demo{font-family:var(--font-display);font-weight:600;font-size:clamp(2rem,4.6vw,3.8rem);line-height:1.02;letter-spacing:-.045em;max-width:18ch;text-wrap:balance;margin:0}
+.hf-specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px 32px;margin-top:20px;font-size:14px;color:var(--fg-2)}
+.hf-specs b{display:block;color:var(--fg);font-size:13px;margin-bottom:4px}
+.stage{position:relative;background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:var(--r-3);padding:clamp(16px,3vw,32px);display:grid;gap:24px;transition:background var(--t-base) ease,color var(--t-base) ease}
+.stage+.stage{margin-top:12px}
+.stage-h{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-3)}
+.flex{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.sw{border-radius:var(--r-3);overflow:hidden;border:1px solid var(--line)}
+.sw i{display:block;height:64px}
+.sw div{padding:10px 12px;font-family:var(--font-mono);font-size:11px;line-height:1.5;color:var(--fg-2);background:var(--surface)}
+.sw b{display:block;color:var(--fg);font-weight:500}
+.tbl{width:100%;border-collapse:collapse;font-size:14px}
+.tbl th,.tbl td{text-align:left;padding:12px 12px 12px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl th{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-3);font-weight:500}
+.tbl td:first-child{white-space:nowrap}
+.scroll-x{overflow-x:auto}
+.spc{display:flex;align-items:center;gap:16px;font-family:var(--font-mono);font-size:12px;color:var(--fg-2);padding:6px 0}
+.spc i{display:block;height:12px;background:var(--accent);border-radius:2px}
+.rad{width:88px;height:88px;background:var(--surface-2);border:1px solid var(--line-strong);display:grid;place-items:center;font-family:var(--font-mono);font-size:11px;color:var(--fg-2)}
+.demo-box{width:120px;height:56px;border-radius:var(--r-2);background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.icons{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px}
+.icons div{display:grid;justify-items:center;gap:8px;padding:16px 8px;border:1px solid var(--line);border-radius:var(--r-2);font-family:var(--font-mono);font-size:10.5px;color:var(--fg-3)}
+.icons .ico{width:24px;height:24px;color:var(--fg)}
+.gridguide{position:relative;height:120px;border:1px solid var(--line);border-radius:var(--r-3);display:grid;grid-template-columns:repeat(12,1fr);gap:16px;padding:0 16px;overflow:hidden}
+.gridguide i{background:color-mix(in srgb,var(--coral) 18%,transparent);border-inline:1px solid color-mix(in srgb,var(--coral) 45%,transparent)}
+.note{font-size:13.5px;color:var(--fg-2);border-left:2px solid var(--accent);padding-left:14px;max-width:70ch}
+.note code{color:var(--fg)}
+
+
+
+/* ============ BOTÃO COM DEGRADÊ EM MOVIMENTO ============ */
+.btn--liquid{position:relative;isolation:isolate;overflow:hidden;--grad-liquid:linear-gradient(110deg,#FF5047 0%,#FF8308 28%,#FF5047 52%,#0B0B0D 78%,#FF5047 100%);transition:color 320ms ease 80ms}
+.btn--liquid::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--grad-liquid);background-size:300% 100%;opacity:0;transition:opacity 480ms var(--ease-out);animation:liquid-flow 3s linear infinite;animation-play-state:paused}
+.btn--liquid.btn--secondary{border:0;background:var(--surface-2);color:var(--fg)}
+.btn--liquid:hover,.btn--liquid.is-hover,.btn--liquid:focus-visible{color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.25);filter:none}
+.btn--liquid:hover::before,.btn--liquid.is-hover::before,.btn--liquid:focus-visible::before{opacity:1;animation-play-state:running}
+@keyframes liquid-flow{to{background-position:-300% 0}}
+
+/* ============ CONTATO D: tinta com vidro sobre quadrados ============ */
+.contact-d{position:relative;overflow:hidden;border-radius:var(--r-4);background:#0B0B0D;color:var(--fg);padding:clamp(24px,5vw,64px);--btn-bg:#fff;--btn-fg:#0B0B0D}
+.contact-d .cg{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,56px);align-items:center}
+.contact-d .label{color:var(--fg-2)}
+.contact-d .t-lead{color:var(--fg-2)}
+.contact-d form{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:22px;border-radius:12px}
+@media (max-width:900px){.contact-d .cg{grid-template-columns:1fr}.contact-d form{grid-template-columns:1fr}}
+
+/* ============ VIDRO ============ */
+.glass,.nav,.dd-menu,.win,.modal,.drawer{background:var(--glass);border:1px solid var(--glass-line);box-shadow:var(--glass-sh);backdrop-filter:blur(var(--blur)) saturate(1.7);-webkit-backdrop-filter:blur(var(--blur)) saturate(1.7)}
+.dd-menu{border-radius:var(--r-3)}
+.glass{border-radius:var(--r-3)}
+.sq{position:absolute;display:block}
+.sq--coral{background:var(--coral)}.sq--indigo{background:var(--indigo)}.sq--ember{background:var(--ember)}.sq--ink{background:#0B0B0D}
+.glass-demo{position:relative;height:300px;overflow:hidden;border-radius:var(--r-3);border:1px solid var(--line);background:var(--bg)}
+.glass-demo .glass{position:absolute;padding:20px;display:grid;gap:8px;align-content:start}
+.glass-demo .glass p{color:var(--fg-2);font-size:14px}
+@media (max-width:1000px){
+  .cat{grid-template-columns:1fr}
+  .cat-nav{display:none}
+  .g3,.g4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  .g2,.g3,.g4,.paths,.steps,.case{grid-template-columns:1fr}
+  .nav-links{display:none}.nav .menu-btn{display:inline-flex}
+  .m-row{grid-template-columns:1fr;gap:8px}
+  .prow{grid-template-columns:1fr;gap:6px}
+  .logos{grid-template-columns:repeat(2,1fr)}.logos div{border-bottom:1px solid var(--line)}
+  .app{grid-template-columns:1fr}.app aside{display:none}
+  .thumbs{grid-template-columns:repeat(2,1fr)}
+  .cat-top .seg button{padding:8px 10px}
+  .cat-top .brand-sub{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .ticker .track{animation:none}
+  html{scroll-behavior:auto}
+}
+
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs><symbol id="logo-word" viewBox="0 0 2000 530"><path d="M934.674 0.699888C933.174 2.19968 933.874 242.966 935.374 254.565C943.873 318.656 986.267 363.849 1050.96 377.647C1063.16 380.247 1101.65 380.247 1113.95 377.647C1167.44 366.349 1207.44 331.254 1223.73 281.461C1232.83 253.665 1232.63 216.47 1223.33 188.274C1209.24 145.88 1175.94 112.984 1132.95 98.9862C1114.55 92.987 1104.45 91.4873 1082.45 91.4873C1056.96 91.5872 1039.26 94.9868 1019.46 103.586C1015.06 105.485 1011.06 107.185 1010.46 107.285C1009.86 107.385 1009.26 98.6863 1008.86 83.4884C1008.46 70.2902 1007.76 57.8919 1007.16 55.9922C998.265 25.7964 974.068 4.79932 943.573 0.999846C939.173 0.499916 935.474 -1.44579e-05 935.374 -1.44579e-05C935.374 -1.44579e-05 934.974 0.299944 934.674 0.699888ZM1095.95 162.077C1125.25 166.777 1147.14 188.174 1153.64 218.47C1155.54 227.468 1154.94 249.865 1152.54 258.464C1143.64 290.36 1116.75 310.257 1082.45 310.157C1049.06 310.157 1024.66 293.159 1013.56 262.263C1010.46 253.565 1010.46 253.165 1010.56 235.467C1010.56 218.57 1010.76 216.97 1013.36 209.471C1025.16 175.176 1058.56 155.978 1095.95 162.077Z"/><path d="M95.7899 91.9872C51.896 97.0865 18.6006 120.683 8.30205 153.979C0.303163 180.175 6.10236 212.57 22.0001 229.268C37.9979 246.366 57.7952 254.365 104.089 262.563C144.783 269.762 156.081 276.162 156.081 291.859C156.081 299.258 155.182 301.758 150.482 306.957C135.284 323.755 96.5898 322.455 80.592 304.758C76.1926 299.858 73.6929 294.159 72.4931 286.16L71.7932 281.961L36.1982 282.161L0.603121 282.461L0.303163 286.66C-0.0967815 292.459 2.60284 307.557 5.60243 316.056C20.7003 359.45 69.4935 384.746 128.585 379.947C194.276 374.648 232.871 337.553 229.771 283.061C228.571 263.663 223.172 249.665 212.074 237.667C196.476 220.769 180.378 214.17 130.585 204.472C86.0912 195.773 77.0925 191.073 76.8925 176.175C76.7925 158.578 96.3898 147.379 121.286 150.879C140.384 153.579 150.382 161.378 153.382 176.075L154.682 182.475L189.377 182.775C219.373 182.975 224.172 182.775 224.672 181.475C225.472 179.475 223.372 163.877 221.372 156.978C211.974 124.083 183.078 100.686 142.783 93.387C132.685 91.5872 106.288 90.7873 95.7899 91.9872Z"/><path d="M400.547 91.5872C398.948 91.7872 394.148 92.4871 390.049 93.087C314.659 103.686 264.266 173.476 273.165 254.765C282.364 339.353 361.253 395.245 446.041 377.347C493.634 367.349 535.529 329.954 549.427 285.16L550.127 282.961H511.232H472.237L468.638 287.86C447.341 316.756 401.147 323.155 372.151 301.158C360.353 292.259 348.055 270.862 348.055 259.364V256.964H450.94C528.83 256.964 554.126 256.664 554.626 255.764C555.026 255.164 555.526 247.865 555.826 239.567C557.925 166.377 513.132 108.085 443.941 93.9869C434.043 91.9872 408.046 90.4874 400.547 91.5872ZM429.443 156.078C443.341 158.578 458.239 167.377 467.038 178.275C472.037 184.374 479.436 198.072 480.636 203.172L481.236 205.971H415.545H349.854L350.454 202.672C351.654 196.173 359.853 181.475 365.852 174.976C380.75 158.778 405.047 151.479 429.443 156.078Z"/><path d="M1403.91 91.6872C1337.32 97.9864 1287.72 140.38 1273.73 202.972C1270.63 217.07 1270.33 253.565 1273.23 266.463C1288.12 331.954 1337.72 374.448 1405.81 379.947C1490.2 386.746 1558.99 330.854 1566.09 249.665C1574.28 155.578 1499.4 82.5885 1403.91 91.6872ZM1439.4 163.777C1452.3 167.177 1459.5 171.476 1469.9 181.975C1485.4 197.373 1491.2 212.27 1491.2 235.967C1491.2 279.761 1462 310.057 1419.41 310.357C1374.41 310.657 1344.22 278.361 1346.22 231.968C1347.32 207.771 1355.52 190.473 1372.41 176.675C1389.91 162.477 1415.91 157.478 1439.4 163.777Z"/><path d="M728.002 96.9865C677.409 101.886 633.715 131.882 612.018 176.475C593.121 215.37 593.421 267.663 612.718 306.457C637.615 356.35 686.908 385.346 746.5 385.246C821.189 385.146 879.281 338.253 891.88 268.063C895.479 248.065 894.379 219.269 889.38 200.972C870.083 131.282 805.192 89.4875 728.002 96.9865ZM766.497 168.377C799.892 177.075 820.989 208.571 818.69 246.366C816.69 278.361 799.592 301.558 770.196 312.157C761.098 315.456 737.201 315.956 726.003 312.956C690.708 303.858 669.91 271.062 674.01 231.068C677.409 198.572 698.106 174.776 729.002 167.877C739.101 165.677 756.798 165.877 766.497 168.377Z"/><path d="M1577.88 103.286C1577.88 104.086 1579.18 106.485 1580.68 108.585C1583.68 112.684 1594.18 128.082 1612.18 154.479C1623.58 171.276 1627.38 176.775 1653.67 215.27C1662.57 228.268 1669.87 239.467 1669.87 240.067C1669.87 241.066 1664.47 249.165 1638.87 286.16C1632.58 295.359 1619.48 314.456 1609.88 328.454C1600.28 342.552 1589.48 358.15 1585.98 363.249C1582.48 368.249 1578.98 373.448 1578.08 374.648L1576.68 376.948H1617.48L1658.37 376.848L1669.37 360.65C1675.47 351.751 1686.57 335.253 1694.27 323.955C1701.87 312.656 1708.87 302.658 1709.77 301.658C1711.36 299.958 1712.36 301.258 1728.96 325.455C1738.56 339.553 1750.36 356.85 1755.26 363.949L1764.16 376.948H1804.65C1836.55 376.948 1844.95 376.648 1844.55 375.648C1844.35 375.048 1838.55 366.349 1831.65 356.45C1824.85 346.552 1815.65 333.254 1811.35 326.954C1807.05 320.655 1802.05 313.456 1800.35 310.957C1798.65 308.457 1793.85 301.458 1789.65 295.459C1785.55 289.36 1778.66 279.461 1774.56 273.462C1770.36 267.363 1763.56 257.364 1759.36 251.265L1751.76 239.967L1771.56 210.971C1782.45 194.973 1803.35 164.377 1818.15 142.88C1832.85 121.383 1844.85 103.386 1844.85 102.886C1844.85 102.286 1828.65 102.086 1805.15 102.186L1765.36 102.486L1752.16 121.483C1744.86 131.882 1735.16 146.08 1730.46 152.979C1715.46 174.976 1712.16 179.475 1711.06 179.475C1710.46 179.475 1698.07 162.177 1683.57 140.98L1657.17 102.486L1617.48 102.186C1584.58 101.986 1577.88 102.186 1577.88 103.286Z"/><path d="M819.589 386.146C819.389 386.846 818.69 391.546 818.09 396.545C815.99 413.942 810.591 425.841 799.192 438.039C767.697 471.734 707.305 465.835 684.308 426.841L682.608 423.941H642.814C616.918 423.941 603.02 424.241 603.02 424.941C603.02 427.441 609.519 444.338 613.618 452.437C643.414 511.629 712.404 541.525 783.094 525.927C845.886 512.029 893.979 454.337 893.979 392.645V384.946H856.984C828.188 384.946 819.889 385.246 819.589 386.146Z"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-arrow-ur" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.2-4.2"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+    <symbol id="i-chevron-r" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+    <symbol id="i-chevron-l" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 012-2h9"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-terminal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 10l3 2-3 2M13 15h4"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5 9-5zM3 13l9 5 9-5"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 16H3L12 4z"/><path d="M12 10v4M12 17v.01"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.5 3-6 6-6s6 2.5 6 6M16 5a3 3 0 010 6M17 14c2.5.5 4 2.5 4 6"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+    <symbol id="i-inbox" viewBox="0 0 24 24"><path d="M3 13l3-8h12l3 8v6H3v-6zM3 13h5l1 3h6l1-3h5"/></symbol>
+  </defs>
+</svg>
+
+<div class="cat-top">
+  <div style="display:flex;align-items:center;gap:16px">
+    <a class="logo" href="#top"><svg class="logo-svg" viewBox="0 0 2000 530" aria-hidden="true"><use href="#logo-word"/><rect class="logo-sq" x="1889" y="265" width="112" height="112"/></svg></a>
+    <span class="label brand-sub" style="color:var(--fg-3)">Design System · v0.1</span>
+  </div>
+  <div class="seg" role="group" aria-label="Superfície dos exemplos">
+    <button type="button" data-surface-set="paper" aria-pressed="true">Paper</button>
+    <button type="button" data-surface-set="signal" aria-pressed="false">Signal</button>
+    <button type="button" data-surface-set="ink" aria-pressed="false">Ink</button>
+  </div>
+</div>
+
+<div class="cat" id="top">
+  <nav class="cat-nav" aria-label="Catálogo">
+    <h4>Fundamentos</h4>
+    <a href="#logotipo">Logotipo</a><a href="#cores">Cores</a><a href="#tipografia">Tipografia</a><a href="#espaco">Espaço, raios e sombras</a><a href="#grid">Grid e moldura</a><a href="#vidro">Vidro</a><a href="#icones">Ícones</a><a href="#movimento">Movimento</a>
+    <h4>Componentes básicos</h4>
+    <a href="#botoes">Botões</a><a href="#liquido">Botão com degradê</a><a href="#tags">Tags e status</a><a href="#campos">Campos</a><a href="#selecao">Seleção e ajuste</a><a href="#tooltip-dd">Tooltip e dropdown</a><a href="#acc-tabs">Accordion e tabs</a><a href="#nav-pag">Breadcrumbs e paginação</a><a href="#feedback">Alerta e toast</a><a href="#overlays">Modal e drawer</a><a href="#estados">Vazio e skeleton</a>
+    <h4>Componentes do site</h4>
+    <a href="#s-nav">Navegação</a><a href="#s-hero">Hero</a><a href="#s-ticker">Ticker</a><a href="#s-manifesto">Manifesto</a><a href="#s-hfade">Título com fade</a><a href="#s-stats">Números</a><a href="#s-paths">Cards de solução</a><a href="#s-janela">Janela e terminal</a><a href="#s-steps">Governança</a><a href="#s-case">Case</a><a href="#s-produtos">Lista de produtos</a><a href="#s-logos">Logos e depoimento</a><a href="#s-faq">FAQ</a><a href="#s-form">Formulário de contato</a><a href="#s-cta">CTA e rodapé</a>
+  </nav>
+
+  <main class="cat-main">
+
+    <!-- INTRO -->
+    <div style="padding-top:56px;display:grid;gap:20px;max-width:820px">
+      <span class="label" style="color:var(--accent)">Segbox · Tecnologia e inovação para seguradoras</span>
+      <h1 class="t-display h-balance">Uma linguagem só para o site inteiro.</h1>
+      <p class="t-lead">Base para montar a home e as páginas de solução, produto e case. O site é claro: fundo bone, texto quase preto e coral só onde há ação. Da referência rig.ai vem o estilo, não a cor: moldura de linhas finas, rótulos em mono caixa alta, numeração, copy opinativa e artefatos de terminal. A clareza e o cuidado com o movimento vêm da tradição Apple. Use o seletor no topo para ver cada peça em Paper (padrão), Signal e Ink.</p>
+      <p class="note"><strong>Fonte dos títulos:</strong> a GT Standard é licenciada pela Grilli Type. Enquanto os arquivos não chegam, os títulos usam <code>Hanken Grotesk</code> como substituta. Ao colocar os <code>.woff2</code> em <code>fonts/</code>, a troca é automática e nada mais muda.</p>
+    </div>
+
+    <!-- ===================== FUNDAMENTOS ===================== -->
+    <section class="part">
+      <h2>Fundamentos <small>01</small></h2>
+
+      <div class="spec" id="logotipo">
+        <header><h3>Logotipo</h3><p>Wordmark em minúsculas com um quadrado coral que assenta na linha de base. O quadrado é o mesmo elemento dos quadrados de vidro e dos cubos do hero: no início da página os cubos se fundem nele ao rolar. Três versões: principal (preto com coral), branca (fundo escuro) e cinza (uso discreto).</p><code>.logo · .logo-svg · .logo--branco · .logo--cinza · --logo-h</code></header>
+        <div class="grid g3">
+          <div class="stage" data-surface="paper" style="place-items:center;min-height:180px"><a class="logo" href="#logotipo" style="--logo-h:44px"><svg class="logo-svg" viewBox="0 0 2000 530" aria-hidden="true"><use href="#logo-word"/><rect class="logo-sq" x="1889" y="265" width="112" height="112"/></svg></a><span class="stage-h">Principal · fundo claro</span></div>
+          <div class="stage" data-surface="ink" style="place-items:center;min-height:180px"><a class="logo logo--branco" href="#logotipo" style="--logo-h:44px"><svg class="logo-svg" viewBox="0 0 2000 530" aria-hidden="true"><use href="#logo-word"/><rect class="logo-sq" x="1889" y="265" width="112" height="112"/></svg></a><span class="stage-h">Branca · fundo escuro</span></div>
+          <div class="stage" data-surface="paper" style="place-items:center;min-height:180px"><a class="logo logo--cinza" href="#logotipo" style="--logo-h:44px"><svg class="logo-svg" viewBox="0 0 2000 530" aria-hidden="true"><use href="#logo-word"/><rect class="logo-sq" x="1889" y="265" width="112" height="112"/></svg></a><span class="stage-h">Cinza · uso discreto</span></div>
+        </div>
+        <div class="stage" data-surface="paper">
+          <div class="grid g3">
+            <div><span class="stage-h">Tamanho mínimo</span><p class="t-small" style="margin-top:8px">24 px de altura em tela (o quadrado fica com 5 px). Abaixo disso, use só o quadrado coral.</p></div>
+            <div><span class="stage-h">Área de proteção</span><p class="t-small" style="margin-top:8px">Livre em todos os lados a uma distância igual à altura do quadrado do logotipo, no mínimo.</p></div>
+            <div><span class="stage-h">Não fazer</span><p class="t-small" style="margin-top:8px">Não recolorir o quadrado, não usar gradiente, sombra ou contorno no logotipo, e não separar o quadrado do wordmark, exceto na animação do hero.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spec" id="cores">
+        <header><h3>Cores</h3><p>Paper é a superfície padrão do site. Signal (coral) é a faixa de destaque e Ink aparece só em detalhes técnicos, como o terminal. Coral marca a marca e a ação; nunca serve de fundo de erro.</p><code>--coral · --ember · --ink-* · --bone-* · --ok · --warn · --err</code></header>
+        <div class="stage" data-surface="paper">
+          <span class="stage-h">Marca</span>
+          <div class="swatches">
+            <div class="sw"><i style="background:#FF5047"></i><div><b>Coral</b>#FF5047 · sinal, ação</div></div>
+            <div class="sw"><i style="background:#FF8308"></i><div><b>Ember</b>#FF8308 · apoio, gradientes</div></div>
+            
+            <div class="sw"><i style="background:#FF8A80"></i><div><b>Coral 300</b>#FF8A80 · foco e info no ink</div></div>
+          </div>
+          <span class="stage-h">Neutros</span>
+          <div class="swatches">
+            <div class="sw"><i style="background:#09090B"></i><div><b>Ink 950</b>#09090B · fundo</div></div>
+            <div class="sw"><i style="background:#101013"></i><div><b>Ink 900</b>#101013 · superfície</div></div>
+            <div class="sw"><i style="background:#18181C"></i><div><b>Ink 800</b>#18181C · superfície 2</div></div>
+            <div class="sw"><i style="background:#7C7C88"></i><div><b>Ink 400</b>#7C7C88 · texto fraco</div></div>
+            <div class="sw"><i style="background:#A6A6B2"></i><div><b>Ink 300</b>#A6A6B2 · texto 2</div></div>
+            <div class="sw"><i style="background:#F6F4F1"></i><div><b>Bone 100</b>#F6F4F1 · fundo paper</div></div>
+            <div class="sw"><i style="background:#E8E6E3"></i><div><b>Bone 200</b>#E8E6E3 · superfície 2</div></div>
+            <div class="sw"><i style="background:#D3D0CB"></i><div><b>Bone 300</b>#D3D0CB · linhas</div></div>
+          </div>
+          <span class="stage-h">Feedback</span>
+          <div class="swatches">
+            <div class="sw"><i style="background:#3DDC97"></i><div><b>OK</b>#3DDC97</div></div>
+            <div class="sw"><i style="background:#FFB020"></i><div><b>Atenção</b>#FFB020</div></div>
+            <div class="sw"><i style="background:#FF6369"></i><div><b>Erro</b>#FF6369 · sempre com ícone e texto</div></div>
+            <div class="sw"><i style="background:#FF8A80"></i><div><b>Info</b>#FF8A80</div></div>
+          </div>
+        </div>
+        <div class="stage" data-surface="paper">
+          <span class="stage-h">Tokens semânticos por superfície</span>
+          <div class="scroll-x"><table class="tbl">
+            <tr><th>Token</th><th>Paper (padrão)</th><th>Signal</th><th>Ink</th></tr>
+            <tr><td><code>--bg</code></td><td>Bone 100</td><td>Coral</td><td>Ink 950</td></tr>
+            <tr><td><code>--surface</code></td><td>Branco</td><td>Preto 8%</td><td>Ink 900</td></tr>
+            <tr><td><code>--fg</code></td><td>#0B0B0D</td><td>#0B0B0D</td><td>#F4F3F0</td></tr>
+            <tr><td><code>--btn-bg / --btn-fg</code></td><td>Preto / bone</td><td>Preto / bone</td><td>Coral / preto</td></tr>
+            <tr><td><code>--ring</code></td><td>Ink</td><td>Preto</td><td>Coral 300</td></tr>
+          </table></div>
+          <p class="note">Texto de corpo passa de 4.5:1 nas três superfícies. Sobre Signal, use sempre preto. Branco sobre coral não atinge contraste para texto pequeno.</p>
+        </div>
+      </div>
+
+      <div class="spec" id="tipografia">
+        <header><h3>Tipografia</h3><p>Títulos em GT Standard, texto em Geist (a mesma do site atual, para manter a continuidade), rótulos e código em Geist Mono. Rótulos em caixa alta com espaçamento largo são a assinatura técnica.</p><code>--font-display · --font-body · --font-mono</code></header>
+        <div class="stage" data-surface="paper">
+          <div class="scroll-x"><table class="tbl">
+            <tr><th>Classe</th><th>Amostra</th><th>Uso</th></tr>
+            <tr><td><code>.t-display-xl</code></td><td><span class="t-display-xl" style="font-size:clamp(2.4rem,6vw,4.4rem)">Governança</span></td><td>Hero, uma vez por página</td></tr>
+            <tr><td><code>.t-display</code></td><td><span class="t-display" style="font-size:clamp(2rem,4.6vw,3.4rem)">Sua marca na mão</span></td><td>Títulos de seção grandes</td></tr>
+            <tr><td><code>.t-h1</code></td><td><span class="t-h1" style="font-size:2.2rem">Plataformas white label</span></td><td>Título de página</td></tr>
+            <tr><td><code>.t-h2</code></td><td><span class="t-h2" style="font-size:1.7rem">Projetos do zero</span></td><td>Título de seção</td></tr>
+            <tr><td><code>.t-h3 / .t-h4</code></td><td><span class="t-h3" style="font-size:1.35rem">Você aprova</span></td><td>Cards e blocos</td></tr>
+            <tr><td><code>.t-lead</code></td><td><span class="t-lead">A tecnologia é nossa, a marca é sua.</span></td><td>Subtítulos</td></tr>
+            <tr><td><code>.t-body / .t-small</code></td><td>Texto de leitura em Geist 16 px, entrelinha 1.55.</td><td>Corpo e apoio</td></tr>
+            <tr><td><code>.label</code></td><td><span class="label">[ 01 ] Soluções</span></td><td>Eyebrows, tags, botões</td></tr>
+            <tr><td><code>.t-code</code></td><td><span class="t-code">POST /sso/corretor → 200 OK</span></td><td>Código, dados técnicos</td></tr>
+          </table></div>
+        </div>
+      </div>
+
+      <div class="spec" id="espaco">
+        <header><h3>Espaço, raios e sombras</h3><p>Escala de 4 px. Raios pequenos: o site atual já usa 6 px, e o retângulo bem cortado faz parte do tom de engenharia.</p><code>--s-1…10 · --r-1…4 · --sh-1 · --sh-2</code></header>
+        <div class="stage" data-surface="paper">
+          <span class="stage-h">Espaço</span>
+          <div>
+            <div class="spc"><span style="width:70px">s-1 · 4</span><i style="width:4px"></i></div>
+            <div class="spc"><span style="width:70px">s-2 · 8</span><i style="width:8px"></i></div>
+            <div class="spc"><span style="width:70px">s-3 · 12</span><i style="width:12px"></i></div>
+            <div class="spc"><span style="width:70px">s-4 · 16</span><i style="width:16px"></i></div>
+            <div class="spc"><span style="width:70px">s-5 · 24</span><i style="width:24px"></i></div>
+            <div class="spc"><span style="width:70px">s-6 · 32</span><i style="width:32px"></i></div>
+            <div class="spc"><span style="width:70px">s-7 · 48</span><i style="width:48px"></i></div>
+            <div class="spc"><span style="width:70px">s-8 · 64</span><i style="width:64px"></i></div>
+            <div class="spc"><span style="width:70px">s-9 · 96</span><i style="width:96px"></i></div>
+            <div class="spc"><span style="width:70px">s-10 · 144</span><i style="width:144px"></i></div>
+          </div>
+          <span class="stage-h">Raios</span>
+          <div class="flex">
+            <div class="rad" style="border-radius:2px">r-1 · 2<br>tags</div>
+            <div class="rad" style="border-radius:6px">r-2 · 6<br>botões</div>
+            <div class="rad" style="border-radius:12px">r-3 · 12<br>cards</div>
+            <div class="rad" style="border-radius:20px">r-4 · 20<br>janelas</div>
+          </div>
+          <span class="stage-h">Sombras</span>
+          <div class="flex">
+            <div class="rad" style="width:150px;box-shadow:var(--sh-1);border-radius:12px">sh-1 · card</div>
+            <div class="rad" style="width:150px;box-shadow:var(--sh-2);border-radius:12px">sh-2 · janela</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spec" id="grid">
+        <header><h3>Grid e moldura</h3><p>12 colunas, máximo de 1280 px, gutter de 16 px no celular e 48 px no desktop. Seções são separadas por linhas de 1 px, com marcadores de canto nos blocos que precisam de ênfase.</p><code>.corner.tl/.tr/.bl/.br</code></header>
+        <div class="stage" data-surface="paper">
+          <div class="gridguide"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="card" style="max-width:420px"><span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+            <span class="label" style="color:var(--fg-3)">Marcador de canto</span><p>Use em um bloco por seção, no máximo. Muitos cantos viram ruído.</p></div>
+        </div>
+      </div>
+
+      <div class="spec" id="vidro">
+        <header><h3>Vidro</h3><p>Painéis translúcidos com desfoque e brilho na borda, usados só onde há algo atrás para desfocar: navegação, menus, janelas de produto, modal e drawer. O fundo do vidro são quadrados chapados nas cores da marca, o mesmo motivo do ponto do logotipo. Nunca use vidro sobre fundo liso.</p><code>.glass · --glass · --glass-line · --glass-sh · --blur · .sq--coral/--indigo/--ember</code></header>
+        <div class="stage" data-surface="paper">
+          <div class="glass-demo">
+            <i class="sq sq--coral" style="width:150px;height:150px;left:9%;top:26px"></i>
+            <i class="sq sq--indigo" style="width:96px;height:96px;left:34%;top:150px"></i>
+            <i class="sq sq--ember" style="width:54px;height:54px;right:28%;top:30px"></i>
+            <i class="sq sq--ink" style="width:34px;height:34px;right:12%;bottom:38px"></i>
+            <div class="glass" style="left:18%;top:70px;width:min(300px,64%)"><span class="label" style="color:var(--fg-3)">Vidro</span><strong class="t-h4">Painel translúcido</strong><p>O desfoque deixa passar a cor dos quadrados sem atrapalhar a leitura.</p></div>
+            <div class="glass" style="right:6%;bottom:22px;width:min(220px,50%);padding:14px"><span class="label" style="color:var(--fg-3)">POST /sso/corretor</span><strong class="t-code">200 OK · login unificado</strong></div>
+          </div>
+          <p class="note">Contraste: o texto sobre vidro usa sempre os tokens da superfície e passa de 4.5:1 sobre qualquer quadrado. Em navegadores sem <code>backdrop-filter</code>, o vidro cai para cor sólida translúcida.</p>
+        </div>
+      </div>
+
+      <div class="spec" id="icones">
+        <header><h3>Ícones</h3><p>Traço de 1.5 px em grade de 24, pontas arredondadas, sem preenchimento. Herdam a cor do texto.</p><code>&lt;svg class="ico"&gt;&lt;use href="#i-nome"/&gt;&lt;/svg&gt;</code></header>
+        <div class="stage" data-surface="paper">
+          <div class="icons" id="iconGrid"></div>
+        </div>
+      </div>
+
+      <div class="spec" id="movimento">
+        <header><h3>Movimento</h3><p>Regras da skill do Emil Kowalski, aplicadas ao site: só anima o que ajuda a entender, saída sempre <code>ease-out</code> forte, interface abaixo de 300 ms, botão afunda 3% ao pressionar, nada nasce de <code>scale(0)</code> e tudo respeita movimento reduzido.</p><code>--ease-out · --ease-in-out · --ease-drawer · --t-press 160 · --t-fast 180 · --t-base 240 · --t-slow 420</code></header>
+        <div class="stage" data-surface="paper">
+          <div class="scroll-x"><table class="tbl">
+            <tr><th>Situação</th><th>Curva</th><th>Duração</th></tr>
+            <tr><td>Entrada de elemento</td><td><code>ease-out</code> (0.23, 1, 0.32, 1)</td><td>240 ms</td></tr>
+            <tr><td>Movimento na tela (indicador de tab)</td><td><code>ease-in-out</code> (0.77, 0, 0.175, 1)</td><td>240 ms</td></tr>
+            <tr><td>Drawer</td><td>(0.32, 0.72, 0, 1)</td><td>420 ms</td></tr>
+            <tr><td>Hover e cor</td><td><code>ease</code></td><td>180 ms</td></tr>
+            <tr><td>Ticker e barras contínuas</td><td><code>linear</code></td><td>40 s por volta</td></tr>
+            <tr><td>Menu de navegação e atalhos de teclado</td><td>sem animação</td><td>0 ms</td></tr>
+          </table></div>
+          <span class="stage-h">Demonstração (clique para repetir)</span>
+          <div class="flex" style="align-items:flex-start;gap:24px">
+            <button class="btn btn--secondary" type="button" id="replay">Repetir entrada</button>
+            <div class="flex" id="enterDemo" style="gap:12px">
+              <div class="demo-box" style="--i:0">Um</div><div class="demo-box" style="--i:1">Dois</div><div class="demo-box" style="--i:2">Três</div>
+            </div>
+            <button class="btn" type="button">Pressione e segure</button>
+          </div>
+          <p class="note">Entrada em sequência: cada item sobe 8 px, ganha opacidade e tira 2 px de desfoque, com 60 ms de atraso entre eles. É o único tipo de coreografia usado nos blocos de seção.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== BÁSICOS ===================== -->
+    <section class="part">
+      <h2>Componentes básicos <small>02</small></h2>
+
+      <div class="spec" id="botoes">
+        <header><h3>Botões</h3><p>Rótulo em mono caixa alta. No fundo claro o primário é preto, e o coral fica para destaque. Só um primário por bloco. A seta sobe 2 px no hover.</p><code>.btn · .btn--secondary · --ghost · --danger · --icon · --sm · --lg</code></header>
+        <div class="stage" data-surface="paper">
+          <span class="stage-h">Variantes</span>
+          <div class="flex">
+            <button class="btn" type="button">Fale com a gente <svg class="ico ico-move"><use href="#i-arrow-ur"/></svg></button>
+            <button class="btn btn--secondary" type="button">Ver soluções</button>
+            <button class="btn btn--ghost" type="button">Cancelar</button>
+            <button class="btn btn--danger" type="button">Remover acesso</button>
+            <button class="btn btn--icon btn--secondary" type="button" aria-label="Copiar"><svg class="ico"><use href="#i-copy"/></svg></button>
+            <button class="btn btn--sm" type="button">Pequeno</button>
+            <button class="btn btn--lg" type="button">Grande</button>
+          </div>
+          <span class="stage-h">Estados do primário</span>
+          <div class="flex">
+            <button class="btn" type="button">Padrão</button>
+            <button class="btn is-hover" type="button">Hover</button>
+            <button class="btn is-focus" type="button">Foco</button>
+            <button class="btn is-active" type="button">Pressionado</button>
+            <button class="btn is-loading" type="button" aria-busy="true"><span class="spin"></span>Enviando</button>
+            <button class="btn" type="button" disabled>Desabilitado</button>
+          </div>
+          <span class="stage-h">Link com seta</span>
+          <div class="flex"><a class="link-arrow" href="#botoes">Ver Otimize White Label <svg class="ico"><use href="#i-arrow-ur"/></svg></a></div>
+        </div>
+      </div>
+
+      <div class="spec" id="liquido">
+        <header><h3>Botão com degradê em movimento</h3><p>Forma estática, sem ondulação nem salto. Ao pousar o mouse, o degradê das cores da marca preenche o botão e corre continuamente, e o texto passa para branco. Ao sair, volta à cor de repouso. É o botão usado no CTA principal do hero ("Fale com a gente") e no "Enviar" do contato. Vale também para botões de ícone.</p><code>.btn--liquid · --grad-liquid · liquid-flow</code></header>
+        <div class="stage" data-surface="paper">
+          <span class="stage-h">Botões de texto</span>
+          <div class="flex">
+            <button class="btn btn--liquid" type="button">Fale com a gente <svg class="ico"><use href="#i-arrow-ur"/></svg></button>
+            <button class="btn btn--secondary btn--liquid" type="button">Ver soluções</button>
+            <button class="btn btn--lg btn--liquid" type="button">Contar o desafio</button>
+          </div>
+          <span class="stage-h">Ícones</span>
+          <div class="flex">
+            <button class="btn btn--icon btn--secondary btn--liquid" type="button" aria-label="Copiar"><svg class="ico"><use href="#i-copy"/></svg></button>
+            <button class="btn btn--icon btn--secondary btn--liquid" type="button" aria-label="Código"><svg class="ico"><use href="#i-code"/></svg></button>
+            <button class="btn btn--icon btn--secondary btn--liquid" type="button" aria-label="Mensagem"><svg class="ico"><use href="#i-message"/></svg></button>
+            <button class="btn btn--icon btn--secondary btn--liquid" type="button" aria-label="Segurança"><svg class="ico"><use href="#i-shield"/></svg></button>
+            <button class="btn btn--icon btn--secondary btn--liquid" type="button" aria-label="Camadas"><svg class="ico"><use href="#i-layers"/></svg></button>
+            <button class="btn btn--icon btn--secondary btn--liquid" type="button" aria-label="Pessoas"><svg class="ico"><use href="#i-users"/></svg></button>
+            <button class="btn btn--icon btn--liquid" type="button" aria-label="Seta"><svg class="ico"><use href="#i-arrow-ur"/></svg></button>
+          </div>
+          <span class="stage-h">Estado congelado (para revisar o degradê)</span>
+          <div class="flex"><button class="btn btn--liquid is-hover" type="button">Fale com a gente <svg class="ico"><use href="#i-arrow-ur"/></svg></button></div>
+          <p class="note">Contraste: o texto branco sobre coral e laranja fica perto de 3:1, aceitável para rótulo grande em hover, mas abaixo de 4.5:1. Se o efeito for aprovado, vale escurecer um pouco o coral e o laranja só dentro do degradê. Em movimento reduzido o degradê aparece parado.</p>
+        </div>
+      </div>
+
+      <div class="spec" id="tags">
+        <header><h3>Tags e status</h3><p>Retângulo de 2 px de raio, mono caixa alta. Status sempre com ponto e texto, nunca só cor.</p><code>.tag · --solid · --boxed · --ok · --warn · --err · --info · --live</code></header>
+        <div class="stage" data-surface="paper">
+          <div class="flex">
+            <span class="tag">Sob medida</span><span class="tag tag--solid">Novo</span><span class="tag tag--boxed">Em definição</span>
+            <span class="tag tag--ok"><i class="dot"></i>Em operação</span><span class="tag tag--warn"><i class="dot"></i>Em implantação</span><span class="tag tag--err"><i class="dot"></i>Indisponível</span><span class="tag tag--info tag--live"><i class="dot"></i>Ao vivo</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="spec" id="campos">
+        <header><h3>Campos</h3><p>Altura de 44 px, rótulo acima, dica ou erro abaixo. Erro traz ícone e frase que explica como corrigir.</p><code>.field · .input · .textarea · .select · .hint</code></header>
+        <div class="stage" data-surface="paper">
+          <div class="grid g3">
+            <div class="field"><label class="label" for="c1">Nome</label><input class="input" id="c1" placeholder="Seu nome"><span class="hint">Como devemos te chamar.</span></div>
+            <div class="field"><label class="label" for="c2">Hover</label><input class="input is-hover" id="c2" value="Gerente de Canais"></div>
+            <div class="field"><label class="label" for="c3">Foco</label><input class="input is-focus" id="c3" value="Seguradora Exemplo"></div>
+            <div class="field"><label class="label" for="c4">E-mail corporativo</label><input class="input is-error" id="c4" value="ana@gmail"><span class="hint err"><svg class="ico"><use href="#i-alert"/></svg>Informe um e-mail completo, como ana@empresa.com.br.</span></div>
+            <div class="field"><label class="label" for="c5">Válido</label><input class="input is-ok" id="c5" value="ana@seguradora.com.br"><span class="hint"><svg class="ico"><use href="#i-check"/></svg>Tudo certo.</span></div>
+            <div class="field"><label class="label" for="c6">Desabilitado</label><input class="input" id="c6" value="Preenchido automaticamente" disabled></div>
+          </div>
+          <div class="grid g3">
+            <div class="field"><label class="label" for="pw">Senha</label>
+              <div class="input-wrap"><input class="input" id="pw" type="password" value="segredo123"><button class="btn btn--icon btn--ghost btn--sm trail" type="button" id="pwBtn" aria-label="Mostrar senha"><svg class="ico"><use href="#i-eye"/></svg></button></div></div>
+            <div class="field"><label class="label" for="sr">Busca</label>
+              <div class="input-wrap has-lead"><svg class="ico lead"><use href="#i-search"/></svg><input class="input" id="sr" type="search" placeholder="Buscar no site"><span class="kbd trail" style="right:12px">/</span></div></div>
+            <div class="field"><label class="label" for="sl">Interesse</label><select class="select" id="sl"><option>Otimize White Label</option><option>SegZap White Label</option><option>Projeto sob medida</option><option>Ainda não sei</option></select></div>
+          </div>
+          <div class="field"><label class="label" for="ta">Mensagem</label><textarea class="textarea" id="ta" maxlength="280" placeholder="Conte o desafio da sua rede de corretores"></textarea><span class="count" id="taCount">0 / 280</span></div>
+        </div>
+      </div>
+
+      <div class="spec" id="selecao">
+        <header><h3>Seleção e ajuste</h3><p>Checkbox, radio, switch e slider usam o coral como estado ligado. O clique afunda levemente.</p><code>.check · .radio · .switch · .range</code></header>
+        <div class="stage" data-surface="paper">
+          <div class="grid g4">
+            <div style="display:grid;gap:14px"><span class="stage-h">Checkbox</span>
+              <label class="check"><input type="checkbox" checked><span class="box"><svg class="ico"><use href="#i-check"/></svg></span>Aceito os termos</label>
+              <label class="check"><input type="checkbox"><span class="box"><svg class="ico"><use href="#i-check"/></svg></span>Quero novidades</label>
+              <label class="check"><input type="checkbox" disabled><span class="box"><svg class="ico"><use href="#i-check"/></svg></span>Desabilitado</label></div>
+            <div style="display:grid;gap:14px"><span class="stage-h">Radio</span>
+              <label class="radio"><input type="radio" name="r1" checked><span class="box"></span>Seguradora</label>
+              <label class="radio"><input type="radio" name="r1"><span class="box"></span>Entidade</label>
+              <label class="radio"><input type="radio" name="r1" disabled><span class="box"></span>Desabilitado</label></div>
+            <div style="display:grid;gap:14px"><span class="stage-h">Switch</span>
+              <label class="switch"><input type="checkbox" checked><span class="track"></span>Travar templates</label>
+              <label class="switch"><input type="checkbox"><span class="track"></span>Edição livre</label>
+              <label class="switch"><input type="checkbox" disabled><span class="track"></span>Desabilitado</label></div>
+            <div style="display:grid;gap:14px"><span class="stage-h">Slider <b id="rv" style="color:var(--fg)">40</b></span>
+              <input class="range" id="rg" type="range" min="0" max="100" value="40" aria-label="Volume de corretores"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spec" id="tooltip-dd">
+        <header><h3>Tooltip e dropdown</h3><p>O primeiro tooltip espera 400 ms; os seguintes abrem na hora e sem animação. O dropdown nasce a partir do botão que o abriu.</p><code>[data-tip] · .dd · .dd-menu · .dd-item</code></header>
+        <div class="stage" data-surface="paper" style="min-height:320px;align-content:start">
+          <div class="flex" style="gap:16px">
+            <button class="btn btn--secondary btn--icon" data-tip="Copiar link" aria-label="Copiar link" type="button"><svg class="ico"><use href="#i-copy"/></svg></button>
+            <button class="btn btn--secondary btn--icon" data-tip="Segurança da informação" aria-label="Segurança" type="button"><svg class="ico"><use href="#i-shield"/></svg></button>
+            <button class="btn btn--secondary btn--icon" data-tip="Ver código" aria-label="Código" type="button"><svg class="ico"><use href="#i-code"/></svg></button>
+            <div class="dd" data-dd>
+              <button class="btn btn--secondary" type="button" aria-haspopup="menu" aria-expanded="false">Soluções <svg class="ico"><use href="#i-chevron"/></svg></button>
+              <div class="dd-menu" role="menu">
+                <a class="dd-item" role="menuitem" href="#tooltip-dd"><svg class="ico"><use href="#i-layers"/></svg><span><strong>Otimize White Label</strong><small>Materiais e landing pages aprovados pela seguradora</small></span></a>
+                <a class="dd-item" role="menuitem" href="#tooltip-dd"><svg class="ico"><use href="#i-message"/></svg><span><strong>SegZap White Label</strong><small>Assistente de IA no WhatsApp com a sua marca</small></span></a>
+                <div class="dd-sep"></div>
+                <a class="dd-item" role="menuitem" href="#tooltip-dd"><svg class="ico"><use href="#i-code"/></svg><span><strong>Projetos sob medida</strong><small>Se não existe, construímos do zero</small></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spec" id="acc-tabs">
+        <header><h3>Accordion e tabs</h3><p>Accordion numerado, com abertura por altura real do conteúdo. O indicador da tab desliza até a tab ativa.</p><code>.acc · .acc-item · .tabs · .tab · [role=tabpanel]</code></header>
+        <div class="stage" data-surface="paper">
+          <div class="tabs" role="tablist" aria-label="Exemplo de tabs" id="tabs1">
+            <button class="tab" role="tab" aria-selected="true" aria-controls="p1" id="t1">Visão geral</button>
+            <button class="tab" role="tab" aria-selected="false" aria-controls="p2" id="t2" tabindex="-1">Integração</button>
+            <button class="tab" role="tab" aria-selected="false" aria-controls="p3" id="t3" tabindex="-1">Implantação</button>
+            <span class="tab-ind"></span>
+          </div>
+          <div class="panel" id="p1" role="tabpanel" aria-labelledby="t1">Materiais, landing pages e leads dos corretores, com a identidade da seguradora e gestão centralizada.</div>
+          <div class="panel" id="p2" role="tabpanel" aria-labelledby="t2" hidden>Login unificado via API: o corretor entra já autenticado pelo portal da seguradora.</div>
+          <div class="panel" id="p3" role="tabpanel" aria-labelledby="t3" hidden>Videoaulas, treinamentos presenciais mensais e atendimento online todos os dias.</div>
+        </div>
+      </div>
+
+      <div class="spec" id="nav-pag">
+        <header><h3>Breadcrumbs e paginação</h3><p>Usados em páginas de produto e case, e na lista de conteúdo quando existir.</p><code>.crumbs · .pager</code></header>
+        <div class="stage" data-surface="paper">
+          <nav class="crumbs" aria-label="Você está em"><a href="#nav-pag">Início</a><svg class="ico"><use href="#i-chevron-r"/></svg><a href="#nav-pag">Cases</a><svg class="ico"><use href="#i-chevron-r"/></svg><span aria-current="page">MAPFRE +Digital</span></nav>
+          <nav class="pager" aria-label="Paginação" id="pager"></nav>
+        </div>
+      </div>
+
+      <div class="spec" id="feedback">
+        <header><h3>Alerta e toast</h3><p>Alerta fica na página; toast aparece, some sozinho em 4 segundos e pode ser dispensado.</p><code>.alert--ok/--warn/--err/--info · toast()</code></header>
+        <div class="stage" data-surface="paper">
+          <div class="grid g2">
+            <div class="alert alert--ok"><svg class="ico"><use href="#i-check"/></svg><div><strong>Mensagem enviada</strong><p>Nossa equipe responde em até um dia útil.</p></div></div>
+            <div class="alert alert--info"><svg class="ico"><use href="#i-info"/></svg><div><strong>Integração via API</strong><p>O login unificado depende do time de TI da seguradora.</p></div></div>
+            <div class="alert alert--warn"><svg class="ico"><use href="#i-alert"/></svg><div><strong>Dado a confirmar</strong><p>Este número ainda não tem fonte validada.</p></div></div>
+            <div class="alert alert--err"><svg class="ico"><use href="#i-alert"/></svg><div><strong>Não foi possível enviar</strong><p>Verifique a conexão e tente de novo.</p></div></div>
+          </div>
+          <div class="flex"><button class="btn btn--secondary" type="button" data-toast="ok">Disparar toast de sucesso</button><button class="btn btn--secondary" type="button" data-toast="err">Disparar toast de erro</button></div>
+        </div>
+      </div>
+
+      <div class="spec" id="overlays">
+        <header><h3>Modal e drawer</h3><p>Modal nasce no centro, com leve escala. O drawer entra pela direita com a curva de sheet do iOS. Esc fecha e o foco volta ao botão de origem.</p><code>.overlay · .modal · .drawer</code></header>
+        <div class="stage" data-surface="paper">
+          <div class="flex"><button class="btn" type="button" data-open="m1">Abrir modal</button><button class="btn btn--secondary" type="button" data-open="d1">Abrir drawer</button></div>
+        </div>
+      </div>
+
+      <div class="spec" id="estados">
+        <header><h3>Vazio, carregando e erro de página</h3><p>Todo estado ausente explica o que fazer em seguida.</p><code>.empty · .skel</code></header>
+        <div class="stage" data-surface="paper">
+          <div class="grid g3">
+            <div class="empty"><svg class="ico"><use href="#i-inbox"/></svg><strong>Nenhum case publicado ainda</strong><p class="t-small">Os cases entram aqui assim que forem documentados.</p><a class="btn btn--secondary btn--sm" href="#estados">Falar com a equipe</a></div>
+            <div class="card" aria-label="Carregando"><div class="skel" style="height:14px;width:40%"></div><div class="skel" style="height:28px;width:85%"></div><div class="skel" style="height:14px;width:100%"></div><div class="skel" style="height:14px;width:70%"></div></div>
+            <div class="empty"><svg class="ico"><use href="#i-alert"/></svg><strong>Não encontramos esta página</strong><p class="t-small">O endereço mudou ou nunca existiu.</p><a class="btn btn--sm" href="#top">Ir para o início</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SITE ===================== -->
+    <section class="part">
+      <h2>Componentes do site <small>03</small></h2>
+
+      <div class="spec" id="s-nav">
+        <header><h3>Navegação</h3><p>Soluções, Produtos, Cases, Conteúdo e Sobre, com o botão de contato sempre à vista. Abre sem animação por teclado; no mouse, o painel usa a animação curta do dropdown.</p><code>.nav · .nav-links · .dd</code></header>
+        <div class="stage" data-surface="paper" style="min-height:360px;align-content:start">
+          <header class="nav">
+            <a class="logo" href="#s-nav"><svg class="logo-svg" viewBox="0 0 2000 530" aria-hidden="true"><use href="#logo-word"/><rect class="logo-sq" x="1889" y="265" width="112" height="112"/></svg></a>
+            <nav class="nav-links" aria-label="Principal">
+              <div class="dd" data-dd><button type="button" aria-expanded="false" aria-haspopup="menu">Soluções <svg class="ico"><use href="#i-chevron"/></svg></button>
+                <div class="dd-menu" role="menu" style="min-width:300px">
+                  <a class="dd-item" role="menuitem" href="#s-nav"><svg class="ico"><use href="#i-layers"/></svg><span><strong>Otimize White Label</strong><small>Materiais e landing pages com a sua marca</small></span></a>
+                  <a class="dd-item" role="menuitem" href="#s-nav"><svg class="ico"><use href="#i-message"/></svg><span><strong>SegZap White Label</strong><small>Assistente de IA no WhatsApp</small></span></a>
+                  <div class="dd-sep"></div>
+                  <a class="dd-item" role="menuitem" href="#s-nav"><svg class="ico"><use href="#i-code"/></svg><span><strong>Projetos sob medida</strong><small>Construímos do zero</small></span></a>
+                </div></div>
+              <div class="dd" data-dd><button type="button" aria-expanded="false" aria-haspopup="menu">Produtos <svg class="ico"><use href="#i-chevron"/></svg></button>
+                <div class="dd-menu" role="menu">
+                  <a class="dd-item" role="menuitem" href="#s-nav"><span><strong>Otimize</strong></span></a><a class="dd-item" role="menuitem" href="#s-nav"><span><strong>SegZap</strong></span></a><a class="dd-item" role="menuitem" href="#s-nav"><span><strong>CorretorPRO</strong></span></a><a class="dd-item" role="menuitem" href="#s-nav"><span><strong>LeadsGO!</strong></span></a>
+                  <div class="dd-sep"></div>
+                  <a class="dd-item" role="menuitem" href="#s-nav"><span><strong>ReviewSeguro ↗</strong><small>Site próprio</small></span></a>
+                </div></div>
+              <a href="#s-nav">Cases</a>
+              <div class="dd" data-dd><button type="button" aria-expanded="false" aria-haspopup="menu">Conteúdo <svg class="ico"><use href="#i-chevron"/></svg></button>
+                <div class="dd-menu" role="menu">
+                  <a class="dd-item" role="menuitem" href="#s-nav"><span><strong>Notícias ↗</strong><small>No site Insurtalks</small></span></a>
+                  <a class="dd-item" role="menuitem" href="#s-nav"><span><strong>Podcast ↗</strong><small>No InsurtalksCast</small></span></a>
+                  <a class="dd-item" role="menuitem" href="#s-nav"><span><strong>Insurance Innovators</strong><small><span class="tag tag--boxed" style="height:18px;font-size:9.5px">Lugar em definição</span></small></span></a>
+                </div></div>
+              <a href="#s-nav">Sobre</a>
+            </nav>
+            <div class="flex" style="gap:8px"><a class="btn btn--sm" href="#s-form">Fale com a gente</a><button class="btn btn--secondary btn--icon btn--sm menu-btn" type="button" aria-label="Abrir menu"><svg class="ico"><use href="#i-menu"/></svg></button></div>
+          </header>
+        </div>
+      </div>
+
+      <div class="spec" id="s-hero">
+        <header><h3>Hero</h3><p>Fundo claro com textura de linhas finas e o logotipo gigante em contorno coral, cortado pela borda. A versão Signal (coral chapado) é a faixa de destaque, usada uma vez por página, nunca como fundo geral.</p><code>.hero · .hero--signal · .hero-mark</code></header>
+        <div class="hero hero--signal">
+          <svg class="hero-mark" viewBox="0 0 2000 530" aria-hidden="true"><use href="#logo-word"/><rect x="1889" y="265" width="112" height="112"/></svg>
+          <div>
+            <span class="tag" style="border-color:#0B0B0D;color:#0B0B0D">Tecnologia e inovação para seguradoras</span>
+            <h2 class="t-display-xl h-balance">Sua marca na mão de cada corretor.</h2>
+            <p class="lead">Plataformas white label prontas para implantar ou sistemas construídos do zero. Do jeito que você aprovou.</p>
+            <div class="row"><a class="btn" href="#s-hero">Fale com a gente <svg class="ico ico-move"><use href="#i-arrow-ur"/></svg></a><a class="btn btn--secondary" href="#s-hero">Ver soluções</a></div>
+          </div>
+          <div class="hero-foot label"><span>Desde 2017 no mercado de seguros</span><span>Em operação com a MAPFRE +Digital</span></div>
+        </div>
+        <div class="hero" style="margin-top:12px;min-height:420px">
+          <svg class="hero-mark" viewBox="0 0 2000 530" aria-hidden="true"><use href="#logo-word"/><rect x="1889" y="265" width="112" height="112"/></svg>
+          <div>
+            <span class="tag">Projetos sob medida</span>
+            <h2 class="t-display h-balance">Se não existe, a gente constrói do zero.</h2>
+            <p class="lead">O mesmo time que opera produtos com milhares de corretores desde 2019.</p>
+            <div class="row"><a class="btn" href="#s-hero">Contar o desafio <svg class="ico ico-move"><use href="#i-arrow-ur"/></svg></a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spec" id="s-ticker">
+        <header><h3>Ticker</h3><p>Faixa contínua de termos técnicos, em mono. Movimento linear e lento; pausa em movimento reduzido.</p><code>.ticker</code></header>
+        <div class="stage" data-surface="paper" style="padding:0;border:0;background:transparent">
+          <div class="ticker" aria-hidden="true"><div class="track label" id="tickerTrack"></div></div>
+        </div>
+      </div>
+
+      <div class="spec" id="s-manifesto">
+        <header><h3>Manifesto numerado</h3><p>Afirmações curtas e opinativas, cada uma com número, título e explicação. É o componente de "o problema" da home.</p><code>.manifesto · .m-row</code></header>
+        <div class="stage" data-surface="paper">
+          <div class="sec-head"><span class="label">[ 01 ] O problema</span><h2 class="t-h1 h-balance">A marca da seguradora vira improviso.</h2></div>
+          <div class="manifesto">
+            <div class="m-row"><span class="label n">001</span><h3 class="t-h3">Cada corretor faz a sua peça.</h3><p>Com IA, sem padrão, do jeito que der. A seguradora só descobre quando a peça já está no ar.</p></div>
+            <div class="m-row"><span class="label n">002</span><h3 class="t-h3">A informação fica longe do atendimento.</h3><p>Condições gerais em PDF, apólice em portal, dúvida no WhatsApp. O corretor alterna entre sistemas no meio da conversa.</p></div>
+            <div class="m-row"><span class="label n">003</span><h3 class="t-h3">Ninguém enxerga a adoção.</h3><p>Sem painel, a seguradora não sabe quem usa, o que gera resultado e onde a rede travou.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spec" id="s-hfade">
+        <header><h3>Título com fade na rolagem</h3><p>Título de dois tons: a primeira frase afirma, a segunda complementa. As duas partes começam na cor do texto. Conforme o título sobe na tela, a parte secundária vai para o cinza, palavra a palavra, e o olho fica na afirmação. É ligado à rolagem (volta ao preto se o usuário subir), não um disparo único. Role esta página para ver.</p><code>.h-fade · .h-fade-2 · script h-fade</code></header>
+        <div class="stage" data-surface="paper" style="padding-block:72px">
+          <h2 class="hf-demo h-fade">Uma assessoria com dezenas de recursos. <span class="h-fade-2">Agora um ecossistema, com uma IA que conhece a carteira do corretor.</span></h2>
+        </div>
+        <div class="stage" data-surface="ink" style="margin-top:12px;padding-block:72px">
+          <h2 class="hf-demo h-fade">A seguradora publica. O corretor usa. <span class="h-fade-2">A marca não se perde no caminho.</span></h2>
+        </div>
+        <div class="hf-specs">
+          <div><b>Marcação</b>Classe <code>h-fade</code> no título; a parte secundária em <code>&lt;span class="h-fade-2"&gt;</code>. O texto não muda; o script envolve cada palavra em <code>.hf-w</code> na hora.</div>
+          <div><b>Progresso</b>0 quando o topo do título está a 85% da altura da tela; 1 quando chega a 40%. Cada palavra ocupa uma janela de ~35% desse trajeto, com suavização (smoothstep).</div>
+          <div><b>Cores</b>De <code>color</code> do título (<code>--fg</code>) até <code>--fg-3</code> do contexto. Funciona em Paper e Ink sem ajuste: o script lê as cores calculadas.</div>
+          <div><b>Contraste</b>Estado final: #7E7E88 sobre #F6F4F1 = 3,66:1; sobre branco = 4,02:1; #7C7C88 sobre #09090B = 4,83:1. Passa AA só para texto grande: usar a partir de 24px (ou 19px em 600).</div>
+          <div><b>Movimento reduzido e sem JS</b>Com <code>prefers-reduced-motion</code> ou sem script, a parte secundária aparece direto no cinza final (o desenho de antes).</div>
+          <div><b>Onde usar</b>Frases de abertura de seção de case e de produto (<code>.q</code>). Uma por página, no máximo duas. Não usar em corpo de texto nem em botões.</div>
+        </div>
+      </div>
+
+      <div class="spec" id="s-stats">
+        <header><h3>Números</h3><p>Quatro células com rótulo, valor grande e nota. Os valores contam quando entram na tela; em movimento reduzido já nascem finais. Só usar números com fonte confirmada.</p><code>.stats · .stat</code></header>
+        <div class="stage" data-surface="paper">
+          <div class="stats">
+            <div class="stat"><span class="label">Corretores</span><b data-count="17" data-prefix="+" data-suffix=" mil">+17 mil</b><span>cadastrados na MAPFRE +Digital</span></div>
+            <div class="stat"><span class="label">Leads</span><b data-count="26" data-prefix="+" data-suffix=" mil">+26 mil</b><span>gerados na plataforma</span></div>
+            <div class="stat"><span class="label">Artes</span><b data-count="200" data-prefix="+">+200</b><span>para redes sociais</span></div>
+            <div class="stat"><span class="label">No mercado</span><b data-count="2017" data-format="raw">2017</b><span>origem dentro do setor de seguros</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spec" id="s-paths">
+        <header><h3>Cards de solução</h3><p>Dois caminhos lado a lado: plataforma pronta e projeto sob medida. Um link por item, nunca um bloco de texto corrido.</p><code>.paths · .card · .sub · .chips</code></header>
+        <div class="stage" data-surface="paper">
+          <div class="paths">
+            <article class="card"><span class="label" style="color:var(--fg-3)">Pronto para implantar</span><h3 class="t-h2">Plataformas white label</h3><p>A tecnologia é nossa, a marca é sua. O corretor usa, a seguradora controla.</p>
+              <div class="sub"><div><strong>Otimize White Label</strong><span>Peças, landing pages e leads com a sua identidade.</span></div><a class="link-arrow" href="#s-paths">Ver <svg class="ico"><use href="#i-arrow-ur"/></svg></a></div>
+              <div class="sub"><div><strong>SegZap White Label</strong><span>Assistente de IA no WhatsApp com a sua base de informação.</span></div><a class="link-arrow" href="#s-paths">Ver <svg class="ico"><use href="#i-arrow-ur"/></svg></a></div></article>
+            <article class="card"><span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span><span class="label" style="color:var(--fg-3)">Sob medida</span><h3 class="t-h2">Projetos do zero</h3><p>Se o que você precisa não existe, construímos do zero, com o mesmo time que opera produtos para corretores desde 2019.</p>
+              <div class="chips"><span class="tag">Portais de distribuição</span><span class="tag">Integrações</span><span class="tag">Assistentes de IA</span><span class="tag">Painéis</span></div>
+              <div style="margin-top:auto;padding-top:12px"><a class="btn btn--secondary" href="#s-form">Contar o desafio</a></div></article>
+          </div>
+        </div>
+      </div>
+
+      <div class="spec" id="s-janela">
+        <header><h3>Janela de produto e terminal</h3><p>A janela mostra o produto funcionando com a marca de uma seguradora fictícia. O terminal digita uma chamada de API real do login unificado. Ambos marcam o exemplo como ilustrativo.</p><code>.win · .app · .term</code></header>
+        <div class="stage" data-surface="paper">
+          <div class="grid g2" style="align-items:start">
+            <div class="win"><div class="chrome"><span></span><span></span><span></span><div class="url">hub.suaseguradora.com.br/corretor</div></div>
+              <div class="app"><aside><div class="b"><i></i>Sua Seguradora</div><a class="on">Peças aprovadas</a><a>Landing pages</a><a>Meus leads</a><a>Agenda de posts</a></aside>
+                <div class="main"><div class="flex" style="justify-content:space-between"><strong>Campanha do mês</strong><span class="tag tag--ok"><i class="dot"></i>Aprovada</span></div>
+                  <div class="thumbs"><div class="thumb"><span class="tag">Travado</span></div><div class="thumb"><span class="tag">Travado</span></div><div class="thumb"><span class="tag">Editável</span></div><div class="thumb"><span class="tag">Travado</span></div></div>
+                  <span class="label" style="color:var(--fg-3)">Exemplo ilustrativo</span></div></div></div>
+            <div class="term" id="term"><div class="bar"><span>segbox://sso</span><span>exemplo</span></div><pre id="termOut" aria-live="off"></pre></div>
+          </div>
+          <div class="code-block"><div class="bar"><span class="label" style="color:var(--fg-3)">bash</span><button class="btn btn--ghost btn--sm" type="button" data-copy="curl -X POST https://api.suaseguradora.com.br/sso/corretor"><svg class="ico"><use href="#i-copy"/></svg><span>Copiar</span></button></div><pre>curl -X POST https://api.suaseguradora.com.br/sso/corretor</pre></div>
+        </div>
+      </div>
+
+      <div class="spec" id="s-steps">
+        <header><h3>Governança em três passos</h3><p>Quem faz o quê: a seguradora aprova, o corretor personaliza, a seguradora acompanha. A ordem é real, por isso os passos são marcados.</p><code>.steps · .step</code></header>
+        <div class="stage" data-surface="paper">
+          <div class="sec-head"><span class="label">[ 02 ] Governança</span><h2 class="t-h1 h-balance">A seguradora manda. O corretor executa.</h2></div>
+          <div class="steps">
+            <div class="step"><span class="label">Passo 1 · Seguradora</span><h3 class="t-h3">Você aprova</h3><p>Marca, templates, materiais e conteúdos. Trave o que precisa ser padrão e libere o que pode ser editado.</p></div>
+            <div class="step"><span class="label">Passo 2 · Corretor</span><h3 class="t-h3">Ele personaliza</h3><p>Landing pages e peças com logotipo e dados próprios, sempre dentro do que foi permitido.</p></div>
+            <div class="step"><span class="label">Passo 3 · Seguradora</span><h3 class="t-h3">Você acompanha</h3><p>Painel de uso, gestão da base de corretores e leads gerados por cada página.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spec" id="s-case">
+        <header><h3>Bloco de case</h3><p>Números à esquerda, depoimento à direita, um link para o case completo.</p><code>.case · .nums · blockquote</code></header>
+        <div class="stage" data-surface="paper">
+          <div class="sec-head"><span class="label">[ 03 ] Case · MAPFRE +Digital</span><h2 class="t-h1 h-balance">Uma rede inteira com a mesma marca.</h2></div>
+          <div class="case">
+            <div class="nums"><div><b>+17 mil</b><span>corretores cadastrados</span></div><div><b>+200</b><span>artes para redes sociais</span></div><div><b>+26 mil</b><span>leads gerados na plataforma</span></div></div>
+            <div><blockquote><p>“A plataforma oferece navegação intuitiva e recursos que facilitam a gestão de campanhas, aumentando a produtividade e a satisfação dos parceiros.”</p><footer><span class="avatar">TS</span><span>Tatiane Seraphim, Comunicação e Marketing da MAPFRE</span></footer></blockquote>
+              <div style="margin-top:24px"><a class="link-arrow" href="#s-case">Ler o case completo <svg class="ico"><use href="#i-arrow-ur"/></svg></a></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spec" id="s-produtos">
+        <header><h3>Lista de produtos</h3><p>Uma linha por produto, com ano de lançamento. Links externos ganham a seta diagonal.</p><code>.plist · .prow</code></header>
+        <div class="stage" data-surface="paper">
+          <div class="plist">
+            <a class="prow" href="#s-produtos"><span class="label yr">2019</span><strong class="t-h4">CorretorPRO</strong><p>Sites e landing pages para o corretor.</p><span class="go label">Ver <svg class="ico"><use href="#i-arrow-ur"/></svg></span></a>
+            <a class="prow" href="#s-produtos"><span class="label yr">2020</span><strong class="t-h4">LeadsGO!</strong><p>Leads para a rotina comercial do corretor.</p><span class="go label">Ver <svg class="ico"><use href="#i-arrow-ur"/></svg></span></a>
+            <a class="prow" href="#s-produtos"><span class="label yr">2023</span><strong class="t-h4">Otimize</strong><p>Peças, sites e landing pages em um só ambiente.</p><span class="go label">Ver <svg class="ico"><use href="#i-arrow-ur"/></svg></span></a>
+            <a class="prow" href="#s-produtos"><span class="label yr">2026</span><strong class="t-h4">SegZap</strong><p>Assistente de IA no WhatsApp para o atendimento.</p><span class="go label">Ver <svg class="ico"><use href="#i-arrow-ur"/></svg></span></a>
+            <a class="prow" href="https://reviewseguro.net" target="_blank" rel="noopener"><span class="label yr">Externo</span><strong class="t-h4">ReviewSeguro</strong><p>Reputação e avaliações do mercado de seguros.</p><span class="go label">Abrir <svg class="ico"><use href="#i-arrow-ur"/></svg></span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="spec" id="s-logos">
+        <header><h3>Faixa de logos</h3><p>Só logos de clientes com autorização. Até lá, o componente mostra espaços marcados como placeholder.</p><code>.logos</code></header>
+        <div class="stage" data-surface="paper">
+          <div class="logos"><div>Cliente A</div><div>Cliente B</div><div>Cliente C</div><div>Cliente D</div><div>Cliente E</div></div>
+          <p class="note">Placeholder. Nenhum logo entra sem autorização por escrito.</p>
+        </div>
+      </div>
+
+      <div class="spec" id="s-faq">
+        <header><h3>FAQ</h3><p>Accordion numerado, com perguntas do decisor. Respostas só com o que já é fato publicado.</p><code>.acc</code></header>
+        <div class="stage" data-surface="paper">
+          <div class="acc" id="faq">
+            <div class="acc-item open"><button class="acc-h" type="button" aria-expanded="true"><span class="n">01</span><span>Como o corretor acessa a plataforma?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b"><div><p>Por login unificado via API. O corretor entra já autenticado pelo portal da seguradora, sem criar outra senha.</p></div></div></div>
+            <div class="acc-item"><button class="acc-h" type="button" aria-expanded="false"><span class="n">02</span><span>A seguradora consegue travar os materiais?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b"><div><p>Sim. Você escolhe entre travar os templates para proteger a identidade da marca ou permitir edição livre.</p></div></div></div>
+            <div class="acc-item"><button class="acc-h" type="button" aria-expanded="false"><span class="n">03</span><span>Existe treinamento para a rede?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b"><div><p>Videoaulas, treinamentos presenciais mensais e atendimento online todos os dias.</p></div></div></div>
+            <div class="acc-item"><button class="acc-h" type="button" aria-expanded="false"><span class="n">04</span><span>Posso pedir algo que ainda não existe?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b"><div><p>Pode. Construímos do zero, com o mesmo time que opera os produtos.</p></div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spec" id="s-form">
+        <header><h3>Formulário de contato</h3><p>Pede cargo e empresa, porque quem preenche é decisor. Tente enviar vazio para ver o erro; com dados, para ver o carregamento e o sucesso.</p><code>.field · .input · .select · .btn</code></header>
+        <div class="stage" data-surface="paper">
+          <form id="leadForm" novalidate style="display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:760px">
+            <div class="field"><label class="label" for="f1">Nome</label><input class="input" id="f1" autocomplete="name" placeholder="Seu nome"></div>
+            <div class="field"><label class="label" for="f2">Cargo</label><input class="input" id="f2" placeholder="Ex.: Gerente de Canais"></div>
+            <div class="field"><label class="label" for="f3">Empresa</label><input class="input" id="f3" autocomplete="organization" placeholder="Nome da seguradora"></div>
+            <div class="field"><label class="label" for="f4">E-mail corporativo</label><input class="input" id="f4" type="email" autocomplete="email" placeholder="voce@empresa.com.br"><span class="hint err" id="f4e" hidden><svg class="ico"><use href="#i-alert"/></svg>Informe um e-mail completo, como ana@empresa.com.br.</span></div>
+            <div class="field" style="grid-column:1/-1"><label class="label" for="f5">Interesse</label><select class="select" id="f5"><option>Otimize White Label</option><option>SegZap White Label</option><option>Projeto sob medida</option><option>Ainda não sei</option></select></div>
+            <div style="grid-column:1/-1;display:flex;flex-wrap:wrap;gap:12px;align-items:center"><button class="btn" type="submit" id="fBtn"><span>Enviar</span></button><span class="hint" id="fMsg" role="status"></span></div>
+          </form>
+        </div>
+      </div>
+
+      <div class="spec" id="s-cta">
+        <header><h3>Faixa de contato e rodapé</h3><p>A faixa de contato é escura, com três quadrados da marca atrás de um formulário de vidro. Coral e laranja aparecem só nos quadrados, nunca sob texto: título branco, subtítulo cinza e botão branco com texto preto. O rodapé traz os dados da empresa e os links de conteúdo externos.</p><code>.contact-d · .glass · .sq--coral/--indigo/--ember · .foot</code></header>
+        <div class="contact-d" data-surface="ink">
+          <i class="sq sq--coral" style="width:150px;height:150px;right:7%;top:26px"></i>
+          <i class="sq sq--indigo" style="width:92px;height:92px;right:1.5%;bottom:34px"></i>
+          <i class="sq sq--ember" style="width:44px;height:44px;right:36%;top:16px"></i>
+          <div class="cg">
+            <div><span class="label">Contato</span><h3 class="t-display h-balance" style="margin-top:14px">Conte o desafio da sua rede de corretores.</h3><p class="t-lead" style="margin-top:16px;max-width:40ch">Uma conversa curta para entender o que sua seguradora precisa: uma plataforma pronta ou algo feito do zero.</p></div>
+            <form class="glass" data-demo novalidate>
+              <div class="field"><label class="label" for="dc1">Nome</label><input class="input" id="dc1" placeholder="Seu nome"></div>
+              <div class="field"><label class="label" for="dc2">Cargo</label><input class="input" id="dc2" placeholder="Ex.: Gerente de Canais"></div>
+              <div class="field"><label class="label" for="dc3">Empresa</label><input class="input" id="dc3" placeholder="Nome da seguradora"></div>
+              <div class="field"><label class="label" for="dc4">E-mail corporativo</label><input class="input" id="dc4" type="email" placeholder="voce@empresa.com.br"></div>
+              <div style="grid-column:1/-1"><button class="btn btn--lg" type="submit" style="width:100%">Enviar</button></div>
+            </form>
+          </div>
+        </div>
+        <div class="stage" data-surface="paper" style="margin-top:12px">
+          <footer class="foot">
+            <div><a class="logo" href="#top" style="font-size:1.6rem;color:var(--fg)"><svg class="logo-svg" viewBox="0 0 2000 530" aria-hidden="true"><use href="#logo-word"/><rect class="logo-sq" x="1889" y="265" width="112" height="112"/></svg></a><p style="margin-top:12px;max-width:30ch">Tecnologia e inovação para o mercado de seguros.</p></div>
+            <div><h4>Soluções</h4><ul><li><a href="#s-cta">Otimize White Label</a></li><li><a href="#s-cta">SegZap White Label</a></li><li><a href="#s-cta">Projetos sob medida</a></li></ul></div>
+            <div><h4>Empresa</h4><ul><li><a href="#s-cta">Sobre</a></li><li><a href="#s-cta">Cases</a></li><li><a href="#s-cta">Segurança da informação</a></li></ul></div>
+            <div><h4>Conteúdo</h4><ul><li><a href="#s-cta">Insurtalks ↗</a></li><li><a href="#s-cta">InsurtalksCast ↗</a></li><li><a href="#s-cta">Privacidade</a></li></ul></div>
+            <div class="legal">SEGBOX SERVICOS DE INTERNET LTDA · CNPJ 25.336.720/0001-53</div>
+          </footer>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- overlays -->
+<div class="overlay" id="m1" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="m1t">
+    <span class="label" style="color:var(--label-accent)">Contato</span>
+    <h3 class="t-h2" id="m1t" style="margin-top:8px">Agendar uma conversa</h3>
+    <p class="t-small" style="margin-top:8px">Uma conversa curta para entender o desafio da sua rede de corretores.</p>
+    <div class="field" style="margin-top:20px"><label class="label" for="m1e">E-mail corporativo</label><input class="input" id="m1e" placeholder="voce@empresa.com.br"></div>
+    <div class="actions"><button class="btn btn--secondary" type="button" data-close>Cancelar</button><button class="btn" type="button" data-close data-toast="ok">Agendar</button></div>
+  </div>
+</div>
+<div class="overlay overlay--drawer" id="d1" aria-hidden="true">
+  <aside class="drawer" role="dialog" aria-modal="true" aria-labelledby="d1t">
+    <header><h3 class="t-h3" id="d1t">Menu</h3><button class="btn btn--icon btn--ghost" type="button" data-close aria-label="Fechar"><svg class="ico"><use href="#i-x"/></svg></button></header>
+    <nav style="display:grid;gap:4px">
+      <a class="dd-item" href="#overlays" data-close><strong>Soluções</strong></a><a class="dd-item" href="#overlays" data-close><strong>Produtos</strong></a><a class="dd-item" href="#overlays" data-close><strong>Cases</strong></a><a class="dd-item" href="#overlays" data-close><strong>Conteúdo</strong></a><a class="dd-item" href="#overlays" data-close><strong>Sobre</strong></a>
+    </nav>
+    <div style="margin-top:24px"><a class="btn" href="#overlays" data-close style="width:100%">Fale com a gente</a></div>
+  </aside>
+</div>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<div class="tip" id="tip" role="tooltip"></div>
+
+<script>
+(function(){
+  var $=function(s,r){return (r||document).querySelector(s)}, $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ícones */
+  var names=['arrow-right','arrow-ur','check','x','plus','search','chevron','chevron-r','chevron-l','copy','lock','eye','terminal','layers','message','shield','code','menu','info','alert','users','chart','inbox'];
+  var ig=$('#iconGrid'); names.forEach(function(n){var d=document.createElement('div');d.innerHTML='<svg class="ico"><use href="#i-'+n+'"/></svg><span>'+n+'</span>';ig.appendChild(d)});
+
+  /* superfície */
+  var segBtns=$$('[data-surface-set]');
+  segBtns.forEach(function(b){b.addEventListener('click',function(){
+    segBtns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+    $$('.stage').forEach(function(s){s.setAttribute('data-surface',b.getAttribute('data-surface-set'))});
+  })});
+
+  /* ticker */
+  var terms=['White label','Projetos sob medida','Login unificado via API','Governança de marca','IA no WhatsApp','Painel de gestão','Treinamento e suporte','Desde 2017'];
+  var tt=$('#tickerTrack'); var half='<span>'+terms.map(function(t){return t}).join('</span><span>')+'</span>'; tt.innerHTML=half+half;
+
+  /* copiar */
+  $$('[data-copy]').forEach(function(b){b.addEventListener('click',function(){
+    var t=b.getAttribute('data-copy'), s=$('span',b);
+    function done(){s.textContent='Copiado';setTimeout(function(){s.textContent='Copiar'},1600)}
+    try{navigator.clipboard.writeText(t).then(done,function(){s.textContent='Selecione e copie'})}catch(e){s.textContent='Selecione e copie'}
+  })});
+
+  /* senha */
+  var pw=$('#pw'), pb=$('#pwBtn'); pb.addEventListener('click',function(){var show=pw.type==='password';pw.type=show?'text':'password';pb.setAttribute('aria-label',show?'Ocultar senha':'Mostrar senha')});
+  /* contador textarea */
+  var ta=$('#ta'), tc=$('#taCount'); ta.addEventListener('input',function(){tc.textContent=ta.value.length+' / 280'});
+  /* slider */
+  var rg=$('#rg'), rv=$('#rv'); function rp(){rg.style.setProperty('--p',((rg.value-rg.min)/(rg.max-rg.min)*100)+'%');rv.textContent=rg.value} rg.addEventListener('input',rp); rp();
+
+  /* tooltip */
+  var tip=$('#tip'), tipTimer=null, lastHide=0;
+  function showTip(el){
+    var r=el.getBoundingClientRect(); tip.textContent=el.getAttribute('data-tip');
+    var instant=Date.now()-lastHide<300; tip.classList.toggle('instant',instant);
+    tip.style.left='0px';tip.style.top='0px';
+    var w=tip.offsetWidth, x=Math.max(8,Math.min(window.innerWidth-w-8,r.left+r.width/2-w/2)), y=r.top-tip.offsetHeight-8; if(y<8) y=r.bottom+8;
+    tip.style.left=x+'px';tip.style.top=y+'px';tip.classList.add('on');
+  }
+  function hideTip(){clearTimeout(tipTimer);if(tip.classList.contains('on')){lastHide=Date.now()}tip.classList.remove('on')}
+  $$('[data-tip]').forEach(function(el){
+    el.addEventListener('mouseenter',function(){var open=Date.now()-lastHide<300;tipTimer=setTimeout(function(){showTip(el)},open?0:400)});
+    el.addEventListener('focus',function(){showTip(el)});
+    el.addEventListener('mouseleave',hideTip);el.addEventListener('blur',hideTip);
+  });
+
+  /* dropdown */
+  var dds=$$('[data-dd]');
+  function closeDD(except){dds.forEach(function(d){if(d!==except){d.classList.remove('open');var b=$('button',d);if(b)b.setAttribute('aria-expanded','false')}})}
+  dds.forEach(function(d){var b=$('button',d); b.addEventListener('click',function(e){e.stopPropagation();var o=!d.classList.contains('open');closeDD(d);d.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false')})});
+  document.addEventListener('click',function(){closeDD()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDD()});
+
+  /* accordion */
+  $$('.acc').forEach(function(acc){
+    $$('.acc-h',acc).forEach(function(h){h.addEventListener('click',function(){
+      var item=h.parentNode, open=!item.classList.contains('open');
+      $$('.acc-item',acc).forEach(function(i){i.classList.remove('open');$('.acc-h',i).setAttribute('aria-expanded','false')});
+      if(open){item.classList.add('open');h.setAttribute('aria-expanded','true')}
+    })});
+  });
+
+  /* tabs */
+  var tabs=$('#tabs1'), tabEls=$$('.tab',tabs), ind=$('.tab-ind',tabs);
+  function moveInd(t){ind.style.width=t.offsetWidth+'px';ind.style.transform='translateX('+t.offsetLeft+'px)'}
+  function selTab(t){tabEls.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on?'true':'false');x.tabIndex=on?0:-1;$('#'+x.getAttribute('aria-controls')).hidden=!on});moveInd(t)}
+  tabEls.forEach(function(t,i){t.addEventListener('click',function(){selTab(t)});t.addEventListener('keydown',function(e){var n=null;if(e.key==='ArrowRight')n=tabEls[(i+1)%tabEls.length];if(e.key==='ArrowLeft')n=tabEls[(i-1+tabEls.length)%tabEls.length];if(n){n.focus();selTab(n)}})});
+  ind.style.transition='none';moveInd(tabEls[0]);requestAnimationFrame(function(){ind.style.transition=''});
+  window.addEventListener('resize',function(){moveInd($('.tab[aria-selected="true"]',tabs))});
+
+  /* paginação */
+  var pg=$('#pager'), cur=3, total=8;
+  function pageBtn(l,p,dis,aria){var b=document.createElement('button');b.type='button';b.innerHTML=l;if(aria)b.setAttribute('aria-label',aria);if(dis)b.disabled=true;if(p===cur&&!aria)b.setAttribute('aria-current','page');b.addEventListener('click',function(){cur=p;drawPager()});return b}
+  function drawPager(){pg.innerHTML='';pg.appendChild(pageBtn('<svg class="ico" style="width:16px;height:16px"><use href="#i-chevron-l"/></svg>',Math.max(1,cur-1),cur===1,'Página anterior'));
+    for(var i=1;i<=total;i++){if(i===1||i===total||Math.abs(i-cur)<=1){pg.appendChild(pageBtn(String(i),i))}else if(Math.abs(i-cur)===2){var s=document.createElement('span');s.textContent='…';s.style.padding='0 6px';s.style.color='var(--fg-3)';pg.appendChild(s)}}
+    pg.appendChild(pageBtn('<svg class="ico" style="width:16px;height:16px"><use href="#i-chevron-r"/></svg>',Math.min(total,cur+1),cur===total,'Próxima página'))}
+  drawPager();
+
+  /* toast */
+  var tw=$('#toasts');
+  function toast(kind){
+    var el=document.createElement('div'); el.className='toast'; el.setAttribute('role','status');
+    var ok=kind!=='err';
+    el.innerHTML='<svg class="ico" style="color:'+(ok?'#3DDC97':'#FF6369')+'"><use href="#i-'+(ok?'check':'alert')+'"/></svg><p>'+(ok?'Mensagem enviada':'Não foi possível enviar')+'<small>'+(ok?'Nossa equipe responde em até um dia útil.':'Verifique a conexão e tente de novo.')+'</small></p><button type="button" aria-label="Fechar"><svg class="ico" style="width:16px;height:16px"><use href="#i-x"/></svg></button>';
+    tw.appendChild(el); requestAnimationFrame(function(){requestAnimationFrame(function(){el.classList.add('in')})});
+    var gone=false; function kill(){if(gone)return;gone=true;el.classList.remove('in');setTimeout(function(){el.remove()},reduce?0:260)}
+    $('button',el).addEventListener('click',kill); setTimeout(kill,4000);
+  }
+  $$('[data-toast]').forEach(function(b){b.addEventListener('click',function(){toast(b.getAttribute('data-toast'))})});
+
+  /* overlays */
+  var lastFocus=null;
+  function openOv(id,trigger){var o=document.getElementById(id);lastFocus=trigger;o.classList.add('open');o.setAttribute('aria-hidden','false');setTimeout(function(){var f=$('input,button,a',o);if(f)f.focus()},60)}
+  function closeOv(o){o.classList.remove('open');o.setAttribute('aria-hidden','true');if(lastFocus)lastFocus.focus()}
+  $$('[data-open]').forEach(function(b){b.addEventListener('click',function(){openOv(b.getAttribute('data-open'),b)})});
+  $$('.overlay').forEach(function(o){
+    o.addEventListener('click',function(e){if(e.target===o)closeOv(o)});
+    $$('[data-close]',o).forEach(function(c){c.addEventListener('click',function(){closeOv(o)})});
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){$$('.overlay.open').forEach(closeOv)}});
+  $$('.menu-btn').forEach(function(b){b.addEventListener('click',function(){openOv('d1',b)})});
+
+  /* entrada em sequência */
+  var enter=$('#enterDemo'), boxes=$$('.demo-box',enter);
+  function playEnter(){
+    if(reduce)return;
+    boxes.forEach(function(b,i){b.style.transition='none';b.style.opacity='0';b.style.transform='translateY(8px)';b.style.filter='blur(2px)'});
+    void enter.offsetWidth;
+    boxes.forEach(function(b,i){b.style.transition='opacity 240ms cubic-bezier(.23,1,.32,1) '+(i*60)+'ms,transform 240ms cubic-bezier(.23,1,.32,1) '+(i*60)+'ms,filter 240ms cubic-bezier(.23,1,.32,1) '+(i*60)+'ms';b.style.opacity='1';b.style.transform='none';b.style.filter='none'});
+  }
+  $('#replay').addEventListener('click',playEnter);
+
+  /* números */
+  var counted=false;
+  function fmt(el,v){var p=el.getAttribute('data-prefix')||'',s=el.getAttribute('data-suffix')||'';el.textContent=p+Math.round(v)+s}
+  if(!reduce&&'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!e.target._done){e.target._done=true;
+      $$('[data-count]',e.target).forEach(function(el){
+        var end=parseFloat(el.getAttribute('data-count')); if(el.getAttribute('data-format')==='raw'){return}
+        var t0=null;function step(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/900),ease=1-Math.pow(1-k,4);fmt(el,end*ease);if(k<1)requestAnimationFrame(step)}requestAnimationFrame(step)});
+    }})},{threshold:.4});
+    $$('.stats').forEach(function(s){io.observe(s)});
+  }
+
+  /* terminal */
+  var lines=[['<span class="p">λ</span> segbox connect --seguradora suaseguradora',500],['<span class="d">&gt; Validando credenciais do portal...</span>',700],['<span class="d">&gt; POST /sso/corretor</span>',600],['<span class="d">&gt; Sessão do corretor criada via API</span>',700],['<span class="ok">✓ Login unificado ativo · nenhuma senha nova</span>',0]];
+  var out=$('#termOut'), tmr=null;
+  function typeLine(i,buf){
+    if(i>=lines.length){tmr=setTimeout(function(){out.innerHTML='';typeLine(0,'')},4200);return}
+    var html=lines[i][0], delay=lines[i][1], plain=html.replace(/<[^>]+>/g,'');
+    buf=buf; var step=0, steps=Math.min(plain.length,24);
+    function tick(){
+      step++; var show=html;
+      if(step<steps){var cut=Math.ceil(plain.length*step/steps),c=0,res='',inTag=false;for(var k=0;k<html.length;k++){var ch=html[k];if(ch==='<')inTag=true;if(inTag){res+=ch;if(ch==='>')inTag=false;continue}if(c<cut){res+=ch;if(ch==='&'){var m=html.indexOf(';',k);res+=html.slice(k+1,m+1);k=m}c++}}show=res}
+      out.innerHTML=buf+show+(step>=steps?'\n':'')+'<span class="cur"></span>';
+      if(step<steps){tmr=setTimeout(tick,22)}else{tmr=setTimeout(function(){typeLine(i+1,buf+html+'\n')},delay)}
+    }
+    tick();
+  }
+  if(reduce){out.innerHTML=lines.map(function(l){return l[0]}).join('\n')}else{typeLine(0,'')}
+
+  /* formulário de demonstração da faixa de contato */
+  $$('form[data-demo]').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();toast('ok')})});
+
+  /* formulário */
+  var lf=$('#leadForm'), fm=$('#fMsg'), fb=$('#fBtn'), f4=$('#f4'), f4e=$('#f4e');
+  lf.addEventListener('submit',function(e){
+    e.preventDefault(); var ok=/^\S+@\S+\.\S+$/.test(f4.value.trim());
+    f4.classList.toggle('is-error',!ok); f4e.hidden=ok; fm.className='hint';
+    if(!ok){fm.textContent='Corrija o campo destacado.';fm.className='hint err';f4.focus();return}
+    fb.classList.add('is-loading');fb.setAttribute('aria-busy','true');fb.innerHTML='<span class="spin"></span><span>Enviando</span>';fm.textContent='';
+    setTimeout(function(){fb.classList.remove('is-loading');fb.removeAttribute('aria-busy');fb.innerHTML='<span>Enviar</span>';fm.textContent='Prévia: o formulário não envia dados de verdade.';toast('ok')},1400);
+  });
+})();
+</script>
+<script>
+(function(){if(window.__hFade)return;window.__hFade=1;var hfEls=[].slice.call(document.querySelectorAll('.h-fade'));if(!hfEls.length)return;var hfMq=window.matchMedia?window.matchMedia('(prefers-reduced-motion: reduce)'):null;function hfRGB(c){var m=/rgba?\(([^)]+)\)/.exec(c);if(!m)return null;var a=m[1].split(/[\s,\/]+/).filter(Boolean).map(parseFloat);if(a.length<3)return null;if(a.length<4)a.push(1);return a}var hfItems=[];hfEls.forEach(function(h){var s=h.querySelector('.h-fade-2');if(!s)return;var c0=getComputedStyle(h).color,c1=getComputedStyle(s).color,ws=[];(function hfWalk(n){[].slice.call(n.childNodes).forEach(function(c){if(c.nodeType===3){var fr=document.createDocumentFragment();c.nodeValue.split(/(\s+)/).forEach(function(t){if(!t)return;if(/^\s+$/.test(t)){fr.appendChild(document.createTextNode(t))}else{var w=document.createElement('span');w.className='hf-w';w.textContent=t;fr.appendChild(w);ws.push(w)}});n.replaceChild(fr,c);}else if(c.nodeType===1&&c.className!=='hf-w')hfWalk(c)})})(s);hfItems.push({h:h,s:s,ws:ws,a:hfRGB(c0),b:hfRGB(c1),c0:c0,c1:c1,last:-1});});if(!hfItems.length)return;function hfMix(it,t){if(it.a&&it.b){var a=it.a,b=it.b,f=function(i){return a[i]+(b[i]-a[i])*t};return 'rgba('+Math.round(f(0))+','+Math.round(f(1))+','+Math.round(f(2))+','+(+f(3).toFixed(3))+')'}return 'color-mix(in srgb,'+it.c1+' '+(t*100).toFixed(1)+'%,'+it.c0+')'}function hfPaint(it,p){var n=it.ws.length,win=n>1?Math.min(1,Math.max(.22,2/n)):1;it.ws.forEach(function(w,i){var st=n>1?(i/(n-1))*(1-win):0,t=Math.min(1,Math.max(0,(p-st)/win));t=t*t*(3-2*t);w.style.color=hfMix(it,t)})}function hfClear(){hfItems.forEach(function(it){it.last=-1;it.ws.forEach(function(w){w.style.color=''})})}var hfOff=!!(hfMq&&hfMq.matches);function hfTick(){if(hfOff)return;var vh=window.innerHeight||document.documentElement.clientHeight;hfItems.forEach(function(it){var r=it.h.getBoundingClientRect(),k0=getComputedStyle(it.h).color,k1=getComputedStyle(it.s).color;if(k0!==it.c0||k1!==it.c1){it.c0=k0;it.c1=k1;it.a=hfRGB(k0);it.b=hfRGB(k1);it.last=-1}var p=Math.min(1,Math.max(0,(vh*.72-r.top)/(vh*.5)));p=Math.round(p*500)/500;if(p===it.last)return;it.last=p;hfPaint(it,p)})}var hfQ=false;function hfOnScroll(){if(hfQ)return;hfQ=true;requestAnimationFrame(function(){hfQ=false;hfTick()})}if(hfMq){var hfCh=function(e){hfOff=e.matches;if(hfOff)hfClear();else hfTick()};if(hfMq.addEventListener)hfMq.addEventListener('change',hfCh);else if(hfMq.addListener)hfMq.addListener(hfCh)}window.addEventListener('scroll',hfOnScroll,{passive:true});window.addEventListener('resize',hfOnScroll);window.addEventListener('load',hfTick);document.addEventListener('click',function(){setTimeout(hfOnScroll,60);setTimeout(hfOnScroll,700)});hfTick();})();
+</script>
