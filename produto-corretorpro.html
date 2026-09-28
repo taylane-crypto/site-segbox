@@ -505,7 +505,7 @@ main{--label-accent:var(--cp)}
 
 /* ---------- ESCALA DE PALCO (fixo, escalado) ---------- */
 .cp-fit{position:relative;width:100%;height:460px}
-.cp-fi{position:absolute;left:0;top:0;transform-origin:0 0;transform:scale(var(--s,1))}
+.cp-fi{position:absolute;left:0;top:0;transform-origin:0 0;transform:scale(var(--s,1))}.cp-fi{will-change:transform;backface-visibility:hidden}#cpDP .d{animation:none}.cpd-card{transform:translateZ(0)}
 @keyframes cpIn{from{opacity:0;transform:translateY(8px) scale(.97)}}
 @keyframes cpFade{from{opacity:0}}
 
