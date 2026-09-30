@@ -801,9 +801,8 @@ body{background:var(--bone-100)}
           </div></div>
         <a href="index.html#sobre">Sobre</a>
       </nav>
-      <div class="flex" style="gap:8px"><a class="btn btn--sm cta-d" href="#contato">Fale com a gente</a><button class="btn btn--secondary btn--icon btn--sm menu-btn" type="button" id="menuBtn" aria-label="Abrir menu" aria-expanded="false"><svg class="ico"><use href="#i-menu"/></svg></button></div>
+      <div class="flex" style="gap:8px"><a class="btn btn--sm cta-d" href="#contato">Fale com a gente</a><button class="btn btn--secondary btn--icon btn--sm menu-btn" type="button" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-haspopup="dialog" data-sgm-menu="#snav .nav-links" data-sgm-cta="#snav .cta-d" data-sgm-logo="#snav .logo"><svg class="ico"><use href="#i-menu"/></svg></button></div>
     </div>
-    <nav class="mpanel" aria-label="Menu móvel"><a href="index.html#solucoes">Soluções</a><a href="index.html#produtos">Produtos</a><a href="index.html#cases">Cases</a><a href="index.html#sobre">Sobre</a><a href="#contato" style="color:var(--label-accent)">Fale com a gente</a></nav>
   </div>
 </header><main id="top"><section class="case-hero"><div class="container grid2">
 <div><span class="tag" data-in style="--i:0">Case · Venda+ Suhai</span><h1 data-in style="--i:1">Uma plataforma viva, usada como ferramenta de growth.</h1>
@@ -825,19 +824,19 @@ body{background:var(--bone-100)}
 <div class="sect-h"><div class="sec-head"><span class="label">Dentro da plataforma</span><h2 class="t-h1 h-balance">O que a rede encontra no Venda+ Suhai.</h2></div><p class="t-small" style="max-width:38ch">Interfaces ilustrativas, montadas a partir das telas reais da plataforma.</p></div>
 <div class="feat"><div class="txt"><span class="label" style="color:var(--label-accent)">Maturidade digital</span><h3>Um quiz para saber por onde começar</h3><p>A plataforma abre com o desafio de maturidade digital. A corretora responde, entende onde está e recebe um material exclusivo para evoluir. É o primeiro passo para preparar a rede.</p></div><div class="stage-mk" data-tilt><div class="win su"><div class="chrome"><span></span><span></span><span></span><div class="url">venda-suhai.exemplo/maturidade-digital</div></div><div class="mk"><div class="mk-top"><span class="mk-logoimg" role="img" aria-label="Venda+ Suhai"></span><div class="sp"><span>Quiz</span></div></div>
 <div class="mk-body"><div class="mk-step"><div class="lbl" id="qLbl">Pergunta 3 de 8</div><div class="mk-bar"><i id="qBar" style="width:38%"></i></div><div class="mk-h" id="qText" style="font-size:14px">Com que frequência você publica nas suas redes sociais?</div>
-<div class="mk-opts" id="qOpts" style="display:grid;gap:6px"><div class="mk-opt">Ainda não publico</div><div class="mk-opt on">Uma ou duas vezes por semana</div><div class="mk-opt">Todos os dias, com planejamento</div></div></div>
+<div class="mk-opts" id="qOpts" style="display:grid;gap:6px" data-scroll-target="&lt;.mk-step" data-scroll-ctl=".mk-opt"><div class="mk-opt">Ainda não publico</div><div class="mk-opt on">Uma ou duas vezes por semana</div><div class="mk-opt">Todos os dias, com planejamento</div></div></div>
 <div class="mk-card" style="grid-template-columns:auto 1fr;align-items:center;gap:10px"><span class="mk-pill">Resultado</span><small>Ao final, a corretora recebe o nível e um material para evoluir.</small></div></div></div></div></div></div>
 <div class="feat rev"><div class="txt"><span class="label" style="color:var(--label-accent)">Campanhas de venda</span><h3>Peças alinhadas aos seguros que a Suhai quer vender</h3><p>Os modelos seguem os produtos prioritários da seguradora: Auto, Moto, Residencial, Caminhão e outros. Campanhas com influenciadores também entram na plataforma, prontas para a rede usar. <span class="tag tag--boxed" style="height:20px;font-size:9.5px">Nome do influenciador a confirmar</span></p></div><div class="stage-mk" data-tilt><div class="win su"><div class="chrome"><span></span><span></span><span></span><div class="url">venda-suhai.exemplo/redes-sociais</div></div><div class="mk"><div class="mk-top"><span class="mk-logoimg" role="img" aria-label="Venda+ Suhai"></span><div class="sp"><span>Redes Sociais</span></div></div>
 <div class="mk-body"><div class="mk-step"><div class="lbl">1 · Categoria</div><div class="mk-opts" data-group><span class="mk-opt on">Imagem para post</span><span class="mk-opt">Motion</span></div></div>
 <div class="mk-step"><div class="lbl">2 · Formato</div><div class="mk-opts" data-group><span class="mk-opt on">Quadrado 1080×1080</span><span class="mk-opt">Vertical 1080×1350</span><span class="mk-opt">Horizontal 1200×800</span><span class="mk-opt">Stories 1080×1920</span></div></div>
-<div class="mk-step"><div class="lbl">3 · Tema</div><div class="mk-opts" data-group data-theme><span class="mk-opt on">Seguro Auto</span><span class="mk-opt">Seguro Moto</span><span class="mk-opt">Seguro Residencial</span><span class="mk-opt">Seguro Caminhão</span></div></div>
+<div class="mk-step"><div class="lbl">3 · Tema</div><div class="mk-opts" data-group data-theme data-scroll-target="#flowTiles" data-scroll-ctl=".mk-opt" data-scroll-delay="120"><span class="mk-opt on">Seguro Auto</span><span class="mk-opt">Seguro Moto</span><span class="mk-opt">Seguro Residencial</span><span class="mk-opt">Seguro Caminhão</span></div></div>
 <div class="mk-step"><div class="lbl">4 · Modelos prontos</div><div class="mk-tiles" id="flowTiles"><div class="mk-tile" style="background-image:var(--i-p1)"></div><div class="mk-tile" style="background-image:var(--i-p2)"></div><div class="mk-tile" style="background-image:var(--i-p3)"></div><div class="mk-tile" style="background-image:var(--i-p4)"></div></div></div></div></div></div></div></div>
 <div class="feat"><div class="txt"><span class="label" style="color:var(--label-accent)">Marca sob controle</span><h3>A marca da Suhai, o espaço da corretora</h3><p>A corretora cadastra logo, WhatsApp e SUSEP uma única vez, e esses dados entram sozinhos nas peças. O resto do modelo é validado pela seguradora e não muda.</p></div><div class="stage-mk" data-tilt><div class="win su"><div class="chrome"><span></span><span></span><span></span><div class="url">venda-suhai.exemplo/modelo</div></div><div class="mk"><div class="mk-top"><span class="mk-logoimg" role="img" aria-label="Venda+ Suhai"></span><div class="sp"><span>Modelo validado</span></div></div>
 <div class="mk-body" style="grid-template-columns:1fr 1fr;align-items:center;gap:16px"><div class="mk-post" style="background-image:var(--i-p2)"><span class="mk-frame">Área da corretora</span></div>
 <div style="display:grid;gap:10px"><span class="mk-pill" style="width:max-content">Modelo validado pela seguradora</span><div class="mk-card"><b>Cadastro único</b><small>Logo, WhatsApp e SUSEP entram sozinhos em todas as peças.</small></div><div class="mk-card"><b>Área protegida</b><small>Só o espaço da corretora é personalizado.</small></div></div></div></div></div></div></div>
 <div class="feat rev"><div class="txt"><span class="label" style="color:var(--label-accent)">Cartão digital</span><h3>O cartão de visita da corretora, em uma página</h3><p>A corretora monta o cartão com foto, WhatsApp, telefone, endereço e e-mail, liga e desliga quando quiser e acompanha as visitas.</p></div><div class="stage-mk" data-tilt><div class="win su"><div class="chrome"><span></span><span></span><span></span><div class="url">venda-suhai.exemplo/cartao-digital</div></div><div class="mk"><div class="mk-top"><span class="mk-logoimg" role="img" aria-label="Venda+ Suhai"></span><div class="sp"><span>Cartão Digital</span></div></div>
 <div class="mk-body" style="grid-template-columns:auto 1fr;align-items:center;gap:18px"><div class="mk-phone"><span class="mk-notch"></span><img class="ph" src="assets/web/corretora.jpg" alt=""><b>Nome da Corretora</b><small class="mk-desc">Breve descrição sobre a corretora e o seu atendimento</small><div class="ln"><i style="background:#25D366"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.4 18.7L4 20z"/><path d="M9.3 9.2c.3 2 2.4 4.1 4.5 4.5l1.2-1.1-1.6-1-.8.7c-.9-.4-1.6-1.1-2-2l.7-.8-1-1.6z"/></svg></i><span>WhatsApp<em>Fale comigo agora</em></span></div><div class="ln"><i style="background:#2f6f4e"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></i><span>Telefone<em>(11) 90000-0000</em></span></div><div class="ln"><i style="background:#E5484D"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></i><span>Endereço<em>Encontre-nos no mapa</em></span></div><div class="ln"><i style="background:#55606a"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></i><span>E-mail<em>contato@corretora.com.br</em></span></div><small class="mk-soc">Acesse minhas redes sociais</small><span class="mk-socrow"><i></i><i></i><i></i><i></i></span><span class="mk-home"></span></div>
-<div class="mk-card"><b>Seus cartões</b><div style="display:flex;align-items:center;gap:8px"><span>Cartão principal</span><span class="mk-toggle" id="cardToggle" role="switch" aria-checked="true" tabindex="0"></span></div><small>Visitantes no mês</small><div class="mk-bar"><i id="cardBar" data-fill="46"></i></div><div style="display:flex;gap:6px;flex-wrap:wrap"><span class="mk-btn d">Copiar link</span><span class="mk-btn d">Editar</span></div></div></div></div></div></div></div>
+<div class="mk-card"><b>Seus cartões</b><div style="display:flex;align-items:center;gap:8px"><span>Cartão principal</span><span class="mk-toggle" id="cardToggle" role="switch" aria-checked="true" tabindex="0" data-scroll-target="#cardBar"></span></div><small>Visitantes no mês</small><div class="mk-bar"><i id="cardBar" data-fill="46"></i></div><div style="display:flex;gap:6px;flex-wrap:wrap"><span class="mk-btn d">Copiar link</span><span class="mk-btn d">Editar</span></div></div></div></div></div></div></div>
 <div class="feat"><div class="txt"><span class="label" style="color:var(--label-accent)">Níveis, ranking e badges</span><h3>Quem participa mais desbloqueia mais</h3><p>Nem todos os recursos são liberados para todos. Corretoras de nível premium acessam mais materiais e campanhas exclusivas, e ganham badges ao avançar. O ranking mantém a rede em movimento.</p></div><div class="stage-mk" data-tilt><div class="win su"><div class="chrome"><span></span><span></span><span></span><div class="url">venda-suhai.exemplo/ranking</div></div><div class="mk"><div class="mk-top"><span class="mk-logoimg" role="img" aria-label="Venda+ Suhai"></span><div class="sp"><span>Ranking</span></div></div>
 <div class="mk-body"><div class="mk-h">Ranking de corretoras</div><div class="mk-rank">
 <div class="mk-row"><span class="n">1</span><span class="a">CA</span><span>Corretora Exemplo A</span><div class="mk-badges"><span class="mk-badge" data-pop><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="mk-badge" data-pop><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="mk-badge" data-pop><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></div></div>
@@ -887,8 +886,7 @@ body{background:var(--bone-100)}
   function closeDD(ex){dds.forEach(function(d){if(d!==ex){d.classList.remove('open');$('button',d).setAttribute('aria-expanded','false')}})}
   dds.forEach(function(d){var b=$('button',d);b.addEventListener('click',function(e){e.stopPropagation();var o=!d.classList.contains('open');closeDD(d);d.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false')})});
   document.addEventListener('click',function(){closeDD()}); document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDD()});
-  var sn=$('#snav'), mb=$('#menuBtn'); mb.addEventListener('click',function(){var o=!sn.classList.contains('open');sn.classList.toggle('open',o);mb.setAttribute('aria-expanded',o?'true':'false')});
-  var lf=$('#leadForm'),fm=$('#fMsg'),fb=$('#fBtn'),f4=$('#f4'),f4e=$('#f4e');
+  /* menu móvel: drawer no bloco sgm */var lf=$('#leadForm'),fm=$('#fMsg'),fb=$('#fBtn'),f4=$('#f4'),f4e=$('#f4e');
   lf.addEventListener('submit',function(e){e.preventDefault();var ok=/^\S+@\S+\.\S+$/.test(f4.value.trim());f4.classList.toggle('is-error',!ok);f4e.hidden=ok;
     if(!ok){fm.textContent='Corrija o campo destacado.';f4.focus();return}
     fb.classList.add('is-loading');fb.innerHTML='<span class="spin"></span><span>Enviando</span>';fm.textContent='';
@@ -1001,3 +999,186 @@ body{background:var(--bone-100)}
   }
 })();
 </script>
+<!-- sgm:begin · menu móvel gerado a partir do menu desktop + revelar a UI-alvo no mobile. Bloco idêntico em todas as páginas. -->
+<style id="sgm-css">
+.sgm-ov{position:fixed;inset:0;z-index:250;visibility:hidden;pointer-events:none;transition:visibility 0s var(--t-slow,420ms)}
+.sgm-ov.open{visibility:visible;pointer-events:auto;transition-delay:0s}
+.sgm-scrim{position:absolute;inset:0;background:rgba(20,20,24,.38);opacity:0;transition:opacity var(--t-base,240ms) var(--ease-out,ease-out)}
+.sgm-ov.open .sgm-scrim{opacity:1}
+.sgm-dr{position:absolute;top:0;right:0;bottom:0;width:min(400px,100%);display:flex;flex-direction:column;background:#FBFAF8;color:#0B0B0D;border-left:1px solid rgba(0,0,0,.12);box-shadow:0 0 60px -20px rgba(0,0,0,.35);transform:translateX(100%);transition:transform var(--t-slow,420ms) var(--ease-drawer,cubic-bezier(.32,.72,0,1));overscroll-behavior:contain;outline:0}
+.sgm-ov.open .sgm-dr{transform:none}
+.sgm-hd{flex:none;display:flex;align-items:center;justify-content:space-between;gap:12px;height:68px;padding:0 12px 0 16px;border-bottom:1px solid rgba(0,0,0,.12)}
+.sgm-hd .logo-svg{height:26px}
+.sgm-x{display:inline-grid;place-items:center;width:44px;height:44px;padding:0;border:1px solid rgba(0,0,0,.14);border-radius:var(--r-2,6px);background:#fff;color:#0B0B0D;cursor:pointer}
+.sgm-x .ico{width:18px;height:18px}
+.sgm-bd{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:4px 16px 16px}
+.sgm-acc,.sgm-top{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-height:56px;padding:0 4px;margin:0;border:0;border-bottom:1px solid rgba(0,0,0,.12);background:none;color:#0B0B0D;font-family:var(--font-display,inherit);font-size:18px;font-weight:600;letter-spacing:-.015em;line-height:1.2;text-align:left;text-decoration:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.sgm-acc .ico{width:16px;height:16px;flex:none;color:#565660;transition:transform var(--t-base,240ms) var(--ease-out,ease-out)}
+.sgm-grp.open>.sgm-acc .ico{transform:rotate(180deg)}
+.sgm-top .ico{width:16px;height:16px;flex:none;color:#565660}
+.sgm-pn{display:grid;grid-template-rows:0fr;visibility:hidden;transition:grid-template-rows var(--t-base,240ms) var(--ease-out,ease-out),visibility 0s var(--t-base,240ms)}
+.sgm-grp.open>.sgm-pn{grid-template-rows:1fr;visibility:visible;transition-delay:0s}
+.sgm-pn>div{min-height:0;overflow:hidden}
+.sgm-grp.open>.sgm-pn>div{padding:6px 0 10px;border-bottom:1px solid rgba(0,0,0,.12)}
+.sgm-ln{display:flex;flex-direction:column;justify-content:center;gap:2px;min-height:48px;padding:8px 12px;border-radius:var(--r-2,6px);color:#0B0B0D;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.sgm-ln strong{font-weight:500;font-size:15.5px;line-height:1.3}
+.sgm-ln small{color:#565660;font-size:13px;line-height:1.35}
+.sgm-ln:active,.sgm-ln:hover{background:#E8E6E3}
+.sgm-ln[aria-current="page"]{background:#E8E6E3;box-shadow:inset 3px 0 0 #FF5047}
+.sgm-sep{height:1px;margin:6px 12px;background:rgba(0,0,0,.1)}
+.sgm-ft{flex:none;padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px));border-top:1px solid rgba(0,0,0,.12)}
+.sgm-ft .btn{display:flex;width:100%;min-height:48px;justify-content:center}
+.sgm-sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.sgm-ov :focus-visible{outline:2px solid #0B0B0D;outline-offset:2px}
+html.sgm-lock,html.sgm-lock body{overflow:hidden}
+@media (max-width:900px){[data-sgm-menu]{position:relative}[data-sgm-menu]::after{content:"";position:absolute;inset:-5px}}
+@media (min-width:901px){.sgm-ov{display:none}}
+</style>
+<script id="sgm-js">
+/* sgm 1: drawer do menu móvel, montado a partir do menu desktop (.nav-links) para nunca divergir */
+(function(){
+  if(window.__sgmNav)return; window.__sgmNav=1;
+  var sgmBtn=document.querySelector('[data-sgm-menu]'); if(!sgmBtn)return;
+  var sgmSrc=document.querySelector(sgmBtn.getAttribute('data-sgm-menu')); if(!sgmSrc)return;
+  var sgmCta=document.querySelector(sgmBtn.getAttribute('data-sgm-cta')||'#sgm-none');
+  var sgmLogo=document.querySelector(sgmBtn.getAttribute('data-sgm-logo')||'#sgm-none');
+  var sgmMq=window.matchMedia('(max-width:900px)');
+  var sgmRoot=document.documentElement, sgmLast=null, sgmN=0;
+  function sgmEl(tag,cls,html){var e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e}
+  function sgmTxt(el,sel){var n=el.querySelector(sel);return n?n.textContent.replace(/\s+/g,' ').trim():''}
+  function sgmLink(a){
+    var l=sgmEl('a','sgm-ln'); l.href=a.getAttribute('href');
+    ['target','rel','aria-current'].forEach(function(k){if(a.hasAttribute(k))l.setAttribute(k,a.getAttribute(k))});
+    var t=sgmTxt(a,'strong')||a.textContent.replace(/\s+/g,' ').trim(), s=sgmTxt(a,'small');
+    l.appendChild(sgmEl('strong','',null)).textContent=t;
+    if(s)l.appendChild(sgmEl('small','',null)).textContent=s;
+    if(a.getAttribute('target')==='_blank')l.appendChild(sgmEl('span','sgm-sr',null)).textContent=' (abre em nova aba)';
+    return l;
+  }
+  var ov=sgmEl('div','sgm-ov'); ov.id='sgmOv'; ov.setAttribute('data-sgm',''); ov.setAttribute('aria-hidden','true');
+  var scrim=sgmEl('div','sgm-scrim'); ov.appendChild(scrim);
+  var dr=sgmEl('div','sgm-dr'); dr.id='sgmDr'; dr.setAttribute('role','dialog'); dr.setAttribute('aria-modal','true'); dr.setAttribute('aria-label','Menu'); dr.tabIndex=-1; ov.appendChild(dr);
+  var hd=sgmEl('div','sgm-hd'); dr.appendChild(hd);
+  if(sgmLogo){var lg=sgmLogo.cloneNode(true); lg.removeAttribute('id'); hd.appendChild(lg)} else hd.appendChild(sgmEl('span','',''));
+  var xb=sgmEl('button','sgm-x','<svg class="ico" aria-hidden="true"><use href="#i-x"/></svg>'); xb.type='button'; xb.setAttribute('aria-label','Fechar menu'); hd.appendChild(xb);
+  var bd=sgmEl('nav','sgm-bd'); bd.setAttribute('aria-label','Menu principal'); dr.appendChild(bd);
+  Array.prototype.forEach.call(sgmSrc.children,function(it){
+    if(it.matches('.dd')){
+      var b=it.querySelector('button'), m=it.querySelector('.dd-menu'); if(!b||!m)return;
+      var id='sgmG'+(++sgmN), g=sgmEl('div','sgm-grp');
+      var ab=sgmEl('button','sgm-acc'); ab.type='button'; ab.setAttribute('aria-expanded','false'); ab.setAttribute('aria-controls',id);
+      ab.appendChild(sgmEl('span','',null)).textContent=b.textContent.replace(/\s+/g,' ').trim();
+      ab.insertAdjacentHTML('beforeend','<svg class="ico" aria-hidden="true"><use href="#i-chevron"/></svg>');
+      var pn=sgmEl('div','sgm-pn'); pn.id=id; var inner=sgmEl('div','',null); pn.appendChild(inner);
+      Array.prototype.forEach.call(m.children,function(c){
+        if(c.matches('a'))inner.appendChild(sgmLink(c)); else if(c.matches('.dd-sep'))inner.appendChild(sgmEl('div','sgm-sep',null));
+      });
+      g.appendChild(ab); g.appendChild(pn); bd.appendChild(g);
+      if(m.querySelector('[aria-current="page"]')){g.classList.add('open');ab.setAttribute('aria-expanded','true')}
+      ab.addEventListener('click',function(){var o=!g.classList.contains('open');g.classList.toggle('open',o);ab.setAttribute('aria-expanded',o?'true':'false')});
+    } else if(it.matches('a')){
+      var tl=sgmEl('a','sgm-top'); tl.href=it.getAttribute('href');
+      ['target','rel','aria-current'].forEach(function(k){if(it.hasAttribute(k))tl.setAttribute(k,it.getAttribute(k))});
+      tl.appendChild(sgmEl('span','',null)).textContent=it.textContent.replace(/\s+/g,' ').trim();
+      tl.insertAdjacentHTML('beforeend','<svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg>');
+      bd.appendChild(tl);
+    }
+  });
+  if(sgmCta){var ft=sgmEl('div','sgm-ft'), cb=sgmEl('a','btn btn--lg',null); cb.href=sgmCta.getAttribute('href'); cb.textContent=sgmCta.textContent.replace(/\s+/g,' ').trim(); ft.appendChild(cb); dr.appendChild(ft)}
+  document.body.appendChild(ov);
+  sgmBtn.setAttribute('aria-controls','sgmDr'); sgmBtn.setAttribute('aria-expanded','false');
+  function sgmIsOpen(){return ov.classList.contains('open')}
+  function sgmFocusables(){return Array.prototype.filter.call(dr.querySelectorAll('a[href],button:not([disabled])'),function(e){return e.getClientRects().length&&getComputedStyle(e).visibility!=='hidden'})}
+  function sgmOpen(){
+    if(sgmIsOpen())return; sgmLast=document.activeElement&&document.activeElement!==document.body?document.activeElement:sgmBtn;
+    var sw=window.innerWidth-sgmRoot.clientWidth; if(sw>0)document.body.style.paddingRight=sw+'px';
+    ov.classList.add('open'); ov.removeAttribute('aria-hidden'); sgmRoot.classList.add('sgm-lock');
+    sgmBtn.setAttribute('aria-expanded','true');
+    requestAnimationFrame(function(){try{xb.focus({preventScroll:true})}catch(e){xb.focus()}});
+  }
+  function sgmClose(){
+    if(!sgmIsOpen())return;
+    ov.classList.remove('open'); ov.setAttribute('aria-hidden','true'); sgmRoot.classList.remove('sgm-lock'); document.body.style.paddingRight='';
+    sgmBtn.setAttribute('aria-expanded','false');
+    var f=sgmLast&&sgmLast.isConnected?sgmLast:sgmBtn; if(f.closest&&f.closest('#sgmOv'))f=sgmBtn;
+    try{f.focus({preventScroll:true})}catch(e){f.focus()}
+  }
+  sgmBtn.addEventListener('click',function(e){e.preventDefault();if(sgmIsOpen())sgmClose();else sgmOpen()});
+  xb.addEventListener('click',sgmClose);
+  scrim.addEventListener('click',sgmClose);
+  scrim.addEventListener('touchmove',function(e){e.preventDefault()},{passive:false});
+  dr.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(a)sgmClose()});
+  document.addEventListener('keydown',function(e){
+    if(!sgmIsOpen())return;
+    if(e.key==='Escape'||e.key==='Esc'){e.preventDefault();sgmClose();return}
+    if(e.key==='Tab'){var f=sgmFocusables();if(!f.length){e.preventDefault();dr.focus();return}
+      var first=f[0],last=f[f.length-1],act=document.activeElement;
+      if(!dr.contains(act)){e.preventDefault();(e.shiftKey?last:first).focus();return}
+      if(e.shiftKey&&act===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&act===last){e.preventDefault();first.focus()}}
+  });
+  function sgmMqChange(){if(!sgmMq.matches)sgmClose()}
+  if(sgmMq.addEventListener)sgmMq.addEventListener('change',sgmMqChange);else if(sgmMq.addListener)sgmMq.addListener(sgmMqChange);
+})();
+/* sgm 2: no mobile, ao tocar um controle marcado com data-scroll-target, rola até a UI que ele transforma se ela não estiver visível.
+   data-scroll-target: "#id" (querySelector, resolvido depois da troca), "<.sel" (closest a partir do controle), "@controls" (aria-controls do controle); vários alvos com "|".
+   data-scroll-ctl: seletor dos controles dentro do elemento marcado (padrão: botões, links, inputs, roles). data-scroll-delay: ms antes de medir (padrão 80). */
+(function(){
+  if(window.__sgmReveal)return; window.__sgmReveal=1;
+  var srvMq=window.matchMedia('(max-width:900px)'), srvRm=window.matchMedia('(prefers-reduced-motion: reduce)');
+  var SRV_CTL='button,a[href],input,select,textarea,label,summary,[role="button"],[role="tab"],[role="switch"],[role="radio"],[role="checkbox"],[role="option"],[tabindex]';
+  var srvTimer=0, SRV_GAP=12;
+  function srvHeader(){
+    var h=document.querySelector('[data-sgm-header]')||document.getElementById('snav'); if(!h)return 0;
+    var p=getComputedStyle(h).position; if(p!=='sticky'&&p!=='fixed')return 0;
+    return Math.max(0,h.getBoundingClientRect().bottom);
+  }
+  function srvRect(list){
+    var r=null; list.forEach(function(t){if(!t||!t.getClientRects().length)return;var b=t.getBoundingClientRect();if(!b.width&&!b.height)return;
+      if(!r)r={top:b.top,bottom:b.bottom};else{r.top=Math.min(r.top,b.top);r.bottom=Math.max(r.bottom,b.bottom)}});
+    return r;
+  }
+  function srvReveal(list,ctl){
+    var r=srvRect(list); if(!r)return;
+    var top=srvHeader()+SRV_GAP, bot=window.innerHeight-SRV_GAP, avail=bot-top, h=r.bottom-r.top, dy=0;
+    if(h>avail){if(Math.min(r.bottom,bot)-Math.max(r.top,top)>=avail*.8)return}
+    else if(r.top>=top-2&&r.bottom<=bot+2)return;
+    /* se couber, mantém o controle tocado na tela junto com o alvo */
+    var c=ctl&&ctl.isConnected?srvRect([ctl]):null;
+    if(c){var u={top:Math.min(r.top,c.top),bottom:Math.max(r.bottom,c.bottom)};if(u.bottom-u.top<=avail)r=u}
+    h=r.bottom-r.top;
+    if(h>avail||r.top<top-2){dy=r.top-top}else if(r.bottom>bot+2){dy=r.bottom-bot}
+    if(Math.abs(dy)<4)return;
+    window.scrollTo({top:Math.max(0,(window.pageYOffset||0)+dy),behavior:srvRm.matches?'instant':'smooth'});
+  }
+  function srvResolve(sel,ctl){
+    var out=[];
+    sel.split('|').forEach(function(s){s=s.trim();if(!s)return;var t=null;
+      try{
+        if(s==='@controls'){var id=ctl.getAttribute('aria-controls');t=id?document.getElementById(id.split(' ')[0]):null}
+        else if(s.charAt(0)==='<'){t=ctl.closest(s.slice(1))}
+        else{t=document.querySelector(s)}
+      }catch(e){t=null}
+      if(t)out.push(t)});
+    return out;
+  }
+  function srvHandle(e){
+    if(!e.isTrusted||!srvMq.matches)return;
+    var t=e.target; if(t&&t.nodeType!==1)t=t.parentElement; if(!t||!t.closest)return;
+    var host=t.closest('[data-scroll-target]'); if(!host||host.closest('[data-sgm]'))return;
+    var ctl=t.closest(host.getAttribute('data-scroll-ctl')||SRV_CTL); if(!ctl||(ctl!==host&&!host.contains(ctl)))return;
+    var tag=ctl.tagName, typ=(ctl.getAttribute('type')||'').toLowerCase();
+    if(e.type==='click'&&(tag==='SELECT'||tag==='TEXTAREA'||(tag==='INPUT'&&!/^(checkbox|radio|button|submit|reset)$/.test(typ))))return;
+    if(e.type==='change'&&!(tag==='SELECT'||(tag==='INPUT'&&typ==='range')))return;
+    if(e.type==='keydown'){if(e.key!=='Enter'&&e.key!==' ')return; if(/^(BUTTON|A|INPUT|SELECT|TEXTAREA|SUMMARY|LABEL)$/.test(tag))return}
+    var sel=host.getAttribute('data-scroll-target'), list0=srvResolve(sel,ctl);
+    var d=parseInt(host.getAttribute('data-scroll-delay')||'80',10);
+    clearTimeout(srvTimer); srvTimer=setTimeout(function(){var l=srvResolve(sel,ctl);srvReveal(l.length?l:list0,ctl)},isNaN(d)?80:d);
+  }
+  /* fase de captura: funciona mesmo quando o handler da página chama stopPropagation */
+  document.addEventListener('click',srvHandle,true);
+  document.addEventListener('change',srvHandle,true);
+  document.addEventListener('keydown',srvHandle,true);
+  window.sgmReveal=function(el,ctl){srvReveal([].concat(el),ctl)};
+})();
+</script>
+<!-- sgm:end -->

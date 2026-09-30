@@ -1274,9 +1274,8 @@ body{background:var(--bone-100)}
           </div></div>
         <a href="index.html#sobre">Sobre</a>
       </nav>
-      <div class="flex" style="gap:8px"><a class="btn btn--sm cta-d" href="#contato">Fale com a gente</a><button class="btn btn--secondary btn--icon btn--sm menu-btn" type="button" id="menuBtn" aria-label="Abrir menu" aria-expanded="false"><svg class="ico"><use href="#i-menu"/></svg></button></div>
+      <div class="flex" style="gap:8px"><a class="btn btn--sm cta-d" href="#contato">Fale com a gente</a><button class="btn btn--secondary btn--icon btn--sm menu-btn" type="button" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-haspopup="dialog" data-sgm-menu="#snav .nav-links" data-sgm-cta="#snav .cta-d" data-sgm-logo="#snav .logo"><svg class="ico"><use href="#i-menu"/></svg></button></div>
     </div>
-    <nav class="mpanel" aria-label="Menu móvel"><a href="index.html#solucoes">Soluções</a><a href="index.html#produtos">Produtos</a><a href="index.html#cases">Cases</a><a href="index.html#sobre">Sobre</a><a href="#contato" style="color:var(--label-accent)">Fale com a gente</a></nav>
   </div>
 </header>
 <main id="top">
@@ -1337,7 +1336,7 @@ body{background:var(--bone-100)}
 </div></div>
 <div class="pj-sw glass">
 <span class="label" id="pjSwL">Do rascunho ao sistema</span>
-<div class="bsel" id="pjSel" data-v="2" role="group" aria-labelledby="pjSwL"><span class="ind" aria-hidden="true"></span>
+<div class="bsel" id="pjSel" data-v="2" role="group" aria-labelledby="pjSwL" data-scroll-target="@controls" data-scroll-ctl="button"><span class="ind" aria-hidden="true"></span>
 <button type="button" data-b="0" aria-pressed="false" aria-controls="pjHb"><span class="bm" aria-hidden="true">1</span><span>Rascunho<small>O problema no papel</small></span></button>
 <button type="button" data-b="1" aria-pressed="false" aria-controls="pjHb"><span class="bm" aria-hidden="true">2</span><span>Componentes<small>As peças do sistema</small></span></button>
 <button type="button" data-b="2" aria-pressed="true" aria-controls="pjHb"><span class="bm" aria-hidden="true">3</span><span>No ar<small>Com a marca da organização</small></span></button>
@@ -1355,7 +1354,7 @@ body{background:var(--bone-100)}
 <div class="sg-sum" data-rv><span class="label" id="pjSgL">Marque o que você reconhece</span><div class="ct" aria-live="polite"><b id="pjSgN">0</b><span>de 5 sinais</span></div><p id="pjSgT">Selecione os sinais que acontecem na sua organização.</p><a class="btn btn--sm sg-go" href="#contato">Contar o desafio <svg class="ico ico-move"><use href="#i-arrow-right"/></svg></a></div>
 </div>
 <div>
-<ul class="sg-list" id="pjSg" data-rv aria-labelledby="pjSgL">
+<ul class="sg-list" id="pjSg" data-rv aria-labelledby="pjSgL" data-scroll-target=".sg-sum" data-scroll-ctl=".sg">
 <li><button class="sg" type="button" aria-pressed="false" data-sg="A regra é sua"><span class="n">01</span><span><strong>A regra é sua.</strong><span class="tx">Seu processo tem etapas próprias, como aprovação de cadastro, certificação antes da venda ou acesso por perfil, e nenhuma ferramenta segue essa ordem.</span></span><span class="bx" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span></button></li>
 <li><button class="sg" type="button" aria-pressed="false" data-sg="A rede usa cinco sistemas"><span class="n">02</span><span><strong>A rede usa cinco sistemas.</strong><span class="tx">Cotador, informativos, treinamento e canais de atendimento estão espalhados, cada um com a sua senha.</span></span><span class="bx" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span></button></li>
 <li><button class="sg" type="button" aria-pressed="false" data-sg="Tem planilha fazendo papel de sistema"><span class="n">03</span><span><strong>Tem planilha fazendo papel de sistema.</strong><span class="tx">Conferência manual, e-mail e controle paralelo seguram uma operação que já cresceu.</span></span><span class="bx" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span></button></li>
@@ -1370,7 +1369,7 @@ body{background:var(--bone-100)}
 <section class="pj-sec pj-bld" id="construimos"><div class="container">
 <div class="sec-head" data-rv><span class="label">[ 03 ] O que construímos</span><h2 class="t-h1 h-balance h-fade">Tecnologia feita para a rotina <span class="h-fade-2">de quem vende seguro.</span></h2><p class="t-lead">Cada projeto parte de um desafio diferente. Estes são os tipos de sistema que a Segbox já desenha, constrói e opera.</p></div>
 <div class="g">
-<div class="bl-tabs" id="pjTabs" role="tablist" aria-label="Tipos de sistema" data-rv>
+<div class="bl-tabs" id="pjTabs" role="tablist" aria-label="Tipos de sistema" data-rv data-scroll-target="@controls" data-scroll-ctl="[role=&quot;tab&quot;]">
 <button class="bl-tab" type="button" role="tab" id="pjT0" aria-controls="pjP0" aria-selected="true" tabindex="0"><span class="n">01</span><b>Portais de parceiros</b><svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
 <button class="bl-tab" type="button" role="tab" id="pjT1" aria-controls="pjP1" aria-selected="false" tabindex="-1"><span class="n">02</span><b>Capacitação e certificação</b><svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
 <button class="bl-tab" type="button" role="tab" id="pjT2" aria-controls="pjP2" aria-selected="false" tabindex="-1"><span class="n">03</span><b>Integrações</b><svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
@@ -1667,7 +1666,7 @@ body{background:var(--bone-100)}
 <!-- 08. FAQ -->
 <section class="pj-sec pj-faq" id="faq"><div class="container g">
 <div class="sec-head" data-rv><span class="label">[ 08 ] FAQ</span><h2 class="t-h1 h-balance">Perguntas de quem decide</h2></div>
-<div class="acc" data-rv>
+<div class="acc" data-rv data-scroll-target="&lt;.acc-item" data-scroll-ctl=".acc-h" data-scroll-delay="300">
 <div class="acc-item open"><button class="acc-h" type="button" aria-expanded="true" aria-controls="pjF1" id="pjFh1"><span class="n">01</span><span>Quanto tempo leva um projeto?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b" id="pjF1" role="region" aria-labelledby="pjFh1"><div><p>Depende do escopo e das integrações. Definimos o cronograma no diagnóstico, com entregas por etapa.</p></div></div></div>
 <div class="acc-item"><button class="acc-h" type="button" aria-expanded="false" aria-controls="pjF2" id="pjFh2"><span class="n">02</span><span>Como funciona a contratação?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b" id="pjF2" role="region" aria-labelledby="pjFh2"><div><p>O modelo é definido junto com o escopo, depois da conversa inicial.</p></div></div></div>
 <div class="acc-item"><button class="acc-h" type="button" aria-expanded="false" aria-controls="pjF3" id="pjFh3"><span class="n">03</span><span>De quem é o sistema e o código?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b" id="pjF3" role="region" aria-labelledby="pjFh3"><div><p>A marca, os dados e o conteúdo são da sua organização. As condições sobre código e plataforma ficam definidas em contrato. <span class="draft-tag">Texto provisório</span></p></div></div></div>
@@ -1734,8 +1733,7 @@ body{background:var(--bone-100)}
   function pjCloseDD(ex){pjDds.forEach(function(d){if(d!==ex){d.classList.remove('open');pjQ('button',d).setAttribute('aria-expanded','false')}})}
   pjDds.forEach(function(d){var b=pjQ('button',d);b.addEventListener('click',function(e){e.stopPropagation();var o=!d.classList.contains('open');pjCloseDD(d);d.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false')})});
   document.addEventListener('click',function(){pjCloseDD()});document.addEventListener('keydown',function(e){if(e.key==='Escape')pjCloseDD()});
-  var pjNav=pjQ('#snav'), pjMenu=pjQ('#menuBtn');
-  if(pjMenu)pjMenu.addEventListener('click',function(){var o=!pjNav.classList.contains('open');pjNav.classList.toggle('open',o);pjMenu.setAttribute('aria-expanded',o?'true':'false')});
+  /* menu móvel: drawer no bloco sgm */
 
   /* ---------- formulário: erro só depois da primeira tentativa de envio ---------- */
   var pjForm=pjQ('#pjForm'), pjFMsg=pjQ('#pjFMsg'), pjFBtn=pjQ('#pjFBtn'), pjTried=false;
@@ -1853,4 +1851,187 @@ body{background:var(--bone-100)}
 })();
 (function(){if(window.__hFade)return;window.__hFade=1;var hfEls=[].slice.call(document.querySelectorAll('.h-fade'));if(!hfEls.length)return;var hfMq=window.matchMedia?window.matchMedia('(prefers-reduced-motion: reduce)'):null;function hfRGB(c){var m=/rgba?\(([^)]+)\)/.exec(c);if(!m)return null;var a=m[1].split(/[\s,\/]+/).filter(Boolean).map(parseFloat);if(a.length<3)return null;if(a.length<4)a.push(1);return a}var hfItems=[];hfEls.forEach(function(h){var s=h.querySelector('.h-fade-2');if(!s)return;var c0=getComputedStyle(h).color,c1=getComputedStyle(s).color,ws=[];(function hfWalk(n){[].slice.call(n.childNodes).forEach(function(c){if(c.nodeType===3){var fr=document.createDocumentFragment();c.nodeValue.split(/(\s+)/).forEach(function(t){if(!t)return;if(/^\s+$/.test(t)){fr.appendChild(document.createTextNode(t))}else{var w=document.createElement('span');w.className='hf-w';w.textContent=t;fr.appendChild(w);ws.push(w)}});n.replaceChild(fr,c);}else if(c.nodeType===1&&c.className!=='hf-w')hfWalk(c)})})(s);hfItems.push({h:h,s:s,ws:ws,a:hfRGB(c0),b:hfRGB(c1),c0:c0,c1:c1,last:-1});});if(!hfItems.length)return;function hfMix(it,t){if(it.a&&it.b){var a=it.a,b=it.b,f=function(i){return a[i]+(b[i]-a[i])*t};return 'rgba('+Math.round(f(0))+','+Math.round(f(1))+','+Math.round(f(2))+','+(+f(3).toFixed(3))+')'}return 'color-mix(in srgb,'+it.c1+' '+(t*100).toFixed(1)+'%,'+it.c0+')'}function hfPaint(it,p){var n=it.ws.length,win=n>1?Math.min(1,Math.max(.22,2/n)):1;it.ws.forEach(function(w,i){var st=n>1?(i/(n-1))*(1-win):0,t=Math.min(1,Math.max(0,(p-st)/win));t=t*t*(3-2*t);w.style.color=hfMix(it,t)})}function hfClear(){hfItems.forEach(function(it){it.last=-1;it.ws.forEach(function(w){w.style.color=''})})}var hfOff=!!(hfMq&&hfMq.matches);function hfTick(){if(hfOff)return;var vh=window.innerHeight||document.documentElement.clientHeight;hfItems.forEach(function(it){var r=it.h.getBoundingClientRect(),k0=getComputedStyle(it.h).color,k1=getComputedStyle(it.s).color;if(k0!==it.c0||k1!==it.c1){it.c0=k0;it.c1=k1;it.a=hfRGB(k0);it.b=hfRGB(k1);it.last=-1}var p=Math.min(1,Math.max(0,(vh*.72-r.top)/(vh*.5)));p=Math.round(p*500)/500;if(p===it.last)return;it.last=p;hfPaint(it,p)})}var hfQ=false;function hfOnScroll(){if(hfQ)return;hfQ=true;requestAnimationFrame(function(){hfQ=false;hfTick()})}if(hfMq){var hfCh=function(e){hfOff=e.matches;if(hfOff)hfClear();else hfTick()};if(hfMq.addEventListener)hfMq.addEventListener('change',hfCh);else if(hfMq.addListener)hfMq.addListener(hfCh)}window.addEventListener('scroll',hfOnScroll,{passive:true});window.addEventListener('resize',hfOnScroll);window.addEventListener('load',hfTick);document.addEventListener('click',function(){setTimeout(hfOnScroll,60);setTimeout(hfOnScroll,700)});hfTick();})();
 </script>
+<!-- sgm:begin · menu móvel gerado a partir do menu desktop + revelar a UI-alvo no mobile. Bloco idêntico em todas as páginas. -->
+<style id="sgm-css">
+.sgm-ov{position:fixed;inset:0;z-index:250;visibility:hidden;pointer-events:none;transition:visibility 0s var(--t-slow,420ms)}
+.sgm-ov.open{visibility:visible;pointer-events:auto;transition-delay:0s}
+.sgm-scrim{position:absolute;inset:0;background:rgba(20,20,24,.38);opacity:0;transition:opacity var(--t-base,240ms) var(--ease-out,ease-out)}
+.sgm-ov.open .sgm-scrim{opacity:1}
+.sgm-dr{position:absolute;top:0;right:0;bottom:0;width:min(400px,100%);display:flex;flex-direction:column;background:#FBFAF8;color:#0B0B0D;border-left:1px solid rgba(0,0,0,.12);box-shadow:0 0 60px -20px rgba(0,0,0,.35);transform:translateX(100%);transition:transform var(--t-slow,420ms) var(--ease-drawer,cubic-bezier(.32,.72,0,1));overscroll-behavior:contain;outline:0}
+.sgm-ov.open .sgm-dr{transform:none}
+.sgm-hd{flex:none;display:flex;align-items:center;justify-content:space-between;gap:12px;height:68px;padding:0 12px 0 16px;border-bottom:1px solid rgba(0,0,0,.12)}
+.sgm-hd .logo-svg{height:26px}
+.sgm-x{display:inline-grid;place-items:center;width:44px;height:44px;padding:0;border:1px solid rgba(0,0,0,.14);border-radius:var(--r-2,6px);background:#fff;color:#0B0B0D;cursor:pointer}
+.sgm-x .ico{width:18px;height:18px}
+.sgm-bd{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:4px 16px 16px}
+.sgm-acc,.sgm-top{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-height:56px;padding:0 4px;margin:0;border:0;border-bottom:1px solid rgba(0,0,0,.12);background:none;color:#0B0B0D;font-family:var(--font-display,inherit);font-size:18px;font-weight:600;letter-spacing:-.015em;line-height:1.2;text-align:left;text-decoration:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.sgm-acc .ico{width:16px;height:16px;flex:none;color:#565660;transition:transform var(--t-base,240ms) var(--ease-out,ease-out)}
+.sgm-grp.open>.sgm-acc .ico{transform:rotate(180deg)}
+.sgm-top .ico{width:16px;height:16px;flex:none;color:#565660}
+.sgm-pn{display:grid;grid-template-rows:0fr;visibility:hidden;transition:grid-template-rows var(--t-base,240ms) var(--ease-out,ease-out),visibility 0s var(--t-base,240ms)}
+.sgm-grp.open>.sgm-pn{grid-template-rows:1fr;visibility:visible;transition-delay:0s}
+.sgm-pn>div{min-height:0;overflow:hidden}
+.sgm-grp.open>.sgm-pn>div{padding:6px 0 10px;border-bottom:1px solid rgba(0,0,0,.12)}
+.sgm-ln{display:flex;flex-direction:column;justify-content:center;gap:2px;min-height:48px;padding:8px 12px;border-radius:var(--r-2,6px);color:#0B0B0D;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.sgm-ln strong{font-weight:500;font-size:15.5px;line-height:1.3}
+.sgm-ln small{color:#565660;font-size:13px;line-height:1.35}
+.sgm-ln:active,.sgm-ln:hover{background:#E8E6E3}
+.sgm-ln[aria-current="page"]{background:#E8E6E3;box-shadow:inset 3px 0 0 #FF5047}
+.sgm-sep{height:1px;margin:6px 12px;background:rgba(0,0,0,.1)}
+.sgm-ft{flex:none;padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px));border-top:1px solid rgba(0,0,0,.12)}
+.sgm-ft .btn{display:flex;width:100%;min-height:48px;justify-content:center}
+.sgm-sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.sgm-ov :focus-visible{outline:2px solid #0B0B0D;outline-offset:2px}
+html.sgm-lock,html.sgm-lock body{overflow:hidden}
+@media (max-width:900px){[data-sgm-menu]{position:relative}[data-sgm-menu]::after{content:"";position:absolute;inset:-5px}}
+@media (min-width:901px){.sgm-ov{display:none}}
+</style>
+<script id="sgm-js">
+/* sgm 1: drawer do menu móvel, montado a partir do menu desktop (.nav-links) para nunca divergir */
+(function(){
+  if(window.__sgmNav)return; window.__sgmNav=1;
+  var sgmBtn=document.querySelector('[data-sgm-menu]'); if(!sgmBtn)return;
+  var sgmSrc=document.querySelector(sgmBtn.getAttribute('data-sgm-menu')); if(!sgmSrc)return;
+  var sgmCta=document.querySelector(sgmBtn.getAttribute('data-sgm-cta')||'#sgm-none');
+  var sgmLogo=document.querySelector(sgmBtn.getAttribute('data-sgm-logo')||'#sgm-none');
+  var sgmMq=window.matchMedia('(max-width:900px)');
+  var sgmRoot=document.documentElement, sgmLast=null, sgmN=0;
+  function sgmEl(tag,cls,html){var e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e}
+  function sgmTxt(el,sel){var n=el.querySelector(sel);return n?n.textContent.replace(/\s+/g,' ').trim():''}
+  function sgmLink(a){
+    var l=sgmEl('a','sgm-ln'); l.href=a.getAttribute('href');
+    ['target','rel','aria-current'].forEach(function(k){if(a.hasAttribute(k))l.setAttribute(k,a.getAttribute(k))});
+    var t=sgmTxt(a,'strong')||a.textContent.replace(/\s+/g,' ').trim(), s=sgmTxt(a,'small');
+    l.appendChild(sgmEl('strong','',null)).textContent=t;
+    if(s)l.appendChild(sgmEl('small','',null)).textContent=s;
+    if(a.getAttribute('target')==='_blank')l.appendChild(sgmEl('span','sgm-sr',null)).textContent=' (abre em nova aba)';
+    return l;
+  }
+  var ov=sgmEl('div','sgm-ov'); ov.id='sgmOv'; ov.setAttribute('data-sgm',''); ov.setAttribute('aria-hidden','true');
+  var scrim=sgmEl('div','sgm-scrim'); ov.appendChild(scrim);
+  var dr=sgmEl('div','sgm-dr'); dr.id='sgmDr'; dr.setAttribute('role','dialog'); dr.setAttribute('aria-modal','true'); dr.setAttribute('aria-label','Menu'); dr.tabIndex=-1; ov.appendChild(dr);
+  var hd=sgmEl('div','sgm-hd'); dr.appendChild(hd);
+  if(sgmLogo){var lg=sgmLogo.cloneNode(true); lg.removeAttribute('id'); hd.appendChild(lg)} else hd.appendChild(sgmEl('span','',''));
+  var xb=sgmEl('button','sgm-x','<svg class="ico" aria-hidden="true"><use href="#i-x"/></svg>'); xb.type='button'; xb.setAttribute('aria-label','Fechar menu'); hd.appendChild(xb);
+  var bd=sgmEl('nav','sgm-bd'); bd.setAttribute('aria-label','Menu principal'); dr.appendChild(bd);
+  Array.prototype.forEach.call(sgmSrc.children,function(it){
+    if(it.matches('.dd')){
+      var b=it.querySelector('button'), m=it.querySelector('.dd-menu'); if(!b||!m)return;
+      var id='sgmG'+(++sgmN), g=sgmEl('div','sgm-grp');
+      var ab=sgmEl('button','sgm-acc'); ab.type='button'; ab.setAttribute('aria-expanded','false'); ab.setAttribute('aria-controls',id);
+      ab.appendChild(sgmEl('span','',null)).textContent=b.textContent.replace(/\s+/g,' ').trim();
+      ab.insertAdjacentHTML('beforeend','<svg class="ico" aria-hidden="true"><use href="#i-chevron"/></svg>');
+      var pn=sgmEl('div','sgm-pn'); pn.id=id; var inner=sgmEl('div','',null); pn.appendChild(inner);
+      Array.prototype.forEach.call(m.children,function(c){
+        if(c.matches('a'))inner.appendChild(sgmLink(c)); else if(c.matches('.dd-sep'))inner.appendChild(sgmEl('div','sgm-sep',null));
+      });
+      g.appendChild(ab); g.appendChild(pn); bd.appendChild(g);
+      if(m.querySelector('[aria-current="page"]')){g.classList.add('open');ab.setAttribute('aria-expanded','true')}
+      ab.addEventListener('click',function(){var o=!g.classList.contains('open');g.classList.toggle('open',o);ab.setAttribute('aria-expanded',o?'true':'false')});
+    } else if(it.matches('a')){
+      var tl=sgmEl('a','sgm-top'); tl.href=it.getAttribute('href');
+      ['target','rel','aria-current'].forEach(function(k){if(it.hasAttribute(k))tl.setAttribute(k,it.getAttribute(k))});
+      tl.appendChild(sgmEl('span','',null)).textContent=it.textContent.replace(/\s+/g,' ').trim();
+      tl.insertAdjacentHTML('beforeend','<svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg>');
+      bd.appendChild(tl);
+    }
+  });
+  if(sgmCta){var ft=sgmEl('div','sgm-ft'), cb=sgmEl('a','btn btn--lg',null); cb.href=sgmCta.getAttribute('href'); cb.textContent=sgmCta.textContent.replace(/\s+/g,' ').trim(); ft.appendChild(cb); dr.appendChild(ft)}
+  document.body.appendChild(ov);
+  sgmBtn.setAttribute('aria-controls','sgmDr'); sgmBtn.setAttribute('aria-expanded','false');
+  function sgmIsOpen(){return ov.classList.contains('open')}
+  function sgmFocusables(){return Array.prototype.filter.call(dr.querySelectorAll('a[href],button:not([disabled])'),function(e){return e.getClientRects().length&&getComputedStyle(e).visibility!=='hidden'})}
+  function sgmOpen(){
+    if(sgmIsOpen())return; sgmLast=document.activeElement&&document.activeElement!==document.body?document.activeElement:sgmBtn;
+    var sw=window.innerWidth-sgmRoot.clientWidth; if(sw>0)document.body.style.paddingRight=sw+'px';
+    ov.classList.add('open'); ov.removeAttribute('aria-hidden'); sgmRoot.classList.add('sgm-lock');
+    sgmBtn.setAttribute('aria-expanded','true');
+    requestAnimationFrame(function(){try{xb.focus({preventScroll:true})}catch(e){xb.focus()}});
+  }
+  function sgmClose(){
+    if(!sgmIsOpen())return;
+    ov.classList.remove('open'); ov.setAttribute('aria-hidden','true'); sgmRoot.classList.remove('sgm-lock'); document.body.style.paddingRight='';
+    sgmBtn.setAttribute('aria-expanded','false');
+    var f=sgmLast&&sgmLast.isConnected?sgmLast:sgmBtn; if(f.closest&&f.closest('#sgmOv'))f=sgmBtn;
+    try{f.focus({preventScroll:true})}catch(e){f.focus()}
+  }
+  sgmBtn.addEventListener('click',function(e){e.preventDefault();if(sgmIsOpen())sgmClose();else sgmOpen()});
+  xb.addEventListener('click',sgmClose);
+  scrim.addEventListener('click',sgmClose);
+  scrim.addEventListener('touchmove',function(e){e.preventDefault()},{passive:false});
+  dr.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(a)sgmClose()});
+  document.addEventListener('keydown',function(e){
+    if(!sgmIsOpen())return;
+    if(e.key==='Escape'||e.key==='Esc'){e.preventDefault();sgmClose();return}
+    if(e.key==='Tab'){var f=sgmFocusables();if(!f.length){e.preventDefault();dr.focus();return}
+      var first=f[0],last=f[f.length-1],act=document.activeElement;
+      if(!dr.contains(act)){e.preventDefault();(e.shiftKey?last:first).focus();return}
+      if(e.shiftKey&&act===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&act===last){e.preventDefault();first.focus()}}
+  });
+  function sgmMqChange(){if(!sgmMq.matches)sgmClose()}
+  if(sgmMq.addEventListener)sgmMq.addEventListener('change',sgmMqChange);else if(sgmMq.addListener)sgmMq.addListener(sgmMqChange);
+})();
+/* sgm 2: no mobile, ao tocar um controle marcado com data-scroll-target, rola até a UI que ele transforma se ela não estiver visível.
+   data-scroll-target: "#id" (querySelector, resolvido depois da troca), "<.sel" (closest a partir do controle), "@controls" (aria-controls do controle); vários alvos com "|".
+   data-scroll-ctl: seletor dos controles dentro do elemento marcado (padrão: botões, links, inputs, roles). data-scroll-delay: ms antes de medir (padrão 80). */
+(function(){
+  if(window.__sgmReveal)return; window.__sgmReveal=1;
+  var srvMq=window.matchMedia('(max-width:900px)'), srvRm=window.matchMedia('(prefers-reduced-motion: reduce)');
+  var SRV_CTL='button,a[href],input,select,textarea,label,summary,[role="button"],[role="tab"],[role="switch"],[role="radio"],[role="checkbox"],[role="option"],[tabindex]';
+  var srvTimer=0, SRV_GAP=12;
+  function srvHeader(){
+    var h=document.querySelector('[data-sgm-header]')||document.getElementById('snav'); if(!h)return 0;
+    var p=getComputedStyle(h).position; if(p!=='sticky'&&p!=='fixed')return 0;
+    return Math.max(0,h.getBoundingClientRect().bottom);
+  }
+  function srvRect(list){
+    var r=null; list.forEach(function(t){if(!t||!t.getClientRects().length)return;var b=t.getBoundingClientRect();if(!b.width&&!b.height)return;
+      if(!r)r={top:b.top,bottom:b.bottom};else{r.top=Math.min(r.top,b.top);r.bottom=Math.max(r.bottom,b.bottom)}});
+    return r;
+  }
+  function srvReveal(list,ctl){
+    var r=srvRect(list); if(!r)return;
+    var top=srvHeader()+SRV_GAP, bot=window.innerHeight-SRV_GAP, avail=bot-top, h=r.bottom-r.top, dy=0;
+    if(h>avail){if(Math.min(r.bottom,bot)-Math.max(r.top,top)>=avail*.8)return}
+    else if(r.top>=top-2&&r.bottom<=bot+2)return;
+    /* se couber, mantém o controle tocado na tela junto com o alvo */
+    var c=ctl&&ctl.isConnected?srvRect([ctl]):null;
+    if(c){var u={top:Math.min(r.top,c.top),bottom:Math.max(r.bottom,c.bottom)};if(u.bottom-u.top<=avail)r=u}
+    h=r.bottom-r.top;
+    if(h>avail||r.top<top-2){dy=r.top-top}else if(r.bottom>bot+2){dy=r.bottom-bot}
+    if(Math.abs(dy)<4)return;
+    window.scrollTo({top:Math.max(0,(window.pageYOffset||0)+dy),behavior:srvRm.matches?'instant':'smooth'});
+  }
+  function srvResolve(sel,ctl){
+    var out=[];
+    sel.split('|').forEach(function(s){s=s.trim();if(!s)return;var t=null;
+      try{
+        if(s==='@controls'){var id=ctl.getAttribute('aria-controls');t=id?document.getElementById(id.split(' ')[0]):null}
+        else if(s.charAt(0)==='<'){t=ctl.closest(s.slice(1))}
+        else{t=document.querySelector(s)}
+      }catch(e){t=null}
+      if(t)out.push(t)});
+    return out;
+  }
+  function srvHandle(e){
+    if(!e.isTrusted||!srvMq.matches)return;
+    var t=e.target; if(t&&t.nodeType!==1)t=t.parentElement; if(!t||!t.closest)return;
+    var host=t.closest('[data-scroll-target]'); if(!host||host.closest('[data-sgm]'))return;
+    var ctl=t.closest(host.getAttribute('data-scroll-ctl')||SRV_CTL); if(!ctl||(ctl!==host&&!host.contains(ctl)))return;
+    var tag=ctl.tagName, typ=(ctl.getAttribute('type')||'').toLowerCase();
+    if(e.type==='click'&&(tag==='SELECT'||tag==='TEXTAREA'||(tag==='INPUT'&&!/^(checkbox|radio|button|submit|reset)$/.test(typ))))return;
+    if(e.type==='change'&&!(tag==='SELECT'||(tag==='INPUT'&&typ==='range')))return;
+    if(e.type==='keydown'){if(e.key!=='Enter'&&e.key!==' ')return; if(/^(BUTTON|A|INPUT|SELECT|TEXTAREA|SUMMARY|LABEL)$/.test(tag))return}
+    var sel=host.getAttribute('data-scroll-target'), list0=srvResolve(sel,ctl);
+    var d=parseInt(host.getAttribute('data-scroll-delay')||'80',10);
+    clearTimeout(srvTimer); srvTimer=setTimeout(function(){var l=srvResolve(sel,ctl);srvReveal(l.length?l:list0,ctl)},isNaN(d)?80:d);
+  }
+  /* fase de captura: funciona mesmo quando o handler da página chama stopPropagation */
+  document.addEventListener('click',srvHandle,true);
+  document.addEventListener('change',srvHandle,true);
+  document.addEventListener('keydown',srvHandle,true);
+  window.sgmReveal=function(el,ctl){srvReveal([].concat(el),ctl)};
+})();
+</script>
+<!-- sgm:end -->
 </html>

@@ -1598,9 +1598,8 @@ button.ot-btn.gh:hover{border-color:var(--ob);color:var(--ob)}
           </div></div>
         <a href="index.html#sobre">Sobre</a>
       </nav>
-      <div class="flex" style="gap:8px"><a class="btn btn--sm cta-d" href="#contato">Fale com a gente</a><button class="btn btn--secondary btn--icon btn--sm menu-btn" type="button" id="menuBtn" aria-label="Abrir menu" aria-expanded="false"><svg class="ico"><use href="#i-menu"/></svg></button></div>
+      <div class="flex" style="gap:8px"><a class="btn btn--sm cta-d" href="#contato">Fale com a gente</a><button class="btn btn--secondary btn--icon btn--sm menu-btn" type="button" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-haspopup="dialog" data-sgm-menu="#snav .nav-links" data-sgm-cta="#snav .cta-d" data-sgm-logo="#snav .logo"><svg class="ico"><use href="#i-menu"/></svg></button></div>
     </div>
-    <nav class="mpanel" aria-label="Menu móvel"><a href="index.html#solucoes">Soluções</a><a href="index.html#produtos">Produtos</a><a href="index.html#cases">Cases</a><a href="index.html#sobre">Sobre</a><a href="#contato" style="color:var(--label-accent)">Fale com a gente</a></nav>
   </div>
 </header>
 <main id="top">
@@ -1630,7 +1629,7 @@ button.ot-btn.gh:hover{border-color:var(--ob);color:var(--ob)}
 <div class="ot-ed">
 <div class="ot-canvas"><div class="oz-hpost" id="ozPost"></div></div>
 <div class="ot-side">
-<div class="ot-card oma-card"><div class="oma-hd"><svg class="oma-ic" aria-hidden="true"><use href="#oz-oma"/></svg><span><b>OMA</b><small>Oi, Juliana! Bora escrever a legenda de hoje?</small></span></div><p class="txt" id="ozCap"></p><div class="ot-acts"><button class="ot-btn gh" type="button" id="ozCapNew">Gerar outra</button><span class="ot-btn">Usar legenda</span></div></div>
+<div class="ot-card oma-card"><div class="oma-hd"><svg class="oma-ic" aria-hidden="true"><use href="#oz-oma"/></svg><span><b>OMA</b><small>Oi, Juliana! Bora escrever a legenda de hoje?</small></span></div><p class="txt" id="ozCap"></p><div class="ot-acts"><button class="ot-btn gh" type="button" id="ozCapNew" data-scroll-target="#ozCap">Gerar outra</button><span class="ot-btn">Usar legenda</span></div></div>
 <div class="ot-card"><span class="ot-sub">Identidade da corretora</span><div class="ot-id"><i class="mk">P</i><span><b>Prado Seguros</b><small id="ozIdLbl">Verde aplicado</small></span><span class="ot-dots" aria-hidden="true"><i style="background:var(--pc)"></i><i style="background:var(--pa)"></i><i style="background:var(--pk)"></i></span></div></div>
 </div>
 </div>
@@ -1638,13 +1637,13 @@ button.ot-btn.gh:hover{border-color:var(--ob);color:var(--ob)}
 </div></div>
 <div class="oz-pick glass">
 <span class="label"><span class="dot" style="color:var(--ob)"></span>Toque e troque</span>
-<div><span class="oz-pl-l" id="ozThemeL">Template</span><div class="oz-chips" role="group" aria-labelledby="ozThemeL">
+<div><span class="oz-pl-l" id="ozThemeL">Template</span><div class="oz-chips" role="group" aria-labelledby="ozThemeL" data-scroll-target="@controls" data-scroll-ctl=".oz-chip">
 <button class="oz-chip" type="button" data-oz-theme="auto" aria-pressed="true" aria-controls="ozPost">Seguro Auto</button>
 <button class="oz-chip" type="button" data-oz-theme="vida" aria-pressed="false" aria-controls="ozPost">Vida</button>
 <button class="oz-chip" type="button" data-oz-theme="corretor" aria-pressed="false" aria-controls="ozPost">Dia do Corretor</button>
 <button class="oz-chip" type="button" data-oz-theme="viagem" aria-pressed="false" aria-controls="ozPost">Viagem</button>
 </div></div>
-<div><span class="oz-pl-l" id="ozIdL">Cor da corretora</span><div class="oz-sws" role="group" aria-labelledby="ozIdL">
+<div><span class="oz-pl-l" id="ozIdL">Cor da corretora</span><div class="oz-sws" role="group" aria-labelledby="ozIdL" data-scroll-target="#ozPost" data-scroll-ctl=".oz-sw">
 <button class="oz-sw" type="button" data-oz-id="verde" aria-pressed="true" style="--c1:#0E7C66;--c2:#BEF264"><i></i>Verde</button>
 <button class="oz-sw" type="button" data-oz-id="vinho" aria-pressed="false" style="--c1:#8C1D40;--c2:#F4B6DA"><i></i>Vinho</button>
 <button class="oz-sw" type="button" data-oz-id="grafite" aria-pressed="false" style="--c1:#23262D;--c2:#FF7A45"><i></i>Grafite</button>
@@ -1677,7 +1676,7 @@ button.ot-btn.gh:hover{border-color:var(--ob);color:var(--ob)}
 <div class="oz-themes" aria-hidden="true"><div class="oz-themes-t"><span>Seguro Auto</span><span>Vida</span><span>Saúde</span><span>Consórcio</span><span>Datas importantes</span><span>Dia do Corretor</span><span>Dia das Mães</span><span>Fim de ano</span><span>Humor</span><span>Depoimentos</span><span>Carrosséis</span><span>Preços e Ofertas</span><span>Seguro Auto</span><span>Vida</span><span>Saúde</span><span>Consórcio</span><span>Datas importantes</span><span>Dia do Corretor</span><span>Dia das Mães</span><span>Fim de ano</span><span>Humor</span><span>Depoimentos</span><span>Carrosséis</span><span>Preços e Ofertas</span></div></div>
 <div class="container">
 <div class="oz-wctl" data-rv>
-<div class="oz-wf"><span class="oz-pl-l" id="ozFmtL">Formato</span><div class="oz-chips" role="group" aria-labelledby="ozFmtL">
+<div class="oz-wf"><span class="oz-pl-l" id="ozFmtL">Formato</span><div class="oz-chips" role="group" aria-labelledby="ozFmtL" data-scroll-target="@controls" data-scroll-ctl=".oz-chip" data-scroll-delay="120">
 <button class="oz-chip" type="button" data-oz-fmt="all" aria-pressed="true" aria-controls="ozWall">Todos</button>
 <button class="oz-chip" type="button" data-oz-fmt="sq" aria-pressed="false" aria-controls="ozWall">Quadrado</button>
 <button class="oz-chip" type="button" data-oz-fmt="pt" aria-pressed="false" aria-controls="ozWall">Retrato</button>
@@ -1685,7 +1684,7 @@ button.ot-btn.gh:hover{border-color:var(--ob);color:var(--ob)}
 <button class="oz-chip" type="button" data-oz-fmt="st" aria-pressed="false" aria-controls="ozWall">Stories</button>
 <button class="oz-chip" type="button" data-oz-fmt="cr" aria-pressed="false" aria-controls="ozWall">Carrossel</button>
 </div></div>
-<div class="oz-wf"><span class="oz-pl-l" id="ozBrandL">Aplique a sua marca em tudo</span><div class="oz-sws" role="group" aria-labelledby="ozBrandL">
+<div class="oz-wf"><span class="oz-pl-l" id="ozBrandL">Aplique a sua marca em tudo</span><div class="oz-sws" role="group" aria-labelledby="ozBrandL" data-scroll-target="#ozWall" data-scroll-ctl=".oz-sw">
 <button class="oz-sw" type="button" data-oz-brand="verde" aria-pressed="true" style="--c1:#0E7C66;--c2:#BEF264"><i></i>Verde</button>
 <button class="oz-sw" type="button" data-oz-brand="vinho" aria-pressed="false" style="--c1:#8C1D40;--c2:#F4B6DA"><i></i>Vinho</button>
 <button class="oz-sw" type="button" data-oz-brand="grafite" aria-pressed="false" style="--c1:#23262D;--c2:#FF7A45"><i></i>Grafite</button>
@@ -1860,7 +1859,7 @@ button.ot-btn.gh:hover{border-color:var(--ob);color:var(--ob)}
 <div class="oma-docb" id="ozOmaDoc"><p class="oma-empty">O texto da OMA cai aqui, no lugar certo: legenda, e-mail, landing, site ou resposta.</p></div>
 </div>
 </div>
-<div class="oma-ps" role="group" aria-label="Pedidos de exemplo para a OMA">
+<div class="oma-ps" role="group" aria-label="Pedidos de exemplo para a OMA" data-scroll-target="#ozOmaLog|#ozOmaDoc" data-scroll-ctl=".oma-p">
 <button type="button" class="oma-p" data-oma="0"><svg aria-hidden="true"><use href="#i-image"/></svg>Legenda de seguro residencial</button>
 <button type="button" class="oma-p" data-oma="1"><svg aria-hidden="true"><use href="#i-mail"/></svg>E-mail de renovação</button>
 <button type="button" class="oma-p" data-oma="2"><svg aria-hidden="true"><use href="#i-target"/></svg>Abertura de landing pet</button>
@@ -1894,12 +1893,12 @@ button.ot-btn.gh:hover{border-color:var(--ob);color:var(--ob)}
 <div class="st-ctl">
 <span class="st-k">Cena 1 · Site</span>
 <h3 class="t-h3">Escolha o template. Ligue o que você vende.</h3>
-<div class="st-group"><span class="oz-pl-l" id="ozTplL">Template</span><div class="st-tpls" role="radiogroup" aria-labelledby="ozTplL">
+<div class="st-group"><span class="oz-pl-l" id="ozTplL">Template</span><div class="st-tpls" role="radiogroup" aria-labelledby="ozTplL" data-scroll-target="#ozSite" data-scroll-ctl="button">
 <button type="button" role="radio" aria-checked="true" tabindex="0" data-oz-tpl="classico"><i class="tp tp--1" aria-hidden="true"></i>Clássico</button>
 <button type="button" role="radio" aria-checked="false" tabindex="-1" data-oz-tpl="moderno"><i class="tp tp--2" aria-hidden="true"></i>Moderno</button>
 <button type="button" role="radio" aria-checked="false" tabindex="-1" data-oz-tpl="direto"><i class="tp tp--3" aria-hidden="true"></i>Direto</button>
 </div></div>
-<div class="st-group"><span class="oz-pl-l" id="ozPgL">Páginas de seguros</span><div class="oz-tgs" role="group" aria-labelledby="ozPgL">
+<div class="st-group"><span class="oz-pl-l" id="ozPgL">Páginas de seguros</span><div class="oz-tgs" role="group" aria-labelledby="ozPgL" data-scroll-target="#ozSiteGrid" data-scroll-ctl="button" data-scroll-delay="120">
 <button class="oz-tg" type="button" role="switch" aria-checked="true" data-oz-pg="auto"><span>Auto</span><i class="tr" aria-hidden="true"></i></button>
 <button class="oz-tg" type="button" role="switch" aria-checked="true" data-oz-pg="vida"><span>Vida</span><i class="tr" aria-hidden="true"></i></button>
 <button class="oz-tg" type="button" role="switch" aria-checked="true" data-oz-pg="resid"><span>Residencial</span><i class="tr" aria-hidden="true"></i></button>
@@ -1917,7 +1916,7 @@ button.ot-btn.gh:hover{border-color:var(--ob);color:var(--ob)}
 <span class="st-k">Cena 2 · Landing page</span>
 <h3 class="t-h3">Uma página por campanha. O formulário vira lead.</h3>
 <p class="st-p">Quem preenche a landing ou o formulário do site cai direto em Leads, com a origem marcada. Sem planilha no meio.</p>
-<div class="st-lp-live"><span class="ot-pill" id="ozLpPill"><span class="d"></span>Landing no ar</span><button class="btn btn--sm btn--secondary" type="button" id="ozLpBtn">Simular um lead</button></div>
+<div class="st-lp-live"><span class="ot-pill" id="ozLpPill"><span class="d"></span>Landing no ar</span><button class="btn btn--sm btn--secondary" type="button" id="ozLpBtn" data-scroll-target=".st-lp">Simular um lead</button></div>
 </div>
 <div class="st-vis st-duo" aria-hidden="true">
 <div class="win st-lp"><div class="chrome"><span></span><span></span><span></span><div class="url"><svg class="lk"><use href="#i-lock"/></svg>pradoseguros.com.br/seguro-auto</div></div>
@@ -1965,7 +1964,7 @@ button.ot-btn.gh:hover{border-color:var(--ob);color:var(--ob)}
 <ul class="dom-bul" data-rv><li><span>Domínio grátis incluso no plano: <b>nome.corretoraseguros.net.br</b>, pronto no primeiro dia.</span></li><li>Tem ou quer um domínio só seu? Você registra e a Otimize conecta, com ajuda do suporte.</li><li>SSL grátis: cadeado no navegador e zero susto para o cliente.</li></ul>
 </div>
 <div class="dom-vis" data-rv>
-<div class="dom-steps" role="tablist" aria-label="Etapas do endereço da corretora">
+<div class="dom-steps" role="tablist" aria-label="Etapas do endereço da corretora" data-scroll-target="@controls" data-scroll-ctl="[role=&quot;tab&quot;]">
 <button type="button" role="tab" id="ozDomT0" aria-selected="true" aria-controls="ozDomP" tabindex="0" data-dom="0"><span>01</span>Hoje</button>
 <button type="button" role="tab" id="ozDomT1" aria-selected="false" aria-controls="ozDomP" tabindex="-1" data-dom="1"><span>02</span>Grátis no plano</button>
 <button type="button" role="tab" id="ozDomT2" aria-selected="false" aria-controls="ozDomP" tabindex="-1" data-dom="2"><span>03</span>Domínio próprio</button>
@@ -1978,7 +1977,7 @@ button.ot-btn.gh:hover{border-color:var(--ob);color:var(--ob)}
 <li><svg><use href="#i-target"/></svg><span>Landing</span><b data-dom-k="lp">link de formulário genérico</b></li>
 <li><svg><use href="#i-card"/></svg><span>Cartão</span><b data-dom-k="card">sem cartão digital</b></li>
 </ul>
-<div class="dom-act"><button class="btn btn--sm dom-btn" type="button" id="ozDomGo">Ativar o domínio grátis</button><span class="dom-note" id="ozDomNote">Endereço genérico passa amadorismo na hora de fechar.</span></div>
+<div class="dom-act"><button class="btn btn--sm dom-btn" type="button" id="ozDomGo" data-scroll-target="#ozDomP">Ativar o domínio grátis</button><span class="dom-note" id="ozDomNote">Endereço genérico passa amadorismo na hora de fechar.</span></div>
 </div>
 </div>
 </div></section>
@@ -1999,7 +1998,7 @@ button.ot-btn.gh:hover{border-color:var(--ob);color:var(--ob)}
 </ol>
 
 <div class="rc-tabs" id="rcTabs" data-rv>
-<div class="rc-tl" role="tablist" aria-label="Recursos em detalhe">
+<div class="rc-tl" role="tablist" aria-label="Recursos em detalhe" data-scroll-target="@controls" data-scroll-ctl="[role=&quot;tab&quot;]">
 <button type="button" role="tab" id="rcT0" aria-controls="rcP0" aria-selected="true" tabindex="0"><span>01</span>Cartão digital</button>
 <button type="button" role="tab" id="rcT1" aria-controls="rcP1" aria-selected="false" tabindex="-1"><span>02</span>E-mail marketing</button>
 <button type="button" role="tab" id="rcT2" aria-controls="rcP2" aria-selected="false" tabindex="-1"><span>03</span>Leads e painel</button>
@@ -2010,7 +2009,7 @@ button.ot-btn.gh:hover{border-color:var(--ob);color:var(--ob)}
 <!-- aba 1: cartão digital (tela vertical de celular) -->
 <div class="rc-p" id="rcP0" role="tabpanel" aria-labelledby="rcT0">
 <div class="rc-txt"><h3 class="t-h2">Seu cartão de visita cabe no link da bio.</h3><p class="t-lead">Uma página vertical do tamanho da tela do celular. O cliente toca e já fala com você. Manda no WhatsApp ou coloca na bio.</p>
-<div class="st-group"><span class="oz-pl-l" id="ozCdL">Template do cartão</span><div class="oz-sws" role="group" aria-labelledby="ozCdL">
+<div class="st-group"><span class="oz-pl-l" id="ozCdL">Template do cartão</span><div class="oz-sws" role="group" aria-labelledby="ozCdL" data-scroll-target="#ozCard" data-scroll-ctl=".oz-sw">
 <button class="oz-sw" type="button" data-oz-cd="claro" aria-pressed="true" style="--c1:#FFFFFF;--c2:#0E7C66"><i></i>Claro</button>
 <button class="oz-sw" type="button" data-oz-cd="marca" aria-pressed="false" style="--c1:#0E7C66;--c2:#BEF264"><i></i>Cor da marca</button>
 <button class="oz-sw" type="button" data-oz-cd="noite" aria-pressed="false" style="--c1:#181C32;--c2:#BEF264"><i></i>Noite</button>
@@ -2051,7 +2050,7 @@ button.ot-btn.gh:hover{border-color:var(--ob);color:var(--ob)}
 <div class="rc-txt"><h3 class="t-h2">Veja o que o seu marketing trouxe.</h3><p class="t-lead">Visitantes do site por mês, semana ou dia, leads com origem e categoria e campanhas com resultado. Importe, exporte e edite em massa.</p></div>
 <div class="rc-vis"><div class="win rc-win" role="group" aria-label="Painel da Otimize com dados fictícios"><div class="ot"><div class="ot-top"><svg class="ot-logo" aria-hidden="true"><use href="#oz-logo"/></svg><div class="ot-nav"><span class="on">Home</span><span>Site</span><span>Redes Sociais</span><span>E-mails</span><span>Landing Page</span><span>Leads</span></div></div>
 <div class="ot-body">
-<div class="ot-card"><div class="ot-chh"><span class="ot-h">Visitantes no Site <span class="ot-sub" id="ozVisN" style="display:inline">1.284 no mês</span></span><span class="ot-seg ot-seg--b" role="tablist" aria-label="Período do gráfico"><button type="button" role="tab" aria-selected="true" data-oz-per="m">Mês</button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-oz-per="s">Semana</button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-oz-per="d">Dia</button></span></div><div class="ot-bars ot-bars--l" id="ozVisBars"></div><div class="ot-bx" id="ozVisX"></div></div>
+<div class="ot-card"><div class="ot-chh"><span class="ot-h">Visitantes no Site <span class="ot-sub" id="ozVisN" style="display:inline">1.284 no mês</span></span><span class="ot-seg ot-seg--b" role="tablist" aria-label="Período do gráfico" data-scroll-target="#ozVisBars" data-scroll-ctl="button"><button type="button" role="tab" aria-selected="true" data-oz-per="m">Mês</button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-oz-per="s">Semana</button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-oz-per="d">Dia</button></span></div><div class="ot-bars ot-bars--l" id="ozVisBars"></div><div class="ot-bx" id="ozVisX"></div></div>
 <div class="ot-card" style="padding:0 12px" aria-hidden="true"><div class="ot-ltbl ot-ltbl--c"><div class="tr"><span>Nome</span><span>Origem</span><span>Categoria</span></div><div class="tr"><b><i class="a">CM</i>Carlos Menezes</b><span>Site</span><span><span class="ot-pill b">Auto</span></span></div><div class="tr"><b><i class="a">AR</i>Ana Ribeiro</b><span>Landing</span><span><span class="ot-pill y">Residencial</span></span></div><div class="tr"><b><i class="a">PL</i>Pedro Lima</b><span>Landing</span><span><span class="ot-pill b">Auto</span></span></div></div></div>
 </div></div></div></div>
 </div>
@@ -2062,7 +2061,7 @@ button.ot-btn.gh:hover{border-color:var(--ob);color:var(--ob)}
 <div class="rc-vis"><div class="win rc-win" role="group" aria-label="Agenda Estratégica: exemplo de semana, com sugestões ilustrativas"><div class="ot"><div class="ot-top"><svg class="ot-logo" aria-hidden="true"><use href="#oz-logo"/></svg><div class="ot-nav"><span class="on">Home</span><span>Site</span><span>Redes Sociais</span><span>E-mails</span><span>Landing Page</span></div></div>
 <div class="ag-sub" aria-hidden="true"><span>Dashboard</span><span class="on">Agenda Estratégica</span><span>Minha Assinatura</span></div>
 <div class="ot-body">
-<div class="ag-week" role="tablist" aria-label="Dias da semana"><button class="ag-d" type="button" role="tab" id="agT0" aria-controls="agDet" aria-selected="false" tabindex="-1" data-ag-h="Domingo: conteúdo leve" data-ag-p="Algo leve para engajar: uma enquete, um bastidor ou um meme de seguro."><small>DOM</small><b>11</b><em class="y">Leve</em></button><button class="ag-d" type="button" role="tab" id="agT1" aria-controls="agDet" aria-selected="false" tabindex="-1" data-ag-h="Segunda: dica de proteção" data-ag-p="Uma dica de proteção para começar a semana."><small>SEG</small><b>12</b><em>Proteção</em></button><button class="ag-d" type="button" role="tab" id="agT2" aria-controls="agDet" aria-selected="false" tabindex="-1" data-ag-h="Terça: explique uma cobertura" data-ag-p="Explique uma cobertura em linguagem simples."><small>TER</small><b>13</b><em>Cobertura</em></button><button class="ag-d" type="button" role="tab" id="agT3" aria-controls="agDet" aria-selected="true" tabindex="0" data-ag-h="Quarta: depoimento de cliente" data-ag-p="Mostre um cliente que foi bem atendido. Use o template Depoimentos."><small>QUA</small><b>14</b><em class="g">Depoimento</em></button><button class="ag-d" type="button" role="tab" id="agT4" aria-controls="agDet" aria-selected="false" tabindex="-1" data-ag-h="Quinta: tire uma dúvida" data-ag-p="Responda uma dúvida comum sobre seguros."><small>QUI</small><b>15</b><em>Dúvida</em></button><button class="ag-d" type="button" role="tab" id="agT5" aria-controls="agDet" aria-selected="false" tabindex="-1" data-ag-h="Sexta: chamada para cotação" data-ag-p="Convide para cotar, com o link da landing."><small>SEX</small><b>16</b><em class="y">Cotação</em></button><button class="ag-d" type="button" role="tab" id="agT6" aria-controls="agDet" aria-selected="false" tabindex="-1" data-ag-h="Sábado: bastidores" data-ag-p="Mostre a rotina e o time da corretora."><small>SÁB</small><b>17</b><em class="g">Bastidores</em></button></div>
+<div class="ag-week" role="tablist" aria-label="Dias da semana" data-scroll-target="@controls" data-scroll-ctl=".ag-d"><button class="ag-d" type="button" role="tab" id="agT0" aria-controls="agDet" aria-selected="false" tabindex="-1" data-ag-h="Domingo: conteúdo leve" data-ag-p="Algo leve para engajar: uma enquete, um bastidor ou um meme de seguro."><small>DOM</small><b>11</b><em class="y">Leve</em></button><button class="ag-d" type="button" role="tab" id="agT1" aria-controls="agDet" aria-selected="false" tabindex="-1" data-ag-h="Segunda: dica de proteção" data-ag-p="Uma dica de proteção para começar a semana."><small>SEG</small><b>12</b><em>Proteção</em></button><button class="ag-d" type="button" role="tab" id="agT2" aria-controls="agDet" aria-selected="false" tabindex="-1" data-ag-h="Terça: explique uma cobertura" data-ag-p="Explique uma cobertura em linguagem simples."><small>TER</small><b>13</b><em>Cobertura</em></button><button class="ag-d" type="button" role="tab" id="agT3" aria-controls="agDet" aria-selected="true" tabindex="0" data-ag-h="Quarta: depoimento de cliente" data-ag-p="Mostre um cliente que foi bem atendido. Use o template Depoimentos."><small>QUA</small><b>14</b><em class="g">Depoimento</em></button><button class="ag-d" type="button" role="tab" id="agT4" aria-controls="agDet" aria-selected="false" tabindex="-1" data-ag-h="Quinta: tire uma dúvida" data-ag-p="Responda uma dúvida comum sobre seguros."><small>QUI</small><b>15</b><em>Dúvida</em></button><button class="ag-d" type="button" role="tab" id="agT5" aria-controls="agDet" aria-selected="false" tabindex="-1" data-ag-h="Sexta: chamada para cotação" data-ag-p="Convide para cotar, com o link da landing."><small>SEX</small><b>16</b><em class="y">Cotação</em></button><button class="ag-d" type="button" role="tab" id="agT6" aria-controls="agDet" aria-selected="false" tabindex="-1" data-ag-h="Sábado: bastidores" data-ag-p="Mostre a rotina e o time da corretora."><small>SÁB</small><b>17</b><em class="g">Bastidores</em></button></div>
 <div class="ot-card ag-det" id="agDet" role="tabpanel" aria-labelledby="agT3"><div class="top"><span class="ot-h" id="agDetH">Quarta: depoimento de cliente</span></div><p id="agDetP">Mostre um cliente que foi bem atendido. Use o template Depoimentos.</p><span class="ot-btn gh" style="justify-self:start">Ver templates</span></div>
 </div></div></div></div>
 </div>
@@ -2082,7 +2081,7 @@ button.ot-btn.gh:hover{border-color:var(--ob);color:var(--ob)}
 <!-- [10] PLANOS (preço só nesta página de corretor; nas páginas white label não há preço) -->
 <section class="oz-sec oz-pl" id="planos" aria-labelledby="ozPlTitle"><div class="container">
 <div class="oz-pl-top"><div class="sec-head" data-rv><span class="label">[ 10 ] Planos</span><h2 class="t-h1 h-balance h-fade" id="ozPlTitle">Um plano para cada <span class="h-fade-2">tamanho de corretora.</span></h2></div><p class="t-lead" data-rv>Valores mensais no plano anual. Diga como você trabalha e veja o plano indicado.</p></div>
-<div class="oz-pl-ctl" data-rv><span class="label" id="ozPlQ">Como você trabalha hoje?</span><div class="oz-pl-opts" role="radiogroup" aria-labelledby="ozPlQ">
+<div class="oz-pl-ctl" data-rv><span class="label" id="ozPlQ">Como você trabalha hoje?</span><div class="oz-pl-opts" role="radiogroup" aria-labelledby="ozPlQ" data-scroll-target="#ozPlT" data-scroll-ctl="button" data-scroll-delay="120">
 <button type="button" role="radio" aria-checked="false" tabindex="0" data-oz-pick="0"><b>Sozinho</b><small>Corretor individual</small></button>
 <button type="button" role="radio" aria-checked="false" tabindex="-1" data-oz-pick="1"><b>Com CNPJ</b><small>Corretora PJ</small></button>
 <button type="button" role="radio" aria-checked="false" tabindex="-1" data-oz-pick="2"><b>Com acompanhamento</b><small>Quero um supervisor de marketing</small></button>
@@ -2111,7 +2110,7 @@ button.ot-btn.gh:hover{border-color:var(--ob);color:var(--ob)}
 <!-- [11] FAQ -->
 <section class="oz-sec oz-faq" id="faq"><div class="container g">
 <div class="sec-head" data-rv><span class="label">[ 11 ] FAQ</span><h2 class="t-h1 h-balance">Perguntas frequentes</h2></div>
-<div class="acc" data-rv><div class="acc-item open"><button class="acc-h" type="button" aria-expanded="true" aria-controls="ozFaq1" id="ozFaqH1"><span class="n">01</span><span>Preciso saber design ou programação?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b" id="ozFaq1" role="region" aria-labelledby="ozFaqH1"><div><p>Não. Posts, site, landing pages e e-mails partem de templates prontos para seguros. Você troca texto, imagem e cores e está pronto. Travou no texto? A OMA ajuda.</p></div></div></div><div class="acc-item"><button class="acc-h" type="button" aria-expanded="false" aria-controls="ozFaq2" id="ozFaqH2"><span class="n">02</span><span>Como funciona o teste grátis?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b" id="ozFaq2" role="region" aria-labelledby="ozFaqH2"><div><p>São 7 dias sem cartão de crédito. Você cria a conta e já começa a usar.</p></div></div></div><div class="acc-item"><button class="acc-h" type="button" aria-expanded="false" aria-controls="ozFaq3" id="ozFaqH3"><span class="n">03</span><span>Posso usar o domínio da minha corretora?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b" id="ozFaq3" role="region" aria-labelledby="ozFaqH3"><div><p>Pode. O plano já inclui um domínio grátis, nome.corretoraseguros.net.br. Se a corretora tiver (ou registrar) um domínio próprio, a Otimize conecta, com ajuda do suporte. Site, landing pages, e-mails e cartão digital passam a usar o endereço, com SSL grátis.</p></div></div></div><div class="acc-item"><button class="acc-h" type="button" aria-expanded="false" aria-controls="ozFaq4" id="ozFaqH4"><span class="n">04</span><span>A Otimize publica direto nas minhas redes?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b" id="ozFaq4" role="region" aria-labelledby="ozFaqH4"><div><p>Não publica direto. Você cria o post, pede a legenda para a OMA, baixa a arte e posta em segundos. Agendamento de posts ainda não está disponível.</p></div></div></div><div class="acc-item"><button class="acc-h" type="button" aria-expanded="false" aria-controls="ozFaq5" id="ozFaqH5"><span class="n">05</span><span>O que é a OMA?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b" id="ozFaq5" role="region" aria-labelledby="ozFaqH5"><div><p>É a assistente IA da Otimize (Otimize Magic Assistance). Escreve legenda, e-mail marketing, texto de site e landing, resposta para cliente e ideia de post. Você revisa e usa onde quiser.</p></div></div></div><div class="acc-item"><button class="acc-h" type="button" aria-expanded="false" aria-controls="ozFaq6" id="ozFaqH6"><span class="n">06</span><span>Os leads do site vão para onde?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b" id="ozFaq6" role="region" aria-labelledby="ozFaqH6"><div><p>Para o módulo Leads, com a origem registrada. Lá você organiza por categoria, edita em massa, importa e exporta a base.</p></div></div></div><div class="acc-item"><button class="acc-h" type="button" aria-expanded="false" aria-controls="ozFaq7" id="ozFaqH7"><span class="n">07</span><span>Que suporte eu tenho?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b" id="ozFaq7" role="region" aria-labelledby="ozFaqH7"><div><p>Central de apoio com tutoriais e atendimento por e-mail, WhatsApp e videochamada. No Business Plus, um supervisor auxilia o marketing digital da corretora.</p></div></div></div></div>
+<div class="acc" data-rv data-scroll-target="&lt;.acc-item" data-scroll-ctl=".acc-h" data-scroll-delay="300"><div class="acc-item open"><button class="acc-h" type="button" aria-expanded="true" aria-controls="ozFaq1" id="ozFaqH1"><span class="n">01</span><span>Preciso saber design ou programação?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b" id="ozFaq1" role="region" aria-labelledby="ozFaqH1"><div><p>Não. Posts, site, landing pages e e-mails partem de templates prontos para seguros. Você troca texto, imagem e cores e está pronto. Travou no texto? A OMA ajuda.</p></div></div></div><div class="acc-item"><button class="acc-h" type="button" aria-expanded="false" aria-controls="ozFaq2" id="ozFaqH2"><span class="n">02</span><span>Como funciona o teste grátis?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b" id="ozFaq2" role="region" aria-labelledby="ozFaqH2"><div><p>São 7 dias sem cartão de crédito. Você cria a conta e já começa a usar.</p></div></div></div><div class="acc-item"><button class="acc-h" type="button" aria-expanded="false" aria-controls="ozFaq3" id="ozFaqH3"><span class="n">03</span><span>Posso usar o domínio da minha corretora?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b" id="ozFaq3" role="region" aria-labelledby="ozFaqH3"><div><p>Pode. O plano já inclui um domínio grátis, nome.corretoraseguros.net.br. Se a corretora tiver (ou registrar) um domínio próprio, a Otimize conecta, com ajuda do suporte. Site, landing pages, e-mails e cartão digital passam a usar o endereço, com SSL grátis.</p></div></div></div><div class="acc-item"><button class="acc-h" type="button" aria-expanded="false" aria-controls="ozFaq4" id="ozFaqH4"><span class="n">04</span><span>A Otimize publica direto nas minhas redes?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b" id="ozFaq4" role="region" aria-labelledby="ozFaqH4"><div><p>Não publica direto. Você cria o post, pede a legenda para a OMA, baixa a arte e posta em segundos. Agendamento de posts ainda não está disponível.</p></div></div></div><div class="acc-item"><button class="acc-h" type="button" aria-expanded="false" aria-controls="ozFaq5" id="ozFaqH5"><span class="n">05</span><span>O que é a OMA?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b" id="ozFaq5" role="region" aria-labelledby="ozFaqH5"><div><p>É a assistente IA da Otimize (Otimize Magic Assistance). Escreve legenda, e-mail marketing, texto de site e landing, resposta para cliente e ideia de post. Você revisa e usa onde quiser.</p></div></div></div><div class="acc-item"><button class="acc-h" type="button" aria-expanded="false" aria-controls="ozFaq6" id="ozFaqH6"><span class="n">06</span><span>Os leads do site vão para onde?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b" id="ozFaq6" role="region" aria-labelledby="ozFaqH6"><div><p>Para o módulo Leads, com a origem registrada. Lá você organiza por categoria, edita em massa, importa e exporta a base.</p></div></div></div><div class="acc-item"><button class="acc-h" type="button" aria-expanded="false" aria-controls="ozFaq7" id="ozFaqH7"><span class="n">07</span><span>Que suporte eu tenho?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b" id="ozFaq7" role="region" aria-labelledby="ozFaqH7"><div><p>Central de apoio com tutoriais e atendimento por e-mail, WhatsApp e videochamada. No Business Plus, um supervisor auxilia o marketing digital da corretora.</p></div></div></div></div>
 </div></section>
 
 <!-- [12] PRÓXIMO PASSO (formulário) -->
@@ -2158,8 +2157,7 @@ button.ot-btn.gh:hover{border-color:var(--ob);color:var(--ob)}
   ozDds.forEach(function(d){var b=ozQ('button',d);b.addEventListener('click',function(e){e.stopPropagation();var o=!d.classList.contains('open');ozCloseDD(d);d.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false')})});
   document.addEventListener('click',function(){ozCloseDD()});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')ozCloseDD()});
-  var ozSn=ozQ('#snav'), ozMb=ozQ('#menuBtn');
-  if(ozMb)ozMb.addEventListener('click',function(){var o=!ozSn.classList.contains('open');ozSn.classList.toggle('open',o);ozMb.setAttribute('aria-expanded',o?'true':'false')});
+  /* menu móvel: drawer no bloco sgm */
   ozQA('.acc-h').forEach(function(h){h.addEventListener('click',function(){var it=h.closest('.acc-item'),o=!it.classList.contains('open');it.classList.toggle('open',o);h.setAttribute('aria-expanded',o?'true':'false')})});
   var ozLf=ozQ('#leadForm'),ozFm=ozQ('#fMsg'),ozFb=ozQ('#fBtn'),ozF4=ozQ('#f4'),ozF4e=ozQ('#f4e');
   if(ozLf)ozLf.addEventListener('submit',function(e){
@@ -2609,5 +2607,188 @@ button.ot-btn.gh:hover{border-color:var(--ob);color:var(--ob)}
 (function(){if(window.__hFade)return;window.__hFade=1;var hfEls=[].slice.call(document.querySelectorAll('.h-fade'));if(!hfEls.length)return;var hfMq=window.matchMedia?window.matchMedia('(prefers-reduced-motion: reduce)'):null;function hfRGB(c){var m=/rgba?\(([^)]+)\)/.exec(c);if(!m)return null;var a=m[1].split(/[\s,\/]+/).filter(Boolean).map(parseFloat);if(a.length<3)return null;if(a.length<4)a.push(1);return a}var hfItems=[];hfEls.forEach(function(h){var s=h.querySelector('.h-fade-2');if(!s)return;var c0=getComputedStyle(h).color,c1=getComputedStyle(s).color,ws=[];(function hfWalk(n){[].slice.call(n.childNodes).forEach(function(c){if(c.nodeType===3){var fr=document.createDocumentFragment();c.nodeValue.split(/(\s+)/).forEach(function(t){if(!t)return;if(/^\s+$/.test(t)){fr.appendChild(document.createTextNode(t))}else{var w=document.createElement('span');w.className='hf-w';w.textContent=t;fr.appendChild(w);ws.push(w)}});n.replaceChild(fr,c);}else if(c.nodeType===1&&c.className!=='hf-w')hfWalk(c)})})(s);hfItems.push({h:h,s:s,ws:ws,a:hfRGB(c0),b:hfRGB(c1),c0:c0,c1:c1,last:-1});});if(!hfItems.length)return;function hfMix(it,t){if(it.a&&it.b){var a=it.a,b=it.b,f=function(i){return a[i]+(b[i]-a[i])*t};return 'rgba('+Math.round(f(0))+','+Math.round(f(1))+','+Math.round(f(2))+','+(+f(3).toFixed(3))+')'}return 'color-mix(in srgb,'+it.c1+' '+(t*100).toFixed(1)+'%,'+it.c0+')'}function hfPaint(it,p){var n=it.ws.length,win=n>1?Math.min(1,Math.max(.22,2/n)):1;it.ws.forEach(function(w,i){var st=n>1?(i/(n-1))*(1-win):0,t=Math.min(1,Math.max(0,(p-st)/win));t=t*t*(3-2*t);w.style.color=hfMix(it,t)})}function hfClear(){hfItems.forEach(function(it){it.last=-1;it.ws.forEach(function(w){w.style.color=''})})}var hfOff=!!(hfMq&&hfMq.matches);function hfTick(){if(hfOff)return;var vh=window.innerHeight||document.documentElement.clientHeight;hfItems.forEach(function(it){var r=it.h.getBoundingClientRect(),k0=getComputedStyle(it.h).color,k1=getComputedStyle(it.s).color;if(k0!==it.c0||k1!==it.c1){it.c0=k0;it.c1=k1;it.a=hfRGB(k0);it.b=hfRGB(k1);it.last=-1}var p=Math.min(1,Math.max(0,(vh*.72-r.top)/(vh*.5)));p=Math.round(p*500)/500;if(p===it.last)return;it.last=p;hfPaint(it,p)})}var hfQ=false;function hfOnScroll(){if(hfQ)return;hfQ=true;requestAnimationFrame(function(){hfQ=false;hfTick()})}if(hfMq){var hfCh=function(e){hfOff=e.matches;if(hfOff)hfClear();else hfTick()};if(hfMq.addEventListener)hfMq.addEventListener('change',hfCh);else if(hfMq.addListener)hfMq.addListener(hfCh)}window.addEventListener('scroll',hfOnScroll,{passive:true});window.addEventListener('resize',hfOnScroll);window.addEventListener('load',hfTick);document.addEventListener('click',function(){setTimeout(hfOnScroll,60);setTimeout(hfOnScroll,700)});hfTick();})();
 
 </script>
+<!-- sgm:begin · menu móvel gerado a partir do menu desktop + revelar a UI-alvo no mobile. Bloco idêntico em todas as páginas. -->
+<style id="sgm-css">
+.sgm-ov{position:fixed;inset:0;z-index:250;visibility:hidden;pointer-events:none;transition:visibility 0s var(--t-slow,420ms)}
+.sgm-ov.open{visibility:visible;pointer-events:auto;transition-delay:0s}
+.sgm-scrim{position:absolute;inset:0;background:rgba(20,20,24,.38);opacity:0;transition:opacity var(--t-base,240ms) var(--ease-out,ease-out)}
+.sgm-ov.open .sgm-scrim{opacity:1}
+.sgm-dr{position:absolute;top:0;right:0;bottom:0;width:min(400px,100%);display:flex;flex-direction:column;background:#FBFAF8;color:#0B0B0D;border-left:1px solid rgba(0,0,0,.12);box-shadow:0 0 60px -20px rgba(0,0,0,.35);transform:translateX(100%);transition:transform var(--t-slow,420ms) var(--ease-drawer,cubic-bezier(.32,.72,0,1));overscroll-behavior:contain;outline:0}
+.sgm-ov.open .sgm-dr{transform:none}
+.sgm-hd{flex:none;display:flex;align-items:center;justify-content:space-between;gap:12px;height:68px;padding:0 12px 0 16px;border-bottom:1px solid rgba(0,0,0,.12)}
+.sgm-hd .logo-svg{height:26px}
+.sgm-x{display:inline-grid;place-items:center;width:44px;height:44px;padding:0;border:1px solid rgba(0,0,0,.14);border-radius:var(--r-2,6px);background:#fff;color:#0B0B0D;cursor:pointer}
+.sgm-x .ico{width:18px;height:18px}
+.sgm-bd{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:4px 16px 16px}
+.sgm-acc,.sgm-top{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-height:56px;padding:0 4px;margin:0;border:0;border-bottom:1px solid rgba(0,0,0,.12);background:none;color:#0B0B0D;font-family:var(--font-display,inherit);font-size:18px;font-weight:600;letter-spacing:-.015em;line-height:1.2;text-align:left;text-decoration:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.sgm-acc .ico{width:16px;height:16px;flex:none;color:#565660;transition:transform var(--t-base,240ms) var(--ease-out,ease-out)}
+.sgm-grp.open>.sgm-acc .ico{transform:rotate(180deg)}
+.sgm-top .ico{width:16px;height:16px;flex:none;color:#565660}
+.sgm-pn{display:grid;grid-template-rows:0fr;visibility:hidden;transition:grid-template-rows var(--t-base,240ms) var(--ease-out,ease-out),visibility 0s var(--t-base,240ms)}
+.sgm-grp.open>.sgm-pn{grid-template-rows:1fr;visibility:visible;transition-delay:0s}
+.sgm-pn>div{min-height:0;overflow:hidden}
+.sgm-grp.open>.sgm-pn>div{padding:6px 0 10px;border-bottom:1px solid rgba(0,0,0,.12)}
+.sgm-ln{display:flex;flex-direction:column;justify-content:center;gap:2px;min-height:48px;padding:8px 12px;border-radius:var(--r-2,6px);color:#0B0B0D;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.sgm-ln strong{font-weight:500;font-size:15.5px;line-height:1.3}
+.sgm-ln small{color:#565660;font-size:13px;line-height:1.35}
+.sgm-ln:active,.sgm-ln:hover{background:#E8E6E3}
+.sgm-ln[aria-current="page"]{background:#E8E6E3;box-shadow:inset 3px 0 0 #FF5047}
+.sgm-sep{height:1px;margin:6px 12px;background:rgba(0,0,0,.1)}
+.sgm-ft{flex:none;padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px));border-top:1px solid rgba(0,0,0,.12)}
+.sgm-ft .btn{display:flex;width:100%;min-height:48px;justify-content:center}
+.sgm-sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.sgm-ov :focus-visible{outline:2px solid #0B0B0D;outline-offset:2px}
+html.sgm-lock,html.sgm-lock body{overflow:hidden}
+@media (max-width:900px){[data-sgm-menu]{position:relative}[data-sgm-menu]::after{content:"";position:absolute;inset:-5px}}
+@media (min-width:901px){.sgm-ov{display:none}}
+</style>
+<script id="sgm-js">
+/* sgm 1: drawer do menu móvel, montado a partir do menu desktop (.nav-links) para nunca divergir */
+(function(){
+  if(window.__sgmNav)return; window.__sgmNav=1;
+  var sgmBtn=document.querySelector('[data-sgm-menu]'); if(!sgmBtn)return;
+  var sgmSrc=document.querySelector(sgmBtn.getAttribute('data-sgm-menu')); if(!sgmSrc)return;
+  var sgmCta=document.querySelector(sgmBtn.getAttribute('data-sgm-cta')||'#sgm-none');
+  var sgmLogo=document.querySelector(sgmBtn.getAttribute('data-sgm-logo')||'#sgm-none');
+  var sgmMq=window.matchMedia('(max-width:900px)');
+  var sgmRoot=document.documentElement, sgmLast=null, sgmN=0;
+  function sgmEl(tag,cls,html){var e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e}
+  function sgmTxt(el,sel){var n=el.querySelector(sel);return n?n.textContent.replace(/\s+/g,' ').trim():''}
+  function sgmLink(a){
+    var l=sgmEl('a','sgm-ln'); l.href=a.getAttribute('href');
+    ['target','rel','aria-current'].forEach(function(k){if(a.hasAttribute(k))l.setAttribute(k,a.getAttribute(k))});
+    var t=sgmTxt(a,'strong')||a.textContent.replace(/\s+/g,' ').trim(), s=sgmTxt(a,'small');
+    l.appendChild(sgmEl('strong','',null)).textContent=t;
+    if(s)l.appendChild(sgmEl('small','',null)).textContent=s;
+    if(a.getAttribute('target')==='_blank')l.appendChild(sgmEl('span','sgm-sr',null)).textContent=' (abre em nova aba)';
+    return l;
+  }
+  var ov=sgmEl('div','sgm-ov'); ov.id='sgmOv'; ov.setAttribute('data-sgm',''); ov.setAttribute('aria-hidden','true');
+  var scrim=sgmEl('div','sgm-scrim'); ov.appendChild(scrim);
+  var dr=sgmEl('div','sgm-dr'); dr.id='sgmDr'; dr.setAttribute('role','dialog'); dr.setAttribute('aria-modal','true'); dr.setAttribute('aria-label','Menu'); dr.tabIndex=-1; ov.appendChild(dr);
+  var hd=sgmEl('div','sgm-hd'); dr.appendChild(hd);
+  if(sgmLogo){var lg=sgmLogo.cloneNode(true); lg.removeAttribute('id'); hd.appendChild(lg)} else hd.appendChild(sgmEl('span','',''));
+  var xb=sgmEl('button','sgm-x','<svg class="ico" aria-hidden="true"><use href="#i-x"/></svg>'); xb.type='button'; xb.setAttribute('aria-label','Fechar menu'); hd.appendChild(xb);
+  var bd=sgmEl('nav','sgm-bd'); bd.setAttribute('aria-label','Menu principal'); dr.appendChild(bd);
+  Array.prototype.forEach.call(sgmSrc.children,function(it){
+    if(it.matches('.dd')){
+      var b=it.querySelector('button'), m=it.querySelector('.dd-menu'); if(!b||!m)return;
+      var id='sgmG'+(++sgmN), g=sgmEl('div','sgm-grp');
+      var ab=sgmEl('button','sgm-acc'); ab.type='button'; ab.setAttribute('aria-expanded','false'); ab.setAttribute('aria-controls',id);
+      ab.appendChild(sgmEl('span','',null)).textContent=b.textContent.replace(/\s+/g,' ').trim();
+      ab.insertAdjacentHTML('beforeend','<svg class="ico" aria-hidden="true"><use href="#i-chevron"/></svg>');
+      var pn=sgmEl('div','sgm-pn'); pn.id=id; var inner=sgmEl('div','',null); pn.appendChild(inner);
+      Array.prototype.forEach.call(m.children,function(c){
+        if(c.matches('a'))inner.appendChild(sgmLink(c)); else if(c.matches('.dd-sep'))inner.appendChild(sgmEl('div','sgm-sep',null));
+      });
+      g.appendChild(ab); g.appendChild(pn); bd.appendChild(g);
+      if(m.querySelector('[aria-current="page"]')){g.classList.add('open');ab.setAttribute('aria-expanded','true')}
+      ab.addEventListener('click',function(){var o=!g.classList.contains('open');g.classList.toggle('open',o);ab.setAttribute('aria-expanded',o?'true':'false')});
+    } else if(it.matches('a')){
+      var tl=sgmEl('a','sgm-top'); tl.href=it.getAttribute('href');
+      ['target','rel','aria-current'].forEach(function(k){if(it.hasAttribute(k))tl.setAttribute(k,it.getAttribute(k))});
+      tl.appendChild(sgmEl('span','',null)).textContent=it.textContent.replace(/\s+/g,' ').trim();
+      tl.insertAdjacentHTML('beforeend','<svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg>');
+      bd.appendChild(tl);
+    }
+  });
+  if(sgmCta){var ft=sgmEl('div','sgm-ft'), cb=sgmEl('a','btn btn--lg',null); cb.href=sgmCta.getAttribute('href'); cb.textContent=sgmCta.textContent.replace(/\s+/g,' ').trim(); ft.appendChild(cb); dr.appendChild(ft)}
+  document.body.appendChild(ov);
+  sgmBtn.setAttribute('aria-controls','sgmDr'); sgmBtn.setAttribute('aria-expanded','false');
+  function sgmIsOpen(){return ov.classList.contains('open')}
+  function sgmFocusables(){return Array.prototype.filter.call(dr.querySelectorAll('a[href],button:not([disabled])'),function(e){return e.getClientRects().length&&getComputedStyle(e).visibility!=='hidden'})}
+  function sgmOpen(){
+    if(sgmIsOpen())return; sgmLast=document.activeElement&&document.activeElement!==document.body?document.activeElement:sgmBtn;
+    var sw=window.innerWidth-sgmRoot.clientWidth; if(sw>0)document.body.style.paddingRight=sw+'px';
+    ov.classList.add('open'); ov.removeAttribute('aria-hidden'); sgmRoot.classList.add('sgm-lock');
+    sgmBtn.setAttribute('aria-expanded','true');
+    requestAnimationFrame(function(){try{xb.focus({preventScroll:true})}catch(e){xb.focus()}});
+  }
+  function sgmClose(){
+    if(!sgmIsOpen())return;
+    ov.classList.remove('open'); ov.setAttribute('aria-hidden','true'); sgmRoot.classList.remove('sgm-lock'); document.body.style.paddingRight='';
+    sgmBtn.setAttribute('aria-expanded','false');
+    var f=sgmLast&&sgmLast.isConnected?sgmLast:sgmBtn; if(f.closest&&f.closest('#sgmOv'))f=sgmBtn;
+    try{f.focus({preventScroll:true})}catch(e){f.focus()}
+  }
+  sgmBtn.addEventListener('click',function(e){e.preventDefault();if(sgmIsOpen())sgmClose();else sgmOpen()});
+  xb.addEventListener('click',sgmClose);
+  scrim.addEventListener('click',sgmClose);
+  scrim.addEventListener('touchmove',function(e){e.preventDefault()},{passive:false});
+  dr.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(a)sgmClose()});
+  document.addEventListener('keydown',function(e){
+    if(!sgmIsOpen())return;
+    if(e.key==='Escape'||e.key==='Esc'){e.preventDefault();sgmClose();return}
+    if(e.key==='Tab'){var f=sgmFocusables();if(!f.length){e.preventDefault();dr.focus();return}
+      var first=f[0],last=f[f.length-1],act=document.activeElement;
+      if(!dr.contains(act)){e.preventDefault();(e.shiftKey?last:first).focus();return}
+      if(e.shiftKey&&act===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&act===last){e.preventDefault();first.focus()}}
+  });
+  function sgmMqChange(){if(!sgmMq.matches)sgmClose()}
+  if(sgmMq.addEventListener)sgmMq.addEventListener('change',sgmMqChange);else if(sgmMq.addListener)sgmMq.addListener(sgmMqChange);
+})();
+/* sgm 2: no mobile, ao tocar um controle marcado com data-scroll-target, rola até a UI que ele transforma se ela não estiver visível.
+   data-scroll-target: "#id" (querySelector, resolvido depois da troca), "<.sel" (closest a partir do controle), "@controls" (aria-controls do controle); vários alvos com "|".
+   data-scroll-ctl: seletor dos controles dentro do elemento marcado (padrão: botões, links, inputs, roles). data-scroll-delay: ms antes de medir (padrão 80). */
+(function(){
+  if(window.__sgmReveal)return; window.__sgmReveal=1;
+  var srvMq=window.matchMedia('(max-width:900px)'), srvRm=window.matchMedia('(prefers-reduced-motion: reduce)');
+  var SRV_CTL='button,a[href],input,select,textarea,label,summary,[role="button"],[role="tab"],[role="switch"],[role="radio"],[role="checkbox"],[role="option"],[tabindex]';
+  var srvTimer=0, SRV_GAP=12;
+  function srvHeader(){
+    var h=document.querySelector('[data-sgm-header]')||document.getElementById('snav'); if(!h)return 0;
+    var p=getComputedStyle(h).position; if(p!=='sticky'&&p!=='fixed')return 0;
+    return Math.max(0,h.getBoundingClientRect().bottom);
+  }
+  function srvRect(list){
+    var r=null; list.forEach(function(t){if(!t||!t.getClientRects().length)return;var b=t.getBoundingClientRect();if(!b.width&&!b.height)return;
+      if(!r)r={top:b.top,bottom:b.bottom};else{r.top=Math.min(r.top,b.top);r.bottom=Math.max(r.bottom,b.bottom)}});
+    return r;
+  }
+  function srvReveal(list,ctl){
+    var r=srvRect(list); if(!r)return;
+    var top=srvHeader()+SRV_GAP, bot=window.innerHeight-SRV_GAP, avail=bot-top, h=r.bottom-r.top, dy=0;
+    if(h>avail){if(Math.min(r.bottom,bot)-Math.max(r.top,top)>=avail*.8)return}
+    else if(r.top>=top-2&&r.bottom<=bot+2)return;
+    /* se couber, mantém o controle tocado na tela junto com o alvo */
+    var c=ctl&&ctl.isConnected?srvRect([ctl]):null;
+    if(c){var u={top:Math.min(r.top,c.top),bottom:Math.max(r.bottom,c.bottom)};if(u.bottom-u.top<=avail)r=u}
+    h=r.bottom-r.top;
+    if(h>avail||r.top<top-2){dy=r.top-top}else if(r.bottom>bot+2){dy=r.bottom-bot}
+    if(Math.abs(dy)<4)return;
+    window.scrollTo({top:Math.max(0,(window.pageYOffset||0)+dy),behavior:srvRm.matches?'instant':'smooth'});
+  }
+  function srvResolve(sel,ctl){
+    var out=[];
+    sel.split('|').forEach(function(s){s=s.trim();if(!s)return;var t=null;
+      try{
+        if(s==='@controls'){var id=ctl.getAttribute('aria-controls');t=id?document.getElementById(id.split(' ')[0]):null}
+        else if(s.charAt(0)==='<'){t=ctl.closest(s.slice(1))}
+        else{t=document.querySelector(s)}
+      }catch(e){t=null}
+      if(t)out.push(t)});
+    return out;
+  }
+  function srvHandle(e){
+    if(!e.isTrusted||!srvMq.matches)return;
+    var t=e.target; if(t&&t.nodeType!==1)t=t.parentElement; if(!t||!t.closest)return;
+    var host=t.closest('[data-scroll-target]'); if(!host||host.closest('[data-sgm]'))return;
+    var ctl=t.closest(host.getAttribute('data-scroll-ctl')||SRV_CTL); if(!ctl||(ctl!==host&&!host.contains(ctl)))return;
+    var tag=ctl.tagName, typ=(ctl.getAttribute('type')||'').toLowerCase();
+    if(e.type==='click'&&(tag==='SELECT'||tag==='TEXTAREA'||(tag==='INPUT'&&!/^(checkbox|radio|button|submit|reset)$/.test(typ))))return;
+    if(e.type==='change'&&!(tag==='SELECT'||(tag==='INPUT'&&typ==='range')))return;
+    if(e.type==='keydown'){if(e.key!=='Enter'&&e.key!==' ')return; if(/^(BUTTON|A|INPUT|SELECT|TEXTAREA|SUMMARY|LABEL)$/.test(tag))return}
+    var sel=host.getAttribute('data-scroll-target'), list0=srvResolve(sel,ctl);
+    var d=parseInt(host.getAttribute('data-scroll-delay')||'80',10);
+    clearTimeout(srvTimer); srvTimer=setTimeout(function(){var l=srvResolve(sel,ctl);srvReveal(l.length?l:list0,ctl)},isNaN(d)?80:d);
+  }
+  /* fase de captura: funciona mesmo quando o handler da página chama stopPropagation */
+  document.addEventListener('click',srvHandle,true);
+  document.addEventListener('change',srvHandle,true);
+  document.addEventListener('keydown',srvHandle,true);
+  window.sgmReveal=function(el,ctl){srvReveal([].concat(el),ctl)};
+})();
+</script>
+<!-- sgm:end -->
 </body>
 </html>

@@ -1343,9 +1343,8 @@ main{--label-accent:var(--szv-t)}
           </div></div>
         <a href="index.html#sobre">Sobre</a>
       </nav>
-      <div class="flex" style="gap:8px"><a class="btn btn--sm cta-d" href="#contato">Fale com a gente</a><button class="btn btn--secondary btn--icon btn--sm menu-btn" type="button" id="menuBtn" aria-label="Abrir menu" aria-expanded="false"><svg class="ico"><use href="#i-menu"/></svg></button></div>
+      <div class="flex" style="gap:8px"><a class="btn btn--sm cta-d" href="#contato">Fale com a gente</a><button class="btn btn--secondary btn--icon btn--sm menu-btn" type="button" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-haspopup="dialog" data-sgm-menu="#snav .nav-links" data-sgm-cta="#snav .cta-d" data-sgm-logo="#snav .logo"><svg class="ico"><use href="#i-menu"/></svg></button></div>
     </div>
-    <nav class="mpanel" aria-label="Menu móvel"><a href="index.html#solucoes">Soluções</a><a href="index.html#produtos">Produtos</a><a href="index.html#cases">Cases</a><a href="index.html#sobre">Sobre</a><a href="#contato" style="color:var(--label-accent)">Fale com a gente</a></nav>
   </div>
 </header>
 <main id="top">
@@ -1365,7 +1364,7 @@ main{--label-accent:var(--szv-t)}
 <i class="sq sq--navy" style="width:92px;height:92px;left:12%;top:120px" data-depth="14"></i>
 <i class="sq sq--aqua" style="width:46px;height:46px;right:14%;bottom:70px" data-depth="26"></i>
 <div class="phone" id="phHero"><div class="scr-in"><span class="isl" aria-hidden="true"></span><div class="wa-top"><div class="wa-sb" aria-hidden="true"><span>9:41</span><span class="ic"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12"><path d="M8 11.5l2.3-2.8a3.4 3.4 0 00-4.6 0zM3.4 6.9a7 7 0 019.2 0l1.5-1.8a9.4 9.4 0 00-12.2 0zM.2 3.4a12 12 0 0115.6 0L14.3 1.6"/></svg><svg viewBox="0 0 27 12"><rect x=".5" y=".5" width="22" height="11" rx="3" fill="none" stroke="#fff" stroke-opacity=".5"/><rect x="2" y="2" width="17" height="8" rx="1.8"/><rect x="23.6" y="4" width="2" height="4" rx="1" fill-opacity=".5"/></svg></span></div><div class="wa-head"><svg class="bk" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg><span class="wa-av"><img src="assets/simbolo_segzap.png" alt="" width="265" height="265"></span><span class="wa-id"><b>SegZap</b><span class="wa-st"><span>online</span><span>digitando…</span></span></span><span class="tools" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="12" height="10" rx="2"/><path d="M15 11l6-3v8l-6-3"/></svg><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg></span></div></div><div class="wa-body" role="log" aria-live="off" aria-label="Simulação: corretor pergunta a franquia de uma apólice ao SegZap no WhatsApp"><div class="wa-list"></div></div><div class="wa-input" aria-hidden="true"><span class="wa-field"></span><span class="wa-send"><svg class="m" viewBox="0 0 24 24"><path d="M12 4a3 3 0 00-3 3v5a3 3 0 006 0V7a3 3 0 00-3-3zM6 11a6 6 0 0012 0M12 17v3"/></svg><svg class="s" viewBox="0 0 24 24"><path d="M4 12l16-8-6 16-3-7-7-1z"/></svg></span></div></div></div>
-<div class="sz-ask glass"><span class="label"><span class="dot" style="color:#7E4AFB"></span>Toque e pergunte</span><div class="sz-chips" id="heroChips">
+<div class="sz-ask glass"><span class="label"><span class="dot" style="color:#7E4AFB"></span>Toque e pergunte</span><div class="sz-chips" id="heroChips" data-scroll-target="@controls" data-scroll-ctl=".sz-chip">
 <button class="sz-chip" type="button" data-conv="venc" aria-controls="phHero">O que vence em 30 dias?</button>
 <button class="sz-chip" type="button" data-conv="pdf" aria-controls="phHero">Me manda a apólice da Juliana</button>
 <button class="sz-chip" type="button" data-conv="danos" aria-controls="phHero">Cobre danos elétricos?</button>
@@ -1392,7 +1391,7 @@ main{--label-accent:var(--szv-t)}
 <section class="sz-dark" id="conversas" data-surface="ink"><div class="gl" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="container g">
 <div>
 <div class="sec-head" data-rv><span class="label">[ 03 ] Na prática</span><h2 class="t-h1 h-balance">Pergunte como perguntaria a um colega.</h2><p class="t-lead">Linguagem natural, resposta curta, documento na mão. Quatro usos do dia a dia.</p></div>
-<div class="sz-qs" id="darkQs" role="group" aria-label="Usos do dia a dia">
+<div class="sz-qs" id="darkQs" role="group" aria-label="Usos do dia a dia" data-scroll-target="@controls" data-scroll-ctl=".sz-q">
 <button class="sz-q" type="button" data-conv="danos" aria-pressed="false" aria-controls="phDark"><span class="n">01</span><span><strong>Coberturas</strong><small>“O residencial do Rafael Costa cobre danos elétricos?”</small></span><svg class="ico"><use href="#i-arrow-right"/></svg></button>
 <button class="sz-q" type="button" data-conv="reserva" aria-pressed="false" aria-controls="phDark"><span class="n">02</span><span><strong>Condições gerais</strong><small>“Carro reserva em caso de roubo é quantos dias?”</small></span><svg class="ico"><use href="#i-arrow-right"/></svg></button>
 <button class="sz-q" type="button" data-conv="pdf" aria-pressed="false" aria-controls="phDark"><span class="n">03</span><span><strong>Documentos</strong><small>“Me manda a apólice da Juliana Prado em PDF.”</small></span><svg class="ico"><use href="#i-arrow-right"/></svg></button>
@@ -1404,9 +1403,9 @@ main{--label-accent:var(--szv-t)}
 
 <!-- S4. A IA AVISA ANTES -->
 <section class="sz-sec" id="avisos"><div class="container sz-two">
-<div class="vis" style="flex-direction:column;align-items:center"><div class="phone" id="phLock"><div class="scr-in"><span class="isl" aria-hidden="true"></span><div class="lock"><svg class="lk" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg><span class="dt">segunda-feira, 6 de outubro</span><span class="hr">8:02</span><div class="nts"><button class="nt" type="button" data-n="venc"><span class="ap"><img src="assets/simbolo_segzap.png" alt="" width="265" height="265"></span><span><span class="h">SegZap<span>agora</span></span><span class="p">Bom dia. Esta semana vencem 3 apólices da sua carteira. Carlos Menezes, auto, vence na quarta.</span></span></button><button class="nt" type="button" data-n="aniv"><span class="ap"><img src="assets/simbolo_segzap.png" alt="" width="265" height="265"></span><span><span class="h">SegZap<span>8:00</span></span><span class="p">Hoje é aniversário de Ana Ribeiro, segurada de residencial e vida com você.</span></span></button></div><span class="bar" aria-hidden="true"></span></div><div class="wa-top"><div class="wa-sb" aria-hidden="true"><span>9:41</span><span class="ic"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12"><path d="M8 11.5l2.3-2.8a3.4 3.4 0 00-4.6 0zM3.4 6.9a7 7 0 019.2 0l1.5-1.8a9.4 9.4 0 00-12.2 0zM.2 3.4a12 12 0 0115.6 0L14.3 1.6"/></svg><svg viewBox="0 0 27 12"><rect x=".5" y=".5" width="22" height="11" rx="3" fill="none" stroke="#fff" stroke-opacity=".5"/><rect x="2" y="2" width="17" height="8" rx="1.8"/><rect x="23.6" y="4" width="2" height="4" rx="1" fill-opacity=".5"/></svg></span></div><div class="wa-head"><svg class="bk" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg><span class="wa-av"><img src="assets/simbolo_segzap.png" alt="" width="265" height="265"></span><span class="wa-id"><b>SegZap</b><span class="wa-st"><span>online</span><span>digitando…</span></span></span><span class="tools" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="12" height="10" rx="2"/><path d="M15 11l6-3v8l-6-3"/></svg><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg></span></div></div><div class="wa-body" role="log" aria-live="off" aria-label="Simulação: tela de bloqueio com avisos do SegZap"><div class="wa-list"></div></div><div class="wa-input" aria-hidden="true"><span class="wa-field"></span><span class="wa-send"><svg class="m" viewBox="0 0 24 24"><path d="M12 4a3 3 0 00-3 3v5a3 3 0 006 0V7a3 3 0 00-3-3zM6 11a6 6 0 0012 0M12 17v3"/></svg><svg class="s" viewBox="0 0 24 24"><path d="M4 12l16-8-6 16-3-7-7-1z"/></svg></span></div></div></div>
+<div class="vis" style="flex-direction:column;align-items:center"><div class="phone" id="phLock" data-scroll-target="#phLock" data-scroll-ctl="button.nt" data-scroll-delay="120"><div class="scr-in"><span class="isl" aria-hidden="true"></span><div class="lock"><svg class="lk" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg><span class="dt">segunda-feira, 6 de outubro</span><span class="hr">8:02</span><div class="nts"><button class="nt" type="button" data-n="venc"><span class="ap"><img src="assets/simbolo_segzap.png" alt="" width="265" height="265"></span><span><span class="h">SegZap<span>agora</span></span><span class="p">Bom dia. Esta semana vencem 3 apólices da sua carteira. Carlos Menezes, auto, vence na quarta.</span></span></button><button class="nt" type="button" data-n="aniv"><span class="ap"><img src="assets/simbolo_segzap.png" alt="" width="265" height="265"></span><span><span class="h">SegZap<span>8:00</span></span><span class="p">Hoje é aniversário de Ana Ribeiro, segurada de residencial e vida com você.</span></span></button></div><span class="bar" aria-hidden="true"></span></div><div class="wa-top"><div class="wa-sb" aria-hidden="true"><span>9:41</span><span class="ic"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12"><path d="M8 11.5l2.3-2.8a3.4 3.4 0 00-4.6 0zM3.4 6.9a7 7 0 019.2 0l1.5-1.8a9.4 9.4 0 00-12.2 0zM.2 3.4a12 12 0 0115.6 0L14.3 1.6"/></svg><svg viewBox="0 0 27 12"><rect x=".5" y=".5" width="22" height="11" rx="3" fill="none" stroke="#fff" stroke-opacity=".5"/><rect x="2" y="2" width="17" height="8" rx="1.8"/><rect x="23.6" y="4" width="2" height="4" rx="1" fill-opacity=".5"/></svg></span></div><div class="wa-head"><svg class="bk" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg><span class="wa-av"><img src="assets/simbolo_segzap.png" alt="" width="265" height="265"></span><span class="wa-id"><b>SegZap</b><span class="wa-st"><span>online</span><span>digitando…</span></span></span><span class="tools" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="12" height="10" rx="2"/><path d="M15 11l6-3v8l-6-3"/></svg><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg></span></div></div><div class="wa-body" role="log" aria-live="off" aria-label="Simulação: tela de bloqueio com avisos do SegZap"><div class="wa-list"></div></div><div class="wa-input" aria-hidden="true"><span class="wa-field"></span><span class="wa-send"><svg class="m" viewBox="0 0 24 24"><path d="M12 4a3 3 0 00-3 3v5a3 3 0 006 0V7a3 3 0 00-3-3zM6 11a6 6 0 0012 0M12 17v3"/></svg><svg class="s" viewBox="0 0 24 24"><path d="M4 12l16-8-6 16-3-7-7-1z"/></svg></span></div></div></div>
 <p class="t-small" style="margin-top:16px;text-align:center" id="lockHint">Toque numa notificação para abrir a conversa.</p>
-<button class="link-arrow sz-back" type="button" id="lockBack" hidden>Voltar à tela de bloqueio</button></div>
+<button class="link-arrow sz-back" type="button" id="lockBack" hidden data-scroll-target="#phLock" data-scroll-delay="120">Voltar à tela de bloqueio</button></div>
 <div class="txt">
 <div class="sec-head" data-rv><span class="label">[ 04 ] Proativo</span><h2 class="t-h1 h-balance">O SegZap também puxa a conversa.</h2></div>
 <p class="t-lead" data-rv>Vencimentos e datas importantes chegam no seu WhatsApp antes de virarem problema.</p>
@@ -1426,7 +1425,7 @@ main{--label-accent:var(--szv-t)}
 <div class="pn-shell"><aside class="pn-side" aria-hidden="true"><div class="pn-brand"><i><img src="assets/simbolo_segzap.png" alt="" width="265" height="265"></i>SegZap</div>
 <a><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5z"/></svg>Conversas</a><a><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Dashboard</a><a><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.5 3-6 6-6s6 2.5 6 6"/></svg>Usuários</a><a><svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/></svg>Apólices</a><a><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>Clientes</a><a class="on"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Fila de processamento</a><a><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>Configurações</a></aside>
 <div class="pn-main">
-<div class="pn-top"><h5>Fila de processamento<small>PDFs de apólice lidos pela IA</small></h5><span style="display:flex;gap:6px"><button class="pn-btn gh" type="button" id="fqReset">Reiniciar</button><button class="pn-btn" type="button" id="fqAdd"><svg viewBox="0 0 24 24"><path d="M12 19V6M6 11l6-6 6 6"/></svg>Enviar PDF</button></span></div>
+<div class="pn-top"><h5>Fila de processamento<small>PDFs de apólice lidos pela IA</small></h5><span style="display:flex;gap:6px"><button class="pn-btn gh" type="button" id="fqReset" data-scroll-target="#fq" data-scroll-delay="300">Reiniciar</button><button class="pn-btn" type="button" id="fqAdd" data-scroll-target="#fq" data-scroll-delay="300"><svg viewBox="0 0 24 24"><path d="M12 19V6M6 11l6-6 6 6"/></svg>Enviar PDF</button></span></div>
 <div class="pn-flow"><div><small>Na fila</small><b id="fc0">0</b></div><div><small>Extraindo texto</small><b id="fc1">0</b></div><div><small>Processando IA</small><b id="fc2">0</b></div><div><small>Concluído</small><b id="fc3">0</b></div></div>
 <div class="pn-grid">
 <div class="fq" id="fq"></div>
@@ -1458,7 +1457,7 @@ main{--label-accent:var(--szv-t)}
 <div data-rv><div class="win pn"><div class="chrome"><span></span><span></span><span></span><div class="url">app.segzap.exemplo/dashboard</div></div>
 <div class="pn-main" style="background:#FAFAF8">
 <div class="pn-top"><h5>Corretora Exemplo<small>Perfil: administrador da corretora · dados fictícios</small></h5><span class="pn-btn gh">Últimos 30 dias</span></div>
-<div class="pn-tabs" role="tablist" aria-label="Telas do painel"><button type="button" role="tab" aria-selected="true" aria-controls="pnDash" id="tbDash">Dashboard</button><button type="button" role="tab" aria-selected="false" aria-controls="pnUsers" id="tbUsers" tabindex="-1">Usuários</button><button type="button" role="tab" aria-selected="false" aria-controls="pnLog" id="tbLog" tabindex="-1">Conversas</button></div>
+<div class="pn-tabs" role="tablist" aria-label="Telas do painel" data-scroll-target="@controls" data-scroll-ctl="[role=&quot;tab&quot;]"><button type="button" role="tab" aria-selected="true" aria-controls="pnDash" id="tbDash">Dashboard</button><button type="button" role="tab" aria-selected="false" aria-controls="pnUsers" id="tbUsers" tabindex="-1">Usuários</button><button type="button" role="tab" aria-selected="false" aria-controls="pnLog" id="tbLog" tabindex="-1">Conversas</button></div>
 <div class="pn-pane" id="pnDash" role="tabpanel" aria-labelledby="tbDash">
 <div class="pn-kpi"><div><small>Clientes</small><b>1.284</b></div><div><small>Apólices</small><b>2.917</b></div><div><small>Ativas</small><b>2.406</b></div><div><small>Prêmios</small><b>R$ 4,8 mi</b><em>+6,2% vs. mês anterior</em></div></div>
 <div class="pn-chart"><header><b>Minha atividade</b><span>perguntas ao assistente por dia</span></header><div class="bars" id="bars"><i style="--h:38%;--k:0"></i><i style="--h:52%;--k:1"></i><i style="--h:44%;--k:2"></i><i style="--h:61%;--k:3"></i><i style="--h:57%;--k:4"></i><i style="--h:70%;--k:5"></i><i style="--h:48%;--k:6"></i><i style="--h:66%;--k:7"></i><i style="--h:74%;--k:8"></i><i style="--h:59%;--k:9"></i><i style="--h:81%;--k:10"></i><i style="--h:68%;--k:11"></i><i style="--h:77%;--k:12"></i><i style="--h:92%;--k:13"></i></div></div>
@@ -1487,13 +1486,13 @@ main{--label-accent:var(--szv-t)}
 <figure class="sz-quote" data-rv style="margin:0"><p>[Frase curta do corretor 2, aguardando autorização]</p><footer><span class="avatar">NN</span><span>Nome · cidade ou corretora<br><span class="draft-tag">Placeholder</span></span></footer></figure>
 <figure class="sz-quote" data-rv style="margin:0"><p>[Frase curta do corretor 3, aguardando autorização]</p><footer><span class="avatar">NN</span><span>Nome · cidade ou corretora<br><span class="draft-tag">Placeholder</span></span></footer></figure>
 </div>
-</div></section><!-- S8. PLANOS (preço só nesta página de corretor; nas páginas de seguradora/white label não há preço) --><section class="sz-sec pz" id="planos" data-bill="a" aria-labelledby="pzTitle"><div class="container"><div class="pz-top"><div class="sec-head" data-rv><span class="label">[ 08 ] Planos</span><h2 class="t-h1 h-balance h-fade" id="pzTitle">Escolha pelo tamanho da carteira. <span class="h-fade-2">Teste 7 dias grátis.</span></h2></div><p class="t-lead" data-rv>O que muda de um plano para outro é o tamanho da operação: apólices, números de WhatsApp, usuários e mensagens por mês.</p></div><div class="pz-ctl" data-rv><div class="pz-q"><label class="label" for="pzRange">Quantas apólices você tem?</label><output class="pz-out" id="pzOut" for="pzRange">500<small>apólices</small></output><input class="range pz-range" id="pzRange" type="range" min="0" max="10" step="1" value="4" aria-valuetext="500 apólices. Plano indicado: Pro"><div class="pz-ends" aria-hidden="true"><span>30</span><span>10.000 ou mais</span></div></div><div class="pz-bill"><span class="label" id="pzBillL">Forma de cobrança</span><div class="pz-seg" role="group" aria-labelledby="pzBillL"><i class="pz-knob" aria-hidden="true"></i><button type="button" data-bill="a" aria-pressed="true">Anual</button><button type="button" data-bill="m" aria-pressed="false">Mensal</button></div><span class="pz-save">No anual, <b>até 20% menos</b></span><p>No anual, a cobrança é feita uma vez por ano, à vista.</p></div></div><div class="pz-tw" data-rv><div class="pz-t" id="pzT" data-pick="1"><i class="pz-col" aria-hidden="true"><span class="pz-tag"><span class="l" id="pzTagL">Recomendado</span><span class="s">Indicado</span></span></i><table><caption class="sr">Planos do SegZap para corretores: preço por mês e limites de cada plano</caption><colgroup><col class="c0"><col><col><col><col></colgroup><thead><tr><td></td><th scope="col"><span class="pz-nm">Start</span><span class="pz-for">Corretores iniciantes</span></th><th scope="col"><span class="pz-nm">Pro</span><span class="pz-for">Corretores com base ativa</span></th><th scope="col"><span class="pz-nm">Max</span><span class="pz-for">Equipes que precisam de escala</span></th><th scope="col"><span class="pz-nm">Enterprise</span><span class="pz-for">Corretoras estruturadas</span></th></tr></thead><tbody><tr><th scope="row">Preço por mês<small id="pzBillNote">plano anual</small></th><td><span class="pz-p"><small>R$</small><b class="pz-n" data-a="49" data-m="59">49</b></span><span class="pz-off"><span aria-hidden="true">−17%</span><span class="sr">17% a menos que no mensal</span></span><span class="pz-sub" data-a="R$ 588 por ano" data-m="No anual, R$ 49">R$ 588 por ano</span></td><td><span class="pz-p"><small>R$</small><b class="pz-n" data-a="119" data-m="149">119</b></span><span class="pz-off"><span aria-hidden="true">−20%</span><span class="sr">20% a menos que no mensal</span></span><span class="pz-sub" data-a="R$ 1.428 por ano" data-m="No anual, R$ 119">R$ 1.428 por ano</span></td><td><span class="pz-p"><small>R$</small><b class="pz-n" data-a="299" data-m="339">299</b></span><span class="pz-off"><span aria-hidden="true">−12%</span><span class="sr">12% a menos que no mensal</span></span><span class="pz-sub" data-a="R$ 3.588 por ano" data-m="No anual, R$ 299">R$ 3.588 por ano</span></td><td><span class="pz-p pz-p--q">Sob consulta</span><a class="pz-talk" href="#contato">Falar com a gente</a></td></tr><tr><th scope="row">Apólices</th><td>Até 100</td><td>Até 1.000</td><td>Até 5.000</td><td>Ilimitadas</td></tr><tr><th scope="row">Números de WhatsApp</th><td>1</td><td>3</td><td>5</td><td>Ilimitados</td></tr><tr><th scope="row">Usuários</th><td>2</td><td>5</td><td>10</td><td>Ilimitados</td></tr><tr><th scope="row">Mensagens por mês</th><td>300</td><td>5.000</td><td>15.000</td><td>Ilimitadas</td></tr></tbody></table></div></div><div class="pz-cta" data-rv><p class="pz-sum" id="pzSum">Para <b>500 apólices</b>, o indicado é o <b>Pro</b>. No anual, R$&nbsp;119 por mês (R$&nbsp;1.428 por ano), R$&nbsp;360 a menos que no mensal.</p><div class="pz-go"><a class="btn btn--lg btn--liquid" href="https://app.segzap.com.br" target="_blank" rel="noopener">Teste 7 dias grátis <svg class="ico ico-move"><use href="#i-arrow-ur"/></svg></a></div></div><p class="pz-note">Valores por mês. No plano anual, a cobrança é anual, à vista.</p><p class="sr" id="pzLive" aria-live="polite"></p></div></section>
+</div></section><!-- S8. PLANOS (preço só nesta página de corretor; nas páginas de seguradora/white label não há preço) --><section class="sz-sec pz" id="planos" data-bill="a" aria-labelledby="pzTitle"><div class="container"><div class="pz-top"><div class="sec-head" data-rv><span class="label">[ 08 ] Planos</span><h2 class="t-h1 h-balance h-fade" id="pzTitle">Escolha pelo tamanho da carteira. <span class="h-fade-2">Teste 7 dias grátis.</span></h2></div><p class="t-lead" data-rv>O que muda de um plano para outro é o tamanho da operação: apólices, números de WhatsApp, usuários e mensagens por mês.</p></div><div class="pz-ctl" data-rv data-scroll-target="#pzT" data-scroll-ctl="input,button" data-scroll-delay="120"><div class="pz-q"><label class="label" for="pzRange">Quantas apólices você tem?</label><output class="pz-out" id="pzOut" for="pzRange">500<small>apólices</small></output><input class="range pz-range" id="pzRange" type="range" min="0" max="10" step="1" value="4" aria-valuetext="500 apólices. Plano indicado: Pro"><div class="pz-ends" aria-hidden="true"><span>30</span><span>10.000 ou mais</span></div></div><div class="pz-bill"><span class="label" id="pzBillL">Forma de cobrança</span><div class="pz-seg" role="group" aria-labelledby="pzBillL"><i class="pz-knob" aria-hidden="true"></i><button type="button" data-bill="a" aria-pressed="true">Anual</button><button type="button" data-bill="m" aria-pressed="false">Mensal</button></div><span class="pz-save">No anual, <b>até 20% menos</b></span><p>No anual, a cobrança é feita uma vez por ano, à vista.</p></div></div><div class="pz-tw" data-rv><div class="pz-t" id="pzT" data-pick="1"><i class="pz-col" aria-hidden="true"><span class="pz-tag"><span class="l" id="pzTagL">Recomendado</span><span class="s">Indicado</span></span></i><table><caption class="sr">Planos do SegZap para corretores: preço por mês e limites de cada plano</caption><colgroup><col class="c0"><col><col><col><col></colgroup><thead><tr><td></td><th scope="col"><span class="pz-nm">Start</span><span class="pz-for">Corretores iniciantes</span></th><th scope="col"><span class="pz-nm">Pro</span><span class="pz-for">Corretores com base ativa</span></th><th scope="col"><span class="pz-nm">Max</span><span class="pz-for">Equipes que precisam de escala</span></th><th scope="col"><span class="pz-nm">Enterprise</span><span class="pz-for">Corretoras estruturadas</span></th></tr></thead><tbody><tr><th scope="row">Preço por mês<small id="pzBillNote">plano anual</small></th><td><span class="pz-p"><small>R$</small><b class="pz-n" data-a="49" data-m="59">49</b></span><span class="pz-off"><span aria-hidden="true">−17%</span><span class="sr">17% a menos que no mensal</span></span><span class="pz-sub" data-a="R$ 588 por ano" data-m="No anual, R$ 49">R$ 588 por ano</span></td><td><span class="pz-p"><small>R$</small><b class="pz-n" data-a="119" data-m="149">119</b></span><span class="pz-off"><span aria-hidden="true">−20%</span><span class="sr">20% a menos que no mensal</span></span><span class="pz-sub" data-a="R$ 1.428 por ano" data-m="No anual, R$ 119">R$ 1.428 por ano</span></td><td><span class="pz-p"><small>R$</small><b class="pz-n" data-a="299" data-m="339">299</b></span><span class="pz-off"><span aria-hidden="true">−12%</span><span class="sr">12% a menos que no mensal</span></span><span class="pz-sub" data-a="R$ 3.588 por ano" data-m="No anual, R$ 299">R$ 3.588 por ano</span></td><td><span class="pz-p pz-p--q">Sob consulta</span><a class="pz-talk" href="#contato">Falar com a gente</a></td></tr><tr><th scope="row">Apólices</th><td>Até 100</td><td>Até 1.000</td><td>Até 5.000</td><td>Ilimitadas</td></tr><tr><th scope="row">Números de WhatsApp</th><td>1</td><td>3</td><td>5</td><td>Ilimitados</td></tr><tr><th scope="row">Usuários</th><td>2</td><td>5</td><td>10</td><td>Ilimitados</td></tr><tr><th scope="row">Mensagens por mês</th><td>300</td><td>5.000</td><td>15.000</td><td>Ilimitadas</td></tr></tbody></table></div></div><div class="pz-cta" data-rv><p class="pz-sum" id="pzSum">Para <b>500 apólices</b>, o indicado é o <b>Pro</b>. No anual, R$&nbsp;119 por mês (R$&nbsp;1.428 por ano), R$&nbsp;360 a menos que no mensal.</p><div class="pz-go"><a class="btn btn--lg btn--liquid" href="https://app.segzap.com.br" target="_blank" rel="noopener">Teste 7 dias grátis <svg class="ico ico-move"><use href="#i-arrow-ur"/></svg></a></div></div><p class="pz-note">Valores por mês. No plano anual, a cobrança é anual, à vista.</p><p class="sr" id="pzLive" aria-live="polite"></p></div></section>
 
 
 <!-- S9. FAQ -->
 <section class="sz-sec sz-faq" id="faq"><div class="container g">
 <div class="sec-head" data-rv><span class="label">[ 09 ] FAQ</span><h2 class="t-h1 h-balance">Perguntas frequentes</h2></div>
-<div class="acc" data-rv><div class="acc-item open"><button class="acc-h" type="button" aria-expanded="true" aria-controls="faq1" id="faqh1"><span class="n">01</span><span>Preciso instalar algum aplicativo?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b" id="faq1" role="region" aria-labelledby="faqh1"><div><p>Não. O SegZap funciona no WhatsApp. Basta salvar o número do assistente e começar a perguntar.</p></div></div></div><div class="acc-item"><button class="acc-h" type="button" aria-expanded="false" aria-controls="faq2" id="faqh2"><span class="n">02</span><span>O SegZap substitui o meu atendimento?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b" id="faq2" role="region" aria-labelledby="faqh2"><div><p>Não. Ele é um apoio técnico: busca a informação, envia o documento e lembra os prazos. A relação com o cliente continua com você.</p></div></div></div><div class="acc-item"><button class="acc-h" type="button" aria-expanded="false" aria-controls="faq3" id="faqh3"><span class="n">03</span><span>De onde vêm as informações das respostas?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b" id="faq3" role="region" aria-labelledby="faqh3"><div><p>Das apólices que você carrega em PDF e que a IA lê, e da base de condições gerais mantida pela Segbox.</p></div></div></div><div class="acc-item"><button class="acc-h" type="button" aria-expanded="false" aria-controls="faq4" id="faqh4"><span class="n">04</span><span>Um corretor da equipe consegue ver a carteira de outro?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b" id="faq4" role="region" aria-labelledby="faqh4"><div><p>Não. Cada corretor acessa apenas os contratos sob sua responsabilidade. O perfil de administrador da corretora vê o conjunto.</p></div></div></div><div class="acc-item"><button class="acc-h" type="button" aria-expanded="false" aria-controls="faq5" id="faqh5"><span class="n">05</span><span>Como começo a usar?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b" id="faq5" role="region" aria-labelledby="faqh5"><div><p>Comece pelo teste de 7 dias grátis: crie a sua conta, suba os PDFs das suas apólices e salve o número do assistente no WhatsApp. Se preferir, fale com a gente e mostramos o SegZap funcionando.</p></div></div></div><div class="acc-item"><button class="acc-h" type="button" aria-expanded="false" aria-controls="faq6" id="faqh6"><span class="n">06</span><span>Quanto custa e como funciona a cobrança?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b" id="faq6" role="region" aria-labelledby="faqh6"><div><p>Os planos vão de R$ 49 a R$ 339 por mês, conforme o número de apólices, de WhatsApps, de usuários e de mensagens. No anual, a cobrança é feita uma vez por ano, à vista, e o valor por mês fica até 20% menor. No mensal, você paga mês a mês. Para operações maiores, o Enterprise tem valor sob consulta. <a href="#planos" style="border-bottom:1px solid var(--line-strong);text-decoration:none">Ver os planos</a></p></div></div></div></div>
+<div class="acc" data-rv data-scroll-target="&lt;.acc-item" data-scroll-ctl=".acc-h" data-scroll-delay="300"><div class="acc-item open"><button class="acc-h" type="button" aria-expanded="true" aria-controls="faq1" id="faqh1"><span class="n">01</span><span>Preciso instalar algum aplicativo?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b" id="faq1" role="region" aria-labelledby="faqh1"><div><p>Não. O SegZap funciona no WhatsApp. Basta salvar o número do assistente e começar a perguntar.</p></div></div></div><div class="acc-item"><button class="acc-h" type="button" aria-expanded="false" aria-controls="faq2" id="faqh2"><span class="n">02</span><span>O SegZap substitui o meu atendimento?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b" id="faq2" role="region" aria-labelledby="faqh2"><div><p>Não. Ele é um apoio técnico: busca a informação, envia o documento e lembra os prazos. A relação com o cliente continua com você.</p></div></div></div><div class="acc-item"><button class="acc-h" type="button" aria-expanded="false" aria-controls="faq3" id="faqh3"><span class="n">03</span><span>De onde vêm as informações das respostas?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b" id="faq3" role="region" aria-labelledby="faqh3"><div><p>Das apólices que você carrega em PDF e que a IA lê, e da base de condições gerais mantida pela Segbox.</p></div></div></div><div class="acc-item"><button class="acc-h" type="button" aria-expanded="false" aria-controls="faq4" id="faqh4"><span class="n">04</span><span>Um corretor da equipe consegue ver a carteira de outro?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b" id="faq4" role="region" aria-labelledby="faqh4"><div><p>Não. Cada corretor acessa apenas os contratos sob sua responsabilidade. O perfil de administrador da corretora vê o conjunto.</p></div></div></div><div class="acc-item"><button class="acc-h" type="button" aria-expanded="false" aria-controls="faq5" id="faqh5"><span class="n">05</span><span>Como começo a usar?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b" id="faq5" role="region" aria-labelledby="faqh5"><div><p>Comece pelo teste de 7 dias grátis: crie a sua conta, suba os PDFs das suas apólices e salve o número do assistente no WhatsApp. Se preferir, fale com a gente e mostramos o SegZap funcionando.</p></div></div></div><div class="acc-item"><button class="acc-h" type="button" aria-expanded="false" aria-controls="faq6" id="faqh6"><span class="n">06</span><span>Quanto custa e como funciona a cobrança?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b" id="faq6" role="region" aria-labelledby="faqh6"><div><p>Os planos vão de R$ 49 a R$ 339 por mês, conforme o número de apólices, de WhatsApps, de usuários e de mensagens. No anual, a cobrança é feita uma vez por ano, à vista, e o valor por mês fica até 20% menor. No mensal, você paga mês a mês. Para operações maiores, o Enterprise tem valor sob consulta. <a href="#planos" style="border-bottom:1px solid var(--line-strong);text-decoration:none">Ver os planos</a></p></div></div></div></div>
 </div></section>
 
   <section class="sect" id="contato" style="padding-top:clamp(40px,6vw,72px)">
@@ -1534,8 +1533,7 @@ main{--label-accent:var(--szv-t)}
   function closeDD(ex){dds.forEach(function(d){if(d!==ex){d.classList.remove('open');$('button',d).setAttribute('aria-expanded','false')}})}
   dds.forEach(function(d){var b=$('button',d);b.addEventListener('click',function(e){e.stopPropagation();var o=!d.classList.contains('open');closeDD(d);d.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false')})});
   document.addEventListener('click',function(){closeDD()}); document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDD()});
-  var sn=$('#snav'), mb=$('#menuBtn'); mb.addEventListener('click',function(){var o=!sn.classList.contains('open');sn.classList.toggle('open',o);mb.setAttribute('aria-expanded',o?'true':'false')});
-  var lf=$('#leadForm'),fm=$('#fMsg'),fb=$('#fBtn'),f4=$('#f4'),f4e=$('#f4e');
+  /* menu móvel: drawer no bloco sgm */var lf=$('#leadForm'),fm=$('#fMsg'),fb=$('#fBtn'),f4=$('#f4'),f4e=$('#f4e');
   lf.addEventListener('submit',function(e){e.preventDefault();var ok=/^\S+@\S+\.\S+$/.test(f4.value.trim());f4.classList.toggle('is-error',!ok);f4e.hidden=ok;
     if(!ok){fm.textContent='Corrija o campo destacado.';f4.focus();return}
     fb.classList.add('is-loading');fb.innerHTML='<span class="spin"></span><span>Enviando</span>';fm.textContent='';
@@ -1873,4 +1871,187 @@ main{--label-accent:var(--szv-t)}
 })();
 </script>
 
+<!-- sgm:begin · menu móvel gerado a partir do menu desktop + revelar a UI-alvo no mobile. Bloco idêntico em todas as páginas. -->
+<style id="sgm-css">
+.sgm-ov{position:fixed;inset:0;z-index:250;visibility:hidden;pointer-events:none;transition:visibility 0s var(--t-slow,420ms)}
+.sgm-ov.open{visibility:visible;pointer-events:auto;transition-delay:0s}
+.sgm-scrim{position:absolute;inset:0;background:rgba(20,20,24,.38);opacity:0;transition:opacity var(--t-base,240ms) var(--ease-out,ease-out)}
+.sgm-ov.open .sgm-scrim{opacity:1}
+.sgm-dr{position:absolute;top:0;right:0;bottom:0;width:min(400px,100%);display:flex;flex-direction:column;background:#FBFAF8;color:#0B0B0D;border-left:1px solid rgba(0,0,0,.12);box-shadow:0 0 60px -20px rgba(0,0,0,.35);transform:translateX(100%);transition:transform var(--t-slow,420ms) var(--ease-drawer,cubic-bezier(.32,.72,0,1));overscroll-behavior:contain;outline:0}
+.sgm-ov.open .sgm-dr{transform:none}
+.sgm-hd{flex:none;display:flex;align-items:center;justify-content:space-between;gap:12px;height:68px;padding:0 12px 0 16px;border-bottom:1px solid rgba(0,0,0,.12)}
+.sgm-hd .logo-svg{height:26px}
+.sgm-x{display:inline-grid;place-items:center;width:44px;height:44px;padding:0;border:1px solid rgba(0,0,0,.14);border-radius:var(--r-2,6px);background:#fff;color:#0B0B0D;cursor:pointer}
+.sgm-x .ico{width:18px;height:18px}
+.sgm-bd{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:4px 16px 16px}
+.sgm-acc,.sgm-top{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-height:56px;padding:0 4px;margin:0;border:0;border-bottom:1px solid rgba(0,0,0,.12);background:none;color:#0B0B0D;font-family:var(--font-display,inherit);font-size:18px;font-weight:600;letter-spacing:-.015em;line-height:1.2;text-align:left;text-decoration:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.sgm-acc .ico{width:16px;height:16px;flex:none;color:#565660;transition:transform var(--t-base,240ms) var(--ease-out,ease-out)}
+.sgm-grp.open>.sgm-acc .ico{transform:rotate(180deg)}
+.sgm-top .ico{width:16px;height:16px;flex:none;color:#565660}
+.sgm-pn{display:grid;grid-template-rows:0fr;visibility:hidden;transition:grid-template-rows var(--t-base,240ms) var(--ease-out,ease-out),visibility 0s var(--t-base,240ms)}
+.sgm-grp.open>.sgm-pn{grid-template-rows:1fr;visibility:visible;transition-delay:0s}
+.sgm-pn>div{min-height:0;overflow:hidden}
+.sgm-grp.open>.sgm-pn>div{padding:6px 0 10px;border-bottom:1px solid rgba(0,0,0,.12)}
+.sgm-ln{display:flex;flex-direction:column;justify-content:center;gap:2px;min-height:48px;padding:8px 12px;border-radius:var(--r-2,6px);color:#0B0B0D;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.sgm-ln strong{font-weight:500;font-size:15.5px;line-height:1.3}
+.sgm-ln small{color:#565660;font-size:13px;line-height:1.35}
+.sgm-ln:active,.sgm-ln:hover{background:#E8E6E3}
+.sgm-ln[aria-current="page"]{background:#E8E6E3;box-shadow:inset 3px 0 0 #FF5047}
+.sgm-sep{height:1px;margin:6px 12px;background:rgba(0,0,0,.1)}
+.sgm-ft{flex:none;padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px));border-top:1px solid rgba(0,0,0,.12)}
+.sgm-ft .btn{display:flex;width:100%;min-height:48px;justify-content:center}
+.sgm-sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.sgm-ov :focus-visible{outline:2px solid #0B0B0D;outline-offset:2px}
+html.sgm-lock,html.sgm-lock body{overflow:hidden}
+@media (max-width:900px){[data-sgm-menu]{position:relative}[data-sgm-menu]::after{content:"";position:absolute;inset:-5px}}
+@media (min-width:901px){.sgm-ov{display:none}}
+</style>
+<script id="sgm-js">
+/* sgm 1: drawer do menu móvel, montado a partir do menu desktop (.nav-links) para nunca divergir */
+(function(){
+  if(window.__sgmNav)return; window.__sgmNav=1;
+  var sgmBtn=document.querySelector('[data-sgm-menu]'); if(!sgmBtn)return;
+  var sgmSrc=document.querySelector(sgmBtn.getAttribute('data-sgm-menu')); if(!sgmSrc)return;
+  var sgmCta=document.querySelector(sgmBtn.getAttribute('data-sgm-cta')||'#sgm-none');
+  var sgmLogo=document.querySelector(sgmBtn.getAttribute('data-sgm-logo')||'#sgm-none');
+  var sgmMq=window.matchMedia('(max-width:900px)');
+  var sgmRoot=document.documentElement, sgmLast=null, sgmN=0;
+  function sgmEl(tag,cls,html){var e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e}
+  function sgmTxt(el,sel){var n=el.querySelector(sel);return n?n.textContent.replace(/\s+/g,' ').trim():''}
+  function sgmLink(a){
+    var l=sgmEl('a','sgm-ln'); l.href=a.getAttribute('href');
+    ['target','rel','aria-current'].forEach(function(k){if(a.hasAttribute(k))l.setAttribute(k,a.getAttribute(k))});
+    var t=sgmTxt(a,'strong')||a.textContent.replace(/\s+/g,' ').trim(), s=sgmTxt(a,'small');
+    l.appendChild(sgmEl('strong','',null)).textContent=t;
+    if(s)l.appendChild(sgmEl('small','',null)).textContent=s;
+    if(a.getAttribute('target')==='_blank')l.appendChild(sgmEl('span','sgm-sr',null)).textContent=' (abre em nova aba)';
+    return l;
+  }
+  var ov=sgmEl('div','sgm-ov'); ov.id='sgmOv'; ov.setAttribute('data-sgm',''); ov.setAttribute('aria-hidden','true');
+  var scrim=sgmEl('div','sgm-scrim'); ov.appendChild(scrim);
+  var dr=sgmEl('div','sgm-dr'); dr.id='sgmDr'; dr.setAttribute('role','dialog'); dr.setAttribute('aria-modal','true'); dr.setAttribute('aria-label','Menu'); dr.tabIndex=-1; ov.appendChild(dr);
+  var hd=sgmEl('div','sgm-hd'); dr.appendChild(hd);
+  if(sgmLogo){var lg=sgmLogo.cloneNode(true); lg.removeAttribute('id'); hd.appendChild(lg)} else hd.appendChild(sgmEl('span','',''));
+  var xb=sgmEl('button','sgm-x','<svg class="ico" aria-hidden="true"><use href="#i-x"/></svg>'); xb.type='button'; xb.setAttribute('aria-label','Fechar menu'); hd.appendChild(xb);
+  var bd=sgmEl('nav','sgm-bd'); bd.setAttribute('aria-label','Menu principal'); dr.appendChild(bd);
+  Array.prototype.forEach.call(sgmSrc.children,function(it){
+    if(it.matches('.dd')){
+      var b=it.querySelector('button'), m=it.querySelector('.dd-menu'); if(!b||!m)return;
+      var id='sgmG'+(++sgmN), g=sgmEl('div','sgm-grp');
+      var ab=sgmEl('button','sgm-acc'); ab.type='button'; ab.setAttribute('aria-expanded','false'); ab.setAttribute('aria-controls',id);
+      ab.appendChild(sgmEl('span','',null)).textContent=b.textContent.replace(/\s+/g,' ').trim();
+      ab.insertAdjacentHTML('beforeend','<svg class="ico" aria-hidden="true"><use href="#i-chevron"/></svg>');
+      var pn=sgmEl('div','sgm-pn'); pn.id=id; var inner=sgmEl('div','',null); pn.appendChild(inner);
+      Array.prototype.forEach.call(m.children,function(c){
+        if(c.matches('a'))inner.appendChild(sgmLink(c)); else if(c.matches('.dd-sep'))inner.appendChild(sgmEl('div','sgm-sep',null));
+      });
+      g.appendChild(ab); g.appendChild(pn); bd.appendChild(g);
+      if(m.querySelector('[aria-current="page"]')){g.classList.add('open');ab.setAttribute('aria-expanded','true')}
+      ab.addEventListener('click',function(){var o=!g.classList.contains('open');g.classList.toggle('open',o);ab.setAttribute('aria-expanded',o?'true':'false')});
+    } else if(it.matches('a')){
+      var tl=sgmEl('a','sgm-top'); tl.href=it.getAttribute('href');
+      ['target','rel','aria-current'].forEach(function(k){if(it.hasAttribute(k))tl.setAttribute(k,it.getAttribute(k))});
+      tl.appendChild(sgmEl('span','',null)).textContent=it.textContent.replace(/\s+/g,' ').trim();
+      tl.insertAdjacentHTML('beforeend','<svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg>');
+      bd.appendChild(tl);
+    }
+  });
+  if(sgmCta){var ft=sgmEl('div','sgm-ft'), cb=sgmEl('a','btn btn--lg',null); cb.href=sgmCta.getAttribute('href'); cb.textContent=sgmCta.textContent.replace(/\s+/g,' ').trim(); ft.appendChild(cb); dr.appendChild(ft)}
+  document.body.appendChild(ov);
+  sgmBtn.setAttribute('aria-controls','sgmDr'); sgmBtn.setAttribute('aria-expanded','false');
+  function sgmIsOpen(){return ov.classList.contains('open')}
+  function sgmFocusables(){return Array.prototype.filter.call(dr.querySelectorAll('a[href],button:not([disabled])'),function(e){return e.getClientRects().length&&getComputedStyle(e).visibility!=='hidden'})}
+  function sgmOpen(){
+    if(sgmIsOpen())return; sgmLast=document.activeElement&&document.activeElement!==document.body?document.activeElement:sgmBtn;
+    var sw=window.innerWidth-sgmRoot.clientWidth; if(sw>0)document.body.style.paddingRight=sw+'px';
+    ov.classList.add('open'); ov.removeAttribute('aria-hidden'); sgmRoot.classList.add('sgm-lock');
+    sgmBtn.setAttribute('aria-expanded','true');
+    requestAnimationFrame(function(){try{xb.focus({preventScroll:true})}catch(e){xb.focus()}});
+  }
+  function sgmClose(){
+    if(!sgmIsOpen())return;
+    ov.classList.remove('open'); ov.setAttribute('aria-hidden','true'); sgmRoot.classList.remove('sgm-lock'); document.body.style.paddingRight='';
+    sgmBtn.setAttribute('aria-expanded','false');
+    var f=sgmLast&&sgmLast.isConnected?sgmLast:sgmBtn; if(f.closest&&f.closest('#sgmOv'))f=sgmBtn;
+    try{f.focus({preventScroll:true})}catch(e){f.focus()}
+  }
+  sgmBtn.addEventListener('click',function(e){e.preventDefault();if(sgmIsOpen())sgmClose();else sgmOpen()});
+  xb.addEventListener('click',sgmClose);
+  scrim.addEventListener('click',sgmClose);
+  scrim.addEventListener('touchmove',function(e){e.preventDefault()},{passive:false});
+  dr.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(a)sgmClose()});
+  document.addEventListener('keydown',function(e){
+    if(!sgmIsOpen())return;
+    if(e.key==='Escape'||e.key==='Esc'){e.preventDefault();sgmClose();return}
+    if(e.key==='Tab'){var f=sgmFocusables();if(!f.length){e.preventDefault();dr.focus();return}
+      var first=f[0],last=f[f.length-1],act=document.activeElement;
+      if(!dr.contains(act)){e.preventDefault();(e.shiftKey?last:first).focus();return}
+      if(e.shiftKey&&act===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&act===last){e.preventDefault();first.focus()}}
+  });
+  function sgmMqChange(){if(!sgmMq.matches)sgmClose()}
+  if(sgmMq.addEventListener)sgmMq.addEventListener('change',sgmMqChange);else if(sgmMq.addListener)sgmMq.addListener(sgmMqChange);
+})();
+/* sgm 2: no mobile, ao tocar um controle marcado com data-scroll-target, rola até a UI que ele transforma se ela não estiver visível.
+   data-scroll-target: "#id" (querySelector, resolvido depois da troca), "<.sel" (closest a partir do controle), "@controls" (aria-controls do controle); vários alvos com "|".
+   data-scroll-ctl: seletor dos controles dentro do elemento marcado (padrão: botões, links, inputs, roles). data-scroll-delay: ms antes de medir (padrão 80). */
+(function(){
+  if(window.__sgmReveal)return; window.__sgmReveal=1;
+  var srvMq=window.matchMedia('(max-width:900px)'), srvRm=window.matchMedia('(prefers-reduced-motion: reduce)');
+  var SRV_CTL='button,a[href],input,select,textarea,label,summary,[role="button"],[role="tab"],[role="switch"],[role="radio"],[role="checkbox"],[role="option"],[tabindex]';
+  var srvTimer=0, SRV_GAP=12;
+  function srvHeader(){
+    var h=document.querySelector('[data-sgm-header]')||document.getElementById('snav'); if(!h)return 0;
+    var p=getComputedStyle(h).position; if(p!=='sticky'&&p!=='fixed')return 0;
+    return Math.max(0,h.getBoundingClientRect().bottom);
+  }
+  function srvRect(list){
+    var r=null; list.forEach(function(t){if(!t||!t.getClientRects().length)return;var b=t.getBoundingClientRect();if(!b.width&&!b.height)return;
+      if(!r)r={top:b.top,bottom:b.bottom};else{r.top=Math.min(r.top,b.top);r.bottom=Math.max(r.bottom,b.bottom)}});
+    return r;
+  }
+  function srvReveal(list,ctl){
+    var r=srvRect(list); if(!r)return;
+    var top=srvHeader()+SRV_GAP, bot=window.innerHeight-SRV_GAP, avail=bot-top, h=r.bottom-r.top, dy=0;
+    if(h>avail){if(Math.min(r.bottom,bot)-Math.max(r.top,top)>=avail*.8)return}
+    else if(r.top>=top-2&&r.bottom<=bot+2)return;
+    /* se couber, mantém o controle tocado na tela junto com o alvo */
+    var c=ctl&&ctl.isConnected?srvRect([ctl]):null;
+    if(c){var u={top:Math.min(r.top,c.top),bottom:Math.max(r.bottom,c.bottom)};if(u.bottom-u.top<=avail)r=u}
+    h=r.bottom-r.top;
+    if(h>avail||r.top<top-2){dy=r.top-top}else if(r.bottom>bot+2){dy=r.bottom-bot}
+    if(Math.abs(dy)<4)return;
+    window.scrollTo({top:Math.max(0,(window.pageYOffset||0)+dy),behavior:srvRm.matches?'instant':'smooth'});
+  }
+  function srvResolve(sel,ctl){
+    var out=[];
+    sel.split('|').forEach(function(s){s=s.trim();if(!s)return;var t=null;
+      try{
+        if(s==='@controls'){var id=ctl.getAttribute('aria-controls');t=id?document.getElementById(id.split(' ')[0]):null}
+        else if(s.charAt(0)==='<'){t=ctl.closest(s.slice(1))}
+        else{t=document.querySelector(s)}
+      }catch(e){t=null}
+      if(t)out.push(t)});
+    return out;
+  }
+  function srvHandle(e){
+    if(!e.isTrusted||!srvMq.matches)return;
+    var t=e.target; if(t&&t.nodeType!==1)t=t.parentElement; if(!t||!t.closest)return;
+    var host=t.closest('[data-scroll-target]'); if(!host||host.closest('[data-sgm]'))return;
+    var ctl=t.closest(host.getAttribute('data-scroll-ctl')||SRV_CTL); if(!ctl||(ctl!==host&&!host.contains(ctl)))return;
+    var tag=ctl.tagName, typ=(ctl.getAttribute('type')||'').toLowerCase();
+    if(e.type==='click'&&(tag==='SELECT'||tag==='TEXTAREA'||(tag==='INPUT'&&!/^(checkbox|radio|button|submit|reset)$/.test(typ))))return;
+    if(e.type==='change'&&!(tag==='SELECT'||(tag==='INPUT'&&typ==='range')))return;
+    if(e.type==='keydown'){if(e.key!=='Enter'&&e.key!==' ')return; if(/^(BUTTON|A|INPUT|SELECT|TEXTAREA|SUMMARY|LABEL)$/.test(tag))return}
+    var sel=host.getAttribute('data-scroll-target'), list0=srvResolve(sel,ctl);
+    var d=parseInt(host.getAttribute('data-scroll-delay')||'80',10);
+    clearTimeout(srvTimer); srvTimer=setTimeout(function(){var l=srvResolve(sel,ctl);srvReveal(l.length?l:list0,ctl)},isNaN(d)?80:d);
+  }
+  /* fase de captura: funciona mesmo quando o handler da página chama stopPropagation */
+  document.addEventListener('click',srvHandle,true);
+  document.addEventListener('change',srvHandle,true);
+  document.addEventListener('keydown',srvHandle,true);
+  window.sgmReveal=function(el,ctl){srvReveal([].concat(el),ctl)};
+})();
+</script>
+<!-- sgm:end -->
 </html>
