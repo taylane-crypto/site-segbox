@@ -1,6 +1,6 @@
 <!doctype html>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="assets/favicon/favicon.svg" type="image/svg+xml"><link rel="icon" href="assets/favicon/favicon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
 <title>Segbox Design System</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -524,7 +524,7 @@ blockquote footer{margin-top:20px;display:flex;align-items:center;gap:12px;color
 <div class="cat" id="top">
   <nav class="cat-nav" aria-label="Catálogo">
     <h4>Fundamentos</h4>
-    <a href="#logotipo">Logotipo</a><a href="#cores">Cores</a><a href="#tipografia">Tipografia</a><a href="#espaco">Espaço, raios e sombras</a><a href="#grid">Grid e moldura</a><a href="#vidro">Vidro</a><a href="#icones">Ícones</a><a href="#movimento">Movimento</a>
+    <a href="#logotipo">Logotipo</a><a href="#favicon">Favicon</a><a href="#cores">Cores</a><a href="#tipografia">Tipografia</a><a href="#espaco">Espaço, raios e sombras</a><a href="#grid">Grid e moldura</a><a href="#vidro">Vidro</a><a href="#icones">Ícones</a><a href="#movimento">Movimento</a>
     <h4>Componentes básicos</h4>
     <a href="#botoes">Botões</a><a href="#liquido">Botão com degradê</a><a href="#tags">Tags e status</a><a href="#campos">Campos</a><a href="#selecao">Seleção e ajuste</a><a href="#tooltip-dd">Tooltip e dropdown</a><a href="#acc-tabs">Accordion e tabs</a><a href="#nav-pag">Breadcrumbs e paginação</a><a href="#feedback">Alerta e toast</a><a href="#overlays">Modal e drawer</a><a href="#estados">Vazio e skeleton</a>
     <h4>Componentes do site</h4>
@@ -557,6 +557,22 @@ blockquote footer{margin-top:20px;display:flex;align-items:center;gap:12px;color
             <div><span class="stage-h">Tamanho mínimo</span><p class="t-small" style="margin-top:8px">24 px de altura em tela (o quadrado fica com 5 px). Abaixo disso, use só o quadrado coral.</p></div>
             <div><span class="stage-h">Área de proteção</span><p class="t-small" style="margin-top:8px">Livre em todos os lados a uma distância igual à altura do quadrado do logotipo, no mínimo.</p></div>
             <div><span class="stage-h">Não fazer</span><p class="t-small" style="margin-top:8px">Não recolorir o quadrado, não usar gradiente, sombra ou contorno no logotipo, e não separar o quadrado do wordmark, exceto na animação do hero.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spec" id="favicon">
+        <header><h3>Favicon e símbolo</h3><p>O "s" do wordmark com o quadrado coral na linha de base. No navegador usamos a versão em bloco (quadrado preto arredondado, "s" branco), que funciona em abas claras e escuras e continua legível em 16 px. O símbolo solto, em preto ou branco, serve para avatar, app e marca d'água.</p><code>assets/favicon/favicon.svg · favicon-16/32/48/192/512.png · apple-touch-icon.png · favicon.ico · segbox-simbolo-preto/branco-512/1024.png</code></header>
+        <div class="grid g3">
+          <div class="stage" data-surface="paper" style="place-items:center;min-height:200px"><div style="display:flex;align-items:flex-end;gap:18px"><img src="assets/favicon/favicon-192.png" width="96" height="96" alt="Favicon Segbox"><img src="assets/favicon/favicon-48.png" width="48" height="48" alt=""><img src="assets/favicon/favicon-32.png" width="32" height="32" alt=""><img src="assets/favicon/favicon-16.png" width="16" height="16" alt=""></div></div>
+          <div class="stage" data-surface="paper" style="place-items:center;min-height:200px"><img src="assets/favicon/segbox-simbolo-preto-512.png" width="120" height="120" alt="Símbolo Segbox preto"></div>
+          <div class="stage" data-surface="ink" style="place-items:center;min-height:200px"><img src="assets/favicon/segbox-simbolo-branco-512.png" width="120" height="120" alt="Símbolo Segbox branco"></div>
+        </div>
+        <div class="stage" data-surface="paper">
+          <div class="grid g3">
+            <div><span class="stage-h">Uso no navegador</span><p class="t-small" style="margin-top:8px">Sempre a versão em bloco. Não use o símbolo solto como favicon: o "s" preto some em abas escuras.</p></div>
+            <div><span class="stage-h">Construção</span><p class="t-small" style="margin-top:8px">Mesmo desenho do "s" do logotipo e quadrado coral com o mesmo tamanho relativo e alinhado à linha de base.</p></div>
+            <div><span class="stage-h">Não fazer</span><p class="t-small" style="margin-top:8px">Não trocar a cor do quadrado, não usar o wordmark inteiro no favicon e não aplicar gradiente ou sombra.</p></div>
           </div>
         </div>
       </div>
