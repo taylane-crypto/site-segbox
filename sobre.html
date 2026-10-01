@@ -1,7 +1,9 @@
 <!doctype html>
+<html lang="pt-BR">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Segbox Home</title>
+<title>Sobre a Segbox | Tecnologia e inovação para o mercado de seguros</title>
+<meta name="description" content="Desde 2017 no mercado de seguros. A Segbox cria plataformas white label, projetos sob medida e produtos que operam com milhares de corretores.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500;600&family=Hanken+Grotesk:wght@500;600;700&display=swap">
 <style>
 /* GT Standard (Grilli Type) é fonte licenciada. Quando os arquivos existirem, basta colocar em fonts/ e o navegador passa a usá-la. */
@@ -367,55 +369,6 @@ blockquote footer{margin-top:20px;display:flex;align-items:center;gap:12px;color
 .empty{display:grid;justify-items:center;gap:12px;text-align:center;padding:40px 24px;border:1px dashed var(--line-strong);border-radius:var(--r-3)}
 .empty .ico{width:28px;height:28px;color:var(--fg-3)}
 
-/* ============ CATÁLOGO (moldura) ============ */
-.cat-top{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px clamp(16px,3vw,32px);background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.seg{display:inline-flex;border:1px solid var(--line-strong);border-radius:var(--r-2);overflow:hidden}
-.seg button{padding:8px 14px;background:transparent;border:0;cursor:pointer;font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-2);transition:background var(--t-fast) ease,color var(--t-fast) ease}
-.seg button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
-.cat{display:grid;grid-template-columns:230px minmax(0,1fr);max-width:1440px;margin:0 auto}
-.cat-nav{position:sticky;top:57px;align-self:start;height:calc(100vh - 57px);overflow:auto;padding:24px 16px 48px clamp(16px,3vw,32px);border-right:1px solid var(--line);font-size:14px}
-.cat-nav h4{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-3);font-weight:500;margin:20px 0 8px}
-.cat-nav h4:first-child{margin-top:0}
-.cat-nav a{display:block;padding:5px 8px;border-radius:var(--r-2);color:var(--fg-2);text-decoration:none}
-.cat-nav a:hover{background:var(--surface-2);color:var(--fg)}
-.cat-main{padding:0 clamp(16px,3vw,40px) 120px;min-width:0}
-.part{padding-top:72px}
-.part>h2{font-family:var(--font-display);font-weight:600;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.04em;line-height:1;padding-bottom:24px;border-bottom:1px solid var(--line-strong);display:flex;align-items:baseline;justify-content:space-between;gap:16px}
-.part>h2 small{font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;color:var(--fg-3);font-weight:500}
-.spec{padding-top:48px}
-.spec>header{display:grid;gap:8px;margin-bottom:20px;max-width:70ch}
-.spec>header h3{font-family:var(--font-display);font-weight:600;font-size:1.5rem;letter-spacing:-.025em}
-.spec>header p{color:var(--fg-2);font-size:15px}
-.spec>header code{font-size:12px;color:var(--fg-3)}
-.stage{position:relative;background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:var(--r-3);padding:clamp(16px,3vw,32px);display:grid;gap:24px;transition:background var(--t-base) ease,color var(--t-base) ease}
-.stage+.stage{margin-top:12px}
-.stage-h{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-3)}
-.flex{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-.grid{display:grid;gap:16px}
-.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
-.swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
-.sw{border-radius:var(--r-3);overflow:hidden;border:1px solid var(--line)}
-.sw i{display:block;height:64px}
-.sw div{padding:10px 12px;font-family:var(--font-mono);font-size:11px;line-height:1.5;color:var(--fg-2);background:var(--surface)}
-.sw b{display:block;color:var(--fg);font-weight:500}
-.tbl{width:100%;border-collapse:collapse;font-size:14px}
-.tbl th,.tbl td{text-align:left;padding:12px 12px 12px 0;border-bottom:1px solid var(--line);vertical-align:top}
-.tbl th{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-3);font-weight:500}
-.tbl td:first-child{white-space:nowrap}
-.scroll-x{overflow-x:auto}
-.spc{display:flex;align-items:center;gap:16px;font-family:var(--font-mono);font-size:12px;color:var(--fg-2);padding:6px 0}
-.spc i{display:block;height:12px;background:var(--accent);border-radius:2px}
-.rad{width:88px;height:88px;background:var(--surface-2);border:1px solid var(--line-strong);display:grid;place-items:center;font-family:var(--font-mono);font-size:11px;color:var(--fg-2)}
-.demo-box{width:120px;height:56px;border-radius:var(--r-2);background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
-.icons{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px}
-.icons div{display:grid;justify-items:center;gap:8px;padding:16px 8px;border:1px solid var(--line);border-radius:var(--r-2);font-family:var(--font-mono);font-size:10.5px;color:var(--fg-3)}
-.icons .ico{width:24px;height:24px;color:var(--fg)}
-.gridguide{position:relative;height:120px;border:1px solid var(--line);border-radius:var(--r-3);display:grid;grid-template-columns:repeat(12,1fr);gap:16px;padding:0 16px;overflow:hidden}
-.gridguide i{background:color-mix(in srgb,var(--coral) 18%,transparent);border-inline:1px solid color-mix(in srgb,var(--coral) 45%,transparent)}
-.note{font-size:13.5px;color:var(--fg-2);border-left:2px solid var(--accent);padding-left:14px;max-width:70ch}
-.note code{color:var(--fg)}
-
-
 /* ============ VIDRO ============ */
 .glass,.nav,.dd-menu,.win,.modal,.drawer{background:var(--glass);border:1px solid var(--glass-line);box-shadow:var(--glass-sh);backdrop-filter:blur(var(--blur)) saturate(1.7);-webkit-backdrop-filter:blur(var(--blur)) saturate(1.7)}
 .dd-menu{border-radius:var(--r-3)}
@@ -529,70 +482,6 @@ body{background:var(--bone-100)}
 .btn--liquid:hover::before,.btn--liquid.is-hover::before,.btn--liquid:focus-visible::before{opacity:1;animation-play-state:running}
 @keyframes liquid-flow{to{background-position:-300% 0}}
 
-
-/* ===== DEPOIMENTO INTERATIVO (vidro que responde ao mouse) ===== */
-.qbox{perspective:1000px}
-.qbox .glass{position:relative;isolation:isolate;overflow:hidden;transform-style:preserve-3d;will-change:transform;transition:box-shadow 300ms ease}
-.qbox .glass::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;background:radial-gradient(380px circle at var(--mx,50%) var(--my,0%),rgba(255,255,255,.7),rgba(255,255,255,0) 62%);opacity:0;transition:opacity 320ms ease}
-.qbox.is-active .glass::before{opacity:1}
-.qbox.is-active .glass{box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 34px 60px -26px rgba(20,20,50,.4),0 0 0 1px var(--glass-edge)}
-.qbox .sq{will-change:transform}
-
-/* ===== PARCEIROS: trilhos de quadrados que acordam perto do cursor ===== */
-:root{--lg-brasilprev:url(assets/parceiros/brasilprev.png);--lg-suhai:url(assets/parceiros/suhai.png);--lg-mapfre:url(assets/parceiros/mapfre.png);--lg-mercadolivre:url(assets/parceiros/mercadolivre.png);--lg-stay:url(assets/parceiros/stay-novo.svg);--lg-baeta:url(assets/parceiros/baeta.png);--lg-creditas:url(assets/parceiros/creditas.png)}
-.partners{overflow:hidden;padding-bottom:clamp(56px,8vw,104px)}
-.pt-stage{display:grid;gap:14px;margin-top:0;padding-block:36px 84px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent)}
-.pt-track{display:flex;gap:14px;width:max-content;will-change:transform}
-.pt-tile{--f:0;position:relative;flex:none;width:clamp(132px,13.5vw,176px);aspect-ratio:1;border-radius:18px;display:grid;place-items:center;background:rgba(255,255,255,calc(.5 + .4*var(--f)));border:1px solid rgba(20,20,40,calc(.08 + .1*var(--f)));box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 calc(6px + var(--f)*22px) calc(14px + var(--f)*22px) -16px rgba(20,20,50,calc(.12 + .28*var(--f)));transform:translateY(calc(var(--f)*-9px)) scale(calc(1 + var(--f)*.09));will-change:transform}
-.pt-tile:nth-child(even){margin-top:22px}
-.pt-logo{display:block;width:66%;height:40%;background-repeat:no-repeat;background-position:center;background-size:contain;filter:grayscale(calc(1 - var(--f)));opacity:calc(.6 + .4*var(--f))}
-.pt-static .pt-track{flex-wrap:wrap;justify-content:center;width:auto;padding-inline:var(--gutter)}
-.pt-static .pt-tile:nth-child(even){margin-top:0}
-.pt-static{-webkit-mask-image:none;mask-image:none}
-
-/* ===== MAIS CASES ===== */
-:root{--i-suhai:url(assets/suhai-peca.jpg)}
-.case-more{margin-top:clamp(40px,6vw,72px);padding-top:28px;border-top:1px solid var(--line);display:grid;gap:16px}
-.case-card{display:grid;grid-template-columns:150px 1fr auto;gap:clamp(16px,3vw,32px);align-items:center;padding:14px;border-radius:16px;border:1px solid var(--line);background:var(--surface);text-decoration:none;color:inherit;transition:transform 220ms var(--ease-out),border-color 220ms ease}
-.case-card:hover{transform:translateY(-3px);border-color:var(--line-strong)}
-.case-card .th{display:block;aspect-ratio:1;border-radius:10px;background:var(--i-suhai) center/cover no-repeat}
-.case-card .tx{display:grid;gap:8px;min-width:0}
-.case-card .tx strong{font-family:var(--font-display);font-weight:600;letter-spacing:-.025em;line-height:1.1;font-size:clamp(1.25rem,2.2vw,1.65rem);text-wrap:balance}
-.case-card .go{display:flex;align-items:center;gap:8px;padding-right:12px}
-.case-card .go .ico{width:16px;height:16px;transition:transform 180ms var(--ease-out)}
-.case-card:hover .go .ico{transform:translate(2px,-2px)}
-@media (max-width:760px){.case-card{grid-template-columns:1fr}.case-card .th{max-width:180px}}
-.case-card .th-ac{background:radial-gradient(120% 140% at 85% 0%,#1d5a35 0%,#0b2116 60%);position:relative}.case-card .th-ac::after{content:"";position:absolute;left:14%;right:14%;top:40%;height:10px;border-radius:5px;background:#86ff6b;box-shadow:0 18px 0 -2px rgba(255,255,255,.4),0 34px 0 -2px rgba(255,255,255,.25)}
-.case-card .th-bp{background:#26BB91;position:relative}.case-card .th-bp::after{content:"";position:absolute;inset:22% 14%;border-radius:8px;background:repeating-linear-gradient(90deg,#15201c 0 30%,transparent 30% 35%);opacity:.9}
-
-.three{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.three .card{min-height:100%}
-.steps4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.cgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.cc{display:grid;gap:10px;align-content:start;padding:14px 14px 20px;border-radius:16px;border:1px solid var(--line);background:var(--surface);text-decoration:none;color:inherit;transition:transform 220ms var(--ease-out),border-color 220ms ease}
-.cc:hover{transform:translateY(-3px);border-color:var(--line-strong)}
-.cc .th{display:block;aspect-ratio:16/8;border-radius:10px;margin-bottom:6px;background-size:cover;background-position:center}
-.cc .th{position:relative;overflow:hidden}
-.cc .th img{position:absolute;left:9%;top:13%;width:82%;height:auto;max-width:none;display:block;border-radius:3.7% 3.7% 0 0/5.9% 5.9% 0 0;box-shadow:0 20px 40px -20px rgba(0,0,0,.45);transition:transform 320ms var(--ease-out)}
-.cc:hover .th img{transform:translateY(-6px)}
-.cc .th-mf{background:#D81E2C;--bar:#b3121f}
-.cc .th-su{background:#0D3B2E;--bar:#B6F55A}
-.cc .th-ac{background:radial-gradient(120% 140% at 85% 0%,#1d5a35 0%,#0b2116 60%);--bar:#2f9e4f}
-.cc .th-bp{background:#26BB91;--bar:#15201c}
-.cc strong{font-family:var(--font-display);font-weight:600;font-size:clamp(1.25rem,2vw,1.55rem);letter-spacing:-.025em;line-height:1.12;text-wrap:balance}
-.cc .go{display:flex;align-items:center;gap:8px;margin-top:4px}.cc .go .ico{width:16px;height:16px;transition:transform 180ms var(--ease-out)}.cc:hover .go .ico{transform:translate(2px,-2px)}
-:root{--i-mf:url(assets/mapfre-thumb.jpg)}
-@media (max-width:900px){.three,.steps4{grid-template-columns:1fr 1fr}}
-@media (max-width:640px){.three,.steps4,.cgrid{grid-template-columns:1fr}}
-
-.steps4{position:relative;padding-top:34px}
-.hw-track{position:absolute;left:0;right:0;top:0;height:2px;background:var(--line);border-radius:2px;overflow:hidden}
-.hw-track i{display:block;height:100%;width:0;background:#0B0B0D;border-radius:2px}
-.step.hw{position:relative;transition:border-color 300ms ease,transform 420ms var(--ease-out),opacity 420ms ease;opacity:.45;transform:translateY(10px)}
-.step.hw.on{opacity:1;transform:none;border-color:#0B0B0D}
-.hw-sq{position:absolute;top:-41px;left:22px;width:14px;height:14px;background:var(--bg);border:2px solid var(--line-strong);transition:background 260ms ease,border-color 260ms ease,transform 420ms var(--ease-out)}
-.step.hw.on .hw-sq{background:#FF5047;border-color:#FF5047;transform:rotate(90deg) scale(1.15)}
-.step.hw h3{transition:letter-spacing 420ms var(--ease-out)}
 @media (prefers-reduced-motion:reduce){.step.hw{opacity:1;transform:none}.hw-sq{transition:none}}/* h-fade: titulo de dois tons; .h-fade-2 comeca na cor do texto e vai ao cinza na rolagem (JS h-fade) */.h-fade .h-fade-2{color:var(--fg-3)}
 @media (max-width:640px){.hw-track,.hw-sq{display:none}.step.hw{opacity:1;transform:none}}
 
@@ -601,6 +490,202 @@ body{background:var(--bone-100)}
 @media (max-width:900px){html,body{overflow-x:clip}.grid2>*,.grid>*,.story .grid>*,[class*="grid"]>*,.stack{min-width:0}.win{max-width:100%;overflow:hidden}.three,.two,.cgrid{grid-template-columns:1fr!important}.tbl{display:block;max-width:100%;overflow-x:auto}}
 
 .hint[hidden]{display:none!important}
+[hidden]{display:none!important}
+[data-rv]{opacity:0;transform:translateY(22px);transition:opacity 700ms var(--ease-out),transform 700ms var(--ease-out)}
+[data-rv].in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){[data-rv]{opacity:1;transform:none}}
+
+/* ===================================================================
+   SOBRE A SEGBOX · só design system Segbox (bone, quase preto, coral, laranja). Sem roxo.
+   Cubos de vidro: assets/cubo-coral.jpg e assets/cubo-obsidiana-preto.jpg (fundo branco, mix-blend multiply).
+   Cubo laranja = cubo coral com hue-rotate (sem asset novo).
+   Hero: os cubos orbitam, se alinham no quadrado do logo e se fundem no quadrado do header (técnica da home).
+   Trajetória: cada marco encaixa um cubo; a pirâmide cresce com a rolagem (palco fixo 560x560 escalado, sem loop infinito).
+   =================================================================== */
+.draft-tag{display:inline-flex;align-items:center;height:20px;padding:0 6px;border:1px dashed currentColor;border-radius:4px;font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-3);vertical-align:middle;white-space:nowrap}
+.sq--coral{background:var(--coral)}.sq--ink{background:#0B0B0D}.sq--ember{background:var(--ember)}
+.sb-cube{mix-blend-mode:multiply;user-select:none;-webkit-user-drag:none;pointer-events:none}
+.sb-em{filter:hue-rotate(26deg) saturate(1.15) brightness(1.04)}
+.sb-sec{padding-block:clamp(72px,10vw,128px);border-top:1px solid var(--line)}
+.sb-sec .sec-head{max-width:780px}
+.sb-sec .sec-head .t-lead{margin-top:4px}
+
+/* ---------- 01 HERO ---------- */
+.sb-hero{position:relative;overflow:hidden}
+.sb-hero .gl{position:absolute;inset:0;display:grid;grid-template-columns:repeat(6,1fr);max-width:1280px;margin:0 auto;padding-inline:clamp(16px,4vw,48px);pointer-events:none}
+.sb-hero .gl i{border-left:1px solid rgba(0,0,0,.055)}.sb-hero .gl i:last-child{border-right:1px solid rgba(0,0,0,.055)}
+.sb-hero .grid2{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(24px,4.5vw,64px);align-items:center;padding-block:clamp(40px,6vw,88px) clamp(64px,8vw,112px)}
+.sb-hero .grid2>*{min-width:0}
+.sb-hero .label{color:var(--label-accent)}
+.sb-hero h1{font-family:var(--font-display);font-weight:600;font-size:clamp(2.45rem,4.9vw,4.3rem);line-height:1;letter-spacing:-.045em;margin-top:20px;text-wrap:balance}
+.sb-hero .lead{margin-top:22px;max-width:48ch;font-size:1.125rem;color:var(--fg-2)}
+.sb-hero .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.sb-mani{margin-top:34px;padding-top:18px;border-top:1px solid var(--line);display:grid;gap:4px;max-width:52ch;font-family:var(--font-mono);font-size:12.5px;line-height:1.6;letter-spacing:.02em;color:var(--fg-2)}
+.sb-mani b{font-weight:500;color:var(--fg)}
+.sb-stage{position:relative;width:100%;max-width:520px;aspect-ratio:1;margin-left:auto}
+.sb-frame{position:absolute;inset:13%;border:1px solid var(--line)}
+.sb-frame .corner{border-color:var(--fg)}
+.sb-coord{position:absolute;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-3);white-space:nowrap}
+.sb-coord.a{left:-1px;top:-24px}.sb-coord.b{right:-1px;bottom:-24px}
+.sb-cap{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-3);white-space:nowrap}
+.sb-fb{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.sb-fb i{display:block;margin:10%;background:var(--coral)}
+.sb-fb i:nth-child(2n){background:#0B0B0D}.sb-fb i:nth-child(3),.sb-fb i:nth-child(7){background:var(--ember)}
+.js-sbh .sb-fb{display:none}
+.sb-static{position:absolute;inset:0}
+.sb-static img{position:absolute;width:40%;height:auto}
+/* camada fixa dos cubos (mesma técnica da home) */
+.cubes{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden;background:#fff;mix-blend-mode:multiply}
+.cubes.top{z-index:90}
+.cubes.off{visibility:hidden}
+.cubes img{position:absolute;left:0;top:0;width:400px;height:400px;mix-blend-mode:multiply;will-change:transform;user-select:none;-webkit-user-drag:none}
+.js-sbh .snav .logo .logo-sq{opacity:0;transform:scale(.3)}
+.js-sbh.dot-on .snav .logo .logo-sq{opacity:1;transform:none;transition:opacity 160ms ease,transform 280ms var(--ease-out)}
+
+/* ---------- 02 QUEM SOMOS ---------- */
+.sb-who{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,5vw,72px);align-items:start}
+.sb-who .tx{display:grid;gap:18px}
+.sb-who .tx p{color:var(--fg-2);font-size:1.0625rem;max-width:60ch}
+.sb-who .tx p:first-child{color:var(--fg);font-size:1.1875rem;line-height:1.5}
+.sb-facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--line);border-radius:var(--r-3);overflow:hidden;margin-top:clamp(40px,6vw,64px);background:var(--surface)}
+.sb-facts>div{padding:24px 22px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:12px;min-width:0}
+.sb-facts>div:last-child{border-right:0}
+.sb-facts .label{color:var(--fg-3)}
+.sb-facts b{font-family:var(--font-display);font-weight:600;font-size:clamp(2rem,3.8vw,3rem);letter-spacing:-.05em;line-height:1;font-variant-numeric:tabular-nums}
+.sb-facts b small{font-size:.42em;letter-spacing:-.02em;font-weight:600;margin-left:6px}
+.sb-facts span:last-child{font-size:13.5px;color:var(--fg-2)}
+
+/* ---------- 03 O QUE ACREDITAMOS ---------- */
+.bl-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:clamp(32px,5vw,56px)}
+.bl{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1fr) 120px;gap:12px 20px;align-items:start;padding:28px;border-radius:var(--r-3);background:var(--surface);border:1px solid var(--line);transition:border-color var(--t-base) ease,transform var(--t-base) var(--ease-out)}
+.bl:hover{border-color:var(--line-strong)}
+.bl .n{color:var(--fg-3)}
+.bl h3{margin-top:14px}
+.bl p{color:var(--fg-2);margin-top:10px;max-width:46ch}
+.bl-cube{position:relative;width:120px;height:120px;justify-self:end}
+.bl-cube img{position:absolute;left:50%;top:50%;width:190px;height:190px;margin:-95px 0 0 -95px;transform:translateY(-34px) rotate(calc(var(--r,0deg) - 28deg)) scale(.82);opacity:0;transition:transform 900ms cubic-bezier(.34,1.56,.64,1),opacity 500ms ease}
+.bl.in .bl-cube img{transform:rotate(var(--r,0deg));opacity:1}
+.bl.in:hover .bl-cube img{transform:translateY(-8px) rotate(calc(var(--r,0deg) + 16deg)) scale(1.06);transition:transform 520ms var(--ease-out)}
+.bl-cube::after{content:"";position:absolute;left:18%;right:18%;bottom:4px;height:10px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.14),transparent);opacity:0;transition:opacity 600ms ease 200ms,transform 520ms var(--ease-out);z-index:-1}
+.bl.in .bl-cube::after{opacity:1}
+.bl.in:hover .bl-cube::after{transform:scaleX(.8);opacity:.6}
+
+/* ---------- 04 TRAJETÓRIA ---------- */
+.tj{background:var(--surface)}
+.tj-g{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(24px,5vw,72px);margin-top:clamp(32px,5vw,56px)}
+.tj-g>*{min-width:0}
+.tj-stick{position:sticky;top:84px;height:calc(100vh - 100px);min-height:520px;display:flex;flex-direction:column;justify-content:center;gap:16px}
+.tj-fit{position:relative;width:100%;max-width:560px;aspect-ratio:1;overflow:hidden;border-radius:20px;border:1px solid var(--line);background:var(--bone-50)}
+.tj-stage{position:absolute;left:0;top:0;width:560px;height:560px;transform-origin:0 0;transform:scale(var(--k,1))}
+.tj-stage::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(0,0,0,.1) 1px,transparent 1.2px);background-size:28px 28px;background-position:14px 14px;pointer-events:none}
+.tj-yr{position:absolute;left:26px;top:18px;font-family:var(--font-display);font-weight:600;font-size:112px;line-height:1;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1.4px rgba(11,11,13,.22);font-variant-numeric:tabular-nums;white-space:nowrap}
+.tj-cp{position:absolute;right:24px;top:28px;max-width:190px;text-align:right;font-family:var(--font-mono);font-size:11px;line-height:1.5;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-2)}
+.tj-cp b{display:block;color:var(--fg);font-weight:500}
+.tj-base{position:absolute;left:40px;right:40px;top:500px;height:1px;background:#0B0B0D;transform-origin:0 50%;transform:scaleX(var(--b,0))}
+.tj-base::before,.tj-base::after{content:"";position:absolute;top:-4px;width:1px;height:9px;background:#0B0B0D}
+.tj-base::before{left:0}.tj-base::after{right:0}
+.tj-bl{position:absolute;left:40px;top:512px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-2);opacity:var(--b,0)}
+.tj-bl i{display:inline-block;width:7px;height:7px;background:var(--coral);margin-right:8px;vertical-align:0}
+.tj-br{position:absolute;right:40px;top:512px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-3)}
+.tj-c{position:absolute;left:0;top:0;width:180px;height:180px;mix-blend-mode:multiply;opacity:0;will-change:transform,opacity;transform:translate(calc(var(--x) * 1px - 90px),calc(var(--y) * 1px - 330px)) rotate(calc(var(--r) * 1deg + 40deg)) scale(var(--s))}
+.tj-built .tj-c{opacity:1;transform:translate(calc(var(--x) * 1px - 90px),calc(var(--y) * 1px - 90px)) rotate(calc(var(--r) * 1deg)) scale(var(--s));transition:transform 820ms cubic-bezier(.34,1.3,.64,1) var(--d,0ms),opacity 300ms ease var(--d,0ms)}
+.tj-built{--b:1}
+.tj-built .tj-base{transition:transform 700ms var(--ease-out)}
+.tj-leg{display:flex;flex-wrap:wrap;gap:8px 20px;font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-2)}
+.tj-leg span{display:inline-flex;align-items:center;gap:8px}
+.tj-leg i,.tj-k i{width:9px;height:9px;flex:none;display:inline-block}
+.k-pr{background:var(--coral)}.k-in{background:var(--ember)}.k-mk{background:#0B0B0D}
+.tj-list{list-style:none;margin:0;padding:0 0 18vh}
+.tj-st{position:relative;min-height:42vh;display:flex;flex-direction:column;justify-content:center;gap:10px;padding-left:28px;border-left:1px solid var(--line);opacity:.3;transition:opacity 420ms var(--ease-out)}
+.tj-st:first-child{min-height:50vh}
+.tj-st::before{content:"";position:absolute;left:-5px;top:calc(50% - 5px);width:9px;height:9px;background:var(--bg);border:1px solid var(--line-strong);transition:background 260ms ease,border-color 260ms ease,transform 420ms var(--ease-out)}
+.tj-st.on{opacity:1}
+.tj-st.on::before{background:#0B0B0D;border-color:#0B0B0D;transform:rotate(45deg)}
+.tj-y{font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;color:var(--fg-3)}
+.tj-st.on .tj-y{color:var(--label-accent)}
+.tj-st h3{font-family:var(--font-display);font-weight:600;font-size:clamp(1.6rem,2.8vw,2.3rem);line-height:1.04;letter-spacing:-.035em;text-wrap:balance}
+.tj-st p{color:var(--fg-2);max-width:42ch}
+.tj-k{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-3)}
+.tj-k span{display:inline-flex;align-items:center;gap:7px}
+.tj-k a{display:inline-flex;align-items:center;gap:5px;min-height:24px;color:var(--fg);text-decoration:none;border-bottom:1px solid var(--line-strong);transition:border-color 180ms ease}
+.tj-k a:hover{border-color:var(--fg)}
+.tj-k a svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2}
+
+/* ---------- 05 O QUE FAZEMOS HOJE ---------- */
+.dz{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:clamp(32px,5vw,56px)}
+.dz .card{min-height:100%}
+.dz .card .label{color:var(--fg-3)}
+.dz-l{list-style:none;margin:auto 0 0;padding:0;border-top:1px solid var(--line)}
+.dz-l a{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:48px;padding:10px 0;border-bottom:1px solid var(--line);text-decoration:none;transition:padding var(--t-base) var(--ease-out)}
+.dz-l a:hover{padding-inline:6px}
+.dz-l strong{font-weight:500;display:block}
+.dz-l small{display:block;color:var(--fg-3);font-size:13px;line-height:1.35}
+.dz-l .ico{width:15px;height:15px;color:var(--fg-2);transition:transform var(--t-fast) var(--ease-out)}
+.dz-l a:hover .ico{transform:translate(2px,-2px);color:var(--fg)}
+
+/* ---------- 06 INICIATIVAS ---------- */
+.ini{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin-top:clamp(32px,5vw,56px)}
+.ini a{grid-column:span 2;position:relative;display:flex;flex-direction:column;gap:10px;min-height:210px;padding:24px;border-radius:var(--r-3);border:1px solid var(--line);background:var(--surface);text-decoration:none;color:inherit;transition:border-color var(--t-base) ease,transform var(--t-base) var(--ease-out)}
+.ini a:nth-child(n+4){grid-column:span 3}
+.ini a:hover{border-color:var(--line-strong);transform:translateY(-3px)}
+.ini .nm{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.ini .nm strong{font-family:var(--font-display);font-weight:600;font-size:1.5rem;letter-spacing:-.025em;line-height:1.1}
+.ini .nm .ico{width:18px;height:18px;color:var(--fg-2);transition:transform var(--t-fast) var(--ease-out)}
+.ini a:hover .nm .ico{transform:translate(2px,-2px);color:var(--fg)}
+.ini p{color:var(--fg-2);font-size:15px;max-width:44ch}
+.ini .dom{margin-top:auto;font-family:var(--font-mono);font-size:11.5px;letter-spacing:.04em;color:var(--fg-3)}
+.ini .sqm{width:10px;height:10px;display:inline-block;margin-right:10px;vertical-align:1px}
+
+/* ---------- 07 LIDERANÇA ---------- */
+.ld{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,6vw,88px);align-items:center;margin-top:clamp(32px,5vw,56px)}
+.ld>*{min-width:0}
+.ld-ph{position:relative;width:100%;max-width:400px}
+.ld-ph figure{margin:0;position:relative;aspect-ratio:4/5;border-radius:var(--r-4);overflow:hidden;background:var(--bone-200);border:1px solid var(--line)}
+.ld-ph img.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:51% 40%;filter:saturate(.86) contrast(1.03)}
+.ld-ph figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 58%,rgba(11,11,13,.28));pointer-events:none}
+.ld-ph figcaption{position:absolute;left:16px;bottom:14px;z-index:2;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#F4F3F0}
+.ld-cube{position:absolute;right:-58px;top:-54px;width:170px;height:170px;z-index:3;pointer-events:none;will-change:transform}
+.ld-cube img{width:100%;height:100%;display:block}
+.ld-sq{position:absolute;left:-14px;bottom:56px;width:28px;height:28px;background:#0B0B0D;z-index:3}
+.ld blockquote p{font-family:var(--font-display);font-weight:500;font-size:clamp(1.45rem,2.6vw,2.1rem);line-height:1.22;letter-spacing:-.025em;text-wrap:pretty}
+.ld blockquote p::before{content:"“";color:var(--coral);margin-right:.04em}
+.ld blockquote p::after{content:"”";color:var(--coral)}
+.ld blockquote footer{margin-top:28px;display:grid;gap:4px;padding-top:18px;border-top:1px solid var(--line)}
+.ld blockquote footer strong{font-weight:500;font-size:1.0625rem}
+.ld blockquote footer span{color:var(--fg-2);font-size:14px}
+
+/* ---------- 08 CONTATO ---------- */
+.contact-d .field.full{grid-column:1/-1}
+.contact-d .micro{font-size:12.5px;color:var(--fg-3)}
+.req{color:var(--coral);margin-left:2px}
+
+/* ---------- responsivo ---------- */
+@media (max-width:1000px){.sb-facts{grid-template-columns:repeat(2,minmax(0,1fr))}.sb-facts>div:nth-child(2){border-right:0}.sb-facts>div:nth-child(-n+2){border-bottom:1px solid var(--line)}.dz{grid-template-columns:minmax(0,1fr)}.ini a,.ini a:nth-child(n+4){grid-column:span 3}}
+@media (max-width:900px){
+  .sb-hero .grid2,.sb-who,.ld{grid-template-columns:minmax(0,1fr)}
+  .sb-stage{max-width:340px;margin:8px auto 0}
+  .tj-g{grid-template-columns:minmax(0,1fr)}
+  .tj-stick{position:relative;top:auto;height:auto;min-height:0}
+  .tj-fit{margin-inline:auto}
+  .tj-list{padding-bottom:0}
+  .tj-st,.tj-st:first-child{min-height:0;padding-block:18px;opacity:1}
+  .tj-st::before{top:26px}
+  .tj-st .tj-y{color:var(--label-accent)}
+  .ld-ph{max-width:300px;margin-inline:auto}
+  .ld-cube{right:-26px;top:-40px;width:120px;height:120px}
+}
+@media (max-width:640px){
+  .bl-grid{grid-template-columns:minmax(0,1fr)}
+  .bl{grid-template-columns:minmax(0,1fr) 84px;padding:22px}
+  .bl-cube{width:84px;height:84px}.bl-cube img{width:140px;height:140px;margin:-70px 0 0 -70px}
+  .ini{grid-template-columns:minmax(0,1fr)}.ini a,.ini a:nth-child(n+4){grid-column:auto;min-height:0}
+  .sb-facts{grid-template-columns:minmax(0,1fr)}.sb-facts>div{border-right:0;border-bottom:1px solid var(--line)}.sb-facts>div:last-child{border-bottom:0}
+}
+@media (prefers-reduced-motion:reduce){
+  .bl-cube img{transform:rotate(var(--r,0deg));opacity:1}
+  .bl.in:hover .bl-cube img{transform:rotate(var(--r,0deg))}
+  .tj-st{opacity:1}
+}
 </style>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs><symbol id="logo-word" viewBox="0 0 2000 530"><path d="M934.674 0.699888C933.174 2.19968 933.874 242.966 935.374 254.565C943.873 318.656 986.267 363.849 1050.96 377.647C1063.16 380.247 1101.65 380.247 1113.95 377.647C1167.44 366.349 1207.44 331.254 1223.73 281.461C1232.83 253.665 1232.63 216.47 1223.33 188.274C1209.24 145.88 1175.94 112.984 1132.95 98.9862C1114.55 92.987 1104.45 91.4873 1082.45 91.4873C1056.96 91.5872 1039.26 94.9868 1019.46 103.586C1015.06 105.485 1011.06 107.185 1010.46 107.285C1009.86 107.385 1009.26 98.6863 1008.86 83.4884C1008.46 70.2902 1007.76 57.8919 1007.16 55.9922C998.265 25.7964 974.068 4.79932 943.573 0.999846C939.173 0.499916 935.474 -1.44579e-05 935.374 -1.44579e-05C935.374 -1.44579e-05 934.974 0.299944 934.674 0.699888ZM1095.95 162.077C1125.25 166.777 1147.14 188.174 1153.64 218.47C1155.54 227.468 1154.94 249.865 1152.54 258.464C1143.64 290.36 1116.75 310.257 1082.45 310.157C1049.06 310.157 1024.66 293.159 1013.56 262.263C1010.46 253.565 1010.46 253.165 1010.56 235.467C1010.56 218.57 1010.76 216.97 1013.36 209.471C1025.16 175.176 1058.56 155.978 1095.95 162.077Z"/><path d="M95.7899 91.9872C51.896 97.0865 18.6006 120.683 8.30205 153.979C0.303163 180.175 6.10236 212.57 22.0001 229.268C37.9979 246.366 57.7952 254.365 104.089 262.563C144.783 269.762 156.081 276.162 156.081 291.859C156.081 299.258 155.182 301.758 150.482 306.957C135.284 323.755 96.5898 322.455 80.592 304.758C76.1926 299.858 73.6929 294.159 72.4931 286.16L71.7932 281.961L36.1982 282.161L0.603121 282.461L0.303163 286.66C-0.0967815 292.459 2.60284 307.557 5.60243 316.056C20.7003 359.45 69.4935 384.746 128.585 379.947C194.276 374.648 232.871 337.553 229.771 283.061C228.571 263.663 223.172 249.665 212.074 237.667C196.476 220.769 180.378 214.17 130.585 204.472C86.0912 195.773 77.0925 191.073 76.8925 176.175C76.7925 158.578 96.3898 147.379 121.286 150.879C140.384 153.579 150.382 161.378 153.382 176.075L154.682 182.475L189.377 182.775C219.373 182.975 224.172 182.775 224.672 181.475C225.472 179.475 223.372 163.877 221.372 156.978C211.974 124.083 183.078 100.686 142.783 93.387C132.685 91.5872 106.288 90.7873 95.7899 91.9872Z"/><path d="M400.547 91.5872C398.948 91.7872 394.148 92.4871 390.049 93.087C314.659 103.686 264.266 173.476 273.165 254.765C282.364 339.353 361.253 395.245 446.041 377.347C493.634 367.349 535.529 329.954 549.427 285.16L550.127 282.961H511.232H472.237L468.638 287.86C447.341 316.756 401.147 323.155 372.151 301.158C360.353 292.259 348.055 270.862 348.055 259.364V256.964H450.94C528.83 256.964 554.126 256.664 554.626 255.764C555.026 255.164 555.526 247.865 555.826 239.567C557.925 166.377 513.132 108.085 443.941 93.9869C434.043 91.9872 408.046 90.4874 400.547 91.5872ZM429.443 156.078C443.341 158.578 458.239 167.377 467.038 178.275C472.037 184.374 479.436 198.072 480.636 203.172L481.236 205.971H415.545H349.854L350.454 202.672C351.654 196.173 359.853 181.475 365.852 174.976C380.75 158.778 405.047 151.479 429.443 156.078Z"/><path d="M1403.91 91.6872C1337.32 97.9864 1287.72 140.38 1273.73 202.972C1270.63 217.07 1270.33 253.565 1273.23 266.463C1288.12 331.954 1337.72 374.448 1405.81 379.947C1490.2 386.746 1558.99 330.854 1566.09 249.665C1574.28 155.578 1499.4 82.5885 1403.91 91.6872ZM1439.4 163.777C1452.3 167.177 1459.5 171.476 1469.9 181.975C1485.4 197.373 1491.2 212.27 1491.2 235.967C1491.2 279.761 1462 310.057 1419.41 310.357C1374.41 310.657 1344.22 278.361 1346.22 231.968C1347.32 207.771 1355.52 190.473 1372.41 176.675C1389.91 162.477 1415.91 157.478 1439.4 163.777Z"/><path d="M728.002 96.9865C677.409 101.886 633.715 131.882 612.018 176.475C593.121 215.37 593.421 267.663 612.718 306.457C637.615 356.35 686.908 385.346 746.5 385.246C821.189 385.146 879.281 338.253 891.88 268.063C895.479 248.065 894.379 219.269 889.38 200.972C870.083 131.282 805.192 89.4875 728.002 96.9865ZM766.497 168.377C799.892 177.075 820.989 208.571 818.69 246.366C816.69 278.361 799.592 301.558 770.196 312.157C761.098 315.456 737.201 315.956 726.003 312.956C690.708 303.858 669.91 271.062 674.01 231.068C677.409 198.572 698.106 174.776 729.002 167.877C739.101 165.677 756.798 165.877 766.497 168.377Z"/><path d="M1577.88 103.286C1577.88 104.086 1579.18 106.485 1580.68 108.585C1583.68 112.684 1594.18 128.082 1612.18 154.479C1623.58 171.276 1627.38 176.775 1653.67 215.27C1662.57 228.268 1669.87 239.467 1669.87 240.067C1669.87 241.066 1664.47 249.165 1638.87 286.16C1632.58 295.359 1619.48 314.456 1609.88 328.454C1600.28 342.552 1589.48 358.15 1585.98 363.249C1582.48 368.249 1578.98 373.448 1578.08 374.648L1576.68 376.948H1617.48L1658.37 376.848L1669.37 360.65C1675.47 351.751 1686.57 335.253 1694.27 323.955C1701.87 312.656 1708.87 302.658 1709.77 301.658C1711.36 299.958 1712.36 301.258 1728.96 325.455C1738.56 339.553 1750.36 356.85 1755.26 363.949L1764.16 376.948H1804.65C1836.55 376.948 1844.95 376.648 1844.55 375.648C1844.35 375.048 1838.55 366.349 1831.65 356.45C1824.85 346.552 1815.65 333.254 1811.35 326.954C1807.05 320.655 1802.05 313.456 1800.35 310.957C1798.65 308.457 1793.85 301.458 1789.65 295.459C1785.55 289.36 1778.66 279.461 1774.56 273.462C1770.36 267.363 1763.56 257.364 1759.36 251.265L1751.76 239.967L1771.56 210.971C1782.45 194.973 1803.35 164.377 1818.15 142.88C1832.85 121.383 1844.85 103.386 1844.85 102.886C1844.85 102.286 1828.65 102.086 1805.15 102.186L1765.36 102.486L1752.16 121.483C1744.86 131.882 1735.16 146.08 1730.46 152.979C1715.46 174.976 1712.16 179.475 1711.06 179.475C1710.46 179.475 1698.07 162.177 1683.57 140.98L1657.17 102.486L1617.48 102.186C1584.58 101.986 1577.88 102.186 1577.88 103.286Z"/><path d="M819.589 386.146C819.389 386.846 818.69 391.546 818.09 396.545C815.99 413.942 810.591 425.841 799.192 438.039C767.697 471.734 707.305 465.835 684.308 426.841L682.608 423.941H642.814C616.918 423.941 603.02 424.241 603.02 424.941C603.02 427.441 609.519 444.338 613.618 452.437C643.414 511.629 712.404 541.525 783.094 525.927C845.886 512.029 893.979 454.337 893.979 392.645V384.946H856.984C828.188 384.946 819.889 385.246 819.589 386.146Z"/></symbol>
@@ -632,7 +717,7 @@ body{background:var(--bone-100)}
 <header class="snav" id="snav">
   <div class="container">
     <div class="in">
-      <a class="logo" href="#top" aria-label="Segbox"><svg class="logo-svg" viewBox="0 0 2000 530" aria-hidden="true"><use href="#logo-word"/><rect class="logo-sq" x="1889" y="265" width="112" height="112"/></svg></a>
+      <a class="logo" href="index.html" aria-label="Segbox"><svg class="logo-svg" viewBox="0 0 2000 530" aria-hidden="true"><use href="#logo-word"/><rect class="logo-sq" x="1889" y="265" width="112" height="112"/></svg></a>
       <nav class="nav-links" aria-label="Principal">
         <div class="dd" data-dd><button type="button" aria-expanded="false" aria-haspopup="menu">Soluções <svg class="ico"><use href="#i-chevron"/></svg></button>
           <div class="dd-menu" role="menu" style="min-width:320px">
@@ -663,337 +748,325 @@ body{background:var(--bone-100)}
             <a class="dd-item" role="menuitem" href="https://insummit.online/" target="_blank" rel="noopener"><span><strong>INSUMMIT ↗</strong><small>Evento do mercado de seguros</small></span></a>
             <a class="dd-item" role="menuitem" href="https://reviewseguro.net" target="_blank" rel="noopener"><span><strong>ReviewSeguro ↗</strong><small>Reputação no mercado de seguros</small></span></a>
           </div></div>
-        <a href="sobre.html">Sobre</a>
+        <a href="sobre.html" aria-current="page">Sobre</a>
       </nav>
       <div class="flex" style="gap:8px"><a class="btn btn--sm cta-d" href="#contato">Fale com a gente</a><button class="btn btn--secondary btn--icon btn--sm menu-btn" type="button" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-haspopup="dialog" data-sgm-menu="#snav .nav-links" data-sgm-cta="#snav .cta-d" data-sgm-logo="#snav .logo"><svg class="ico"><use href="#i-menu"/></svg></button></div>
     </div>
   </div>
 </header>
-
 <main id="top">
-  <section class="hero-s">
-    <div class="container hero-grid">
-      <div>
-        <span class="tag" data-in style="--i:0">Tecnologia e inovação para seguradoras</span>
-        <h1 data-in style="--i:1">Tecnologia que coloca a seguradora mais perto do corretor.</h1>
-        <p class="lead" data-in style="--i:2">A Segbox é uma empresa de tecnologia e inovação para o mercado de seguros. Criamos plataformas white label, projetos sob medida e produtos próprios que já operam com milhares de corretores.</p>
-        <div class="row" data-in style="--i:3"><a class="btn btn--lg" href="#contato">Fale com a gente <svg class="ico ico-move"><use href="#i-arrow-ur"/></svg></a><a class="btn btn--secondary btn--lg" href="#solucoes">O que fazemos</a></div>
-      </div>
-      <div class="compo" data-in style="--i:2" aria-label="Exemplo ilustrativo da plataforma Otimize White Label">
-        <i class="sq sq--coral" style="width:210px;height:210px;right:6%;top:0"></i>
-        <i class="sq sq--indigo" style="width:120px;height:120px;right:-2%;top:206px"></i>
-        <i class="sq sq--ember" style="width:58px;height:58px;left:8%;top:12px"></i>
-        <i class="sq sq--ink" style="width:34px;height:34px;left:2%;bottom:132px"></i>
-        <div class="win"><div class="chrome"><span></span><span></span><span></span><div class="url">hub.suaseguradora.com.br/corretor</div></div>
-          <div class="app" style="min-height:280px"><aside><div class="b"><i></i>Sua Seguradora</div><a class="on">Peças aprovadas</a><a>Landing pages</a><a>Meus leads</a><a>Agenda</a></aside>
-            <div class="main"><div class="flex" style="justify-content:space-between"><strong>Campanha do mês</strong><span class="tag tag--ok"><i class="dot"></i>Aprovada</span></div>
-              <div class="thumbs"><div class="thumb"><span class="tag">Travado</span></div><div class="thumb"><span class="tag">Travado</span></div><div class="thumb"><span class="tag">Editável</span></div><div class="thumb"><span class="tag">Travado</span></div></div>
-              <span class="label" style="color:var(--fg-3)">Exemplo ilustrativo</span></div></div></div>
-      </div>
-    </div>
-  </section>
+<!-- 01. HERO: os cubos orbitam, se alinham no quadrado do logo e se fundem no quadrado do header -->
+<section class="sb-hero" id="sbHero"><div class="gl" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="container grid2">
+<div>
+<span class="label" data-in style="--i:0">[ 01 ] Sobre a Segbox</span>
+<h1 data-in style="--i:1">Tecnologia de seguros feita por quem cresceu dentro do mercado.</h1>
+<p class="lead" data-in style="--i:2">A Segbox é uma empresa de tecnologia e inovação para o mercado de seguros. Começamos em 2017 ao lado do corretor. Hoje construímos as plataformas que seguradoras usam para levar marca, conteúdo e ferramentas a milhares deles.</p>
+<div class="row" data-in style="--i:3"><a class="btn btn--lg btn--liquid" href="#contato">Fale com a gente <svg class="ico ico-move"><use href="#i-arrow-ur"/></svg></a><a class="btn btn--secondary btn--lg" href="#hoje">Ver o que fazemos</a></div>
+<div class="sb-mani" data-in style="--i:4"><b>Seguro é feito de gente, regras e confiança.</b><span>Tecnologia que ignora isso não chega na ponta.</span><span>A nossa nasce da rotina de quem vende e das exigências de quem responde pela marca.</span></div>
+</div>
+<div class="sb-stage" id="sbStage" data-in style="--i:2" aria-hidden="true">
+<div class="sb-frame"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i><span class="sb-coord a">[ 2017 ]</span><span class="sb-coord b">[ 2026 ]</span>
+<div class="sb-fb"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+<span class="sb-cap" id="sbCap">Bloco a bloco</span>
+</div>
+</div></section>
 
-  <div class="ticker" aria-hidden="true"><div class="track label" id="tickerTrack"></div></div>
+<!-- 02. QUEM SOMOS -->
+<section class="sb-sec" id="quem-somos"><div class="container">
+<div class="sb-who">
+<div class="sec-head" data-rv><span class="label">[ 02 ] Quem somos</span><h2 class="t-h1 h-balance h-fade">Entendemos o seguro antes de escrever <span class="h-fade-2">a primeira linha de código.</span></h2></div>
+<div class="tx" data-rv>
+<p>A Segbox nasceu em 2017 para resolver um problema concreto: o corretor de seguros precisava existir no digital e não tinha por onde começar. Foi convivendo com essa rotina, cotação, prazo, cliente cobrando e pouco tempo para o resto, que aprendemos como o mercado funciona na ponta. Com o tempo, seguradoras, assessorias e insurtechs passaram a pedir a mesma coisa em escala: tecnologia que funcione para uma rede inteira.</p>
+<p>Hoje somos uma empresa de tecnologia e inovação para o mercado de seguros. Criamos plataformas white label, projetos sob medida e produtos próprios que já operam com milhares de corretores. O mesmo time desenha, desenvolve, implanta e evolui cada plataforma depois do lançamento. Por isso sabemos o que o corretor precisa para usar e o que a seguradora precisa para confiar.</p>
+</div>
+</div>
+<div class="sb-facts" data-rv>
+<div><span class="label">Desde</span><b>2017</b><span>O ano em que começamos.</span></div>
+<div><span class="label">Produtos próprios</span><b>4</b><span>Otimize, SegZap, CorretorPRO e LeadsGO!.</span></div>
+<div><span class="label">White label</span><b>2</b><span>Otimize e SegZap com a marca da seguradora.</span></div>
+<div><span class="label">Iniciativas</span><b>5</b><span>Insurtalks, InsurtalksCast, INSUMMIT, Insurance Innovators e ReviewSeguro.</span></div>
+</div>
+</div></section>
 
-  <section class="sect partners" id="parceiros">
-    <div class="container"><div class="sect-h"><div class="sec-head"><span class="label">Parceiros</span><h2 class="t-h1 h-balance">Quem já constrói com a Segbox.</h2></div><p class="t-small" style="max-width:34ch">Passe o mouse: as marcas acordam perto do cursor.</p></div></div>
-    <div class="pt-stage" data-pt aria-label="Parceiros da Segbox"><div class="pt-row" data-dir="-1"><div class="pt-track"></div></div></div>
-  </section>
+<!-- 03. O QUE ACREDITAMOS: cada card encaixa um cubo ao entrar na tela; no hover o cubo gira e sobe -->
+<section class="sb-sec" id="acreditamos"><div class="container">
+<div class="sec-head" data-rv><span class="label">[ 03 ] O que acreditamos</span><h2 class="t-h1 h-balance h-fade">Quatro coisas que guiam <span class="h-fade-2">cada projeto.</span></h2></div>
+<div class="bl-grid">
+<article class="bl" data-bl><div><span class="label n">001</span><h3 class="t-h3">Quem usa decide se funciona.</h3><p>Uma plataforma só dá certo se o corretor abre no dia seguinte. Desenhamos para a rotina real de quem vende, não para a apresentação da reunião.</p></div><span class="bl-cube" aria-hidden="true"><img class="sb-cube" src="assets/cubo-coral.jpg" alt="" width="720" height="720" loading="lazy" decoding="async" style="--r:-6deg"></span></article>
+<article class="bl" data-bl><div><span class="label n">002</span><h3 class="t-h3">Marca é responsabilidade, não detalhe.</h3><p>Quem responde pela marca precisa de controle sobre o que chega à rede. Por isso nossas plataformas dão liberdade ao corretor dentro de regras claras da seguradora.</p></div><span class="bl-cube" aria-hidden="true"><img class="sb-cube" src="assets/cubo-obsidiana-preto.jpg" alt="" width="720" height="720" loading="lazy" decoding="async" style="--r:8deg"></span></article>
+<article class="bl" data-bl><div><span class="label n">003</span><h3 class="t-h3">Lançar é o começo.</h3><p>Não entregamos código e vamos embora. Operamos, damos suporte, treinamos a rede e melhoramos o produto enquanto ele estiver no ar.</p></div><span class="bl-cube" aria-hidden="true"><img class="sb-cube sb-em" src="assets/cubo-coral.jpg" alt="" width="720" height="720" loading="lazy" decoding="async" style="--r:14deg"></span></article>
+<article class="bl" data-bl><div><span class="label n">004</span><h3 class="t-h3">Mercado forte é mercado que conversa.</h3><p>Inovação não acontece isolada. Por isso também criamos espaços para o setor trocar conhecimento, reconhecer quem inova e dar voz ao consumidor.</p></div><span class="bl-cube" aria-hidden="true"><img class="sb-cube" src="assets/cubo-coral.jpg" alt="" width="720" height="720" loading="lazy" decoding="async" style="--r:-18deg"></span></article>
+</div>
+</div></section>
 
-  <section class="sect" id="problema">
-    <div class="container">
-      <div class="sect-h"><div class="sec-head"><span class="label">Por que a Segbox</span><h2 class="t-h1 h-balance">Tecnologia feita por quem vive o mercado de seguros.</h2></div></div>
-      <div class="manifesto">
-        <div class="m-row"><span class="label n">001</span><h3 class="t-h3">Nascemos dentro do setor.</h3><p>Desde 2017 construímos para seguradoras, assessorias e corretores. Conhecemos a rotina de quem vende e as exigências de quem responde pela marca.</p></div>
-        <div class="m-row"><span class="label n">002</span><h3 class="t-h3">Construímos e operamos.</h3><p>Não entregamos só código. O mesmo time desenha, desenvolve, implanta e evolui cada plataforma depois do lançamento.</p></div>
-        <div class="m-row"><span class="label n">003</span><h3 class="t-h3">Tecnologia com gente do lado.</h3><p>Treinamento, atendimento e acompanhamento de resultados junto com o time da seguradora, quando o projeto pede.</p></div>
-      </div>
-    </div>
-  </section>
+<!-- 04. TRAJETÓRIA: cada ano ativo liga um cubo; a pirâmide cresce com a rolagem -->
+<style>
+.tz-g{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(24px,5vw,72px);margin-top:clamp(32px,5vw,56px)}
+.tz-g>*{min-width:0}
+.visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.tz-list{list-style:none;margin:0;padding:0 0 16vh}
+.tz-st{position:relative;min-height:34vh;display:flex;align-items:center;gap:18px;padding-left:28px;border-left:1px solid var(--line);opacity:.3;transition:opacity 420ms var(--ease-out)}
+.tz-st::before{content:"";position:absolute;left:-5px;top:calc(50% - 5px);width:9px;height:9px;background:var(--bg);border:1px solid var(--line-strong);transition:background 260ms ease,transform 400ms var(--ease-out)}
+.tz-st.on{opacity:1}
+.tz-st.on::before{background:#0B0B0D;border-color:#0B0B0D;transform:rotate(45deg)}
+.tz-st .tz-y{display:block;font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;color:var(--fg-3)}
+.tz-st.on .tz-y{color:var(--label-accent)}
+.tz-st h3{margin-top:8px;font-family:var(--font-display);font-weight:600;font-size:clamp(1.35rem,2.4vw,1.9rem);line-height:1.08;letter-spacing:-.03em;text-wrap:balance}
+.tz-st p{margin-top:8px;color:var(--fg-2);max-width:44ch}
+.tz-mc{display:none;width:84px;height:84px;flex:none;margin:-6px -8px -6px 0;mix-blend-mode:multiply}
+.ld-ph .ld-cube{mix-blend-mode:multiply}.ld blockquote footer strong{color:var(--fg)}
+html{background:var(--bg)}
+.js-sbh .sb-cap{top:auto;bottom:3%;transform:translateX(-50%)}
+.sb-frame .corner.bl{position:absolute;display:block;padding:0;border-radius:0;background:none;isolation:auto;width:10px;height:10px;border-style:solid;border-color:var(--fg);border-width:0 0 1px 1px;bottom:-1px;left:-1px}
+@media (max-width:640px){.bl-cube img{width:116px;height:116px;margin:-58px 0 0 -58px}}
+.tz-stick{position:sticky;top:96px;height:calc(100vh - 120px);min-height:460px;display:flex;align-items:center}
+.tz-stage{position:relative;isolation:isolate;width:100%;max-width:540px;aspect-ratio:1;margin-left:auto;border:1px solid var(--line);border-radius:var(--r-4);background:#fff;overflow:hidden}
+.tz-yr{position:absolute;right:5%;top:5%;font-family:var(--font-display);font-weight:600;font-size:clamp(2.4rem,4.5vw,4rem);line-height:1;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1.3px rgba(11,11,13,.24);font-variant-numeric:tabular-nums}
+.tz-c{position:absolute;left:var(--x);top:var(--y);width:28%;height:auto;mix-blend-mode:multiply;opacity:0;transform:translateY(-60px) rotate(var(--r,0deg)) scale(.9);transition:opacity 500ms ease,transform 820ms cubic-bezier(.34,1.3,.64,1)}
+.tz-c.on{opacity:1;transform:rotate(var(--r,0deg))}
+@media (max-width:900px){
+  .tz-g{grid-template-columns:minmax(0,1fr)}
+  .tz-stick{display:none}
+  .tz-list{padding-bottom:0}
+  .tz-st{min-height:0;padding-block:18px;opacity:1;justify-content:space-between}
+  .tz-st::before{top:28px}
+  .tz-st .tz-y{color:var(--label-accent)}
+  .tz-mc{display:block}
+}
+@media (prefers-reduced-motion:reduce){.tz-st{opacity:1}.tz-c{opacity:1;transform:rotate(var(--r,0deg));transition:none}}
+</style>
+<section class="sb-sec" id="trajetoria"><div class="container">
+<div class="sec-head" data-rv><span class="label">[ 04 ] Trajetória</span><h2 class="t-h1 h-balance h-fade">Nove anos construindo <span class="h-fade-2">junto com o mercado.</span></h2><p class="t-lead">Cada passo veio de um problema real do setor.</p></div>
+<div class="tz-g">
+<ol class="tz-list" id="sbTz">
+<li class="tz-st" data-i="0"><div><span class="tz-y">2017</span><h3>Começo</h3><p>A Segbox nasce para levar o corretor de seguros para o digital.</p></div><img class="tz-mc" src="assets/cubo-coral.jpg" alt="" width="720" height="720" loading="lazy" decoding="async"></li>
+<li class="tz-st" data-i="1"><div><span class="tz-y">2018</span><h3>Leads</h3><p>Passamos a gerar oportunidades de venda para corretores com Google e Meta Ads.</p></div><img class="tz-mc" src="assets/cubo-indigo.jpg" alt="" width="720" height="720" loading="lazy" decoding="async"></li>
+<li class="tz-st" data-i="2"><div><span class="tz-y">2019</span><h3>CorretorPRO</h3><p>Nasce o CorretorPRO, sites prontos para o corretor ter presença própria.</p></div><img class="tz-mc" src="assets/cubo-obsidiana.jpg" alt="" width="720" height="720" loading="lazy" decoding="async"></li>
+<li class="tz-st" data-i="3"><div><span class="tz-y">2020</span><h3>LeadsClube</h3><p>Surge o LeadsClube, hoje LeadsGO!, com leads de seguro para a rede.</p></div><img class="tz-mc" src="assets/cubo-coral.jpg" alt="" width="720" height="720" loading="lazy" decoding="async"></li>
+<li class="tz-st" data-i="4"><div><span class="tz-y">2021</span><h3>Grandes players</h3><p>Começamos a construir tecnologia para grandes empresas do mercado.</p></div><img class="tz-mc" src="assets/cubo-indigo.jpg" alt="" width="720" height="720" loading="lazy" decoding="async"></li>
+<li class="tz-st" data-i="5"><div><span class="tz-y">2022</span><h3>Insurtalks</h3><p>Estreia a Insurtalks, nosso portal de notícias do setor.</p></div><img class="tz-mc" src="assets/cubo-obsidiana.jpg" alt="" width="720" height="720" loading="lazy" decoding="async"></li>
+<li class="tz-st" data-i="6"><div><span class="tz-y">2023</span><h3>Otimize e Insurance Innovators</h3><p>Chegam a Otimize e a Insurance Innovators, premiação de inovação em seguros.</p></div><img class="tz-mc" src="assets/cubo-coral.jpg" alt="" width="720" height="720" loading="lazy" decoding="async"></li>
+<li class="tz-st" data-i="7"><div><span class="tz-y">2024</span><h3>INSUMMIT</h3><p>Lançamos o INSUMMIT, com grandes nomes do mercado ao alcance do corretor.</p></div><img class="tz-mc" src="assets/cubo-indigo.jpg" alt="" width="720" height="720" loading="lazy" decoding="async"></li>
+<li class="tz-st" data-i="8"><div><span class="tz-y">2025</span><h3>InsurtalksCast</h3><p>Nasce o InsurtalksCast, o podcast da Insurtalks.</p></div><img class="tz-mc" src="assets/cubo-obsidiana.jpg" alt="" width="720" height="720" loading="lazy" decoding="async"></li>
+<li class="tz-st" data-i="9"><div><span class="tz-y">2026</span><h3>SegZap</h3><p>O SegZap entra em cena: um assistente de IA no WhatsApp.</p></div><img class="tz-mc" src="assets/cubo-coral.jpg" alt="" width="720" height="720" loading="lazy" decoding="async"></li>
+</ol>
+<div class="tz-stick" aria-hidden="true"><div class="tz-stage" id="sbTzStage"><span class="tz-yr" id="sbTzYr">2017</span>
+<img class="tz-c" src="assets/cubo-coral.jpg" alt="" width="720" height="720" loading="lazy" decoding="async" style="--x:4%;--y:66%;--r:-6deg">
+<img class="tz-c" src="assets/cubo-indigo.jpg" alt="" width="720" height="720" loading="lazy" decoding="async" style="--x:26%;--y:66%;--r:4deg">
+<img class="tz-c" src="assets/cubo-obsidiana.jpg" alt="" width="720" height="720" loading="lazy" decoding="async" style="--x:48%;--y:66%;--r:-3deg">
+<img class="tz-c" src="assets/cubo-coral.jpg" alt="" width="720" height="720" loading="lazy" decoding="async" style="--x:70%;--y:66%;--r:7deg">
+<img class="tz-c" src="assets/cubo-indigo.jpg" alt="" width="720" height="720" loading="lazy" decoding="async" style="--x:15%;--y:46%;--r:5deg">
+<img class="tz-c" src="assets/cubo-obsidiana.jpg" alt="" width="720" height="720" loading="lazy" decoding="async" style="--x:37%;--y:46%;--r:-5deg">
+<img class="tz-c" src="assets/cubo-coral.jpg" alt="" width="720" height="720" loading="lazy" decoding="async" style="--x:59%;--y:46%;--r:3deg">
+<img class="tz-c" src="assets/cubo-indigo.jpg" alt="" width="720" height="720" loading="lazy" decoding="async" style="--x:26%;--y:26%;--r:-4deg">
+<img class="tz-c" src="assets/cubo-obsidiana.jpg" alt="" width="720" height="720" loading="lazy" decoding="async" style="--x:48%;--y:26%;--r:6deg">
+<img class="tz-c" src="assets/cubo-coral.jpg" alt="" width="720" height="720" loading="lazy" decoding="async" style="--x:37%;--y:6%;--r:-2deg">
+</div></div>
+</div>
+</div></section>
 
-  <section class="sect" id="solucoes" style="background:var(--surface)">
-    <div class="container">
-      <div class="sect-h"><div class="sec-head"><span class="label">O que fazemos</span><h2 class="t-h1 h-balance">Duas formas de levar tecnologia para a sua rede.</h2></div><p class="t-lead" style="max-width:38ch">Do produto pronto ao sistema criado do zero, sempre com a marca da seguradora.</p></div>
-      <div class="three" style="grid-template-columns:repeat(2,1fr)">
-        <article class="card"><span class="label" style="color:var(--fg-3)">Pronto para implantar</span><h3 class="t-h2">Plataformas white label</h3><p>Nossos produtos com a marca da seguradora, integrados ao portal dela.</p>
-          <div class="sub"><div><strong>Otimize White Label</strong><span>Marketing e materiais oficiais para a rede.</span></div><a class="link-arrow" href="produto-otimize-whitelabel.html">Ver <svg class="ico"><use href="#i-arrow-ur"/></svg></a></div>
-          <div class="sub"><div><strong>SegZap White Label</strong><span>Assistente de IA no WhatsApp.</span></div><a class="link-arrow" href="produto-segzap-whitelabel.html">Ver <svg class="ico"><use href="#i-arrow-ur"/></svg></a></div></article>
-        <article class="card"><span class="label" style="color:var(--fg-3)">Sob medida</span><h3 class="t-h2">Projetos do zero</h3><p>Se o que você precisa não existe, construímos: portais de parceiros, capacitação, integrações e assistentes de IA.</p>
-          <div class="chips"><span class="tag">Portais</span><span class="tag">Capacitação</span><span class="tag">Integrações</span><span class="tag">IA</span></div>
-          <div style="margin-top:auto;padding-top:12px"><a class="btn btn--secondary" href="projetos-sob-medida.html">Ver projetos sob medida</a></div></article>
-      </div>
-    </div>
-  </section>
+<!-- 05. O QUE FAZEMOS HOJE -->
+<section class="sb-sec" id="hoje"><div class="container">
+<div class="sec-head" data-rv><span class="label">[ 05 ] O que fazemos hoje</span><h2 class="t-h1 h-balance h-fade">Três formas de levar tecnologia <span class="h-fade-2">para a sua rede.</span></h2><p class="t-lead">Do produto pronto ao sistema criado do zero, sempre pensando em quem está na ponta.</p></div>
+<div class="dz">
+<article class="card" data-rv><span class="label">01 · White label</span><h3 class="t-h3">Plataformas white label</h3><p>Nossos produtos com a marca da seguradora, integrados ao portal dela.</p>
+<ul class="dz-l">
+<li><a href="produto-otimize-whitelabel.html"><span><strong>Otimize White Label</strong><small>Materiais oficiais e landing pages para a rede.</small></span><svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li>
+<li><a href="produto-segzap-whitelabel.html"><span><strong>SegZap White Label</strong><small>Assistente de IA no WhatsApp.</small></span><svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li>
+</ul></article>
+<article class="card" data-rv><span class="label">02 · Sob medida</span><h3 class="t-h3">Projetos sob medida</h3><p>Quando o que a rede precisa não existe, construímos do zero: portais de parceiros, capacitação, integrações e assistentes de IA.</p>
+<ul class="dz-l">
+<li><a href="projetos-sob-medida.html"><span><strong>Ver projetos sob medida</strong><small>Portais, capacitação, integrações e IA.</small></span><svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li>
+</ul></article>
+<article class="card" data-rv><span class="label">03 · Produtos próprios</span><h3 class="t-h3">Produtos próprios</h3><p>Ferramentas que o corretor usa no dia a dia e que nos ensinam, todos os dias, o que funciona na ponta.</p>
+<ul class="dz-l">
+<li><a href="produto-otimize.html"><span><strong>Otimize</strong></span><svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li>
+<li><a href="produto-segzap.html"><span><strong>SegZap</strong></span><svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li>
+<li><a href="produto-corretorpro.html"><span><strong>CorretorPRO</strong></span><svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li>
+<li><a href="produto-leadsgo.html"><span><strong>LeadsGO!</strong></span><svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li>
+</ul></article>
+</div>
+</div></section>
 
-  <section class="sect" id="cases">
-    <div class="container">
-      <div class="sect-h"><div class="sec-head"><span class="label">Cases</span><h2 class="t-h1 h-balance">O que já construímos para o mercado.</h2></div></div>
-      <div class="cgrid"><a class="cc" href="case-mapfre.html"><span class="th th-mf"><img src="assets/cases/mapfre.jpg" alt="Tela inicial do painel MAPFRE +Digital, com menu rápido, acessos das corretoras e artes recentes" width="1094" height="678" loading="lazy" decoding="async"></span><span class="label" style="color:var(--label-accent)">Case · MAPFRE +Digital</span><strong>A marca da MAPFRE em mais de 17 mil corretoras, sob controle.</strong><span class="t-small">Materiais oficiais na mão de cada corretor, com o logo dele, e um painel para a seguradora medir tudo.</span><span class="go label">Ver case <svg class="ico"><use href="#i-arrow-ur"/></svg></span></a><a class="cc" href="case-suhai.html"><span class="th th-su"><img src="assets/cases/suhai.jpg" alt="Tela inicial do Venda+ Suhai, com o quiz de maturidade digital e atalhos para redes sociais e cartão digital" width="1094" height="678" loading="lazy" decoding="async"></span><span class="label" style="color:var(--label-accent)">Case · Venda+ Suhai</span><strong>Uma plataforma viva, usada como ferramenta de growth.</strong><span class="t-small">Comercial e trade criam campanhas com a Segbox e levam resultado de venda para a rede.</span><span class="go label">Ver case <svg class="ico"><use href="#i-arrow-ur"/></svg></span></a><a class="cc" href="case-suhai-academy-v2.html"><span class="th th-ac"><img src="assets/cases/capacita.jpg" alt="Painel do consultor no Suhai Capacita, com a trilha, o progresso e o sistema de vendas bloqueado até a avaliação" width="1094" height="678" loading="lazy" decoding="async"></span><span class="label" style="color:var(--label-accent)">Case · Suhai Capacita</span><strong>Ninguém vende antes de aprender.</strong><span class="t-small">Trilha, avaliação e certificado liberam o sistema de vendas do consultor.</span><span class="go label">Ver case <svg class="ico"><use href="#i-arrow-ur"/></svg></span></a><a class="cc" href="case-baeta.html"><span class="th th-bp"><img src="assets/cases/baeta.jpg" alt="Dashboard do BaetaPRO com a saudação ao corretor, primeiros passos e resumo do mês" width="1094" height="678" loading="lazy" decoding="async"></span><span class="label" style="color:var(--label-accent)">Case · BaetaPRO</span><strong>Tudo o que a assessoria oferece, num portal só.</strong><span class="t-small">Multicadastro, ferramentas com login único, crédito, conteúdo e equipe.</span><span class="go label">Ver case <svg class="ico"><use href="#i-arrow-ur"/></svg></span></a></div>
-      <div class="qbox" style="margin:clamp(48px,7vw,80px) auto 0;max-width:760px">
-          <i data-depth="-22" class="sq sq--indigo" style="width:110px;height:110px;right:6%;top:0"></i>
-          <i data-depth="16" class="sq sq--coral" style="width:70px;height:70px;left:0;bottom:6px"></i>
-          <i data-depth="34" class="sq sq--ember" style="width:40px;height:40px;right:0;bottom:64px"></i>
-          <blockquote class="glass"><p>“A plataforma oferece navegação intuitiva e recursos que facilitam a gestão de campanhas, aumentando a produtividade e a satisfação dos parceiros.”</p><footer><span class="avatar">TS</span><span>Tatiane Seraphim, Comunicação e Marketing da MAPFRE</span></footer></blockquote>
-      </div>
-    </div>
-  </section>
+<!-- 06. INICIATIVAS -->
+<section class="sb-sec" id="iniciativas"><div class="container">
+<div class="sec-head" data-rv><span class="label">[ 06 ] Iniciativas</span><h2 class="t-h1 h-balance h-fade">Também movemos o mercado <span class="h-fade-2">fora das nossas plataformas.</span></h2><p class="t-lead">Informação, conhecimento, reconhecimento e reputação. Iniciativas próprias que fazem o setor avançar junto.</p></div>
+<div class="ini">
+<a href="https://www.insurtalks.com.br/" target="_blank" rel="noopener" data-rv><span class="nm"><strong><i class="sqm sq--coral" aria-hidden="true"></i>Insurtalks</strong><svg class="ico" aria-hidden="true"><use href="#i-arrow-ur"/></svg></span><p>Portal de notícias do mercado de seguros.</p><span class="dom">insurtalks.com.br<span class="visually-hidden"> (abre em nova aba)</span></span></a>
+<a href="https://www.insurtalks.com.br/cast" target="_blank" rel="noopener" data-rv><span class="nm"><strong><i class="sqm sq--ink" aria-hidden="true"></i>InsurtalksCast</strong><svg class="ico" aria-hidden="true"><use href="#i-arrow-ur"/></svg></span><p>O podcast da Insurtalks, com conversas sobre o setor.</p><span class="dom">insurtalks.com.br/cast<span class="visually-hidden"> (abre em nova aba)</span></span></a>
+<a href="https://insummit.online/" target="_blank" rel="noopener" data-rv><span class="nm"><strong><i class="sqm sq--ember" aria-hidden="true"></i>INSUMMIT</strong><svg class="ico" aria-hidden="true"><use href="#i-arrow-ur"/></svg></span><p>Palestras com grandes nomes do mercado e conhecimento acessível para o corretor.</p><span class="dom">insummit.online<span class="visually-hidden"> (abre em nova aba)</span></span></a>
+<a href="https://innovators.insurtalks.com.br/" target="_blank" rel="noopener" data-rv><span class="nm"><strong><i class="sqm sq--coral" aria-hidden="true"></i>Insurance Innovators</strong><svg class="ico" aria-hidden="true"><use href="#i-arrow-ur"/></svg></span><p>Premiação com conselho consultivo e selo de inovação para quem inova em seguros.</p><span class="dom">innovators.insurtalks.com.br<span class="visually-hidden"> (abre em nova aba)</span></span></a>
+<a href="https://reviewseguro.net" target="_blank" rel="noopener" data-rv><span class="nm"><strong><i class="sqm sq--ink" aria-hidden="true"></i>ReviewSeguro</strong><svg class="ico" aria-hidden="true"><use href="#i-arrow-ur"/></svg></span><p>Plataforma de reputação para o mercado de seguros.</p><span class="dom">reviewseguro.net<span class="visually-hidden"> (abre em nova aba)</span></span></a>
+</div>
+</div></section>
 
-  <section class="sect" id="governanca" style="background:var(--surface)">
-    <div class="container">
-      <div class="sect-h"><div class="sec-head"><span class="label">Como trabalhamos</span><h2 class="t-h1 h-balance">Do desafio à plataforma no ar, com o mesmo time.</h2></div></div>
-      <div class="steps4" id="howSteps"><div class="hw-track" aria-hidden="true"><i id="hwFill"></i></div>
-        <div class="step hw"><span class="hw-sq" aria-hidden="true"></span><span class="label">Passo 1</span><h3 class="t-h3">Entender</h3><p>Mergulhamos no desafio da seguradora e na rotina da rede.</p></div>
-        <div class="step hw"><span class="hw-sq" aria-hidden="true"></span><span class="label">Passo 2</span><h3 class="t-h3">Desenhar</h3><p>Escolhemos entre adaptar um produto nosso ou criar do zero.</p></div>
-        <div class="step hw"><span class="hw-sq" aria-hidden="true"></span><span class="label">Passo 3</span><h3 class="t-h3">Construir e integrar</h3><p>Desenvolvemos com a marca da seguradora e integramos aos sistemas dela.</p></div>
-        <div class="step hw"><span class="hw-sq" aria-hidden="true"></span><span class="label">Passo 4</span><h3 class="t-h3">Operar e evoluir</h3><p>Suporte, treinamento e melhorias contínuas depois do lançamento.</p></div>
-      </div>
-    </div>
-  </section>
+<!-- 07. LIDERANÇA -->
+<section class="sb-sec" id="lideranca"><div class="container">
+<div class="sec-head" data-rv><span class="label">[ 07 ] Liderança</span></div>
+<div class="ld">
+<div class="ld-ph" data-rv>
+<figure><img class="ph" src="assets/sobre/joao_arthur.jpg" alt="João Arthur, CEO e founder da Segbox" width="900" height="600" loading="lazy" decoding="async"><figcaption>João Arthur · Segbox</figcaption></figure>
+<span class="ld-cube" aria-hidden="true"><img class="sb-cube" src="assets/cubo-coral.jpg" alt="" width="720" height="720" loading="lazy" decoding="async"></span>
+<i class="ld-sq" aria-hidden="true"></i>
+</div>
+<blockquote data-rv><p>Começamos ao lado do corretor, resolvendo problemas pequenos todos os dias. Foi isso que nos ensinou a construir para uma rede inteira. Tecnologia no seguro só funciona quando chega na ponta e protege quem responde pela marca.</p>
+<footer><strong>João Arthur</strong><span>CEO e founder</span></footer></blockquote>
+</div>
+</div></section>
 
-  <section class="sect" id="produtos">
-    <div class="container">
-      <div class="sect-h"><div class="sec-head"><span class="label">Produtos que já operam</span><h2 class="t-h1 h-balance">Não vendemos protótipo. Operamos produto com corretor real.</h2></div></div>
-      <div class="plist">
-        <a class="prow" href="produto-otimize.html"><span class="label yr">2023</span><strong class="t-h4">Otimize</strong><p>Peças, sites e landing pages em um só ambiente.</p><span class="go label">Ver <svg class="ico"><use href="#i-arrow-ur"/></svg></span></a>
-        <a class="prow" href="produto-segzap.html"><span class="label yr">2026</span><strong class="t-h4">SegZap</strong><p>Assistente de IA no WhatsApp para o atendimento.</p><span class="go label">Ver <svg class="ico"><use href="#i-arrow-ur"/></svg></span></a>
-      </div>
-    </div>
-  </section>
+<!-- 08. EM NÚMEROS: só fatos verificados -->
+<section class="sb-sec" id="numeros"><div class="container">
+<div class="sec-head" data-rv><span class="label">[ 08 ] Em números</span><h2 class="t-h1 h-balance h-fade">Nove anos de trabalho <span class="h-fade-2">na ponta do seguro.</span></h2></div>
+<div class="sb-facts" data-rv>
+<div><span class="label">Desde</span><b>2017</b><span>O ano em que começamos.</span></div>
+<div><span class="label">Na rede</span><b>Milhares</b><span>De corretores usando plataformas construídas pela Segbox.</span></div>
+<div><span class="label">Produtos próprios</span><b>4</b><span>Otimize, SegZap, CorretorPRO e LeadsGO!.</span></div>
+<div><span class="label">Iniciativas</span><b>5</b><span>Insurtalks, InsurtalksCast, INSUMMIT, Insurance Innovators e ReviewSeguro.</span></div>
+</div>
+</div></section>
 
-  <section class="sect" id="implantacao" style="background:var(--surface)">
-    <div class="container two">
-      <div>
-        <div class="sec-head"><span class="label">Integração e segurança</span><h2 class="t-h1 h-balance">Conecta com o que a seguradora já usa.</h2></div>
-        <div class="term" style="margin-top:28px"><div class="bar"><span>segbox://sso</span><span>exemplo</span></div><pre id="termOut" aria-live="off"></pre></div>
-        <div class="list3">
-          <div><svg class="ico"><use href="#i-lock"/></svg><span><strong>Login único</strong>O usuário entra já autenticado pelo portal da seguradora, sem senha nova.</span></div>
-          <div><svg class="ico"><use href="#i-users"/></svg><span><strong>Treinamento da rede</strong>Videoaulas, encontros e apoio para a rede extrair o máximo da plataforma.</span></div>
-          <div><svg class="ico"><use href="#i-message"/></svg><span><strong>Suporte contínuo</strong>Atendimento aos usuários e acompanhamento de resultados com a seguradora.</span></div>
-        </div>
-      </div>
-      <div>
-        <div class="sec-head" style="margin-bottom:24px"><span class="label">Perguntas frequentes</span><h2 class="t-h2">O que costumam perguntar.</h2></div>
-        <div class="acc" id="faq" data-scroll-target="&lt;.acc-item" data-scroll-ctl=".acc-h" data-scroll-delay="300">
-          <div class="acc-item open"><button class="acc-h" type="button" aria-expanded="true"><span class="n">01</span><span>Vocês integram com os sistemas da seguradora?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b"><div><p>Sim. Integramos por API e login único com portais, sistemas de vendas e bases da seguradora.</p></div></div></div>
-          <div class="acc-item"><button class="acc-h" type="button" aria-expanded="false"><span class="n">02</span><span>Preciso escolher entre produto pronto e projeto do zero?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b"><div><p>Não. Muitos projetos combinam os dois: partimos de uma plataforma nossa e criamos o que falta.</p></div></div></div>
-          <div class="acc-item"><button class="acc-h" type="button" aria-expanded="false"><span class="n">03</span><span>Vocês cuidam do suporte depois do lançamento?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b"><div><p>Sim. Operamos as plataformas e podemos incluir treinamento, atendimento e acompanhamento de resultados.</p></div></div></div>
-          <div class="acc-item"><button class="acc-h" type="button" aria-expanded="false"><span class="n">04</span><span>Posso pedir algo que ainda não existe?</span><svg class="ico"><use href="#i-plus"/></svg></button><div class="acc-b"><div><p>Pode. Construímos do zero, com o mesmo time que opera os produtos.</p></div></div></div>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- 09. CONTATO (contato D, copiado de projetos-sob-medida.html) -->
+<section class="sect" id="contato" style="padding-top:clamp(40px,6vw,72px)">
+<div class="container">
+<div class="contact-d" data-surface="ink">
+<i class="sq sq--coral" style="width:150px;height:150px;right:7%;top:26px" aria-hidden="true"></i>
+<i class="sq sq--ember" style="width:92px;height:92px;right:1.5%;bottom:34px" aria-hidden="true"></i>
+<i class="sq sq--coral" style="width:44px;height:44px;right:36%;top:16px;opacity:.9" aria-hidden="true"></i>
+<div class="cg">
+<div><span class="label">[ 09 ] Contato</span><h2 class="t-display h-balance" style="margin-top:14px">Agora que você conhece a gente, conte o desafio da sua rede.</h2><p class="t-lead" style="margin-top:16px;max-width:40ch">Uma conversa curta para entender o que a sua organização precisa: uma plataforma pronta ou algo feito do zero.</p></div>
+<form class="glass" id="sbForm" novalidate>
+<div class="field"><label class="label" for="sbF_n">Nome<span class="req" aria-hidden="true">*</span></label><input class="input" id="sbF_n" name="nome" autocomplete="name" placeholder="Seu nome" required aria-describedby="sbF_ne"><span class="hint err" id="sbF_ne" hidden><svg class="ico"><use href="#i-alert"/></svg>Informe seu nome.</span></div>
+<div class="field"><label class="label" for="sbF_c">Cargo</label><input class="input" id="sbF_c" name="cargo" autocomplete="organization-title" placeholder="Ex.: Diretor de Canais"></div>
+<div class="field"><label class="label" for="sbF_o">Empresa<span class="req" aria-hidden="true">*</span></label><input class="input" id="sbF_o" name="empresa" autocomplete="organization" placeholder="Nome da organização" required aria-describedby="sbF_oe"><span class="hint err" id="sbF_oe" hidden><svg class="ico"><use href="#i-alert"/></svg>Informe a organização.</span></div>
+<div class="field"><label class="label" for="sbF_i">Interesse</label><select class="select" id="sbF_i" name="interesse"><option>Otimize White Label</option><option>SegZap White Label</option><option>Projeto sob medida</option><option selected>Ainda não sei</option></select></div>
+<div class="field full"><label class="label" for="sbF_e">E-mail corporativo<span class="req" aria-hidden="true">*</span></label><input class="input" id="sbF_e" name="email" type="email" autocomplete="email" placeholder="voce@empresa.com.br" required aria-describedby="sbF_ee"><span class="hint err" id="sbF_ee" hidden><svg class="ico"><use href="#i-alert"/></svg>Informe um e-mail completo.</span></div>
+<div style="grid-column:1/-1;display:flex;flex-wrap:wrap;gap:12px;align-items:center"><button class="btn btn--lg" type="submit" id="sbFBtn"><span>Enviar</span></button><span class="hint" id="sbFMsg" role="status"></span></div>
+<p class="micro" style="grid-column:1/-1">Retornamos pelo e-mail informado.</p>
+</form>
+</div>
+</div>
+<p class="t-small" style="margin-top:16px">É corretor? <a href="index.html#produtos" style="border-bottom:1px solid var(--line-strong);text-decoration:none">Conheça os produtos</a></p>
+</div>
+</section>
 
-  <section class="sect" id="sobre">
-    <div class="container two" style="align-items:center">
-      <div class="sec-head"><span class="label">Sobre a Segbox</span><h2 class="t-h1 h-balance">Nascemos dentro do mercado de seguros.</h2></div>
-      <div><p class="t-lead">Desde 2017 construímos tecnologia para o setor. Hoje o mesmo time que opera produtos com corretores desenha, implanta e evolui as plataformas das seguradoras. Conhecemos a rotina de quem vende seguro e as exigências de quem responde pela marca.</p>
-        <div style="margin-top:20px"><a class="link-arrow" href="sobre.html">Conhecer a Segbox <svg class="ico"><use href="#i-arrow-ur"/></svg></a></div></div>
-    </div>
-  </section>
-
-  <section class="sect" id="contato" style="padding-top:clamp(40px,6vw,72px)">
-    <div class="container">
-      <div class="contact-d" data-surface="ink">
-        <i class="sq sq--coral" style="width:150px;height:150px;right:7%;top:26px"></i>
-        <i class="sq sq--indigo" style="width:92px;height:92px;right:1.5%;bottom:34px"></i>
-        <i class="sq sq--ember" style="width:44px;height:44px;right:36%;top:16px"></i>
-        <div class="cg">
-          <div><span class="label">Contato</span><h2 class="t-display h-balance" style="margin-top:14px">Conte o desafio da sua rede de corretores.</h2><p class="t-lead" style="margin-top:16px;max-width:40ch">Uma conversa curta para entender o que sua seguradora precisa: uma plataforma pronta ou algo feito do zero.</p></div>
-          <form class="glass" id="leadForm" novalidate>
-            <div class="field"><label class="label" for="f1">Nome</label><input class="input" id="f1" autocomplete="name" placeholder="Seu nome"></div>
-            <div class="field"><label class="label" for="f2">Cargo</label><input class="input" id="f2" placeholder="Ex.: Gerente de Canais"></div>
-            <div class="field"><label class="label" for="f3">Empresa</label><input class="input" id="f3" autocomplete="organization" placeholder="Nome da seguradora"></div>
-            <div class="field"><label class="label" for="f4">E-mail corporativo</label><input class="input" id="f4" type="email" autocomplete="email" placeholder="voce@empresa.com.br"><span class="hint err" id="f4e" hidden><svg class="ico"><use href="#i-alert"/></svg>Informe um e-mail completo.</span></div>
-            <div class="field" style="grid-column:1/-1"><label class="label" for="f5">Interesse</label><select class="select" id="f5"><option>Otimize White Label</option><option>SegZap White Label</option><option>Projeto sob medida</option><option>Ainda não sei</option></select></div>
-            <div style="grid-column:1/-1;display:flex;flex-wrap:wrap;gap:12px;align-items:center"><button class="btn btn--lg" type="submit" id="fBtn"><span>Enviar</span></button><span class="hint" id="fMsg" role="status"></span></div>
-          </form>
-        </div>
-      </div>
-      <p class="t-small" style="margin-top:16px">É corretor? <a href="#produtos" style="border-bottom:1px solid var(--line-strong)">Conheça os produtos</a>.</p>
-    </div>
-  </section>
-</main>
-
-<footer class="site-foot" style="border-top:1px solid var(--line)">
+</main><footer class="site-foot" style="border-top:1px solid var(--line)">
   <div class="container">
     <div class="foot" style="border-top:0;padding-top:0">
-      <div><a class="logo" href="#top" style="font-size:1.6rem"><svg class="logo-svg" viewBox="0 0 2000 530" aria-hidden="true"><use href="#logo-word"/><rect class="logo-sq" x="1889" y="265" width="112" height="112"/></svg></a><p style="margin-top:12px;max-width:30ch">Tecnologia e inovação para o mercado de seguros.</p></div>
+      <div><a class="logo" href="#top" style="font-size:1.6rem" aria-label="Segbox, voltar ao topo"><svg class="logo-svg" viewBox="0 0 2000 530" aria-hidden="true"><use href="#logo-word"/><rect class="logo-sq" x="1889" y="265" width="112" height="112"/></svg></a><p style="margin-top:12px;max-width:30ch">Tecnologia e inovação para o mercado de seguros.</p></div>
       <div><h4>Soluções</h4><ul><li><a href="produto-otimize-whitelabel.html">Otimize White Label</a></li><li><a href="produto-segzap-whitelabel.html">SegZap White Label</a></li><li><a href="projetos-sob-medida.html">Projetos sob medida</a></li></ul></div>
-      <div><h4>Empresa</h4><ul><li><a href="sobre.html">Sobre</a></li><li><a href="#cases">Cases</a></li><li><a href="#">Segurança da informação</a></li></ul></div>
+      <div><h4>Empresa</h4><ul><li><a href="sobre.html" aria-current="page">Sobre</a></li><li><a href="index.html#cases">Cases</a></li><li><a href="#">Segurança da informação</a></li></ul></div>
       <div><h4>Conteúdo</h4><ul><li><a href="https://www.insurtalks.com.br/" target="_blank" rel="noopener">Insurtalks ↗</a></li><li><a href="https://www.insurtalks.com.br/cast" target="_blank" rel="noopener">InsurtalksCast ↗</a></li><li><a href="#">Privacidade</a></li></ul></div>
       <div><h4>Iniciativas</h4><ul><li><a href="https://innovators.insurtalks.com.br/" target="_blank" rel="noopener">Insurance Innovators ↗</a></li><li><a href="https://insummit.online/" target="_blank" rel="noopener">INSUMMIT ↗</a></li><li><a href="https://reviewseguro.net" target="_blank" rel="noopener">ReviewSeguro ↗</a></li></ul></div>
-      <div class="legal">SEGBOX SERVICOS DE INTERNET LTDA · CNPJ 25.336.720/0001-53 · Prévia de direção criativa: textos e dados ilustrativos, números a confirmar.</div>
+      <div class="legal">SEGBOX SERVICOS DE INTERNET LTDA · CNPJ 25.336.720/0001-53 · Prévia de direção criativa.</div>
     </div>
   </div>
 </footer>
-
 <script>
+/* sb: reveal [data-rv] e cards [data-bl] */
 (function(){
-  var $=function(s,r){return (r||document).querySelector(s)}, $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
-  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var terms=['White label','Projetos sob medida','Login unificado via API','Governança de marca','IA no WhatsApp','Painel de gestão','Treinamento e suporte','Desde 2017'];
-  var tt=$('#tickerTrack'), half='<span>'+terms.join('</span><span>')+'</span>'; tt.innerHTML=half+half;
-
-  var dds=$$('[data-dd]');
-  function closeDD(ex){dds.forEach(function(d){if(d!==ex){d.classList.remove('open');$('button',d).setAttribute('aria-expanded','false')}})}
-  dds.forEach(function(d){var b=$('button',d);b.addEventListener('click',function(e){e.stopPropagation();var o=!d.classList.contains('open');closeDD(d);d.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false')})});
-  document.addEventListener('click',function(){closeDD()});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDD()});
-
-  /* menu móvel: drawer no bloco sgm */
-
-  $$('.acc').forEach(function(acc){$$('.acc-h',acc).forEach(function(h){h.addEventListener('click',function(){
-    var item=h.parentNode, open=!item.classList.contains('open');
-    $$('.acc-item',acc).forEach(function(i){i.classList.remove('open');$('.acc-h',i).setAttribute('aria-expanded','false')});
-    if(open){item.classList.add('open');h.setAttribute('aria-expanded','true')}})})});
-
-  function fmt(el,v){el.textContent=(el.getAttribute('data-prefix')||'')+Math.round(v)+(el.getAttribute('data-suffix')||'')}
-  if(!reduce&&'IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!e.target._d){e.target._d=1;
-      $$('[data-count]',e.target).forEach(function(el){var end=parseFloat(el.getAttribute('data-count')),t0=null;function st(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/900);fmt(el,end*(1-Math.pow(1-k,4)));if(k<1)requestAnimationFrame(st)}requestAnimationFrame(st)})}})},{threshold:.4});
-    $$('.nums').forEach(function(n){io.observe(n)});
-  }
-
-  var lines=[['<span class="p">λ</span> segbox connect --seguradora suaseguradora',500],['<span class="d">&gt; Validando credenciais do portal...</span>',700],['<span class="d">&gt; POST /sso/corretor</span>',600],['<span class="d">&gt; Sessão do corretor criada via API</span>',700],['<span class="ok">✓ Login unificado ativo · nenhuma senha nova</span>',0]];
-  var out=$('#termOut');
-  function typeLine(i,buf){
-    if(i>=lines.length){setTimeout(function(){out.innerHTML='';typeLine(0,'')},4200);return}
-    var html=lines[i][0],delay=lines[i][1],plain=html.replace(/<[^>]+>/g,'').replace(/&gt;/g,'>'),step=0,steps=Math.min(plain.length,24);
-    (function tick(){step++;var show=html;
-      if(step<steps){var cut=Math.ceil(plain.length*step/steps),c=0,res='',inTag=false;for(var k=0;k<html.length;k++){var ch=html[k];if(ch==='<')inTag=true;if(inTag){res+=ch;if(ch==='>')inTag=false;continue}if(c<cut){if(ch==='&'){var m=html.indexOf(';',k);res+=html.slice(k,m+1);k=m}else{res+=ch}c++}}show=res}
-      out.innerHTML=buf+show+(step>=steps?'\n':'')+'<span class="cur"></span>';
-      if(step<steps){setTimeout(tick,22)}else{setTimeout(function(){typeLine(i+1,buf+html+'\n')},delay)}})();
-  }
-  if(reduce){out.innerHTML=lines.map(function(l){return l[0]}).join('\n')}else{typeLine(0,'')}
-
-  var lf=$('#leadForm'),fm=$('#fMsg'),fb=$('#fBtn'),f4=$('#f4'),f4e=$('#f4e');
-  lf.addEventListener('submit',function(e){e.preventDefault();var ok=/^\S+@\S+\.\S+$/.test(f4.value.trim());f4.classList.toggle('is-error',!ok);f4e.hidden=ok;
-    if(!ok){fm.textContent='Corrija o campo destacado.';f4.focus();return}
-    fb.classList.add('is-loading');fb.setAttribute('aria-busy','true');fb.innerHTML='<span class="spin"></span><span>Enviando</span>';fm.textContent='';
-    setTimeout(function(){fb.classList.remove('is-loading');fb.removeAttribute('aria-busy');fb.innerHTML='<span>Enviar</span>';fm.textContent='Prévia: o formulário não envia dados de verdade.'},1400)});
+  var sbRM=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var sbEls=[].slice.call(document.querySelectorAll('[data-rv],[data-bl]'));
+  if(sbRM||!('IntersectionObserver' in window)){sbEls.forEach(function(e){e.classList.add('in')});return;}
+  var sbIo=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');sbIo.unobserve(x.target)}})},{rootMargin:'0px 0px -10% 0px',threshold:.12});
+  sbEls.forEach(function(e){sbIo.observe(e)});
 })();
-</script>
-
-<script>
+/* sb: trajetória, ano ativo por scroll (rAF) liga os cubos até aquele ano */
 (function(){
-  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var root=document.documentElement, compo=document.querySelector('.compo'), hero=document.querySelector('.hero-s'), dot=document.querySelector('.snav .logo .logo-sq');
-  if(!compo||!hero||!dot)return;
-  var layer=document.createElement('div'); layer.className='cubes'; layer.setAttribute('aria-hidden','true'); document.body.insertBefore(layer,document.body.firstChild);
-  var src={ob:'assets/cubo-obsidiana-preto.jpg',co:'assets/cubo-coral.jpg',in:'assets/cubo-obsidiana-preto.jpg'};
-  var defs=[
-    {k:'ob',fx:.97,fy:.08,size:290,par:-.10,rot:-8,rs:1,ph:0},
-    {k:'co',fx:.03,fy:.09,size:160,par:.16,rot:12,rs:-1.3,ph:1.4},
-    {k:'in',fx:1.0,fy:.70,size:150,par:-.18,rot:-14,rs:1.2,ph:2.6},
-    {k:'co',fx:.56,fy:-.04,size:70,par:.10,rot:24,rs:1.8,ph:3.3},
-    {k:'ob',fx:.04,fy:.82,size:90,par:.22,rot:30,rs:-1.5,ph:4.1},
-    {k:'in',fx:.62,fy:1.0,size:80,par:-.12,rot:-20,rs:1.4,ph:5.2}
+  var sbSt=[].slice.call(document.querySelectorAll('#sbTz .tz-st')), sbC=[].slice.call(document.querySelectorAll('#sbTzStage .tz-c')), sbYr=document.getElementById('sbTzYr');
+  if(!sbSt.length)return;
+  var sbRM=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches, sbCur=-2, sbQ=false;
+  function sbSet(n){
+    if(n===sbCur)return;sbCur=n;
+    sbSt.forEach(function(s,i){s.classList.toggle('on',i===n)});
+    sbC.forEach(function(c,i){c.classList.toggle('on',i<=n)});
+    if(sbYr&&n>=0)sbYr.textContent=sbSt[n].querySelector('.tz-y').textContent;
+  }
+  if(sbRM){sbSt.forEach(function(s){s.classList.add('on')});sbC.forEach(function(c){c.classList.add('on')});if(sbYr)sbYr.textContent='2017–2026';return;}
+  function sbCalc(){
+    sbQ=false;var mid=window.innerHeight*.55, n=-1;
+    for(var i=0;i<sbSt.length;i++){if(sbSt[i].getBoundingClientRect().top<mid)n=i;}
+    sbSet(n);
+  }
+  function sbOn(){if(!sbQ){sbQ=true;requestAnimationFrame(sbCalc)}}
+  window.addEventListener('scroll',sbOn,{passive:true});window.addEventListener('resize',sbOn);sbCalc();
+})();
+/* sb: formulário de contato (prévia, sem envio real) */
+(function(){
+  var f=document.getElementById('sbForm');if(!f)return;
+  var msg=document.getElementById('sbFMsg');
+  var req=[['sbF_n',function(v){return v.trim().length>1}],['sbF_o',function(v){return v.trim().length>1}],['sbF_e',function(v){return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim())}]];
+  f.addEventListener('submit',function(ev){
+    ev.preventDefault();var first=null;
+    req.forEach(function(r){var el=document.getElementById(r[0]),ok=r[1](el.value),h=document.getElementById(r[0]+'e');el.classList.toggle('is-error',!ok);el.setAttribute('aria-invalid',ok?'false':'true');if(h)h.hidden=ok;if(!ok&&!first)first=el;});
+    if(first){first.focus();msg.textContent='';return;}
+    msg.textContent='Recebido. Retornamos pelo e-mail informado.';f.reset();
+  });
+})();
+(function(){if(window.__hFade)return;window.__hFade=1;var hfEls=[].slice.call(document.querySelectorAll('.h-fade'));if(!hfEls.length)return;var hfMq=window.matchMedia?window.matchMedia('(prefers-reduced-motion: reduce)'):null;function hfRGB(c){var m=/rgba?\(([^)]+)\)/.exec(c);if(!m)return null;var a=m[1].split(/[\s,\/]+/).filter(Boolean).map(parseFloat);if(a.length<3)return null;if(a.length<4)a.push(1);return a}var hfItems=[];hfEls.forEach(function(h){var s=h.querySelector('.h-fade-2');if(!s)return;var c0=getComputedStyle(h).color,c1=getComputedStyle(s).color,ws=[];(function hfWalk(n){[].slice.call(n.childNodes).forEach(function(c){if(c.nodeType===3){var fr=document.createDocumentFragment();c.nodeValue.split(/(\s+)/).forEach(function(t){if(!t)return;if(/^\s+$/.test(t)){fr.appendChild(document.createTextNode(t))}else{var w=document.createElement('span');w.className='hf-w';w.textContent=t;fr.appendChild(w);ws.push(w)}});n.replaceChild(fr,c);}else if(c.nodeType===1&&c.className!=='hf-w')hfWalk(c)})})(s);hfItems.push({h:h,s:s,ws:ws,a:hfRGB(c0),b:hfRGB(c1),c0:c0,c1:c1,last:-1});});if(!hfItems.length)return;function hfMix(it,t){if(it.a&&it.b){var a=it.a,b=it.b,f=function(i){return a[i]+(b[i]-a[i])*t};return 'rgba('+Math.round(f(0))+','+Math.round(f(1))+','+Math.round(f(2))+','+(+f(3).toFixed(3))+')'}return 'color-mix(in srgb,'+it.c1+' '+(t*100).toFixed(1)+'%,'+it.c0+')'}function hfPaint(it,p){var n=it.ws.length,win=n>1?Math.min(1,Math.max(.22,2/n)):1;it.ws.forEach(function(w,i){var st=n>1?(i/(n-1))*(1-win):0,t=Math.min(1,Math.max(0,(p-st)/win));t=t*t*(3-2*t);w.style.color=hfMix(it,t)})}function hfClear(){hfItems.forEach(function(it){it.last=-1;it.ws.forEach(function(w){w.style.color=''})})}var hfOff=!!(hfMq&&hfMq.matches);function hfTick(){if(hfOff)return;var vh=window.innerHeight||document.documentElement.clientHeight;hfItems.forEach(function(it){var r=it.h.getBoundingClientRect(),k0=getComputedStyle(it.h).color,k1=getComputedStyle(it.s).color;if(k0!==it.c0||k1!==it.c1){it.c0=k0;it.c1=k1;it.a=hfRGB(k0);it.b=hfRGB(k1);it.last=-1}var p=Math.min(1,Math.max(0,(vh*.72-r.top)/(vh*.5)));p=Math.round(p*500)/500;if(p===it.last)return;it.last=p;hfPaint(it,p)})}var hfQ=false;function hfOnScroll(){if(hfQ)return;hfQ=true;requestAnimationFrame(function(){hfQ=false;hfTick()})}if(hfMq){var hfCh=function(e){hfOff=e.matches;if(hfOff)hfClear();else hfTick()};if(hfMq.addEventListener)hfMq.addEventListener('change',hfCh);else if(hfMq.addListener)hfMq.addListener(hfCh)}window.addEventListener('scroll',hfOnScroll,{passive:true});window.addEventListener('resize',hfOnScroll);window.addEventListener('load',hfTick);document.addEventListener('click',function(){setTimeout(hfOnScroll,60);setTimeout(hfOnScroll,700)});hfTick();})();
+</script>
+<script>
+/* sbh: cubos do hero. Entrada: vêm espalhados e se encaixam na composição do palco.
+   Desktop: parallax leve com o mouse; ao rolar, se afastam e depois se fundem no quadrado do logo.
+   Mobile: só a entrada. Reduced motion: composição final estática. rAF só enquanto há movimento. */
+(function(){
+  var sbhRoot=document.documentElement, sbhHero=document.getElementById('sbHero'), sbhStage=document.getElementById('sbStage'), sbhDot=document.querySelector('.snav .logo .logo-sq');
+  if(!sbhHero||!sbhStage)return;
+  var sbhRM=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var sbhFine=window.matchMedia&&window.matchMedia('(hover:hover) and (pointer:fine) and (min-width:901px)');
+  var sbhSrc={co:'assets/cubo-coral.jpg',in:'assets/cubo-indigo.jpg',ob:'assets/cubo-obsidiana.jpg'};
+  // composição: fx/fy no palco (0..1), s = lado do cubo em fração do palco, dx/dy/r0 = ponto de partida espalhado
+  var sbhDefs=[
+    {k:'ob',fx:.50,fy:.52,s:.34,rot:-6,dep:10,par:-.06,dx:0,dy:-520,r0:-70},
+    {k:'co',fx:.31,fy:.32,s:.22,rot:12,dep:22,par:.10,dx:-560,dy:-260,r0:90},
+    {k:'in',fx:.70,fy:.30,s:.20,rot:-14,dep:-18,par:-.14,dx:520,dy:-320,r0:-80},
+    {k:'co',fx:.70,fy:.72,s:.23,rot:8,dep:16,par:.16,dx:580,dy:300,r0:60,em:1},
+    {k:'ob',fx:.31,fy:.73,s:.18,rot:22,dep:-24,par:-.12,dx:-520,dy:340,r0:-100},
+    {k:'co',fx:.52,fy:.16,s:.10,rot:30,dep:30,par:.22,dx:120,dy:-600,r0:140}
   ];
-  var items=defs.map(function(d){var im=new Image();im.src=src[d.k];im.alt='';im.decoding='async';im.draggable=false;layer.appendChild(im);d.el=im;return d});
-  root.classList.add('js-cubes');
-  function clamp(v,a,b){return Math.max(a,Math.min(b,v))}
-  function lerp(a,b,t){return a+(b-a)*t}
-  function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}
-  function frame(now){
-    var sy=window.pageYOffset||0, cr=compo.getBoundingClientRect(), dr=dot.getBoundingClientRect();
-    var tx=dr.left+dr.width/2, ty=dr.top+dr.height/2, sc=clamp(cr.width/560,.5,1);
-    var p=reduce?0:clamp(sy/(hero.offsetHeight*.75),0,1), done=p>=.985;
-    root.classList.toggle('dot-on',done||reduce);
-    layer.classList.toggle('top',p>.5);
-    for(var i=0;i<items.length;i++){
-      var it=items[i], t=reduce?0:ease(clamp((p-.45-i*.03)/.5,0,1));
-      var x=cr.left+it.fx*cr.width, y=cr.top+it.fy*cr.height+(reduce?0:sy*it.par+Math.sin(now*.0008+it.ph)*8);
-      var s=lerp(it.size*sc,dr.width||7,t), k=(s/.62)/400;
-      var rot=(it.rot+(reduce?0:sy*.04*it.rs+now*.004*it.rs))*(1-t);
-      x=lerp(x,tx,t); y=lerp(y,ty,t);
-      it.el.style.transform='translate('+(x-200)+'px,'+(y-200)+'px) rotate('+rot+'deg) scale('+k+')';
-      it.el.style.visibility=(done||cr.bottom<-400&&t<1)?'hidden':'visible';
+  var sbhLayer=document.createElement('div');sbhLayer.className='cubes';sbhLayer.setAttribute('aria-hidden','true');document.body.insertBefore(sbhLayer,document.body.firstChild);
+  var sbhItems=sbhDefs.map(function(d){var im=new Image();im.src=sbhSrc[d.k];im.alt='';im.decoding='async';im.draggable=false;if(d.em)im.className='sb-em';sbhLayer.appendChild(im);d.el=im;d.v='';return d});
+  sbhRoot.classList.add('js-sbh');
+  var sbhT0=0, sbhDur=1500, sbhM={x:0,y:0}, sbhMc={x:0,y:0}, sbhRaf=0;
+  function sbhClamp(v,a,b){return Math.max(a,Math.min(b,v))}
+  function sbhLerp(a,b,t){return a+(b-a)*t}
+  function sbhOut(t){var c=1.4;return 1+(c+1)*Math.pow(t-1,3)+c*Math.pow(t-1,2)}
+  function sbhIO(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}
+  function sbhFrame(now){
+    sbhRaf=0;
+    var desk=!sbhRM&&sbhFine&&sbhFine.matches, sy=window.pageYOffset||0, r=sbhStage.getBoundingClientRect();
+    var cx=r.left+r.width/2, cy=r.top+r.height/2, W=r.width;
+    var p=desk?sbhClamp(sy/(sbhHero.offsetHeight*.75),0,1):0, done=p>=.985;
+    var dr=sbhDot?sbhDot.getBoundingClientRect():null, tx=dr?dr.left+dr.width/2:cx, ty=dr?dr.top+dr.height/2:cy;
+    sbhRoot.classList.toggle('dot-on',!desk||done||!dr);
+    sbhLayer.classList.toggle('top',p>.5);
+    if(!sbhT0)sbhT0=now;
+    var moving=false;
+    if(desk){sbhMc.x+=(sbhM.x-sbhMc.x)*.08;sbhMc.y+=(sbhM.y-sbhMc.y)*.08;if(Math.abs(sbhM.x-sbhMc.x)>.002||Math.abs(sbhM.y-sbhMc.y)>.002)moving=true}
+    var spread=1+sbhClamp(p/.45,0,1)*.45;
+    for(var i=0;i<sbhItems.length;i++){
+      var it=sbhItems[i];
+      var e=sbhRM?1:sbhClamp((now-sbhT0-i*90)/sbhDur,0,1); if(e<1)moving=true;
+      var eo=sbhOut(e), fade=sbhClamp(e*2.2,0,1);
+      var bx=cx+(it.fx-.5)*W*spread, by=cy+(it.fy-.5)*W*spread;
+      if(desk){bx+=sbhMc.x*it.dep;by+=sbhMc.y*it.dep+sy*it.par}
+      var x=sbhLerp(bx+it.dx,bx,eo), y=sbhLerp(by+it.dy,by,eo);
+      var t=desk?sbhIO(sbhClamp((p-.45-i*.03)/.5,0,1)):0;
+      var side=sbhLerp(it.s*W,dr&&dr.width||7,t), k=(side/.62)/400;
+      var rot=(sbhLerp(it.r0,0,eo)+it.rot+(desk?sy*.03*(i%2?1:-1)+sbhMc.x*it.dep*.2:0))*(1-t);
+      x=sbhLerp(x,tx,t);y=sbhLerp(y,ty,t);
+      var v='translate('+(x-200).toFixed(1)+'px,'+(y-200).toFixed(1)+'px) rotate('+rot.toFixed(2)+'deg) scale('+k.toFixed(4)+')';
+      if(v!==it.v){it.v=v;it.el.style.transform=v}
+      var op=fade.toFixed(3); if(it.op!==op){it.op=op;it.el.style.opacity=op}
+      var hide=done||(r.bottom<-200&&t<=0)?'hidden':'visible'; if(it.vis!==hide){it.vis=hide;it.el.style.visibility=hide}
     }
+    if(moving)sbhKick();
   }
-  if(reduce){frame(0);window.addEventListener('scroll',function(){frame(0)},{passive:true});window.addEventListener('resize',function(){frame(0)})}
-  else{(function loop(now){frame(now);requestAnimationFrame(loop)})(0)}
-})();
-</script>
-
-<script>
-(function(){
-  var box=document.querySelector('.qbox'); if(!box)return;
-  var card=box.querySelector('.glass'), sqs=[].slice.call(box.querySelectorAll('.sq'));
-  var fine=window.matchMedia&&window.matchMedia('(hover:hover) and (pointer:fine)').matches;
-  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(!fine||reduce)return;
-  var t={x:0,y:0}, c={x:0,y:0}, raf=0;
-  function loop(){
-    c.x+=(t.x-c.x)*.1; c.y+=(t.y-c.y)*.1;
-    card.style.transform='rotateX('+(-c.y*6).toFixed(2)+'deg) rotateY('+(c.x*8).toFixed(2)+'deg) translate3d('+(c.x*4).toFixed(2)+'px,'+(c.y*4).toFixed(2)+'px,0)';
-    sqs.forEach(function(q){var d=parseFloat(q.getAttribute('data-depth'))||0;q.style.transform='translate3d('+(c.x*d).toFixed(2)+'px,'+(c.y*d).toFixed(2)+'px,0)'});
-    if(Math.abs(t.x-c.x)<.002&&Math.abs(t.y-c.y)<.002&&t.x===0&&t.y===0){card.style.transform='';sqs.forEach(function(q){q.style.transform=''});raf=0;return}
-    raf=requestAnimationFrame(loop);
-  }
-  box.addEventListener('pointermove',function(e){
-    var r=box.getBoundingClientRect(), cr=card.getBoundingClientRect();
-    t.x=Math.max(-1,Math.min(1,((e.clientX-r.left)/r.width-.5)*2));
-    t.y=Math.max(-1,Math.min(1,((e.clientY-r.top)/r.height-.5)*2));
-    card.style.setProperty('--mx',(e.clientX-cr.left)+'px'); card.style.setProperty('--my',(e.clientY-cr.top)+'px');
-    box.classList.add('is-active'); if(!raf)raf=requestAnimationFrame(loop);
-  });
-  box.addEventListener('pointerleave',function(){t.x=0;t.y=0;box.classList.remove('is-active'); if(!raf)raf=requestAnimationFrame(loop)});
-})();
-</script>
-
-<script>
-(function(){
-  var st=document.querySelector('[data-pt]'); if(!st)return;
-  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var fine=window.matchMedia&&window.matchMedia('(hover:hover) and (pointer:fine)').matches;
-  var L=[['Brasilprev','brasilprev'],['Suhai Seguradora','suhai'],['MAPFRE','mapfre'],['Mercado Livre','mercadolivre'],['Stay','stay'],['Baeta','baeta'],['Creditas','creditas']];
-  var order=[[0,1,2,3,4,5,6],[2,6,4,1,5,0,3]];
-  function tile(n,hid){return '<div class="pt-tile"'+(hid?' aria-hidden="true"':' role="img" aria-label="'+n[0]+'"')+'><i class="pt-logo" style="background-image:var(--lg-'+n[1]+')"></i></div>'}
-  var rows=[].slice.call(st.querySelectorAll('.pt-row')).map(function(r,i){
-    var tr=r.querySelector('.pt-track'), h='';
-    for(var k=0;k<(reduce?1:2);k++)order[i].forEach(function(ix){h+=tile(L[ix],k>0)});
-    tr.innerHTML=h; return {el:r,tr:tr,dir:parseInt(r.getAttribute('data-dir'),10),x:i*260,half:0};
-  });
-  if(reduce){st.classList.add('pt-static');return}
-  var tiles=[].slice.call(st.querySelectorAll('.pt-tile')).map(function(t){return {el:t,f:0}});
-  var base=fine?0:.55, ptr=null, last=0, prevY=window.pageYOffset||0;
-  function measure(){rows.forEach(function(r){r.half=r.tr.scrollWidth/2})} measure(); window.addEventListener('resize',measure); window.addEventListener('load',measure);
-  st.addEventListener('pointermove',function(e){ptr={x:e.clientX,y:e.clientY}}); st.addEventListener('pointerleave',function(){ptr=null});
-  function frame(now){
-    var dt=Math.min(60,now-last)/1000; last=now; var y=window.pageYOffset||0, dy=y-prevY; prevY=y;
-    var b=st.getBoundingClientRect(); var vis=b.bottom>-50&&b.top<innerHeight+50;
-    if(vis){
-      rows.forEach(function(r){
-        r.x+=14*dt+dy*.5; if(!r.half)return; var p=((r.x%r.half)+r.half)%r.half; var tx=r.dir<0?-p:p-r.half;
-        r.tr.style.transform='translate3d('+tx.toFixed(2)+'px,0,0)';
-      });
-      tiles.forEach(function(t){
-        var target=base;
-        if(ptr){var r=t.el.getBoundingClientRect(); var d=Math.hypot(ptr.x-(r.left+r.width/2),ptr.y-(r.top+r.height/2)); target=Math.max(base,Math.pow(Math.max(0,1-d/230),1.4))}
-        t.f+=(target-t.f)*.14; if(Math.abs(target-t.f)<.003)t.f=target;
-        var v=t.f.toFixed(3); if(t.v!==v){t.v=v;t.el.style.setProperty('--f',v)}
-      });
-    }
-    requestAnimationFrame(frame);
-  }
-  requestAnimationFrame(frame);
-})();
-</script>
-
-<script>
-(function(){
-  var box=document.getElementById('howSteps'),fill=document.getElementById('hwFill'); if(!box)return;
-  var steps=[].slice.call(box.querySelectorAll('.step.hw'));
-  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(reduce){steps.forEach(function(s){s.classList.add('on')});fill.style.width='100%';return}
-  function tick(){
-    var r=box.getBoundingClientRect(), vh=innerHeight;
-    var p=Math.max(0,Math.min(1,(vh*.85-r.top)/(r.height+vh*.35)));
-    fill.style.width=(p*100).toFixed(1)+'%';
-    var br=box.getBoundingClientRect();
-    steps.forEach(function(s){var sr=s.getBoundingClientRect();var x=(sr.left-br.left+18)/br.width;s.classList.toggle('on',p>=x-0.001||p>.98)});
-  }
-  var q=false;addEventListener('scroll',function(){if(q)return;q=true;requestAnimationFrame(function(){q=false;tick()})},{passive:true});addEventListener('resize',tick);tick();
+  function sbhKick(){if(!sbhRaf)sbhRaf=requestAnimationFrame(sbhFrame)}
+  window.addEventListener('scroll',sbhKick,{passive:true});
+  window.addEventListener('resize',sbhKick);
+  window.addEventListener('load',sbhKick);
+  window.addEventListener('pointermove',function(ev){if(sbhRM||!sbhFine||!sbhFine.matches||ev.pointerType!=='mouse')return;sbhM.x=sbhClamp(ev.clientX/innerWidth*2-1,-1,1);sbhM.y=sbhClamp(ev.clientY/innerHeight*2-1,-1,1);sbhKick()},{passive:true});
+  sbhKick();
 })();
 </script>
 <!-- sgm:begin · menu móvel gerado a partir do menu desktop + revelar a UI-alvo no mobile. Bloco idêntico em todas as páginas. -->
@@ -1179,3 +1252,5 @@ html.sgm-lock,html.sgm-lock body{overflow:hidden}
 })();
 </script>
 <!-- sgm:end -->
+</body>
+</html>
