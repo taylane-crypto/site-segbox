@@ -1089,6 +1089,9 @@ html.sgm-lock,html.sgm-lock body{overflow:hidden}
 
 /* trajetória: só o ano passando (pedido da Taylane) */
 .tz-stage{background:transparent;border:0;display:grid;place-items:center}.tz-yr{position:static;font-size:clamp(5rem,13vw,11rem);color:var(--fg);-webkit-text-stroke:0;letter-spacing:-.06em;display:inline-block;transition:transform 420ms var(--ease-out),opacity 420ms var(--ease-out)}.tz-yr.out{transform:translateY(-18%);opacity:0;transition:none}.tz-yr.in{transform:translateY(18%);opacity:0;transition:none}@media (prefers-reduced-motion:reduce){.tz-yr{transition:none}}
+
+/* acreditamos: cubo cabe no card e não distorce (feedback Taylane) */
+.bl{overflow:hidden}.bl .bl-cube{width:120px;height:120px;aspect-ratio:1}.bl .bl-cube img{position:absolute;inset:0;left:0;top:0;width:100%!important;height:100%!important;max-width:none;margin:0!important;object-fit:contain}@media (max-width:900px){.bl .bl-cube{width:84px;height:84px}}@media (max-width:640px){.bl .bl-cube{width:72px;height:72px}.bl{grid-template-columns:minmax(0,1fr) 72px}}
 </style>
 <script id="sgm-js">
 /* sgm 1: drawer do menu móvel, montado a partir do menu desktop (.nav-links) para nunca divergir */
