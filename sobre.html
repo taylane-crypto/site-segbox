@@ -786,10 +786,10 @@ body{background:var(--bone-100)}
 <section class="sb-sec" id="acreditamos"><div class="container">
 <div class="sec-head" data-rv><span class="label">[ 03 ] O que acreditamos</span><h2 class="t-h1 h-balance h-fade">Quatro coisas que guiam <span class="h-fade-2">cada projeto.</span></h2></div>
 <div class="bl-grid">
-<article class="bl" data-bl><div><span class="label n">001</span><h3 class="t-h3">Quem usa decide se funciona.</h3><p>Uma plataforma só dá certo se o corretor abre no dia seguinte. Desenhamos para a rotina real de quem vende, não para a apresentação da reunião.</p></div><span class="bl-cube" aria-hidden="true"><img class="sb-cube" src="assets/cubo-coral.jpg" alt="" width="720" height="720" loading="lazy" decoding="async" style="--r:-6deg"></span></article>
+<article class="bl" data-bl><div><span class="label n">001</span><h3 class="t-h3">Quem usa decide se funciona.</h3><p>Uma plataforma só dá certo se o corretor abre no dia seguinte. Desenhamos para a rotina real de quem vende, não para a apresentação da reunião.</p></div><span class="bl-cube" aria-hidden="true"><img class="sb-em sb-cube" src="assets/cubo-coral.jpg" alt="" width="720" height="720" loading="lazy" decoding="async" style="--r:-6deg"></span></article>
 <article class="bl" data-bl><div><span class="label n">002</span><h3 class="t-h3">Marca é responsabilidade, não detalhe.</h3><p>Quem responde pela marca precisa de controle sobre o que chega à rede. Por isso nossas plataformas dão liberdade ao corretor dentro de regras claras da seguradora.</p></div><span class="bl-cube" aria-hidden="true"><img class="sb-cube" src="assets/cubo-obsidiana-preto.jpg" alt="" width="720" height="720" loading="lazy" decoding="async" style="--r:8deg"></span></article>
 <article class="bl" data-bl><div><span class="label n">003</span><h3 class="t-h3">Lançar é o começo.</h3><p>Não entregamos código e vamos embora. Operamos, damos suporte, treinamos a rede e melhoramos o produto enquanto ele estiver no ar.</p></div><span class="bl-cube" aria-hidden="true"><img class="sb-cube sb-em" src="assets/cubo-coral.jpg" alt="" width="720" height="720" loading="lazy" decoding="async" style="--r:14deg"></span></article>
-<article class="bl" data-bl><div><span class="label n">004</span><h3 class="t-h3">Mercado forte é mercado que conversa.</h3><p>Inovação não acontece isolada. Por isso também criamos espaços para o setor trocar conhecimento, reconhecer quem inova e dar voz ao consumidor.</p></div><span class="bl-cube" aria-hidden="true"><img class="sb-cube" src="assets/cubo-coral.jpg" alt="" width="720" height="720" loading="lazy" decoding="async" style="--r:-18deg"></span></article>
+<article class="bl" data-bl><div><span class="label n">004</span><h3 class="t-h3">Mercado forte é mercado que conversa.</h3><p>Inovação não acontece isolada. Por isso também criamos espaços para o setor trocar conhecimento, reconhecer quem inova e dar voz ao consumidor.</p></div><span class="bl-cube" aria-hidden="true"><img class="sb-em sb-cube" src="assets/cubo-coral.jpg" alt="" width="720" height="720" loading="lazy" decoding="async" style="--r:-18deg"></span></article>
 </div>
 </div></section>
 
@@ -996,7 +996,7 @@ html{background:var(--bg)}
   if(!sbhHero||!sbhStage)return;
   var sbhRM=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var sbhFine=window.matchMedia&&window.matchMedia('(hover:hover) and (pointer:fine) and (min-width:901px)');
-  var sbhSrc={co:'assets/cubo-coral.jpg',in:'assets/cubo-indigo.jpg',ob:'assets/cubo-obsidiana.jpg'};
+  var sbhSrc={co:'assets/cubo-coral.jpg',in:'assets/cubo-coral.jpg',ob:'assets/cubo-obsidiana-preto.jpg'};
   // composição: fx/fy no palco (0..1), s = lado do cubo em fração do palco, dx/dy/r0 = ponto de partida espalhado
   var sbhDefs=[
     {k:'ob',fx:.50,fy:.52,s:.34,rot:-6,dep:10,par:-.06,dx:0,dy:-520,r0:-70},
@@ -1007,7 +1007,7 @@ html{background:var(--bg)}
     {k:'co',fx:.52,fy:.16,s:.10,rot:30,dep:30,par:.22,dx:120,dy:-600,r0:140}
   ];
   var sbhLayer=document.createElement('div');sbhLayer.className='cubes';sbhLayer.setAttribute('aria-hidden','true');document.body.insertBefore(sbhLayer,document.body.firstChild);
-  var sbhItems=sbhDefs.map(function(d){var im=new Image();im.src=sbhSrc[d.k];im.alt='';im.decoding='async';im.draggable=false;if(d.em)im.className='sb-em';sbhLayer.appendChild(im);d.el=im;d.v='';return d});
+  var sbhItems=sbhDefs.map(function(d){var im=new Image();im.src=sbhSrc[d.k];im.alt='';im.decoding='async';im.draggable=false;if(d.em||d.k!=='ob')im.className='sb-em';sbhLayer.appendChild(im);d.el=im;d.v='';return d});
   sbhRoot.classList.add('js-sbh');
   var sbhT0=0, sbhDur=1500, sbhM={x:0,y:0}, sbhMc={x:0,y:0}, sbhRaf=0;
   function sbhClamp(v,a,b){return Math.max(a,Math.min(b,v))}
@@ -1094,6 +1094,9 @@ html.sgm-lock,html.sgm-lock body{overflow:hidden}
 .bl{overflow:hidden}.bl .bl-cube{width:120px;height:120px;aspect-ratio:1}.bl .bl-cube img{position:absolute;inset:0;left:0;top:0;width:100%!important;height:100%!important;max-width:none;margin:0!important;object-fit:contain}@media (max-width:900px){.bl .bl-cube{width:84px;height:84px}}@media (max-width:640px){.bl .bl-cube{width:72px;height:72px}.bl{grid-template-columns:minmax(0,1fr) 72px}}
 
 .legal.legal--seg{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;white-space:pre-wrap}.legal--seg .soc{display:inline-flex;gap:14px}.legal--seg .soc a{display:inline-grid;place-items:center;width:32px;height:32px;color:inherit;opacity:.8;transition:opacity .2s ease}.legal--seg .soc a:hover{opacity:1}.legal--seg .soc svg{width:18px;height:18px}
+
+/* só blocos laranja e pretos (feedback Taylane): todo cubo coral vira laranja */
+img[src*="cubo-coral"]{filter:hue-rotate(26deg) saturate(1.15) brightness(1.04)}
 </style>
 <script id="sgm-js">
 /* sgm 1: drawer do menu móvel, montado a partir do menu desktop (.nav-links) para nunca divergir */
