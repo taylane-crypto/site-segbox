@@ -1,0 +1,1122 @@
+<!doctype html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Termos de Uso do Software · Segbox</title>
+<meta name="description" content="Condições gerais de contratação e uso do Sistema Otimize, da Segbox.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500;600&family=Hanken+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* GT Standard (Grilli Type) é fonte licenciada. Quando os arquivos existirem, basta colocar em fonts/ e o navegador passa a usá-la. */
+@font-face{font-family:'GT Standard';font-weight:400 700;font-display:swap;src:local('GT Standard'),local('GT-Standard'),url('fonts/GT-Standard-Medium.woff2') format('woff2')}
+
+:root{
+  color-scheme:light;
+  /* cor: base */
+  --ink-950:#09090B;--ink-900:#101013;--ink-800:#18181C;--ink-700:#232329;--ink-600:#34343C;--ink-400:#7C7C88;--ink-300:#A6A6B2;--ink-200:#CFCFD8;
+  --bone-50:#FBFAF8;--bone-100:#F6F4F1;--bone-200:#E8E6E3;--bone-300:#D3D0CB;
+  --coral:#FF5047;--ember:#FF8308;--indigo:#0B0B0D;--indigo-300:#FF8A80;
+  --ok:#3DDC97;--warn:#FFB020;--err:#FF6369;--info:#FF8A80;
+  /* cor: semântica (superfície ink é o padrão) */
+  --bg:var(--bone-100);--surface:#fff;--surface-2:var(--bone-200);
+  --fg:#0B0B0D;--fg-2:#565660;--fg-3:#7E7E88;
+  --line:rgba(0,0,0,.12);--line-strong:rgba(0,0,0,.3);
+  --accent:var(--coral);--on-accent:#0B0B0D;
+  --btn-bg:#0B0B0D;--btn-fg:var(--bone-100);
+  --ring:var(--indigo);
+  --danger:#D6303A;
+  --ok-t:#0E7A4B;--warn-t:#8A5A00;--info-t:var(--indigo);--label-accent:#C4352A;
+  /* vidro */
+  --glass:rgba(255,255,255,.58);--glass-line:rgba(255,255,255,.8);--glass-edge:rgba(20,20,40,.09);--blur:22px;
+  --glass-sh:0 1px 0 rgba(255,255,255,.9) inset,0 24px 48px -24px rgba(20,20,50,.28),0 0 0 1px var(--glass-edge);
+  /* tipografia */
+  --font-display:'GT Standard','Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
+  --font-body:'Geist',ui-sans-serif,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --font-mono:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  /* espaço (base 4) */
+  --s-1:4px;--s-2:8px;--s-3:12px;--s-4:16px;--s-5:24px;--s-6:32px;--s-7:48px;--s-8:64px;--s-9:96px;--s-10:144px;
+  /* raios */
+  --r-1:2px;--r-2:6px;--r-3:12px;--r-4:20px;
+  /* sombras */
+  --sh-1:0 1px 0 #fff inset,0 10px 30px -14px rgba(0,0,0,.25);
+  --sh-2:0 40px 80px -30px rgba(0,0,0,.28),0 0 0 1px var(--line);
+  /* movimento */
+  --ease-out:cubic-bezier(.23,1,.32,1);
+  --ease-in-out:cubic-bezier(.77,0,.175,1);
+  --ease-drawer:cubic-bezier(.32,.72,0,1);
+  --t-press:160ms;--t-fast:180ms;--t-base:240ms;--t-slow:420ms;
+}
+[data-surface="ink"]{--bg:var(--ink-950);--surface:var(--ink-900);--surface-2:var(--ink-800);--fg:#F4F3F0;--fg-2:var(--ink-300);--fg-3:var(--ink-400);--line:rgba(255,255,255,.12);--line-strong:rgba(255,255,255,.26);--accent:var(--coral);--on-accent:#0B0B0D;--btn-bg:var(--coral);--btn-fg:#0B0B0D;--ring:var(--indigo-300);--danger:var(--err);--ok-t:var(--ok);--warn-t:var(--warn);--info-t:var(--info);--label-accent:var(--coral);--sh-1:0 1px 0 rgba(255,255,255,.04) inset,0 8px 24px -12px rgba(0,0,0,.6);--sh-2:0 40px 80px -24px rgba(0,0,0,.7),0 0 0 1px var(--line)}
+[data-surface="paper"]{--bg:var(--bone-100);--surface:#fff;--surface-2:var(--bone-200);--fg:#0B0B0D;--fg-2:#565660;--fg-3:#7E7E88;--line:rgba(0,0,0,.12);--line-strong:rgba(0,0,0,.3);--accent:var(--coral);--on-accent:#0B0B0D;--btn-bg:#0B0B0D;--btn-fg:var(--bone-100);--ring:var(--indigo);--danger:#D6303A;--ok-t:#0E7A4B;--warn-t:#8A5A00;--info-t:var(--indigo);--label-accent:#C4352A;--sh-1:0 1px 0 #fff inset,0 10px 30px -14px rgba(0,0,0,.25);--sh-2:0 40px 80px -30px rgba(0,0,0,.28),0 0 0 1px var(--line)}
+[data-surface="signal"]{--bg:var(--coral);--surface:rgba(0,0,0,.08);--surface-2:rgba(0,0,0,.14);--fg:#0B0B0D;--fg-2:rgba(0,0,0,.72);--fg-3:rgba(0,0,0,.58);--line:rgba(0,0,0,.26);--line-strong:rgba(0,0,0,.6);--accent:#0B0B0D;--on-accent:var(--bone-100);--btn-bg:#0B0B0D;--btn-fg:var(--bone-100);--ring:#0B0B0D;--danger:#7A0A12;--ok-t:#0B0B0D;--warn-t:#0B0B0D;--info-t:#0B0B0D;--label-accent:#0B0B0D;--sh-1:none;--sh-2:0 30px 60px -30px rgba(0,0,0,.5),0 0 0 1px var(--line)}
+[data-surface="paper"]{--glass:rgba(255,255,255,.58);--glass-line:rgba(255,255,255,.8);--glass-edge:rgba(20,20,40,.09);--glass-sh:0 1px 0 rgba(255,255,255,.9) inset,0 24px 48px -24px rgba(20,20,50,.28),0 0 0 1px var(--glass-edge)}
+[data-surface="ink"]{--glass:rgba(30,30,40,.5);--glass-line:rgba(255,255,255,.16);--glass-edge:rgba(255,255,255,.05);--glass-sh:0 1px 0 rgba(255,255,255,.08) inset,0 24px 48px -24px rgba(0,0,0,.7),0 0 0 1px var(--glass-edge)}
+[data-surface="signal"]{--glass:rgba(255,255,255,.3);--glass-line:rgba(255,255,255,.55);--glass-edge:rgba(0,0,0,.12);--glass-sh:0 1px 0 rgba(255,255,255,.5) inset,0 24px 48px -24px rgba(90,10,0,.4),0 0 0 1px var(--glass-edge)}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,p{margin:0}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ring);outline-offset:3px;border-radius:var(--r-2)}
+code,.mono{font-family:var(--font-mono)}
+.label{font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
+.ico{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ============ TIPOGRAFIA ============ */
+.t-display-xl{font-family:var(--font-display);font-weight:600;font-size:clamp(3rem,9vw,6rem);line-height:.95;letter-spacing:-.045em}
+.t-display{font-family:var(--font-display);font-weight:600;font-size:clamp(2.4rem,6vw,4.5rem);line-height:1;letter-spacing:-.04em}
+.t-h1{font-family:var(--font-display);font-weight:600;font-size:clamp(2rem,4.4vw,3.5rem);line-height:1.04;letter-spacing:-.035em}
+.t-h2{font-family:var(--font-display);font-weight:600;font-size:clamp(1.6rem,3vw,2.5rem);line-height:1.08;letter-spacing:-.03em}
+.t-h3{font-family:var(--font-display);font-weight:600;font-size:1.75rem;line-height:1.15;letter-spacing:-.025em}
+.t-h4{font-family:var(--font-display);font-weight:600;font-size:1.25rem;line-height:1.25;letter-spacing:-.02em}
+.t-lead{font-size:1.125rem;line-height:1.55;color:var(--fg-2)}
+.t-body{font-size:1rem}
+.t-small{font-size:.875rem;color:var(--fg-2)}
+.t-code{font-family:var(--font-mono);font-size:.8125rem}
+.h-balance{text-wrap:balance}
+
+/* ============ BOTÕES ============ */
+.btn{
+  --h:44px;display:inline-flex;align-items:center;justify-content:center;gap:10px;height:var(--h);padding:0 18px;border-radius:var(--r-2);
+  border:1px solid transparent;background:var(--btn-bg);color:var(--btn-fg);cursor:pointer;text-decoration:none;white-space:nowrap;
+  font-family:var(--font-mono);font-size:12px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;
+  transition:transform var(--t-press) var(--ease-out),background var(--t-fast) ease,border-color var(--t-fast) ease,color var(--t-fast) ease,opacity var(--t-fast) ease;
+}
+.btn:hover,.btn.is-hover{filter:brightness(1.08)}
+.btn:active,.btn.is-active{transform:scale(.97)}
+.btn .ico{width:16px;height:16px;transition:transform var(--t-fast) var(--ease-out)}
+.btn:hover .ico-move,.btn.is-hover .ico-move{transform:translate(2px,-2px)}
+.btn.is-focus{outline:2px solid var(--ring);outline-offset:3px}
+.btn--secondary{background:transparent;color:var(--fg);border-color:var(--line-strong)}
+.btn--secondary:hover,.btn--secondary.is-hover{background:var(--surface-2);filter:none}
+.btn--ghost{background:transparent;color:var(--fg-2)}
+.btn--ghost:hover,.btn--ghost.is-hover{background:var(--surface-2);color:var(--fg);filter:none}
+.btn--danger{background:var(--danger);color:#fff}
+[data-surface="paper"] .btn--danger{color:#0B0B0D}
+[data-surface="signal"] .btn--danger{color:#fff}
+.btn--icon{width:var(--h);padding:0}
+.btn--sm{--h:34px;padding:0 12px;font-size:11px}
+.btn--lg{--h:52px;padding:0 24px;font-size:13px}
+.btn[disabled],.btn.is-disabled{opacity:.38;cursor:not-allowed;pointer-events:none}
+.btn.is-loading{pointer-events:none}
+.spin{width:14px;height:14px;border-radius:50%;border:2px solid currentColor;border-right-color:transparent;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.link-arrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:12px;letter-spacing:.09em;text-transform:uppercase;text-decoration:none;color:var(--fg);border-bottom:1px solid var(--line-strong);padding-bottom:3px;transition:border-color var(--t-fast) ease}
+.link-arrow:hover{border-color:var(--fg)}
+.link-arrow .ico{width:14px;height:14px;transition:transform var(--t-fast) var(--ease-out)}
+.link-arrow:hover .ico{transform:translate(2px,-2px)}
+
+/* ============ TAGS / BADGES ============ */
+.tag{display:inline-flex;align-items:center;gap:8px;height:24px;padding:0 8px;border-radius:var(--r-1);border:1px solid var(--line-strong);font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-2);white-space:nowrap}
+.tag--solid{background:var(--accent);color:var(--on-accent);border-color:transparent}
+.tag--boxed{border-style:dashed}
+.dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex:none}
+.tag--ok{color:var(--ok-t)}.tag--warn{color:var(--warn-t)}.tag--err{color:var(--danger)}.tag--info{color:var(--info-t)}
+.tag--live .dot{animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.25}}
+
+/* ============ CAMPOS ============ */
+.field{display:flex;flex-direction:column;gap:8px;min-width:0}
+.field>label,.field>.label{color:var(--fg-2)}
+.input,.select,.textarea{
+  width:100%;height:44px;padding:0 14px;border-radius:var(--r-2);background:var(--surface);color:var(--fg);border:1px solid var(--line);
+  font:inherit;font-size:15px;min-width:0;transition:border-color var(--t-fast) ease,box-shadow var(--t-fast) ease,background var(--t-fast) ease;
+}
+.input::placeholder,.textarea::placeholder{color:var(--fg-3)}
+.input:hover,.select:hover,.textarea:hover,.is-hover.input{border-color:var(--line-strong)}
+.input:focus,.select:focus,.textarea:focus,.input.is-focus{outline:none;border-color:var(--fg);box-shadow:0 0 0 3px color-mix(in srgb,var(--ring) 45%,transparent)}
+.input[disabled],.select[disabled],.textarea[disabled]{opacity:.4;cursor:not-allowed}
+.input.is-error,.textarea.is-error,.select.is-error{border-color:var(--danger)}
+.input.is-ok{border-color:var(--ok)}
+.hint{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--fg-3)}
+.hint.err{color:var(--danger)}
+.hint .ico{width:14px;height:14px}
+.textarea{height:auto;min-height:112px;padding:12px 14px;resize:vertical;line-height:1.5}
+.input-wrap{position:relative;display:flex;align-items:center}
+.input-wrap .input{padding-right:44px}
+.input-wrap.has-lead .input{padding-left:42px}
+.input-wrap .lead{position:absolute;left:14px;color:var(--fg-3);pointer-events:none}
+.input-wrap .trail{position:absolute;right:6px}
+.kbd{font-family:var(--font-mono);font-size:11px;padding:2px 6px;border:1px solid var(--line-strong);border-radius:4px;color:var(--fg-3)}
+.select{appearance:none;-webkit-appearance:none;padding-right:40px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237E7E88' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;background-size:18px}
+.select option{background:var(--surface);color:var(--fg)}
+.count{margin-left:auto;font-family:var(--font-mono);font-size:11px;color:var(--fg-3)}
+
+.check,.radio{display:flex;align-items:center;gap:12px;cursor:pointer;font-size:15px}
+.check input,.radio input{position:absolute;opacity:0;width:1px;height:1px}
+.check .box,.radio .box{width:20px;height:20px;border:1px solid var(--line-strong);background:var(--surface);display:grid;place-items:center;flex:none;transition:background var(--t-fast) ease,border-color var(--t-fast) ease,transform var(--t-press) var(--ease-out)}
+.check .box{border-radius:var(--r-1)}
+.radio .box{border-radius:50%}
+.check .box .ico{width:14px;height:14px;stroke-width:2.2;opacity:0;transform:scale(.7);transition:opacity var(--t-fast) ease,transform var(--t-fast) var(--ease-out)}
+.check input:checked+.box{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.check input:checked+.box .ico{opacity:1;transform:none}
+.radio .box::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--on-accent);transform:scale(0);transition:transform var(--t-fast) var(--ease-out)}
+.radio input:checked+.box{background:var(--accent);border-color:var(--accent)}
+.radio input:checked+.box::after{transform:scale(1)}
+.check:active .box,.radio:active .box{transform:scale(.92)}
+.check input:focus-visible+.box,.radio input:focus-visible+.box,.switch input:focus-visible+.track{outline:2px solid var(--ring);outline-offset:3px}
+.check input:disabled+.box,.radio input:disabled+.box,.switch input:disabled+.track{opacity:.4}
+.check:has(input:disabled),.radio:has(input:disabled),.switch:has(input:disabled){cursor:not-allowed;color:var(--fg-3)}
+.switch{display:flex;align-items:center;gap:12px;cursor:pointer;font-size:15px}
+.switch input{position:absolute;opacity:0;width:1px;height:1px}
+.switch .track{width:44px;height:26px;border-radius:999px;background:var(--surface-2);border:1px solid var(--line-strong);position:relative;transition:background var(--t-base) var(--ease-out),border-color var(--t-base) ease;flex:none}
+.switch .track::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:var(--fg);transition:transform var(--t-base) var(--ease-out),background var(--t-fast) ease}
+.switch input:checked+.track{background:var(--accent);border-color:var(--accent)}
+.switch input:checked+.track::after{transform:translateX(18px);background:var(--on-accent)}
+.range{-webkit-appearance:none;appearance:none;width:100%;height:24px;background:transparent;--p:40%;cursor:pointer}
+.range::-webkit-slider-runnable-track{height:4px;border-radius:2px;background:linear-gradient(to right,var(--accent) var(--p),var(--line-strong) var(--p))}
+.range::-moz-range-track{height:4px;border-radius:2px;background:var(--line-strong)}
+.range::-moz-range-progress{height:4px;border-radius:2px;background:var(--accent)}
+.range::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--fg);border:0;margin-top:-7px;box-shadow:0 0 0 4px var(--bg);transition:transform var(--t-press) var(--ease-out)}
+.range::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--fg);border:0}
+.range:active::-webkit-slider-thumb{transform:scale(1.12)}
+
+/* ============ TOOLTIP / DROPDOWN / ACCORDION / TABS ============ */
+.tip{position:fixed;z-index:200;pointer-events:none;padding:6px 10px;border-radius:var(--r-2);background:#0B0B0D;color:#F4F3F0;font-size:12px;font-weight:500;opacity:0;transform:translateY(4px) scale(.97);transition:opacity 125ms var(--ease-out),transform 125ms var(--ease-out);white-space:nowrap}
+.tip.on{opacity:1;transform:none}
+.tip.instant{transition-duration:0ms}
+.dd{position:relative;display:inline-block}
+.dd-menu{position:absolute;top:calc(100% + 8px);left:0;min-width:240px;z-index:40;padding:6px;border-radius:var(--r-3);background:var(--surface);border:1px solid var(--line-strong);box-shadow:var(--sh-1),0 24px 48px -16px rgba(0,0,0,.5);
+  opacity:0;visibility:hidden;transform:translateY(-4px) scale(.97);transform-origin:top left;transition:opacity var(--t-fast) var(--ease-out),transform var(--t-fast) var(--ease-out),visibility 0s var(--t-fast)}
+.dd.open .dd-menu{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+.dd-item{display:flex;align-items:flex-start;gap:12px;width:100%;padding:10px 12px;border-radius:var(--r-2);border:0;background:transparent;text-align:left;cursor:pointer;text-decoration:none;color:var(--fg)}
+.dd-item:hover,.dd-item:focus-visible{background:var(--surface-2)}
+.dd-item strong{display:block;font-weight:500;font-size:14px}
+.dd-item small{display:block;color:var(--fg-3);font-size:12.5px;line-height:1.4;margin-top:2px}
+.dd-item .ico{margin-top:2px;color:var(--fg-2)}
+.dd-sep{height:1px;background:var(--line);margin:6px 4px}
+.acc{border-top:1px solid var(--line)}
+.acc-item{border-bottom:1px solid var(--line)}
+.acc-h{display:grid;grid-template-columns:48px 1fr 24px;align-items:center;gap:8px;width:100%;padding:22px 0;background:transparent;border:0;cursor:pointer;text-align:left;font-family:var(--font-display);font-size:1.25rem;font-weight:600;letter-spacing:-.02em}
+.acc-h .n{font-family:var(--font-mono);font-size:12px;color:var(--fg-3);letter-spacing:.1em;font-weight:500}
+.acc-h .ico{transition:transform var(--t-base) var(--ease-out)}
+.acc-item.open .acc-h .ico{transform:rotate(45deg)}
+.acc-b{display:grid;grid-template-rows:0fr;transition:grid-template-rows var(--t-base) var(--ease-out)}
+.acc-item.open .acc-b{grid-template-rows:1fr}
+.acc-b>div{overflow:hidden}
+.acc-b p{padding:0 32px 24px 56px;color:var(--fg-2);max-width:64ch}
+.tabs{position:relative;display:flex;gap:4px;border-bottom:1px solid var(--line);overflow-x:auto}
+.tab{position:relative;padding:12px 16px;background:transparent;border:0;cursor:pointer;color:var(--fg-3);font-family:var(--font-mono);font-size:12px;letter-spacing:.09em;text-transform:uppercase;white-space:nowrap;transition:color var(--t-fast) ease}
+.tab:hover{color:var(--fg)}
+.tab[aria-selected="true"]{color:var(--fg)}
+.tab-ind{position:absolute;bottom:-1px;left:0;height:2px;width:0;background:var(--accent);transition:transform var(--t-base) var(--ease-in-out),width var(--t-base) var(--ease-in-out)}
+.panel{padding-top:20px;color:var(--fg-2);max-width:60ch}
+.panel[hidden]{display:none}
+.crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-3)}
+.crumbs a{text-decoration:none}.crumbs a:hover{color:var(--fg)}
+.crumbs [aria-current]{color:var(--fg)}
+.crumbs .ico{width:12px;height:12px}
+.pager{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.pager button{min-width:38px;height:38px;padding:0 10px;border-radius:var(--r-2);border:1px solid transparent;background:transparent;cursor:pointer;font-family:var(--font-mono);font-size:12px;color:var(--fg-2);transition:background var(--t-fast) ease,transform var(--t-press) var(--ease-out)}
+.pager button:hover{background:var(--surface-2)}
+.pager button:active{transform:scale(.95)}
+.pager button[aria-current="page"]{background:var(--fg);color:var(--bg)}
+.pager button[disabled]{opacity:.35;pointer-events:none}
+
+/* ============ ALERTA / TOAST / MODAL / DRAWER ============ */
+.alert{display:grid;grid-template-columns:20px 1fr auto;gap:12px;align-items:start;padding:14px 16px;border-radius:var(--r-3);border:1px solid var(--line-strong);background:var(--surface)}
+.alert strong{display:block;font-weight:500;font-size:14.5px}
+.alert p{font-size:13.5px;color:var(--fg-2);margin-top:2px}
+.alert--ok .ico:first-child{color:var(--ok-t)}.alert--warn .ico:first-child{color:var(--warn-t)}.alert--err{border-color:var(--danger)}.alert--err .ico:first-child{color:var(--danger)}.alert--info .ico:first-child{color:var(--info-t)}
+.toasts{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:300;display:flex;flex-direction:column;gap:8px;width:min(380px,calc(100% - 32px))}
+.toast{display:grid;grid-template-columns:20px 1fr auto;gap:12px;align-items:start;padding:14px 16px;border-radius:var(--r-3);background:#0B0B0D;color:#F4F3F0;box-shadow:0 24px 48px -12px rgba(0,0,0,.35);opacity:0;transform:translateY(12px) scale(.98);transition:opacity var(--t-base) var(--ease-out),transform var(--t-base) var(--ease-out)}
+.toast.in{opacity:1;transform:none}
+.toast p{font-size:14px;font-weight:500}
+.toast small{display:block;font-weight:400;color:#A6A6B2;margin-top:2px}
+.toast button{background:transparent;border:0;cursor:pointer;color:#A6A6B2;padding:0}
+.overlay{position:fixed;inset:0;z-index:150;display:grid;place-items:center;padding:16px;background:rgba(20,20,24,.38);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:opacity var(--t-base) var(--ease-out),visibility 0s var(--t-base)}
+.overlay.open{opacity:1;visibility:visible;transition-delay:0s}
+.modal{width:min(520px,100%);max-height:calc(100% - 32px);overflow:auto;padding:28px;border-radius:var(--r-4);background:var(--surface);color:var(--fg);border:1px solid var(--line-strong);box-shadow:var(--sh-2);transform:translateY(8px) scale(.96);transition:transform var(--t-base) var(--ease-out)}
+.overlay.open .modal{transform:none}
+.modal h3{margin-bottom:8px}
+.modal .actions{display:flex;justify-content:flex-end;gap:8px;margin-top:24px;flex-wrap:wrap}
+.overlay--drawer{place-items:stretch end;padding:0}
+.drawer{width:min(440px,100%);height:100%;overflow:auto;padding:28px;background:var(--surface);color:var(--fg);border-left:1px solid var(--line-strong);transform:translateX(100%);transition:transform var(--t-slow) var(--ease-drawer)}
+.overlay.open .drawer{transform:none}
+.drawer header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+
+/* ============ SITE: NAV ============ */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px;padding:0 20px;border:1px solid var(--line);border-radius:var(--r-3);background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);position:relative;z-index:10}
+.logo{display:inline-flex;align-items:center;line-height:0;text-decoration:none;color:inherit}
+.logo-svg{height:var(--logo-h,30px);width:auto;aspect-ratio:2000/530;fill:currentColor;overflow:visible;display:block}
+.logo-sq{fill:#FF5047;transform-box:fill-box;transform-origin:center}
+.logo--branco{color:#fff}.logo--branco .logo-sq{fill:#fff}
+.logo--cinza{color:#565660}
+.nav-links{display:flex;gap:2px;align-items:center}
+.nav-links .dd>button,.nav-links>a{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border:0;background:transparent;border-radius:var(--r-2);cursor:pointer;text-decoration:none;font-size:14.5px;color:var(--fg-2);transition:color var(--t-fast) ease,background var(--t-fast) ease}
+.nav-links .dd>button:hover,.nav-links>a:hover,.nav-links .dd.open>button{color:var(--fg);background:var(--surface-2)}
+.nav-links .dd>button .ico{width:14px;height:14px;transition:transform var(--t-fast) var(--ease-out)}
+.nav-links .dd.open>button .ico{transform:rotate(180deg)}
+.nav .menu-btn{display:none}
+
+/* ============ SITE: HERO SIGNAL ============ */
+.hero{position:relative;overflow:hidden;background:var(--bone-100);color:#0B0B0D;border:1px solid var(--line);padding:clamp(28px,5vw,48px);min-height:520px;display:flex;flex-direction:column;justify-content:space-between;border-radius:var(--r-4)}
+.hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.045) 0 1px,transparent 1px 4px);pointer-events:none}
+.hero-mark{position:absolute;right:-4%;bottom:-18%;width:78%;max-width:760px;opacity:.9;pointer-events:none}
+.hero-mark text{fill:none;stroke:var(--coral);stroke-width:2;font-family:var(--font-display);font-weight:700;letter-spacing:-.05em}
+.hero>*{position:relative}
+.hero h2{max-width:14ch;margin-top:20px}
+.hero .lead{max-width:48ch;margin-top:20px;font-size:1.125rem;color:#565660}
+.hero .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero .btn--secondary{border-color:#0B0B0D;color:#0B0B0D}
+.hero .btn--secondary:hover{background:rgba(0,0,0,.06)}
+.hero-foot{display:flex;flex-wrap:wrap;gap:12px 28px;color:#565660}
+.hero--signal{background:var(--coral);border-color:transparent}
+.hero--signal::before{background:repeating-linear-gradient(0deg,rgba(0,0,0,.07) 0 1px,transparent 1px 4px)}
+.hero--signal .hero-mark{opacity:.5}
+.hero--signal .hero-mark text{stroke:#0B0B0D}
+.hero--signal .lead,.hero--signal .hero-foot{color:rgba(0,0,0,.72)}
+.hero--signal .btn--secondary:hover{background:rgba(0,0,0,.1)}
+
+/* ============ SITE: TICKER ============ */
+.ticker{border-block:1px solid var(--line);overflow:hidden;background:var(--bg)}
+.ticker .track{display:flex;gap:40px;width:max-content;padding-block:16px;animation:tick 40s linear infinite;color:var(--fg-2)}
+.ticker .track span{white-space:nowrap;display:inline-flex;gap:40px}
+.ticker .track span::after{content:"+";color:var(--fg-3)}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* ============ SITE: SEÇÃO / MANIFESTO / STATS ============ */
+.sec-head{display:grid;gap:16px;max-width:760px}
+.sec-head .label{color:var(--label-accent)}
+.manifesto{border-top:1px solid var(--line)}
+.m-row{display:grid;grid-template-columns:120px 1fr 1.3fr;gap:24px;padding:32px 0;border-bottom:1px solid var(--line);align-items:start;transition:background var(--t-base) ease,padding var(--t-base) var(--ease-out)}
+.m-row:hover{background:var(--surface);padding-inline:16px}
+.m-row .n{color:var(--fg-3)}
+.m-row p{color:var(--fg-2)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:var(--r-3);overflow:hidden}
+.stat{padding:28px 24px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:14px}
+.stat:last-child{border-right:0}
+.stat .label{color:var(--fg-3)}
+.stat b{font-family:var(--font-display);font-weight:600;font-size:clamp(2.2rem,4.6vw,3.6rem);letter-spacing:-.05em;line-height:1;font-variant-numeric:tabular-nums}
+.stat span:last-child{font-size:13.5px;color:var(--fg-2)}
+
+/* ============ SITE: CARDS ============ */
+.paths{display:grid;grid-template-columns:1.15fr 1fr;gap:12px}
+.card{position:relative;display:flex;flex-direction:column;gap:14px;padding:28px;border-radius:var(--r-3);background:var(--surface);border:1px solid var(--line);transition:border-color var(--t-base) ease,transform var(--t-base) var(--ease-out)}
+.card:hover{border-color:var(--line-strong)}
+.card p{color:var(--fg-2)}
+.card .sub{display:flex;justify-content:space-between;gap:16px;padding-top:14px;border-top:1px solid var(--line)}
+.card .sub strong{font-weight:500;display:block}
+.card .sub span{font-size:14px;color:var(--fg-3)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.corner{position:absolute;width:10px;height:10px;border:solid var(--fg-3);border-width:0}
+.corner.tl{top:-1px;left:-1px;border-width:1px 0 0 1px}.corner.tr{top:-1px;right:-1px;border-width:1px 1px 0 0}.corner.bl{bottom:-1px;left:-1px;border-width:0 0 1px 1px}.corner.br{bottom:-1px;right:-1px;border-width:0 1px 1px 0}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.step{padding:24px;border-radius:var(--r-3);border:1px solid var(--line);display:flex;flex-direction:column;gap:12px;background:var(--surface)}
+.step .label{color:var(--fg-3)}
+.step p{color:var(--fg-2);font-size:15px}
+.step .who{display:flex;align-items:center;gap:8px;color:var(--fg-2)}
+.case{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,64px);align-items:end}
+.nums div{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:20px 0;border-top:1px solid var(--line)}
+.nums div:last-child{border-bottom:1px solid var(--line)}
+.nums b{font-family:var(--font-display);font-weight:600;font-size:clamp(2.4rem,5.4vw,4rem);letter-spacing:-.05em;line-height:1;font-variant-numeric:tabular-nums}
+.nums span{color:var(--fg-2);text-align:right;max-width:20ch;font-size:14px}
+blockquote{margin:0}
+blockquote p{font-family:var(--font-display);font-weight:500;font-size:clamp(1.25rem,2.2vw,1.65rem);line-height:1.3;letter-spacing:-.02em;text-wrap:pretty}
+blockquote footer{margin-top:20px;display:flex;align-items:center;gap:12px;color:var(--fg-2);font-size:14px}
+.avatar{width:36px;height:36px;border-radius:50%;background:var(--surface-2);border:1px solid var(--line-strong);display:grid;place-items:center;font-family:var(--font-mono);font-size:11px;color:var(--fg-2);flex:none}
+.plist{border-top:1px solid var(--line)}
+.prow{display:grid;grid-template-columns:80px 1.1fr 2fr auto;gap:20px;align-items:center;padding:22px 0;border-bottom:1px solid var(--line);text-decoration:none;transition:background var(--t-base) ease,padding var(--t-base) var(--ease-out)}
+.prow:hover{background:var(--surface);padding-inline:16px}
+.prow .yr{color:var(--fg-3)}
+.prow p{color:var(--fg-2)}
+.prow .go{display:flex;align-items:center;gap:8px;color:var(--fg)}
+.prow .go .ico{width:16px;height:16px;transition:transform var(--t-fast) var(--ease-out)}
+.prow:hover .go .ico{transform:translate(2px,-2px)}
+.logos{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line);border-radius:var(--r-3);overflow:hidden}
+.logos div{height:84px;display:grid;place-items:center;border-right:1px solid var(--line);color:var(--fg-3);font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.logos div:last-child{border-right:0}
+.cta-band{position:relative;overflow:hidden;background:var(--coral);color:#0B0B0D;border-radius:var(--r-4);padding:clamp(28px,6vw,64px);display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-end}
+.cta-band::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.07) 0 1px,transparent 1px 4px);pointer-events:none}
+.cta-band>*{position:relative}
+.cta-band h3{max-width:16ch}
+.foot{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:32px;padding-top:40px;border-top:1px solid var(--line);color:var(--fg-2);font-size:14px}
+.foot h4{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-3);font-weight:500;margin-bottom:14px}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.foot a{text-decoration:none}.foot a:hover{color:var(--fg)}
+.foot .legal{grid-column:1/-1;padding-top:24px;border-top:1px solid var(--line);color:var(--fg-3);font-size:12.5px}
+
+/* janela de produto + terminal */
+.win{border-radius:var(--r-4);overflow:hidden;background:var(--surface);border:1px solid var(--line-strong);box-shadow:var(--sh-2)}
+.chrome{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.chrome span{width:10px;height:10px;border-radius:50%;background:var(--line-strong)}
+.chrome .url{margin-left:12px;padding:4px 12px;border-radius:6px;background:var(--surface-2);color:var(--fg-3);font-family:var(--font-mono);font-size:11.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.app{display:grid;grid-template-columns:170px 1fr;min-height:300px}
+.app aside{padding:16px 12px;border-right:1px solid var(--line);display:grid;gap:2px;align-content:start}
+.app aside .b{display:flex;align-items:center;gap:10px;padding:4px 8px 14px;font-weight:600;font-size:14px}
+.app aside .b i{width:22px;height:22px;border-radius:6px;background:linear-gradient(135deg,var(--coral),var(--ember))}
+.app aside a{padding:8px 10px;border-radius:var(--r-2);font-size:13px;color:var(--fg-3);text-decoration:none}
+.app aside a.on{background:var(--surface-2);color:var(--fg)}
+.app .main{padding:20px;display:grid;gap:16px;align-content:start;min-width:0}
+.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.thumb{aspect-ratio:4/5;border-radius:var(--r-3);border:1px solid var(--line);position:relative;overflow:hidden}
+.thumb:nth-child(1){background:linear-gradient(160deg,#FF5047,#FF8308)}.thumb:nth-child(2){background:linear-gradient(160deg,#26262C,#0B0B0D)}.thumb:nth-child(3){background:linear-gradient(160deg,#FF8308,#F6F4F1)}.thumb:nth-child(4){background:linear-gradient(160deg,#0B0B0D,#FF5047)}
+.thumb .tag{position:absolute;left:8px;bottom:8px;background:rgba(9,9,11,.75);border-color:transparent;color:#F4F3F0;height:22px;font-size:10px}
+.term{border-radius:var(--r-3);overflow:hidden;background:#0B0B0D;border:1px solid var(--line-strong);font-family:var(--font-mono);font-size:13px;line-height:1.7;color:#E6E5E1}
+.term .bar{display:flex;justify-content:space-between;padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.12);color:#8B8B96;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.term pre{margin:0;padding:16px 14px;min-height:150px;white-space:pre-wrap;font:inherit}
+.term .p{color:#FF5047}.term .ok{color:#3DDC97}.term .d{color:#8B8B96}
+.term .cur{display:inline-block;width:8px;height:15px;background:#E6E5E1;vertical-align:-2px;animation:pulse 1s steps(1) infinite}
+.code-block{border-radius:var(--r-3);overflow:hidden;border:1px solid var(--line);background:var(--surface)}
+.code-block .bar{display:flex;justify-content:space-between;align-items:center;padding:8px 8px 8px 14px;border-bottom:1px solid var(--line)}
+.code-block pre{margin:0;padding:14px;overflow-x:auto;font-family:var(--font-mono);font-size:12.5px;line-height:1.7;color:var(--fg-2)}
+
+/* skeleton / empty */
+.skel{border-radius:var(--r-2);background:linear-gradient(100deg,var(--surface-2) 30%,var(--line-strong) 50%,var(--surface-2) 70%);background-size:200% 100%;animation:shine 1.4s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+.empty{display:grid;justify-items:center;gap:12px;text-align:center;padding:40px 24px;border:1px dashed var(--line-strong);border-radius:var(--r-3)}
+.empty .ico{width:28px;height:28px;color:var(--fg-3)}
+
+
+/* ============ VIDRO ============ */
+.glass,.nav,.dd-menu,.win,.modal,.drawer{background:var(--glass);border:1px solid var(--glass-line);box-shadow:var(--glass-sh);backdrop-filter:blur(var(--blur)) saturate(1.7);-webkit-backdrop-filter:blur(var(--blur)) saturate(1.7)}
+.dd-menu{border-radius:var(--r-3)}
+.glass{border-radius:var(--r-3)}
+.sq{position:absolute;display:block}
+.sq--coral{background:var(--coral)}.sq--indigo{background:var(--indigo)}.sq--ember{background:var(--ember)}.sq--ink{background:#0B0B0D}
+.glass-demo{position:relative;height:300px;overflow:hidden;border-radius:var(--r-3);border:1px solid var(--line);background:var(--bg)}
+.glass-demo .glass{position:absolute;padding:20px;display:grid;gap:8px;align-content:start}
+.glass-demo .glass p{color:var(--fg-2);font-size:14px}
+@media (max-width:1000px){
+  .cat{grid-template-columns:1fr}
+  .cat-nav{display:none}
+  .g3,.g4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  .g2,.g3,.g4,.paths,.steps,.case{grid-template-columns:1fr}
+  .nav-links{display:none}.nav .menu-btn{display:inline-flex}
+  .m-row{grid-template-columns:1fr;gap:8px}
+  .prow{grid-template-columns:1fr;gap:6px}
+  .logos{grid-template-columns:repeat(2,1fr)}.logos div{border-bottom:1px solid var(--line)}
+  .app{grid-template-columns:1fr}.app aside{display:none}
+  .thumbs{grid-template-columns:repeat(2,1fr)}
+  .cat-top .seg button{padding:8px 10px}
+  .cat-top .brand-sub{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .ticker .track{animation:none}
+  html{scroll-behavior:auto}
+}
+/* ===== HOME ===== */
+html{scroll-padding-top:84px}
+body{background:var(--bone-100)}
+.container{width:100%;max-width:1280px;margin-inline:auto;padding-inline:clamp(16px,4vw,48px)}
+.snav{position:sticky;top:0;z-index:80;background:rgba(246,244,241,.62);backdrop-filter:blur(20px) saturate(1.7);-webkit-backdrop-filter:blur(20px) saturate(1.7);border-bottom:1px solid var(--glass-line);box-shadow:0 1px 0 var(--line)}
+.snav .in{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.snav .menu-btn{display:none}
+.snav .mpanel{display:none}
+.hero-s{position:relative;overflow:hidden}
+.hero-s .gl{position:absolute;inset:0;display:grid;grid-template-columns:repeat(6,1fr);max-width:1280px;margin:0 auto;padding-inline:clamp(16px,4vw,48px);pointer-events:none}
+.hero-s .gl i{border-left:1px solid rgba(0,0,0,.055)}
+.hero-s .gl i:last-child{border-right:1px solid rgba(0,0,0,.055)}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(24px,5vw,64px);align-items:center;padding-block:clamp(48px,7vw,96px) clamp(56px,8vw,104px)}
+.hero-s h1{font-family:var(--font-display);font-weight:600;font-size:clamp(2.5rem,5.4vw,4.6rem);line-height:1;letter-spacing:-.045em;margin-top:22px;text-wrap:balance}
+.hero-s .lead{margin-top:22px;max-width:46ch;font-size:1.125rem;color:var(--fg-2)}
+.hero-s .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero-s .proof{margin-top:28px;display:flex;flex-wrap:wrap;gap:8px 24px;color:var(--fg-3)}
+.compo{position:relative;height:560px}
+.compo .win{position:absolute;left:0;top:72px;width:90%;z-index:2}
+.compo .chip{position:absolute;z-index:3;left:-2%;bottom:20px;padding:14px 16px;width:min(280px,72%);display:grid;gap:4px}
+.compo .float{position:absolute;z-index:3;right:0;top:132px;padding:10px 14px;display:flex;align-items:center;gap:10px}
+[data-in]{animation:rise 460ms var(--ease-out) both;animation-delay:calc(var(--i,0)*70ms)}
+@keyframes rise{from{opacity:0;transform:translateY(10px);filter:blur(2px)}}
+.sect{padding-block:clamp(72px,10vw,128px);border-top:1px solid var(--line)}
+.sect-h{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(32px,5vw,56px)}
+.sect-h .sec-head{margin:0}
+.paths .card{min-height:100%}
+.qbox{position:relative;min-height:360px}
+.qbox .glass{position:relative;z-index:2;padding:30px;margin:48px 0 0 clamp(0px,4vw,40px)}
+.two{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(24px,5vw,64px);align-items:start}
+.list3{display:grid;gap:0;margin-top:20px;border-top:1px solid var(--line)}
+.list3 div{display:grid;grid-template-columns:24px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.list3 strong{display:block;font-weight:500}
+.list3 span{color:var(--fg-2);font-size:14.5px}
+.list3 .ico{color:var(--label-accent);margin-top:2px}
+.cta-s{position:relative;overflow:hidden;border-radius:var(--r-4);background:var(--coral);padding:clamp(24px,5vw,56px)}
+.cta-s::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.07) 0 1px,transparent 1px 4px);pointer-events:none}
+.cta-s .cg{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,56px);align-items:center}
+.cta-s form{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:22px;border-radius:var(--r-3)}
+.cta-s .input,.cta-s .select{background:rgba(255,255,255,.62);border-color:rgba(0,0,0,.14)}
+.cta-s .field>label{color:#0B0B0D}
+.site-foot{padding-block:56px 40px}
+@media (max-width:900px){
+  .hero-grid,.two,.cta-s .cg{grid-template-columns:1fr}
+  .compo{height:auto;min-height:0;display:grid;gap:16px;padding-top:16px}
+  .compo .win,.compo .chip,.compo .float{position:relative;left:auto;right:auto;top:auto;bottom:auto;width:100%}
+  .compo .sq{opacity:.9}
+  .snav .nav-links,.snav .cta-d{display:none}
+  .snav .menu-btn{display:inline-flex}
+  .snav.open .mpanel{display:grid;gap:2px;padding:8px 0 16px}
+  .snav .mpanel a{padding:12px 4px;border-bottom:1px solid var(--line);text-decoration:none;font-size:17px}
+  .cta-s form{grid-template-columns:1fr}
+}
+/* ===== CONTATO · opção D (tinta com vidro sobre quadrados) ===== */
+.contact-d{position:relative;overflow:hidden;border-radius:var(--r-4);background:#0B0B0D;color:var(--fg);padding:clamp(24px,5vw,64px);--btn-bg:#fff;--btn-fg:#0B0B0D}
+.contact-d .cg{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,56px);align-items:center}
+.contact-d .label{color:var(--fg-2)}
+.contact-d .t-lead{color:var(--fg-2)}
+.contact-d form{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:22px;border-radius:12px}
+.contact-d .select option{background:#18181C;color:#F4F3F0}
+@media (max-width:900px){.contact-d .cg{grid-template-columns:1fr}.contact-d form{grid-template-columns:1fr}}
+/* ============ BOTÃO COM DEGRADÊ EM MOVIMENTO ============ */
+.btn--liquid{position:relative;isolation:isolate;overflow:hidden;--grad-liquid:linear-gradient(110deg,#FF5047 0%,#FF8308 28%,#FF5047 52%,#0B0B0D 78%,#FF5047 100%);transition:color 320ms ease 80ms}
+.btn--liquid::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--grad-liquid);background-size:300% 100%;opacity:0;transition:opacity 480ms var(--ease-out);animation:liquid-flow 3s linear infinite;animation-play-state:paused}
+.btn--liquid.btn--secondary{border:0;background:var(--surface-2);color:var(--fg)}
+.btn--liquid:hover,.btn--liquid.is-hover,.btn--liquid:focus-visible{color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.25);filter:none}
+.btn--liquid:hover::before,.btn--liquid.is-hover::before,.btn--liquid:focus-visible::before{opacity:1;animation-play-state:running}
+@keyframes liquid-flow{to{background-position:-300% 0}}
+
+/* ===== TRILHO (passos que acendem) ===== */
+.steps4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;position:relative;padding-top:34px}
+.hw-track{position:absolute;left:0;right:0;top:0;height:2px;background:var(--line);border-radius:2px;overflow:hidden}
+.hw-track i{display:block;height:100%;width:0;background:#0B0B0D;border-radius:2px;transition:width 120ms linear}
+.step.hw{position:relative;transition:border-color 300ms ease,transform 420ms var(--ease-out),opacity 420ms ease;opacity:.45;transform:translateY(10px)}
+.step.hw.on{opacity:1;transform:none;border-color:#0B0B0D}
+.hw-sq{position:absolute;top:-41px;left:22px;width:14px;height:14px;background:var(--bg);border:2px solid var(--line-strong);transition:background 260ms ease,border-color 260ms ease,transform 420ms var(--ease-out)}
+.step.hw.on .hw-sq{background:#0B0B0D;border-color:#0B0B0D;transform:rotate(90deg) scale(1.15)}
+@media (max-width:900px){.steps4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.steps4{grid-template-columns:minmax(0,1fr)}.hw-track,.hw-sq{display:none}.step.hw{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.step.hw{opacity:1;transform:none}.hw-sq{transition:none}}
+/* h-fade: titulo de dois tons; .h-fade-2 comeca na cor do texto e vai ao cinza na rolagem (JS h-fade) */
+.h-fade .h-fade-2{color:var(--fg-3)}
+
+/* ===== JORNADA STICKY (base) ===== */
+.story{background:var(--surface);border-block:1px solid var(--line)}
+.st{min-height:62vh;display:flex;flex-direction:column;justify-content:center;gap:10px;opacity:.28;transition:opacity 500ms var(--ease-out)}
+.st.on{opacity:1}
+.st-n{font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;color:var(--fg-3)}
+.st.on .st-n{color:var(--fg)}
+.st .label{color:var(--label-accent)}
+.st h3{font-family:var(--font-display);font-weight:600;font-size:clamp(1.8rem,3.4vw,2.8rem);line-height:1.02;letter-spacing:-.04em;margin:0;text-wrap:balance}
+.st p{color:var(--fg-2);max-width:40ch;margin:0}
+.st-mob{display:none}
+.dev-frame{position:relative;border-radius:22px;overflow:hidden;background:#fff;border:1px solid var(--line-strong);box-shadow:0 50px 100px -40px rgba(10,20,30,.4)}
+.dev-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.dev-bar i{width:10px;height:10px;border-radius:50%;background:var(--line-strong)}
+.dev-bar .prog{margin-left:auto;display:flex;gap:4px}.dev-bar .prog u{display:block;width:22px;height:3px;border-radius:2px;background:var(--line);transition:background 300ms ease}.dev-bar .prog u.on{background:#0B0B0D}
+.scr{position:absolute;inset:0;opacity:0;transform:translateY(14px) scale(.985);filter:blur(4px);transition:opacity 520ms var(--ease-out),transform 520ms var(--ease-out),filter 520ms var(--ease-out);pointer-events:none}
+.scr.on{opacity:1;transform:none;filter:none}
+[data-rv]{opacity:0;transform:translateY(22px);transition:opacity 700ms var(--ease-out),transform 700ms var(--ease-out)}
+[data-rv].in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){[data-rv]{opacity:1;transform:none}.scr{transition:none}}
+
+/* correção padrão: .hint{display:flex} vencia o atributo hidden */
+.hint[hidden]{display:none!important}
+[hidden]{display:none!important}
+
+/* ===================================================================
+   PÁGINAS LEGAIS · design system Segbox (bone, quase preto, coral). Sem roxo.
+   Coluna de leitura ~70ch em Geist; índice lateral sticky no desktop, <details> no mobile.
+   =================================================================== */
+.lg-hero{border-bottom:1px solid var(--line)}
+.lg-hero .container{padding-block:clamp(40px,7vw,88px) clamp(28px,4vw,48px)}
+.lg-eyebrow{color:var(--label-accent)}
+.lg-hero h1{font-family:var(--font-display);font-weight:600;font-size:clamp(2rem,4.6vw,3.5rem);line-height:1.04;letter-spacing:-.035em;margin-top:18px;max-width:22ch;text-wrap:balance;overflow-wrap:anywhere}
+.lg-updated{margin-top:18px;font-family:var(--font-mono);font-size:13px;letter-spacing:.02em;color:var(--fg-2)}
+.lg-wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;padding-block:clamp(24px,4vw,56px) clamp(56px,8vw,112px)}
+.lg-side{min-width:0}
+.lg-toc{border:1px solid var(--line);border-radius:var(--r-3);background:var(--surface)}
+.lg-toc>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:48px;padding:0 16px;cursor:pointer;list-style:none;font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;color:var(--fg)}
+.lg-toc>summary::-webkit-details-marker{display:none}
+.lg-toc>summary .ico{width:16px;height:16px;transition:transform var(--t-fast) var(--ease-out)}
+.lg-toc[open]>summary .ico{transform:rotate(180deg)}
+.lg-toc nav{padding:4px 16px 16px}
+.lg-toc ol{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.lg-toc ol ol{padding-left:12px;margin:2px 0 6px;border-left:1px solid var(--line)}
+.lg-toc a{display:block;padding:7px 8px;border-radius:var(--r-2);text-decoration:none;color:var(--fg-2);font-size:14px;line-height:1.35;overflow-wrap:anywhere;transition:color var(--t-fast) ease,background var(--t-fast) ease}
+.lg-toc ol ol a{font-size:13px;padding:5px 8px}
+.lg-toc a:hover{color:var(--fg);background:var(--surface-2)}
+.lg-toc a.is-on{color:var(--fg);background:var(--surface-2);box-shadow:inset 2px 0 0 var(--coral)}
+.lg-body{min-width:0;max-width:70ch;font-size:17px;line-height:1.72;color:#2A2A30;overflow-wrap:anywhere}
+.lg-body h2{font-family:var(--font-display);font-weight:600;font-size:clamp(1.35rem,2.4vw,1.7rem);line-height:1.18;letter-spacing:-.02em;color:var(--fg);margin:56px 0 16px;padding-top:28px;border-top:1px solid var(--line);text-wrap:balance}
+.lg-body h3{font-family:var(--font-body);font-weight:600;font-size:1.1rem;line-height:1.35;color:var(--fg);margin:36px 0 10px;text-wrap:balance}
+.lg-body h3.lg-sub{font-size:1rem;margin-top:28px}
+.lg-body>:first-child{margin-top:0}
+.lg-body h2:first-child{border-top:0;padding-top:0}
+.lg-body p{margin:0 0 16px}
+.lg-body p.lg-alpha{padding-left:1.4em;text-indent:-1.4em}
+.lg-body .lg-n{font-weight:600;color:var(--fg);font-variant-numeric:tabular-nums}
+.lg-body ul{margin:4px 0 22px;padding:0;list-style:none;display:grid;gap:10px}
+.lg-body li{position:relative;padding-left:22px}
+.lg-body li::before{content:"";position:absolute;left:4px;top:.72em;width:6px;height:6px;border-radius:1px;background:var(--coral)}
+.lg-body a{color:var(--fg);text-decoration:underline;text-decoration-color:var(--line-strong);text-underline-offset:3px}
+.lg-body a:hover{text-decoration-color:currentColor}
+.lg-body h2,.lg-body h3{scroll-margin-top:12px}
+.lg-docs{margin-top:clamp(48px,7vw,80px);padding-top:28px;border-top:1px solid var(--line-strong);max-width:70ch}
+.lg-docs h2{font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;color:var(--fg-2);margin:0 0 14px;padding:0;border:0}
+.lg-docs ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:10px}
+.lg-docs a{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;padding:12px 16px;border:1px solid var(--line);border-radius:var(--r-3);background:var(--surface);text-decoration:none;font-size:15px;line-height:1.3;color:var(--fg);transition:border-color var(--t-fast) ease,transform var(--t-fast) var(--ease-out)}
+.lg-docs a:hover{border-color:var(--line-strong)}
+.lg-docs a:active{transform:scale(.99)}
+.lg-docs a .ico{width:16px;height:16px;color:var(--fg-3)}
+.lg-docs a[aria-current="page"]{background:transparent;border-style:dashed;color:var(--fg-2)}
+.lg-top{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:60;display:inline-flex;align-items:center;gap:6px;height:40px;padding:0 14px;border:1px solid var(--line);border-radius:999px;background:color-mix(in srgb,var(--bone-50) 88%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:var(--fg-2);font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity var(--t-base) ease,transform var(--t-base) var(--ease-out),visibility 0s linear var(--t-base)}
+.lg-top .ico{width:14px;height:14px;transform:rotate(-90deg)}
+.lg-top.on{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+.lg-top:hover{color:var(--fg)}
+@media (min-width:1000px){
+  .lg-wrap{grid-template-columns:260px minmax(0,70ch);gap:clamp(48px,6vw,96px)}
+  .lg-side{position:sticky;top:92px;align-self:start;max-height:calc(100vh - 116px);overflow:auto;overscroll-behavior:contain}
+  .lg-toc{border:0;background:transparent}
+  .js .lg-toc>summary{pointer-events:none;min-height:0;padding:0 0 12px;color:var(--fg-3)}
+  .js .lg-toc>summary .ico{display:none}
+  .lg-toc nav{padding:0}
+}
+@media (max-width:999px){.lg-side{order:-1}.lg-top{width:44px;height:44px;padding:0;justify-content:center}.lg-top .lg-top-t{display:none}.lg-top .ico{width:16px;height:16px}}
+@media (max-width:420px){.lg-body{font-size:16px;line-height:1.7}.lg-body h2{margin-top:44px}}
+@media (prefers-reduced-motion:reduce){.lg-top{transition:none}}
+</style>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs><symbol id="logo-word" viewBox="0 0 2000 530"><path d="M934.674 0.699888C933.174 2.19968 933.874 242.966 935.374 254.565C943.873 318.656 986.267 363.849 1050.96 377.647C1063.16 380.247 1101.65 380.247 1113.95 377.647C1167.44 366.349 1207.44 331.254 1223.73 281.461C1232.83 253.665 1232.63 216.47 1223.33 188.274C1209.24 145.88 1175.94 112.984 1132.95 98.9862C1114.55 92.987 1104.45 91.4873 1082.45 91.4873C1056.96 91.5872 1039.26 94.9868 1019.46 103.586C1015.06 105.485 1011.06 107.185 1010.46 107.285C1009.86 107.385 1009.26 98.6863 1008.86 83.4884C1008.46 70.2902 1007.76 57.8919 1007.16 55.9922C998.265 25.7964 974.068 4.79932 943.573 0.999846C939.173 0.499916 935.474 -1.44579e-05 935.374 -1.44579e-05C935.374 -1.44579e-05 934.974 0.299944 934.674 0.699888ZM1095.95 162.077C1125.25 166.777 1147.14 188.174 1153.64 218.47C1155.54 227.468 1154.94 249.865 1152.54 258.464C1143.64 290.36 1116.75 310.257 1082.45 310.157C1049.06 310.157 1024.66 293.159 1013.56 262.263C1010.46 253.565 1010.46 253.165 1010.56 235.467C1010.56 218.57 1010.76 216.97 1013.36 209.471C1025.16 175.176 1058.56 155.978 1095.95 162.077Z"/><path d="M95.7899 91.9872C51.896 97.0865 18.6006 120.683 8.30205 153.979C0.303163 180.175 6.10236 212.57 22.0001 229.268C37.9979 246.366 57.7952 254.365 104.089 262.563C144.783 269.762 156.081 276.162 156.081 291.859C156.081 299.258 155.182 301.758 150.482 306.957C135.284 323.755 96.5898 322.455 80.592 304.758C76.1926 299.858 73.6929 294.159 72.4931 286.16L71.7932 281.961L36.1982 282.161L0.603121 282.461L0.303163 286.66C-0.0967815 292.459 2.60284 307.557 5.60243 316.056C20.7003 359.45 69.4935 384.746 128.585 379.947C194.276 374.648 232.871 337.553 229.771 283.061C228.571 263.663 223.172 249.665 212.074 237.667C196.476 220.769 180.378 214.17 130.585 204.472C86.0912 195.773 77.0925 191.073 76.8925 176.175C76.7925 158.578 96.3898 147.379 121.286 150.879C140.384 153.579 150.382 161.378 153.382 176.075L154.682 182.475L189.377 182.775C219.373 182.975 224.172 182.775 224.672 181.475C225.472 179.475 223.372 163.877 221.372 156.978C211.974 124.083 183.078 100.686 142.783 93.387C132.685 91.5872 106.288 90.7873 95.7899 91.9872Z"/><path d="M400.547 91.5872C398.948 91.7872 394.148 92.4871 390.049 93.087C314.659 103.686 264.266 173.476 273.165 254.765C282.364 339.353 361.253 395.245 446.041 377.347C493.634 367.349 535.529 329.954 549.427 285.16L550.127 282.961H511.232H472.237L468.638 287.86C447.341 316.756 401.147 323.155 372.151 301.158C360.353 292.259 348.055 270.862 348.055 259.364V256.964H450.94C528.83 256.964 554.126 256.664 554.626 255.764C555.026 255.164 555.526 247.865 555.826 239.567C557.925 166.377 513.132 108.085 443.941 93.9869C434.043 91.9872 408.046 90.4874 400.547 91.5872ZM429.443 156.078C443.341 158.578 458.239 167.377 467.038 178.275C472.037 184.374 479.436 198.072 480.636 203.172L481.236 205.971H415.545H349.854L350.454 202.672C351.654 196.173 359.853 181.475 365.852 174.976C380.75 158.778 405.047 151.479 429.443 156.078Z"/><path d="M1403.91 91.6872C1337.32 97.9864 1287.72 140.38 1273.73 202.972C1270.63 217.07 1270.33 253.565 1273.23 266.463C1288.12 331.954 1337.72 374.448 1405.81 379.947C1490.2 386.746 1558.99 330.854 1566.09 249.665C1574.28 155.578 1499.4 82.5885 1403.91 91.6872ZM1439.4 163.777C1452.3 167.177 1459.5 171.476 1469.9 181.975C1485.4 197.373 1491.2 212.27 1491.2 235.967C1491.2 279.761 1462 310.057 1419.41 310.357C1374.41 310.657 1344.22 278.361 1346.22 231.968C1347.32 207.771 1355.52 190.473 1372.41 176.675C1389.91 162.477 1415.91 157.478 1439.4 163.777Z"/><path d="M728.002 96.9865C677.409 101.886 633.715 131.882 612.018 176.475C593.121 215.37 593.421 267.663 612.718 306.457C637.615 356.35 686.908 385.346 746.5 385.246C821.189 385.146 879.281 338.253 891.88 268.063C895.479 248.065 894.379 219.269 889.38 200.972C870.083 131.282 805.192 89.4875 728.002 96.9865ZM766.497 168.377C799.892 177.075 820.989 208.571 818.69 246.366C816.69 278.361 799.592 301.558 770.196 312.157C761.098 315.456 737.201 315.956 726.003 312.956C690.708 303.858 669.91 271.062 674.01 231.068C677.409 198.572 698.106 174.776 729.002 167.877C739.101 165.677 756.798 165.877 766.497 168.377Z"/><path d="M1577.88 103.286C1577.88 104.086 1579.18 106.485 1580.68 108.585C1583.68 112.684 1594.18 128.082 1612.18 154.479C1623.58 171.276 1627.38 176.775 1653.67 215.27C1662.57 228.268 1669.87 239.467 1669.87 240.067C1669.87 241.066 1664.47 249.165 1638.87 286.16C1632.58 295.359 1619.48 314.456 1609.88 328.454C1600.28 342.552 1589.48 358.15 1585.98 363.249C1582.48 368.249 1578.98 373.448 1578.08 374.648L1576.68 376.948H1617.48L1658.37 376.848L1669.37 360.65C1675.47 351.751 1686.57 335.253 1694.27 323.955C1701.87 312.656 1708.87 302.658 1709.77 301.658C1711.36 299.958 1712.36 301.258 1728.96 325.455C1738.56 339.553 1750.36 356.85 1755.26 363.949L1764.16 376.948H1804.65C1836.55 376.948 1844.95 376.648 1844.55 375.648C1844.35 375.048 1838.55 366.349 1831.65 356.45C1824.85 346.552 1815.65 333.254 1811.35 326.954C1807.05 320.655 1802.05 313.456 1800.35 310.957C1798.65 308.457 1793.85 301.458 1789.65 295.459C1785.55 289.36 1778.66 279.461 1774.56 273.462C1770.36 267.363 1763.56 257.364 1759.36 251.265L1751.76 239.967L1771.56 210.971C1782.45 194.973 1803.35 164.377 1818.15 142.88C1832.85 121.383 1844.85 103.386 1844.85 102.886C1844.85 102.286 1828.65 102.086 1805.15 102.186L1765.36 102.486L1752.16 121.483C1744.86 131.882 1735.16 146.08 1730.46 152.979C1715.46 174.976 1712.16 179.475 1711.06 179.475C1710.46 179.475 1698.07 162.177 1683.57 140.98L1657.17 102.486L1617.48 102.186C1584.58 101.986 1577.88 102.186 1577.88 103.286Z"/><path d="M819.589 386.146C819.389 386.846 818.69 391.546 818.09 396.545C815.99 413.942 810.591 425.841 799.192 438.039C767.697 471.734 707.305 465.835 684.308 426.841L682.608 423.941H642.814C616.918 423.941 603.02 424.241 603.02 424.941C603.02 427.441 609.519 444.338 613.618 452.437C643.414 511.629 712.404 541.525 783.094 525.927C845.886 512.029 893.979 454.337 893.979 392.645V384.946H856.984C828.188 384.946 819.889 385.246 819.589 386.146Z"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-arrow-ur" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.2-4.2"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+    <symbol id="i-chevron-r" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+    <symbol id="i-chevron-l" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 012-2h9"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-terminal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 10l3 2-3 2M13 15h4"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5 9-5zM3 13l9 5 9-5"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 16H3L12 4z"/><path d="M12 10v4M12 17v.01"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.5 3-6 6-6s6 2.5 6 6M16 5a3 3 0 010 6M17 14c2.5.5 4 2.5 4 6"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+    <symbol id="i-inbox" viewBox="0 0 24 24"><path d="M3 13l3-8h12l3 8v6H3v-6zM3 13h5l1 3h6l1-3h5"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9.5v5l4.5-2.5z"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></symbol>
+    <symbol id="i-support" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0116 0v2"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19c0 1.5-2 2.5-5 2.5"/></symbol>
+    <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 01-12 0V8zM12 17v4"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0112 0v5l1.5 2h-15L6 16zM10 20.5a2 2 0 004 0"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20l4.5-1 10-10a2.1 2.1 0 00-3-3l-10 10L4 20z"/><path d="M14 6.5l3 3"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><circle cx="12" cy="8.5" r="2.2"/><path d="M9 13h6M9 16h6"/></symbol>
+    <symbol id="i-page" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18M7 12h6M7 15h10"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></symbol>
+    <symbol id="i-grad" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5L2 9z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5"/></symbol>
+    <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 100 18c1.2 0 1.8-.8 1.8-1.7 0-1.2-1-1.6-1-2.6 0-.9.7-1.5 1.7-1.5H17a4 4 0 004-4c0-4.5-4-8.2-9-8.2z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7.5" r="1"/><circle cx="14.5" cy="7.5" r="1"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8L3 12z"/><circle cx="7.5" cy="8.5" r="1.3"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.6-2-1-1 1c-1.2-.5-2.4-1.6-2.9-2.9l1-1-1-2z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></symbol>
+<symbol id="b-dash" viewBox="0 0 16 16"><rect x="2" y="2" width="5" height="5" rx="1.2"/><rect x="9" y="2" width="5" height="5" rx="1.2"/><rect x="2" y="9" width="5" height="5" rx="1.2"/><rect x="9" y="9" width="5" height="5" rx="1.2"/></symbol>
+<symbol id="b-spark" viewBox="0 0 16 16"><path d="M7.5 1.8l1.4 4.1 4.1 1.4-4.1 1.4-1.4 4.1-1.4-4.1L2 7.3l4.1-1.4z"/><path d="M13 11v3.4M11.3 12.7h3.4"/></symbol>
+<symbol id="b-shield" viewBox="0 0 16 16"><path d="M8 1.8l5 1.9v3.9c0 3-2.1 5.4-5 6.6-2.9-1.2-5-3.6-5-6.6V3.7z"/></symbol>
+<symbol id="b-layers" viewBox="0 0 16 16"><path d="M8 2.2l6 3-6 3-6-3z"/><path d="M2 8.2l6 3 6-3"/><path d="M2 11.2l6 3 6-3"/></symbol>
+<symbol id="b-news" viewBox="0 0 16 16"><rect x="2" y="2.5" width="12" height="11" rx="1.5"/><path d="M5 6h6M5 8.5h6M5 11h3.5"/></symbol>
+<symbol id="b-play" viewBox="0 0 16 16"><rect x="1.8" y="3" width="12.4" height="10" rx="2"/><path d="M6.8 6v4l3.4-2z"/></symbol>
+<symbol id="b-cap" viewBox="0 0 16 16"><path d="M1.5 6.2L8 3l6.5 3.2L8 9.4z"/><path d="M4.2 7.6v3.2c1.1.9 2.4 1.4 3.8 1.4s2.7-.5 3.8-1.4V7.6"/></symbol>
+<symbol id="b-team" viewBox="0 0 16 16"><circle cx="6" cy="5.5" r="2.3"/><path d="M1.8 13.5c.4-2.3 2.1-3.7 4.2-3.7s3.8 1.4 4.2 3.7"/><path d="M10.5 3.4a2.3 2.3 0 010 4.3M12 9.9c1.2.5 2 1.7 2.2 3.6"/></symbol>
+<symbol id="b-chat" viewBox="0 0 16 16"><path d="M2.5 3.5h11v7.5H7l-3 2.5V11H2.5z"/></symbol>
+<symbol id="b-search" viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.3"/><path d="M10.2 10.2l3.3 3.3"/></symbol>
+<symbol id="b-sun" viewBox="0 0 16 16"><circle cx="8" cy="8" r="2.8"/><path d="M8 1.5v1.5M8 13v1.5M1.5 8H3M13 8h1.5M3.4 3.4l1 1M11.6 11.6l1 1M3.4 12.6l1-1M11.6 4.4l1-1"/></symbol>
+<symbol id="b-bell" viewBox="0 0 16 16"><path d="M4 11V7.2a4 4 0 018 0V11l1.2 1.3H2.8z"/><path d="M6.6 13.8a1.5 1.5 0 002.8 0"/></symbol>
+<symbol id="b-check" viewBox="0 0 16 16"><path d="M3.5 8.3l3 3 6-6.3"/></symbol>
+<symbol id="b-send" viewBox="0 0 16 16"><path d="M2.5 8L13.5 3 9.5 13.5 7.6 9z"/></symbol>
+<symbol id="b-down" viewBox="0 0 16 16"><path d="M4.5 6.5L8 10l3.5-3.5"/></symbol>
+<symbol id="b-ext" viewBox="0 0 16 16"><path d="M9 2.5h4.5V7M13.5 2.5L7.5 8.5M11.5 9.5v3.5h-9v-9H6"/></symbol>
+<symbol id="b-plus" viewBox="0 0 16 16"><path d="M8 3v10M3 8h10"/></symbol>
+<symbol id="b-car" viewBox="0 0 16 16"><path d="M2.5 10.5V8l1.4-3.3A1.5 1.5 0 015.3 3.8h5.4a1.5 1.5 0 011.4.9L13.5 8v2.5z"/><circle cx="5" cy="11" r="1.2"/><circle cx="11" cy="11" r="1.2"/></symbol>
+<symbol id="b-heart" viewBox="0 0 16 16"><path d="M8 13.3S2.2 10 2.2 6a3 3 0 015.8-1.2A3 3 0 0113.8 6c0 4-5.8 7.3-5.8 7.3z"/></symbol>
+<symbol id="b-coin" viewBox="0 0 16 16"><circle cx="8" cy="8" r="5.5"/><path d="M8 4.8v6.4M9.8 6.2c-.3-.6-1-.9-1.8-.9-1 0-1.8.5-1.8 1.3 0 1.8 3.7.9 3.7 2.7 0 .8-.8 1.3-1.9 1.3-.9 0-1.6-.4-1.9-1"/></symbol>
+<symbol id="b-mega" viewBox="0 0 16 16"><path d="M2.5 6.5v3h2l5 3v-9l-5 3z"/><path d="M12 6a2.5 2.5 0 010 4"/></symbol>
+<symbol id="b-target" viewBox="0 0 16 16"><circle cx="8" cy="8" r="5.5"/><circle cx="8" cy="8" r="2.5"/></symbol>
+<symbol id="b-calc" viewBox="0 0 16 16"><rect x="3" y="1.8" width="10" height="12.4" rx="1.5"/><path d="M5.5 4.8h5M5.5 8h.01M8 8h.01M10.5 8h.01M5.5 10.8h.01M8 10.8h.01M10.5 10.8h.01"/></symbol>
+<symbol id="b-truck" viewBox="0 0 16 16"><path d="M1.8 4h7.7v6.8H1.8zM9.5 6.5h2.6l2.1 2.3v2H9.5"/><circle cx="4.5" cy="11.5" r="1.3"/><circle cx="11.5" cy="11.5" r="1.3"/></symbol>
+<symbol id="b-home" viewBox="0 0 16 16"><path d="M2.5 7.3L8 2.8l5.5 4.5v6.2h-11z"/><path d="M6.5 13.5V9.8h3v3.7"/></symbol>
+<symbol id="b-shck" viewBox="0 0 16 16"><path d="M8 1.8l5 1.9v3.9c0 3-2.1 5.4-5 6.6-2.9-1.2-5-3.6-5-6.6V3.7z"/><path d="M5.8 8l1.6 1.6 3-3.2"/></symbol>
+<symbol id="b-user" viewBox="0 0 16 16"><circle cx="8" cy="5.5" r="2.5"/><path d="M3 13.5c.5-2.6 2.5-4 5-4s4.5 1.4 5 4"/></symbol>
+<symbol id="b-queue" viewBox="0 0 16 16"><path d="M3 4h10M3 8h10M3 12h6"/></symbol>
+<symbol id="b-gear" viewBox="0 0 16 16"><circle cx="8" cy="8" r="2.2"/><path d="M8 1.8v1.8M8 12.4v1.8M1.8 8h1.8M12.4 8h1.8M3.6 3.6l1.3 1.3M11.1 11.1l1.3 1.3M3.6 12.4l1.3-1.3M11.1 4.9l1.3-1.3"/></symbol>
+<symbol id="b-export" viewBox="0 0 16 16"><path d="M8 10V2.5M5 5.3L8 2.5l3 2.8M2.8 9.5v4h10.4v-4"/></symbol>
+<symbol id="b-arrow" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></symbol>
+<symbol id="b-tri" viewBox="0 0 16 16"><path d="M5.5 3.8v8.4L12.3 8z"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M16 7l3 3M14 9l2 2"/></symbol>
+    <symbol id="i-loop" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0114-5.3L20 9M20 4v5h-5M20 12a8 8 0 01-14 5.3L4 15M4 20v-5h5"/></symbol>
+    <symbol id="i-server" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M5 15c-1.5 1.5-2 4-2 6 2 0 4.5-.5 6-2M9 15l-3-3c1.5-4 5.5-9 13-9 0 7.5-5 11.5-9 13l-1-1z"/><circle cx="15" cy="9" r="1.5"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 13.5L7 21l5-3 5 3-1.5-7.5"/></symbol>
+  </defs></svg>
+<header class="snav" id="snav">
+  <div class="container">
+    <div class="in">
+      <a class="logo" href="index.html" aria-label="Segbox"><svg class="logo-svg" viewBox="0 0 2000 530" aria-hidden="true"><use href="#logo-word"/><rect class="logo-sq" x="1889" y="265" width="112" height="112"/></svg></a>
+      <nav class="nav-links" aria-label="Principal">
+        <div class="dd" data-dd><button type="button" aria-expanded="false" aria-haspopup="menu">Soluções <svg class="ico"><use href="#i-chevron"/></svg></button>
+          <div class="dd-menu" role="menu" style="min-width:320px">
+            <a class="dd-item" role="menuitem" href="produto-otimize-whitelabel.html"><svg class="ico"><use href="#i-layers"/></svg><span><strong>Otimize White Label</strong><small>Materiais e landing pages com a sua marca</small></span></a>
+            <a class="dd-item" role="menuitem" href="produto-segzap-whitelabel.html"><svg class="ico"><use href="#i-message"/></svg><span><strong>SegZap White Label</strong><small>Assistente de IA no WhatsApp</small></span></a>
+            <div class="dd-sep"></div>
+            <a class="dd-item" role="menuitem" href="projetos-sob-medida.html"><svg class="ico"><use href="#i-code"/></svg><span><strong>Projetos sob medida</strong><small>Se não existe, construímos do zero</small></span></a>
+          </div></div>
+        <div class="dd" data-dd><button type="button" aria-expanded="false" aria-haspopup="menu">Produtos <svg class="ico"><use href="#i-chevron"/></svg></button>
+          <div class="dd-menu" role="menu">
+            <a class="dd-item" role="menuitem" href="produto-otimize.html"><span><strong>Otimize</strong></span></a><a class="dd-item" role="menuitem" href="produto-segzap.html"><span><strong>SegZap</strong></span></a><a class="dd-item" role="menuitem" href="produto-corretorpro.html"><span><strong>CorretorPRO</strong></span></a><a class="dd-item" role="menuitem" href="produto-leadsgo.html"><span><strong>LeadsGO!</strong></span></a>
+          </div></div>
+        <div class="dd" data-dd><button type="button" aria-expanded="false" aria-haspopup="menu">Cases <svg class="ico"><use href="#i-chevron"/></svg></button>
+          <div class="dd-menu" role="menu">
+            <a class="dd-item" role="menuitem" href="case-mapfre.html"><span><strong>MAPFRE +Digital</strong><small>Governança de marca para toda a rede</small></span></a>
+            <a class="dd-item" role="menuitem" href="case-suhai.html"><span><strong>Venda+ Suhai</strong><small>Uma plataforma viva, ferramenta de growth</small></span></a>
+            <a class="dd-item" role="menuitem" href="case-suhai-academy-v2.html"><span><strong>Suhai Capacita</strong><small>Capacitação que libera a venda</small></span></a>
+            <a class="dd-item" role="menuitem" href="case-baeta.html"><span><strong>BaetaPRO</strong><small>Portal do corretor parceiro</small></span></a>
+          </div></div>
+        <div class="dd" data-dd><button type="button" aria-expanded="false" aria-haspopup="menu">Conteúdo <svg class="ico"><use href="#i-chevron"/></svg></button>
+          <div class="dd-menu" role="menu">
+            <a class="dd-item" role="menuitem" href="https://www.insurtalks.com.br/" target="_blank" rel="noopener"><span><strong>Notícias ↗</strong><small>No site Insurtalks</small></span></a>
+            <a class="dd-item" role="menuitem" href="https://www.insurtalks.com.br/cast" target="_blank" rel="noopener"><span><strong>Podcast ↗</strong><small>No InsurtalksCast</small></span></a>
+          </div></div>
+        <div class="dd" data-dd><button type="button" aria-expanded="false" aria-haspopup="menu">Nossas iniciativas <svg class="ico"><use href="#i-chevron"/></svg></button>
+          <div class="dd-menu" role="menu">
+            <a class="dd-item" role="menuitem" href="https://innovators.insurtalks.com.br/" target="_blank" rel="noopener"><span><strong>Insurance Innovators ↗</strong><small>Comunidade de inovação em seguros</small></span></a>
+            <a class="dd-item" role="menuitem" href="https://insummit.online/" target="_blank" rel="noopener"><span><strong>INSUMMIT ↗</strong><small>Evento do mercado de seguros</small></span></a>
+            <a class="dd-item" role="menuitem" href="https://reviewseguro.net" target="_blank" rel="noopener"><span><strong>ReviewSeguro ↗</strong><small>Reputação no mercado de seguros</small></span></a>
+          </div></div>
+        <a href="sobre.html">Sobre</a>
+      </nav>
+      <div class="flex" style="gap:8px"><a class="btn btn--sm cta-d" href="index.html#contato">Fale com a gente</a><button class="btn btn--secondary btn--icon btn--sm menu-btn" type="button" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-haspopup="dialog" data-sgm-menu="#snav .nav-links" data-sgm-cta="#snav .cta-d" data-sgm-logo="#snav .logo"><svg class="ico"><use href="#i-menu"/></svg></button></div>
+    </div>
+  </div>
+</header>
+<main id="top">
+<section class="lg-hero"><div class="container">
+  <p class="label lg-eyebrow">[ Legal ]</p>
+  <h1>Termos de Uso do Software</h1>
+  <p class="lg-updated">Atualizado em <time datetime="2024-02-24">2024-02-24</time></p>
+</div></section>
+<div class="container"><div class="lg-wrap">
+<aside class="lg-side" aria-label="Índice do documento"><details class="lg-toc" id="lgToc"><summary>Nesta página <svg class="ico" aria-hidden="true"><use href="#i-chevron"/></svg></summary><nav aria-label="Seções do documento"><ol><li><a href="#1-objeto">1. Objeto</a></li><li><a href="#2-processo-de-cadastro">2. Processo de Cadastro</a></li><li><a href="#3-alteracoes-de-plano">3. Alterações de Plano</a></li><li><a href="#4-vigencia">4. Vigência</a></li><li><a href="#5-valor-e-forma-de-pagamento">5. Valor e Forma de Pagamento</a></li><li><a href="#6-obrigacoes-da-contratada">6. Obrigações da Contratada</a></li><li><a href="#7-obrigacoes-do-contratante">7. Obrigações do Contratante</a></li><li><a href="#8-propriedade-intelectual">8. Propriedade Intelectual</a></li><li><a href="#9-confidencialidade">9. Confidencialidade</a></li><li><a href="#10-protecao-de-dados">10. Proteção de Dados</a></li><li><a href="#11-obrigacoes-trabalhistas">11. Obrigações Trabalhistas</a></li><li><a href="#12-compliance">12. Compliance</a></li><li><a href="#13-rescisao">13. Rescisão</a></li><li><a href="#14-disposicoes-gerais">14. Disposições Gerais</a></li><li><a href="#15-legislacao-aplicavel">15. Legislação Aplicável</a></li></ol></nav></details></aside>
+<div class="lg-main">
+<article class="lg-body" id="lgDoc">
+<p>Este instrumento contém as condições gerais de contratação do Sistema Otimize. Ao aceitar estas condições, Você, doravante denominado CONTRATANTE, aceita todos os termos deste Termo de Prestação de Serviços de uso do Sistema Otimize (“Sistema”), prestados por SEGBOX SERVIÇOS DE INTERNET LTDA (“SEGBOX”), com sua sede na Rua Luiz Leopoldo Fernandes Pinheiro, no 521/1110, Centro, Niterói – RJ, Cep: 24030-124, inscrita no CNPJ sob o no 25.336.720/0001-53,, doravante denominada “CONTRATADA”.</p>
+<p>Ao aceitar estas Condições Gerais de Contratação, Você declara ser maior de 18 (dezoito) anos e, caso esteja efetuando a contratação em nome de uma pessoa jurídica, declara ter capacidade legal de representação da mesma. Você declara que está autorizado a aceitar estes Termos em nome da pessoa jurídica e que esta concorda em ser responsável conosco se Você violar estes Termos.</p>
+<p>Integram às cláusulas do presente Termo as disposições do Termos Gerais e Condições De Uso do Site e Plataformas da SEGBOX acessível pelo link <a href="termos-de-uso.html">https://www.segbox.com/legal/termos-de-uso/</a>, Política de Privacidade da SEGBOX link <a href="politica-de-privacidade.html">https://www.segbox.com/legal/politica-de-privacidade</a>, Política Anti Spam link <a href="politica-anti-spam.html">https://www.segbox.com/legal/politica-anti-spam</a>, Política de Segurança de Informação para Clientes, link <a href="seguranca-da-informacao.html">https://www.segbox.com/legal/seguranca-da-informacao</a> e Política de Pagamento link <a href="politica-de-pagamento.html">https://www.segbox.com/legal/politica-de-pagamento</a> os quais são automaticamente aceitos por Você ao aceitar este Termo.</p>
+<h2 id="1-objeto"><span class="lg-n">1.</span> Objeto</h2>
+<p><span class="lg-n">1.1.</span> Sob os termos e condições deste instrumento, a CONTRATADA prestará ao CONTRATANTE os serviços consistentes na implementação (quando contratada) e disponibilização para uso da plataforma denominada OTIMIZE que possui funcionalidades voltadas para otimização das atividades de marketing em empresas.</p>
+<p><span class="lg-n">1.2.</span> O OTIMIZE possui três modalidades de Planos: Starter, Business e Business Plus.</p>
+<p><span class="lg-n">1.2.1.</span> Ao escolher o Plano desejado, o CONTRATANTE terá o Pacote com a quantidade de leads ativos que irá gerenciar no Sistema, o qual definirá a quantidade mensal de disparos permitidos de e-mails, bem como de usuários cadastrados.</p>
+<p><span class="lg-n">1.2.2.</span> Após o início da vigência deste Termo, o CONTRATANTE tem ciência que a CONTRATADA poderá, a fim de aprimorar o Sistema, incorporar ou retirar funcionalidades ou recursos à ferramenta. Ao incorporar novas funcionalidades, a SEGBOX poderá reajustar o valor do serviço contratado. Caso isso ocorra, o CONTRATANTE será notificado.</p>
+<p><span class="lg-n">1.3.</span> Para efetuar a contratação dos serviços, o CONTRATANTE deverá preencher um cadastro eletrônico, conforme cláusula 2, no qual o CONTRATANTE, além dos dados cadastrais, irá escolher o Plano e o Pacote desejado.</p>
+<p><span class="lg-n">1.3.1.</span> Todas as informações constantes do cadastro eletrônico fazem parte do presente Termo para todos os fins.</p>
+<p><span class="lg-n">1.4.</span>  Serviço de Implementação: Além da contratação dos Planos, o CONTRATANTE poderá contratar os serviços de Implementação, que abrangem o treinamento sobre o uso e configuração do Sistema.</p>
+<p><span class="lg-n">1.4.1.</span> O serviço de Implementação está disponível exclusivamente para Planos Business e Business Plus, o qual poderá ser prestado pela equipe da própria SEGBOX ou por uma empresa parceira da SEGBOX.</p>
+<p><span class="lg-n">1.4.1.1.</span> Caso não seja utilizado o Serviço de Implementação em sua totalidade, não haverá restituição de valores pagos, nem a concessão de qualquer espécie de crédito futuro.</p>
+<p><span class="lg-n">1.5.</span> Outros Serviços: O CONTRATANTE poderá contratar outros serviços (Add-ons) prestados pela CONTRATADA por meio dos canais disponíveis em nossa Central de Ajuda, sendo dispensada a emissão do aditivo.</p>
+<p><span class="lg-n">1.6.</span> Natureza dos Serviços: A Otimize é um sistema exclusivamente voltado para atividades empresariais e tem como objetivo auxiliar o CONTRATANTE a implementar melhorias nas práticas de marketing da empresa CONTRATANTE, não sendo garantido ou prometido a esta o alcance de nenhum resultado econômico ou empresarial em seus respectivos negócios presentes ou futuros, a partir do simples uso do Sistema, sendo certo que a prestação dos Serviços configura obrigação de meio e não de resultado.</p>
+<p><span class="lg-n">1.7.</span> O Sistema será disponibilizado por meio de acesso remoto ao servidor da CONTRATADA, sendo de exclusiva responsabilidade do CONTRATANTE possuir todos os equipamentos e acesso à internet necessários ao uso do Sistema.</p>
+<h2 id="2-processo-de-cadastro"><span class="lg-n">2.</span> Processo de Cadastro</h2>
+<p><span class="lg-n">2.1.</span> Ao se cadastrar o CONTRATANTE deverá informar os seguintes dados: CPF/CNPJ, nome completo/razão social, endereço completo, cidade/UF, país, e-mail, nome completo do representante legal, respectivo CPF e e-mail.</p>
+<p><span class="lg-n">2.1.1</span> Ao finalizar a contratação, serão emitidas as faturas dos serviços escolhidos e você deverá escolher o meio de pagamento. Caso escolha a modalidade “cartão de crédito”, serão solicitados os dados de seu cartão para finalizar o pagamento.</p>
+<p><span class="lg-n">2.2.</span> O CONTRATANTE é responsável por manter sempre atualizado seu cadastro empresarial junto à CONTRATADA pelo seu Painel Financeiro dentro do Sistema, bem como pelos demais canais de comunicação da CONTRATADA, comunicando, imediatamente, sempre que houver quaisquer alterações em seus dados, incluindo, mas não se limitando a endereço, telefone e e-mail para contato.</p>
+<p><span class="lg-n">2.3.</span> Os dados fornecidos pelo CONTRATANTE serão submetidos à previsão da cláusula 10 – Proteção de Dados.</p>
+<p><span class="lg-n">2.4.</span> O CONTRATANTE é responsável por todos os atos praticados mediante o uso das credenciais de acesso de todos os usuários vinculados à sua conta.</p>
+<h2 id="3-alteracoes-de-plano"><span class="lg-n">3.</span> Alterações de Plano</h2>
+<p><span class="lg-n">3.1.</span> O CONTRATANTE poderá efetuar alterações de Plano a qualquer momento, por meio de nosso Painel Financeiro, escolhendo a opção “Planos”. A confirmação da alteração se dará a partir do momento da troca do Plano e com a emissão da fatura proporcional do novo plano, iniciando um novo ciclo contratual.. Portanto, o CONTRATANTE será cobrado do valor integral do novo plano escolhido, conforme a tabela de preços vigente no momento da mudança, a partir do próximo ciclo. Em caso de redução de planos ou serviços, não haverá reembolso dos valores já pagos.</p>
+<p><span class="lg-n">3.1.1.</span> As operações de Alteração de Plano e Cancelamento somente podem ser realizadas por usuário com perfil de “Dono”, mediante o uso de suas credenciais de acesso.</p>
+<p><span class="lg-n">3.1.2.</span> Caso o CONTRATANTE opte por realizar um downgrade (redução do número de leads ativos) ou  downsell (alteração para um plano com menos funcionalidades) do Plano contratado, o CONTRATANTE deverá solicitar pelos nossos canais de atendimento.</p>
+<p><span class="lg-n">3.1.2.1.</span> Em caso de downgrade (redução do número de leads ativos), a alteração será realizada ao final do ciclo atualmente vigente (ciclo mensal ou anual).</p>
+<p><span class="lg-n">3.1.2.2.</span> Em caso de downsell (alteração para um plano com menos funcionalidades), a alteração será realizada ao final do ciclo atualmente vigente (ciclo mensal ou anual) e, o novo plano, seguirá o valor disponível na Tabela de Preços vigente, no momento da alteração.</p>
+<p><span class="lg-n">3.1.2.3.</span> Ao alterar o plano (independente do ciclo de pagamento), inicia-se um novo ciclo contratual. Portanto, será emitida uma fatura para o novo plano e período. Além disso, também haverá a atualização da data de vencimento e da data de reajuste do plano, conforme data de alteração do novo Plano contratado.</p>
+<p><span class="lg-n">3.3.</span> O controle da quantidade de leads ativos é de responsabilidade do CONTRATANTE. Ao ultrapassar a quantidade contratada, seja de forma automática ou por solicitação, ou, ao solicitar a redução da quantidade atualmente contratada, não será efetuado nenhum tipo de reembolso ou aditivo para formalização da alteração.</p>
+<p><span class="lg-n">3.4.</span> As características e limitações de cada Plano e Pacote (quantidade de leads ativos, número de disparos de emails, quantidade de usuários, etc) estão disponíveis no seu Painel Financeiro e no link Página de Preços. O CONTRATANTE é responsável pela gestão do seu plano e pacote, e concorda que, em caso de ultrapassar alguma destas características, deverá contratar um plano e/ou pacote proporcional à sua utilização.</p>
+<h2 id="4-vigencia"><span class="lg-n">4.</span> Vigência</h2>
+<p><span class="lg-n">4.1.</span> O presente Termo entrará em vigor na data da liberação do acesso ao Sistema, o que ocorrerá com a confirmação do pagamento da primeira parcela, visto que os Serviços são pré-pagos. Portanto, os valores serão devidos mesmo que durante o exercício do plano, o CONTRATANTE deixe de utilizar a Plataforma, uma vez considerando que o serviço é adquirido em forma de direito de uso e independe da efetiva utilização. Ou seja, deixar de utilizar o sistema não registra o cancelamento e o mesmo, segue sendo prestado e devido.</p>
+<p><span class="lg-n">4.2.</span> Planos Mensais: o prazo de vigência deste Termo para estes planos é indeterminado. Qualquer uma das Partes poderá resilir imotivadamente o presente instrumento, sem necessidade de prévio aviso e sem qualquer ônus. Neste caso, não haverá direito a estorno de valores pagos, permanecendo o Sistema acessível até o final do período já iniciado (o qual deverá estar adimplente) pelo CONTRATANTE.</p>
+<p><span class="lg-n">4.3.</span> Planos Anuais: o prazo de vigência deste Termo para estes planos é de 12 (doze) meses. Findado o prazo de vigência, o Termo é prorrogado automaticamente por novos 12 (doze) meses, sucessivamente, caso o CONTRATANTE não comunique a CONTRATADA de sua intenção de não prorrogação do prazo até 30 (trinta) dias antes do encerramento do prazo de vigência. Não será emitido aditivo contratual para formalização da prorrogação deste termo.</p>
+<p><span class="lg-n">4.3.1.</span> Caso o CONTRATANTE opte por resilir este Termo (cancelar imotivadamente), antes de transcorrido o primeiro prazo de 12 (doze) meses de vigência, a contar da contratação do plano, será devido aviso prévio de 30 (trinta) dias e multa não compensatória a ser paga no montante equivalente a 30% (trinta por cento) do valor total devido, referente aos meses faltantes, na data da resilição, para o final do Prazo contratual, ainda que a resilição se dê antes do pagamento da primeira parcela. Não serão reembolsados valores já pagos.</p>
+<p><span class="lg-n">4.3.1.1.</span> Caso o serviço tenha sido contratado com ciclo de pagamento antecipado, e exista um período contratado maior que o fim do aviso prévio (30 dias), o cancelamento será efetivado ao final do período contratado. Neste caso, o CONTRATANTE  permanece responsável pela gestão da conta e sua respectiva base, enquanto a conta estiver ativa. Não serão reembolsados valores já pagos.</p>
+<p><span class="lg-n">4.3.1.2.</span> A multa prevista no item 4.3.1 também será aplicada em caso de mudança para um Plano com menos funcionalidades (downsell), antes de transcorrido o primeiro prazo de 12 (doze) meses de vigência do respectivo plano. O aviso prévio de 30 dias será devido a qualquer momento da solicitação.</p>
+<p><span class="lg-n">4.4.</span> Reativação de conta dos Planos: A reativação poderá ser feita antes de completar 60 (sessenta) dias após a data do seu cancelamento e o CONTRATANTE deverá estar em dia com suas pendências financeiras até o momento do cancelamento. Após o cancelamento, o CONTRATANTE poderá voltar a utilizar a conta solicitando a reativação da mesma pelo botão “Reiniciar Assinatura”, no Painel Financeiro da Otimize. Ao solicitar a reutilização de sua conta, inicia-se um novo ciclo de vigência contratual, sendo alterada a data de ativação e de pagamento. A conta será ativada novamente a partir da identificação do pagamento, de acordo com o preço da tabela vigente. O período não utilizado após o cancelamento e antes da reativação não será cobrado. A conta e seus dados serão excluídos ao completar 60 (sessenta) dias da data do cancelamento.</p>
+<p><span class="lg-n">4.5.</span> Período de Testes Planos Otimize: Caso o CONTRATANTE siga com a contratação da versão de testes (trial), este poderá utilizar gratuitamente o Sistema pelo prazo improrrogável de 3 (três) dias. Ao finalizar este prazo, o presente Termo estará encerrado, caso o CONTRATANTE não ative a contratação por meio do Painel Financeiro. Ao seguir com a contratação, será emitida a primeira fatura.</p>
+<h2 id="5-valor-e-forma-de-pagamento"><span class="lg-n">5.</span> Valor e Forma de Pagamento</h2>
+<p><span class="lg-n">5.1.</span> Para consultar nossos valores, condições de pagamento e reajuste, por favor, consulte a nossa Política de Pagamento.</p>
+<h2 id="6-obrigacoes-da-contratada"><span class="lg-n">6.</span> Obrigações da Contratada</h2>
+<p><span class="lg-n">6.1.</span> São obrigações da CONTRATADA:</p>
+<p class="lg-alpha"><span class="lg-n">a)</span> manter disponíveis os serviços contratados durante 24 (vinte e quatro) horas por dia nos 7 (sete) dias da semana, exceto: (i) durante interrupções planejadas (que serão notificadas pela CONTRATADA com pelo menos 8 (oito) horas de antecedência através de e-mail, ou aviso no Sistema, e que serão programadas na medida do possível durante os finais de semana, ou horários não comerciais nos dias de semana, ou (ii) qualquer indisponibilidade causada por caso fortuito ou força maior, ações de governo, inundações, incêndios, terremotos, conflitos civis, atos de terrorismo, greves ou problemas laborais (exceto os que envolvem funcionários da CONTRATADA), falhas ou atrasos do fornecedor do serviço de Internet.</p>
+<p class="lg-alpha"><span class="lg-n">b)</span> disponibilizar ao CONTRATANTE para o download, um arquivo com os dados das palavras-chave e da Base de Leads em formato Comma Separated Value (CSV) (“Dados”), antes de completar o prazo de 60 (sessenta) dias, a contar do efetivo cancelamento dos serviços ou término da vigência deste Termo. Após este período, a CONTRATADA não estará obrigada a manter ou a fornecer os Dados do CONTRATANTE, ficando este ciente de que os mesmos serão removidos dos sistemas da CONTRATADA, exceto quando proibido por lei, ou decisão judicial.</p>
+<p class="lg-alpha"><span class="lg-n">c)</span> oferecer suporte técnico remoto gratuito em relação ao uso do Sistema, sendo que as respostas serão enviadas até o próximo dia útil e durante o horário comercial (das 9am às 6pm – hora de Brasília), devendo o CONTRATANTE efetuar as requisições.</p>
+<p class="lg-alpha"><span class="lg-n">d)</span> Considerando que a CONTRATADA utiliza recursos de terceiros para a prestação do serviço contratado e que os quais interagem com os serviços do Google e dependem da disponibilidade contínua da API e do programa do Google para o uso com os Serviços, na hipótese da Google Inc. deixar de disponibilizar o API e o programa do Google em condições razoáveis para os serviços, a CONTRATADA poderá interromper o fornecimento de tais recursos, sem que o CONTRATANTE tenha direito a qualquer reembolso, crédito ou outras compensações.</p>
+<p class="lg-alpha"><span class="lg-n">e)</span> Serviços Google. O Sistema não opera se não estiver integrado com o sistema da Google Marketing Platform e Google Cloud (as “Plataformas Google”), de titularidade da empresa Google Inc. (“Google”). A contratação da Licença do Sistema implica em uma autorização ao CONTRATANTE em integrar as funções de marketing e de serviços de armazenamento das Plataformas Google no Sistema.</p>
+<p class="lg-alpha"><span class="lg-n">f)</span> O CONTRATANTE entende e concorda que as plataformas Google Marketing Platform e Google Cloud são de titularidade da Google, sendo operacionalizada direta e integralmente por esta, de forma que todas as decisões referentes à gestão e à operacionalização das Plataformas Google são tomadas pela Google, sem que haja qualquer tipo de gerência e/ou interferência por parte da CONTRATADA, motivo pelo qual a CONTRATADA não oferece qualquer garantia sobre as Plataformas Google, seja em relação a seu funcionamento, confiabilidade, segurança, funcionalidades, suporte, entre outros. Dessa forma, a CONTRATADA não se responsabiliza pelas atualizações nas Plataformas Google, as quais serão ou poderão ser realizadas diretamente pela Google, a seu exclusivo critério. O CONTRATANTE entende e concorda que a utilização das Plataformas Google é condicionada à aceitação e cumprimento das regras estabelecidas pela Google em seus termos de uso, comprometendo-se desde já, por si e por seus colaboradores a cumpri-las.</p>
+<p><span class="lg-n">6.2.</span> Nos casos em que for necessária a intervenção do suporte, declara o CONTRATANTE que, está ciente que a CONTRATADA poderá acessar internamente a conta e os dados cadastrados no sistema, a fim de sanar eventuais questões técnicas/financeiras.</p>
+<p><span class="lg-n">6.3.</span> Da exclusão de danos, causados por terceiros: A CONTRATADA não se responsabiliza por danos e prejuízos de qualquer natureza causados por terceiros que venham a ter acesso ao sistema a partir do acesso ou ao Seu perfil. Também não será responsabilizada a CONTRATADA em virtude de acesso, interceptação, eliminação, alteração, modificação ou manipulação, dos arquivos de propriedade do contratante, quando decorrentes de acesso por terceiros não autorizados em ambiente físico ou virtual externo à SEGBOX.</p>
+<p><span class="lg-n">6.4.</span> Da limitação de responsabilidade: Fica estipulado que em qualquer caso de prejuízos sofridos por qualquer uma das partes contratantes, a reparação devida pela outra parte não poderá ser superior ao valor total efetivamente pago pelo CONTRATANTE nos últimos 12 (doze) meses anteriores à ocorrência do prejuízo.</p>
+<h2 id="7-obrigacoes-do-contratante"><span class="lg-n">7.</span> Obrigações do Contratante</h2>
+<p><span class="lg-n">7.1.</span> Além das obrigações previstas neste Termo, caberá ao CONTRATANTE:</p>
+<p class="lg-alpha"><span class="lg-n">a)</span> utilizar o Sistema em sua atividade empresarial nos estritos termos deste Termo, do  Termos Gerais e Condições De Uso do Site e Plataformas da SEGBOX, Política de Privacidade, Política Anti Spam e Política de Segurança de Informação para Clientes, respeitando ainda a legislação vigente e o direito de terceiros;</p>
+<p class="lg-alpha"><span class="lg-n">b)</span> responsabilizar-se, integral e exclusivamente, pelos atos praticados pelos usuários, terceiros autorizados pelo CONTRATANTE para acessar o Sistema através da criação de novos acessos de usuários;</p>
+<p class="lg-alpha"><span class="lg-n">c)</span> tomar todas as medidas de segurança para que seu pessoal e/ou terceiros não violem nenhum direito de propriedade intelectual da CONTRATADA, e comunicar à CONTRATADA, imediatamente, em caso de qualquer violação à propriedade intelectual de que venha a ter conhecimento;</p>
+<p class="lg-alpha"><span class="lg-n">d)</span> tomar todas as medidas necessárias para que o Sistema não seja utilizado indevidamente, assim considerado, mas não se limitando, a importação de lista comprada de contatos, envio de SPAM, phishing e publicação de conteúdos ofensivos e ilegais;</p>
+<p class="lg-alpha"><span class="lg-n">e)</span> manter sempre atualizado seu cadastro empresarial junto à CONTRATADA pelo seu Painel de Financeiro, bem como pelos demais canais de comunicação da CONTRATADA, comunicando, imediatamente, sempre que houver quaisquer alterações em seus dados, incluindo, mas não se limitando a endereço, telefone e e-mail para contato;</p>
+<p class="lg-alpha"><span class="lg-n">f)</span> observar integralmente a “Política Anti Spam” em todo e qualquer envio de mensagens por meio do Sistema.</p>
+<p><span class="lg-n">7.1.1.</span> O descumprimento de qualquer obrigação prevista na cláusula 7.1, autoriza a CONTRATADA, independente de aviso prévio à CONTRATANTE, bloquear, suspender ou cancelar o uso do Sistema pelo CONTRATANTE por prazo indeterminado, podendo ainda, devido à gravidade do que for apurado, encerrar definitivamente a conta, sendo o CONTRATANTE, o único e exclusivo responsável pelos danos que vier a sofrer pela utilização indevida do Sistema, bem como pelos danos que causar a terceiros pelos mesmos motivos.</p>
+<h2 id="8-propriedade-intelectual"><span class="lg-n">8.</span> Propriedade Intelectual</h2>
+<p><span class="lg-n">8.1.</span> O uso de qualquer Sistema da CONTRATADA deverá ocorrer de forma restrita ao objeto do presente Termo, de acordo com as condições estabelecidas, devendo as partes preservar tais direitos, seja de suas marcas, direitos autorais, programas de computador, bem como demais direitos de propriedade intelectual aqui mencionados e relacionados ao Sistema.</p>
+<p><span class="lg-n">8.2.</span> Nenhuma das disposições do presente Termo deverá ser interpretada como forma de licença ou cessão de direitos de propriedade intelectual por qualquer das Partes. Com efeito, cada uma das Partes permanecerá como única e exclusiva titular de seus respectivos direitos de propriedade intelectual.</p>
+<p><span class="lg-n">8.3.</span> O CONTRATANTE não poderá, em qualquer hipótese, por qualquer meio, copiar, reproduzir, traduzir, adaptar, modificar, alienar, vender, locar, sublocar, ceder, transferir, descompilar ou fazer engenharia reversa do Sistema, no todo ou em parte, ou usar o Sistema para qualquer propósito diverso do que lhe foi especificamente autorizado, tampouco permitir que qualquer terceiro o faça.</p>
+<p><span class="lg-n">8.4.</span> As Partes aceitam e concordam que o Sistema, bem como todas as técnicas, metodologias, planos de negócio e bases de dados, desenvolvidos pela CONTRATADA para a consecução do objeto do presente Termo, é produto da tecnologia e do conhecimento desenvolvidos pela CONTRATADA, sendo de propriedade exclusiva da CONTRATADA, observada a legislação aplicável. Nenhuma disposição deste Instrumento deve ser entendida como restrição ou renúncia de quaisquer direitos da CONTRATADA sobre Sistema, tampouco cessão à CONTRATANTE dos direitos de propriedade intelectual inerentes ao Sistema.</p>
+<p><span class="lg-n">8.5.</span> Ainda, qualquer outra tecnologia, código e/ou conteúdo criado pela CONTRATADA para execução do objeto do presente Termo são e continuarão a ser de propriedade exclusiva da CONTRATADA, não sendo, em hipótese alguma, considerados como trabalho por encomenda, ainda que solicitado pela CONTRATANTE.</p>
+<p><span class="lg-n">8.6.</span> Ao término da vigência deste Termo, a Licença será automaticamente cancelada, sendo vedado ao CONTRATANTE realizar qualquer forma de utilização do Sistema. O não cumprimento pelo CONTRATANTE das obrigações estipuladas nesta Cláusula sujeitará o CONTRATANTE às penalidades previstas em lei em razão da violação dos direitos de propriedade intelectual da CONTRATADA.</p>
+<h2 id="9-confidencialidade"><span class="lg-n">9.</span> Confidencialidade</h2>
+<p><span class="lg-n">9.1.</span> Cada parte se compromete a manter e tratar como confidencial e não revelar a terceiros qualquer Informação Confidencial relacionada ao Sistema e aos serviços, dados de usuários, segredo de indústria e outros, ou usar referidas informações para qualquer propósito que não aquele previsto no presente Termo.</p>
+<p><span class="lg-n">9.2.</span> Tanto as partes quanto os seus representantes legais, diretores, empregados, agentes e consultores, incluindo advogados, auditores e consultores financeiros, estão sujeitos ao dever de sigilo e confidencialidade previsto neste Termo.</p>
+<p><span class="lg-n">9.3.</span> Não obstante o disposto neste Termo, as Informações Confidenciais poderão ser reveladas nas seguintes hipóteses: (i) exigência legal aplicável, (ii) ordem ou decisão judicial, ou em processo administrativo ou arbitral, ou (iii) solicitação de qualquer autoridade ou órgão regulador do Brasil. Em quaisquer das situações previstas nesta cláusula, a Parte que tiver de divulgar as Informações Confidenciais somente o fará até a extensão exigida por tal ordem administrativa, arbitral ou judicial, e previamente orientada pela opinião de seus assessores legais, comprometendo-se a tomar todas as medidas razoavelmente necessárias para preservar a confidencialidade das Informações Confidenciais, incluindo a obtenção de uma medida protetiva ou outro provimento que possa assegurar a concessão de tratamento confidencial às Informações Confidenciais.</p>
+<p><span class="lg-n">9.4</span> As partes reconhecem que qualquer quebra das obrigações de confidencialidade deste Termo pode causar danos à outra parte. Sendo assim, as partes acordam, sem prejuízo a outros direitos ou medidas cabíveis, que a parte infratora deverá reparar a parte reveladora pelos danos sofridos, respeitada a previsão da cláusula 6.3.</p>
+<p><span class="lg-n">9.5.</span> A obrigação de confidencialidade aqui prevista permanecerá vigente enquanto perdurar o caráter de confidencialidade das informações recebidas.</p>
+<h2 id="10-protecao-de-dados"><span class="lg-n">10.</span> Proteção de Dados</h2>
+<p><span class="lg-n">10.1.1.</span> A CONTRATADA e o CONTRATANTE (“Partes”) declaram que têm conhecimento  e  se  comprometem  a  cumprir  todas  as  disposições, legislações e normas brasileiras, e, no que couber, as legislações de normas estrangeiras, aplicáveis sobre segurança da informação, privacidade e proteção de Dados Pessoais, incluindo, mas não se limitando, a Constituição Federal, o Código de Defesa do Consumidor, o Código Civil, o Marco Civil da Internet (Lei Federal n. 12.965/2014), seu decreto regulamentador (Decreto 8.771/2016), a Lei Geral de Proteção de Dados (Lei Federal n. 13.709/2018), e dentro dos estritos limites previstos neste instrumento.</p>
+<p><span class="lg-n">10.1.1.1.</span> As Partes devem implementar todas as medidas técnicas, físicas, administrativas e organizacionais necessárias para garantir a existência de níveis de proteção de dados e segurança adequados, conforme exigido de acordo com a legislação de proteção de dados vigente.</p>
+<p><span class="lg-n">10.1.1.2.</span> As Partes devem garantir que qualquer pessoa envolvida no Tratamento de Dados Pessoais em seu nome, em razão desta contratação, cumprirá com as disposições desta cláusula durante o uso e tratamento de dados pessoais, durante a vigência do Contrato e após o término do Contrato, quando aplicável.</p>
+<h3 id="10-2-processamento-de-dados-pessoais" class="lg-sub"><span class="lg-n">10.2.</span> Processamento de dados pessoais</h3>
+<p><span class="lg-n">10.2.1.</span> A CONTRATANTE garante que toda e qualquer atividade de tratamento de dados pessoais efetuadas nos sistemas da CONTRATADA são legítimas e autorizadas pela legislação de proteção de dados aplicável. Ainda, a CONTRATANTE é responsável por garantir:</p>
+<p class="lg-alpha"><span class="lg-n">a)</span> o empreendimento de todos os esforços razoáveis para que toda e qualquer coleta, uso, tratamento e armazenamento dos dados coletados no âmbito da sua relação com os titulares dos Dados Pessoais. Nesse sentido, a CONTRATANTE se responsabiliza por garantir que os dados pessoais apenas serão tratados mediante a existência de uma hipótese legal adequada para os tratamentos realizados, e apenas para os usos permitidos e para os compartilhamentos previstos nestes Termos de Uso, respeitada a legislação aplicável.</p>
+<p class="lg-alpha"><span class="lg-n">b)</span> que os dados inseridos na plataforma foram adquiridos de forma lícita, e garante que não irá utilizar listas de distribuição, endereços de mídia ou endereços de e-mail adquiridos por métodos invasivos ou por terceiros.</p>
+<p class="lg-alpha"><span class="lg-n">c)</span> não utilizar, sob hipótese alguma, os Sistemas da CONTRATADA para práticas comerciais enganosas ou quaisquer outras atividades ilegais, incluindo, mas não se limitando a mailbombing, spam, phishing, spoofing e/ou envio de qualquer email que contenha ou seja capaz de transmitir qualquer vírus ou propagação de worms, ou qualquer malware, seja spyware, adware ou outro arquivo ou programa semelhante.</p>
+<p><span class="lg-n">10.2.2.</span> A CONTRATADA está autorizada, pela CONTRATANTE, a tratar os Dados Pessoais e outros dados que estejam armazenados em seus sistemas dentro das finalidades definidas nestes Termos ou eventuais aditivos celebrados posteriormente. A CONTRATADA autoriza a CONTRATANTE a tratar Dados Pessoais:</p>
+<p class="lg-alpha"><span class="lg-n">a)</span> para atividades inerentes à prestação de serviço, como: (i) responder a solicitações de suporte ao cliente, e (ii) prestação de consultorias contratadas em relação ao uso do software;</p>
+<p class="lg-alpha"><span class="lg-n">b)</span> para investigar possíveis incidentes de segurança ou violações envolvendo dados pessoais;</p>
+<p class="lg-alpha"><span class="lg-n">c)</span> para o desenvolvimento/otimização de funcionalidades, como: (i) realização de análises de dados e inteligência, e (ii) registro da trilha de auditoria dos logins e ações dos usuários (logs) na plataforma e atividades de análise de dados e inteligência, quando se tratando de usuários da ferramenta que a utilizam em nome do cliente.</p>
+<p class="lg-alpha"><span class="lg-n">d)</span> para a compilação de informações estatísticas e outras informações relacionadas ao desempenho, de forma agregada ou através de outras estratégias de minimização, mas sempre dentro das melhores práticas da legislação de proteção de dados vigente.</p>
+<p><span class="lg-n">10.2.3.</span> A CONTRATADA garante que qualquer armazenamento, uso e processamento dos Dados Pessoais coletados durante a prestação dos serviços objeto deste Termo ocorrerão de acordo com as finalidades previstas neste instrumento e na legislação aplicável, protegendo-os contra perdas, divulgações e acessos não autorizados, devendo tais medidas garantir adequada segurança para os riscos apresentados em decorrência da natureza dos Dados Pessoais coletados.</p>
+<p><span class="lg-n">10.2.4.</span> A CONTRATADA se compromete a: (i) não alterar os dados do CONTRATANTE; (ii) não divulgar os Dados Pessoais do CONTRATANTE, exceto se exigido pela lei (sendo que quando conduzir atividades de tratamento de Dados Pessoais para cumprimento de obrigação legal, a CONTRATADA será considerado controladora independente destes dados), ou se o CONTRATANTE permitir expressamente por escrito; (iii) não acessar os Dados Pessoais do CONTRATANTE, exceto para prestar os Serviços, suporte ou resolver problemas de serviço ou técnicos, ou a pedido do CONTRATANTE em relação aos aspectos de suporte ao cliente.</p>
+<h3 id="10-3-processamento-de-dados-pessoais-sensiveis" class="lg-sub"><span class="lg-n">10.3.</span> Processamento de dados pessoais sensíveis</h3>
+<p><span class="lg-n">10.3.1.</span> Os serviços previstos neste Termo não incluem o fornecimento ou processamento de Dados Pessoais Sensíveis. Fica vedado à CONTRATANTE inserir e utilizar Dados Pessoais Sensíveis nos Sistemas da CONTRATADA e, sem prejuízo das outras limitações de responsabilidade estabelecidas neste Termo, a CONTRATANTE responsabiliza-se integralmente perante a CONTRATADA, os titulares dos Dados Pessoais e terceiros pelo tratamento indevido de Dados Pessoais sensíveis, cabendo à CONTRATADA direito de regresso contra a CONTRATANTE em tais casos.</p>
+<h3 id="10-4-compartilhamento-de-dados-pessoais" class="lg-sub"><span class="lg-n">10.4.</span> Compartilhamento de dados pessoais</h3>
+<p><span class="lg-n">10.4.1.</span> A CONTRATADA é responsável por garantir que os Dados Pessoais inseridos nos Sistemas pela CONTRATANTE não sejam acessados, compartilhados ou transferidos para terceiros, salvo os compartilhamentos necessários ou previamente autorizados, para a execução dos serviços contratados. Caso a CONTRATANTE autorize estas operações de tratamento, a CONTRATADA deverá garantir que tais terceiros se obriguem, por escrito, a garantir as mesmas proteções aos Dados Pessoais estabelecidas nestes Termos.</p>
+<p><span class="lg-n">10.4.2.</span> A CONTRATANTE está ciente de que a CONTRATADA, eventualmente, poderá compartilhar os Dados Pessoais inseridos nos Sistemas com outras empresas de seu grupo econômico, para fins exclusivos do cumprimento do objeto deste Termo e/ou para a efetiva execução das atividades da CONTRATANTE e/ou da CONTRATANTE em conjunto com empresa do seu grupo econômico, cabendo a estas observar todas as obrigações inerentes à Cláusula 10.</p>
+<h3 id="10-5-subcontratacoes" class="lg-sub"><span class="lg-n">10.5</span> Subcontratações</h3>
+<p><span class="lg-n">10.5.1.</span> A CONTRATANTE concede à CONTRATADA autorização tácita geral para subcontratar os seguintes tipos de Suboperadores, que são necessários para a execução do presente contrato:  fornecedores  nos  ramos  de  nuvem  e engenharia de software e outras empresas que fornecem tecnologia da informação e consultoria de segurança e serviços de suporte; operadoras terceirizadas de data center e fornecedores de serviços terceirizados de suporte técnico, incluindo terceiros habilitados a prestar o serviço de implementação do sistema Otimize, e considerando que:</p>
+<p class="lg-alpha"><span class="lg-n">a)</span> A CONTRATADA garante que as mesmas obrigações de proteção de dados estabelecidas nestes Termos serão impostas nas subcontratações que realizar, o que será feito por meio de um contrato ou outro ato jurídico ao abrigo da legislação da aplicável e, em particular, fornecendo garantias suficientes para implementar medidas técnicas e organizacionais adequadas.</p>
+<p class="lg-alpha"><span class="lg-n">b)</span> A CONTRATADA, ainda, compromete-se, desde já, a garantir que as transferências internacionais de qualquer subcontratação, respeitarão as disposições da cláusula 10.6 destes Termos, e estrita obediência aos princípios e obrigações constantes na Lei 13.709/2018, antes, durante e após a realização da referida transferência.</p>
+<h3 id="10-6-transferencia-internacional" class="lg-sub"><span class="lg-n">10.6.</span> Transferência Internacional</h3>
+<p><span class="lg-n">10.6.1.</span> Nos casos em que a CONTRATADA, para execução do presente contrato, precise realizar transferências internacionais de dados, atuará como Controladora/Exportadora dos dados, e deverá atender às disposições constantes da Lei 13.709/2018 – LGPD, mais especificamente os requisitos estipulados em seu artigo 33º e demais leis, decretos e resoluções aplicáveis e regulamentações, assegurando:</p>
+<p class="lg-alpha"><span class="lg-n">a)</span> a apresentação de condições e garantias suficientes de observância dos princípios gerais de proteção, dos direitos do titular e do regime de proteção de dados previstos na LGPD.</p>
+<p class="lg-alpha"><span class="lg-n">b)</span> a adoção de medidas técnicas e organizacionais adequadas para garantir a segurança e a privacidade dos dados pessoais transferidos internacionalmente, de acordo com o previsto nos §§ 1º e 2º do art. 46 da LGPD.</p>
+<p class="lg-alpha"><span class="lg-n">c)</span> que a transferência atenda a propósitos legítimos, específicos, explícitos e informados ao titular, sem possibilidade de tratamento posterior de forma incompatível com essas finalidades.</p>
+<p class="lg-alpha"><span class="lg-n">d)</span> que a transferência seja amparada em uma das hipóteses legais previstas no art. 7º ou no art. 11 da LGPD;</p>
+<p class="lg-alpha"><span class="lg-n">e)</span> que a transferência seja amparada em uma modalidade válida de realização de transferência internacional;</p>
+<p class="lg-alpha"><span class="lg-n">f)</span> que a transferência internacional de dados se limite ao mínimo necessário para o alcance de suas finalidades, com abrangência dos dados pertinentes, proporcionais e não excessivos em relação às finalidades do tratamento de dados.</p>
+<p><span class="lg-n">10.6.2.</span> A CONTRATADA se compromete a cumprir com os procedimentos e as regras aplicáveis às operações de transferência internacional de dados realizadas, garantindo que as transferências internacionais de dados apenas ocorram quando se enquadrem nos moldes de, pelo menos, um dos casos permitidos previstos no artigo 33 da LGPD:</p>
+<p class="lg-alpha"><span class="lg-n">a)</span> para países ou organismos internacionais que proporcionem grau de proteção de dados pessoais adequado ao previsto nesta Lei;</p>
+<p class="lg-alpha"><span class="lg-n">b)</span> quando o controlador oferecer e comprovar garantias de cumprimento dos princípios, dos direitos do titular e do regime de proteção de dados previstos nesta Lei, na forma de: (i) cláusulas contratuais específicas para determinada transferência; (ii) cláusulas-padrão contratuais; (iii) normas corporativas globais; (iii) selos, certificados e códigos de conduta regularmente emitidos; ou,</p>
+<p class="lg-alpha"><span class="lg-n">c)</span> demais casos permitidos por lei;</p>
+<h3 id="10-7-medidas-e-controles" class="lg-sub"><span class="lg-n">10.7.</span> Medidas e controles</h3>
+<p><span class="lg-n">10.7.1.</span> Programa de Privacidade: as PARTES se comprometem a instituir e manter um programa abrangente de privacidade, segurança e governança de dados pessoais. Esse programa deverá estabelecer controles técnicos e administrativos apropriados para garantir a confidencialidade, integridade e disponibilidade dos Dados Pessoais objeto do Tratamento, além de garantir a conformidade com a Lei Geral de Proteção de Dados e demais normas que versem sobre privacidade e proteção de dados pessoais. Isso inclui a implementação de “Políticas Internas” que estabeleçam, dentre outras regras: (i) como os titulares de dados são informados quando do tratamento de dados pessoais; (ii) quais são as medidas de segurança aplicadas (técnicas e procedimentais) que garantam a confidencialidade, integridade e disponibilidade das informações; (iii) como é realizada a gestão de crise, em caso de ocorrência de incidentes envolvendo dados pessoais; (iv) qual o procedimento instituído que garante a constante atualização dessas medidas; (v) a limitação e controle de acesso aos Dados Pessoais; (vi) a revisão periódica das medidas implementadas; (vii) condução de constantes treinamentos com os funcionários da companhia.</p>
+<p><span class="lg-n">10.7.2.</span> Política de Segurança da Informação: a CONTRATADA concorda e declara possuir medidas implementadas para proteger as informações pessoais tratadas, possuir uma política de segurança da informação instituída, onde constam medidas de segurança, técnicas e administrativas capazes de garantir a integridade, disponibilidade e confidencialidade das informações tratadas, mesmo após o término do tratamento.</p>
+<p><span class="lg-n">10.7.3.</span> Registro das Operações de Tratamento: as PARTES manterão devidamente atualizados os registros das operações de Tratamento de Dados Pessoais, que conterá a categoria dos dados tratados, os sujeitos envolvidos na atividade, qual a finalidade das diversas atividades de tratamento realizadas e por quanto tempo os dados pessoais serão processados e armazenados após o cumprimento de sua finalidade originária.</p>
+<p><span class="lg-n">10.7.4.</span> Qualidade dos dados: A CONTRATANTE deverá assegurar que as informações pessoais tratadas em razão da finalidade celebrada neste instrumento permaneçam, entre outros pontos, corretas e devidamente atualizadas, devendo as informações desatualizadas serem imediatamente corrigidas ou excluídas.</p>
+<h3 id="10-8-direitos-dos-titulares" class="lg-sub"><span class="lg-n">10.8.</span> Direitos dos titulares</h3>
+<p><span class="lg-n">10.8.1.</span> A CONTRATANTE, na qualidade de controladora, é responsável por tomar decisões referentes ao Tratamento de Dados Pessoais. Cabendo a ela, inclusive , conforme definido no  artigo 18 da Lei 13.709/2018, o dever de atender às solicitações dos Titulares de Dados, apresentadas a qualquer momento e mediante solicitação.</p>
+<p><span class="lg-n">10.8.2.</span> A CONTRATANTE concorda expressamente em incluir, em suas políticas de privacidade ou outros instrumentos firmados com os titulares dos Dados Pessoais, direta ou indiretamente, referências claras, destacadas das demais cláusulas contratuais e adequadas em relação à coleta, tratamento e compartilhamento com terceiros de seus dados e aos Usos Permitidos, observando-se a legislação aplicável, visando atender aos princípios da transparência e da informação.</p>
+<p><span class="lg-n">10.8.3.</span> Em conformidade com as melhores práticas de mercado, a CONTRATANTE concorda e responsabiliza-se em informar os titulares dos Dados Pessoais sobre o procedimento detalhado para desativar a coleta, tratamento e compartilhamento dos Dados Pessoais, assim como para solicitar sua exclusão, disponibilizando, por exemplo, e se cabível, um processo facilitado para o exercimento de tais solicitações.</p>
+<p><span class="lg-n">10.8.4.</span> A CONTRATANTE concorda em processar as solicitações de exclusão de Dados Pessoais dos titulares dos Dados Pessoais dentro dos prazos exigidos pela legislação e, na inexistência deste, assim que possível, a partir do momento do recebimento da solicitação. A CONTRATADA não procederá com a exclusão de nenhum contato da CONTRATANTE, sendo de responsabilidade desta última, realizar a gestão de preferências dos Titulares inseridos pela CONTRATANTE nos Sistemas da CONTRATADA.</p>
+<h3 id="10-9-incidentes-de-seguranca" class="lg-sub"><span class="lg-n">10.9.</span> Incidentes de Segurança</h3>
+<p><span class="lg-n">10.9.1.</span> As PARTES declaram possuir um plano escrito e estruturado para casos de ocorrência de Incidentes de Segurança, em especial, quando houver o envolvimento de Dados Pessoais.</p>
+<p><span class="lg-n">10.9.2.</span> Em caso de qualquer Incidente de Segurança que envolva os Dados Pessoais tratados em razão do Contrato, as Partes deverão envidar melhores esforços para adotar todas as medidas necessárias para a sua eliminação ou para a sua contenção, mantendo uma a outra informada sobre a condução dos procedimentos relacionados ao incidente em questão, incluindo, mas não se limitando: (i) a descrição da natureza dos dados pessoais afetados; (ii) as informações sobre os titulares envolvidos; (iii) a indicação das medidas técnicas e de segurança utilizadas para a proteção dos dados, observados os segredos comercial e industrial; (iv) os riscos relacionados ao incidente; (v) os motivos da demora, no caso de a comunicação não ter sido imediata; e (vi) as medidas que foram ou que serão adotadas para reverter ou mitigar os efeitos do prejuízo.</p>
+<p><span class="lg-n">10.9.3.</span> Em caso de perdas, divulgações e acessos não autorizados ou ilícitos de Dados Pessoais sob controle da CONTRATADA, a CONTRATADA comunicará a ocorrência à CONTRATANTE, conforme disposto na cláusula 11, fornecendo as informações constantes no artigo 48 da Lei 13709/2018 em até 01 (um) dias útil da confirmação do ocorrido e, no lugar de operadora de dados, se abstendo de comunicar a ocorrência a qualquer autoridade ou terceiros.</p>
+<h3 id="10-10-uso-de-inteligencia-artificial" class="lg-sub"><span class="lg-n">10.10.</span> Uso de Inteligência Artificial</h3>
+<p><span class="lg-n">10.10.1.</span> A CONTRATADA disponibiliza e pode vir a disponibilizar funcionalidades e soluções em seus Sistemas que utilizam Inteligência Artificial, com o objetivo de oferecer à CONTRATANTE a possibilidade de utilizar ferramentas inovadores e eficazes na execução de suas estratégias. Em todos os casos, a CONTRATADA se compromete a adotar uma abordagem responsável e ética na implementação da Inteligência Artificial (IA), em estrita conformidade com as normas de segurança da informação, bem como aquelas relacionadas à privacidade e proteção de dados, assegurando:</p>
+<p class="lg-alpha"><span class="lg-n">a)</span> a adoção de mecanismos de transparência;</p>
+<p class="lg-alpha"><span class="lg-n">b)</span> que seu uso esteja de acordo com os mais rigorosos padrões de mercado, e visando garantir a confidencialidade, integridade e disponibilidade dos dados que venham a ser processados pela Inteligência Artificial em nossos sistemas;</p>
+<p class="lg-alpha"><span class="lg-n">c)</span> adoção de práticas e mecanismos de desenvolvimento dos modelos, a fim de evitar vieses discriminatórios, invasivos e/ou quaisquer desfechos que violem a privacidade dos Titulares de Dados Pessoais.</p>
+<p><span class="lg-n">10.10.2.</span> Levando em consideração que o uso das funcionalidades de Inteligência Artificial fica à critério da CONTRATANTE, bem como a aceitação de qualquer sugestão proferida pelo modelo, a CONTRATANTE declara assumir total responsabilidade em relação ao seu uso e quaisquer consequências advindas do mesmo.</p>
+<h3 id="10-11-exclusao-e-retencao" class="lg-sub"><span class="lg-n">10.11.</span> Exclusão e retenção</h3>
+<p><span class="lg-n">10.11.1.</span> Em caso de encerramento deste Termo, por qualquer motivo, a CONTRATADA excluirá efetivamente os dados inseridos pelo CONTRATANTE em seu Sistema, ao completar 60 (sessenta) dias do cancelamento da conta. Para os fins desta disposição, a exclusão efetiva significa que os dados são excluídos de acordo com os padrões da indústria de práticas recomendadas,  de  forma  que  os  Dados  Pessoais  não  possam  ser reconstruídos usando nenhuma tecnologia conhecida.</p>
+<h3 id="10-12-cumprimento-de-obrigacao-legal" class="lg-sub"><span class="lg-n">10.12.</span> Cumprimento de obrigação legal</h3>
+<p><span class="lg-n">10.12.1.</span> Caso a CONTRATADA seja destinatária de qualquer ordem judicial ou comunicação oficial que determine o fornecimento ou divulgação de informações pessoais, deverá notificar a Contratante, no prazo máximo de 48 (quarenta e oito) horas a partir do recebimento da ordem judicial ou comunicação oficial, sobre o ocorrido, oportunizando a adoção, em tempo hábil de medidas legais para impedir ou mitigar os efeitos decorrentes da divulgação dos dados pessoais relacionados a esta requisição ou objetos desta.</p>
+<h3 id="10-13-acesso-as-informacoes-de-movimentacao-da-conta" class="lg-sub"><span class="lg-n">10.13.</span> Acesso às informações de movimentação da conta:</h3>
+<p><span class="lg-n">10.13.1.</span> Mediante pedido por escrito de seu representante legal e fundamentando sua motivação, a CONTRATANTE poderá requerer informações acerca do uso de sua conta. Neste caso, a CONTRATADA, após realizar a verificação de identidade do(a) solicitante, bem como o fundamento do pedido, poderá, disponibilizar as referidas informações ao CONTRATANTE.</p>
+<p><span class="lg-n">10.13.1.1.</span> A CONTRATANTE, ao receber as informações de uso de sua conta, passa a ser a única responsável por manter as mesmas em sigilo, respondendo integralmente perante terceiros em caso de divulgação indevida.</p>
+<h3 id="10-14-responsabilidade-e-direito-de-regresso" class="lg-sub"><span class="lg-n">10.14.</span> Responsabilidade e direito de regresso</h3>
+<p><span class="lg-n">10.14.1.</span> Em nenhuma circunstância a Parte inocente se responsabilizará por qualquer delito, negligência, descumprimento contratual ou outra hipótese de ilícito civil ou penal que a Parte infratora ou seus parceiros, prestadores de serviços, provedores de conta, funcionários, fornecedores, distribuidores ou agentes, causarem a terceiros ou aos titulares dos Dados Pessoais, incluindo o uso não autorizado de seus dados, sendo de total responsabilidade da Parte infratora arcar com todos e quaisquer danos, monetários ou de outra natureza, decorrentes de sua atuação indireta, direta ou incidental, cabendo à Parte inocente direito de regresso contra a Parte infratora por tais situações, respeitando a limitação de responsabilidade descrito na cláusula 6.3.</p>
+<h3 id="10-15-sobrevivencia" class="lg-sub"><span class="lg-n">10.15.</span> Sobrevivência</h3>
+<p><span class="lg-n">10.15.1.</span> Não obstante qualquer disposição em contrário, as obrigações definidas neste Contrato, perdurarão enquanto as Partes continuarem a ter acesso, estiverem na posse, adquirirem ou realizarem qualquer operação de Tratamento aos Dados Pessoais obtidos em razão da relação contratual, mesmo que todos os contratos entre as Partes tiverem expirado ou sido rescindidos.</p>
+<h3 id="10-16-outras-disposicoes" class="lg-sub"><span class="lg-n">10.16.</span> Outras Disposições</h3>
+<p><span class="lg-n">10.16.1.</span> A CONTRATADA poderá alterar as disposições acima relacionadas à proteção de dados para cumprimento de novas obrigações legais e/ou regulatórias publicadas pela ANPD ou Órgão regulador competente.</p>
+<h2 id="11-obrigacoes-trabalhistas"><span class="lg-n">11.</span> Obrigações Trabalhistas</h2>
+<p><span class="lg-n">11.1.</span> Este Termo é de natureza estritamente civil, inexistindo qualquer vínculo empregatício entre o CONTRATANTE e seus empregados, dirigentes ou prepostos da CONTRATADA e vice e versa.</p>
+<p><span class="lg-n">11.2.</span> É de exclusiva responsabilidade da CONTRATADA arcar com os ônus relativos às obrigações e encargos trabalhistas, previdenciários, tributos federais, estaduais e municipais, FGTS e quaisquer outros decorrentes da relação empregatícia entre ela e seus empregados, encarregados da execução dos Serviços objeto deste Termo, bem como o estrito cumprimento das normas regulamentares de procedimentos trabalhistas em vigor.</p>
+<p><span class="lg-n">11.3.</span> Caso o CONTRATANTE venha a ser demandado judicialmente, a qualquer tempo, no âmbito trabalhista por empregado, preposto ou terceiro que tenha prestado serviço à CONTRATADA esta obriga-se a: (i) intervir voluntariamente no feito, pleiteando a Sua exclusão do polo passivo da respectiva demanda; (ii) prestar todas as cauções e garantias ordenadas durante o trâmite do feito, seja em primeira ou segunda instância; (iii) assumir a responsabilidade integral e exclusiva pelo pagamento de condenações pecuniárias e providências pleiteadas, mantendo o CONTRATANTE a salvo e indene de qualquer ônus e/ou desembolso financeiro a qualquer título relativo ao processo em trâmite; e (iv) arcar com as Suas despesas processuais suportadas decorrentes de sua inclusão nos referidos processos, incluídos aí honorários advocatícios e demais despesas necessárias para a efetivação de defesa e acompanhamento integral do processo, desde que os profissionais contratados sejam previamente indicados ou sua contratação autorizada pela SEGBOX.</p>
+<p><span class="lg-n">11.3.1.</span> A CONTRATADA deverá requerer a Sua exclusão na primeira oportunidade em que se manifestar nos autos ou em audiência, caso o CONTRATANTE seja incluída no polo passivo de demandas promovidas por empregados, colaboradores e/ou terceiros vinculados a SEGBOX.</p>
+<p><span class="lg-n">11.4.</span> A CONTRATADA declara que:</p>
+<p><span class="lg-n">11.4.1.</span> não explora, e não explorará, qualquer forma de trabalho degradante ou análoga à condição de escravo, respeitando a Declaração Universal dos Direitos Humanos, assim como as Convenções nº 29 e 105 da Organização Internacional do Trabalho – OIT, a Declaração de Princípios e Direitos Fundamentais no Trabalho da OIT e pela Convenção Americana sobre Direitos Humanos.</p>
+<p><span class="lg-n">11.4.2.</span> não utiliza de práticas discriminatórias e limitativas ao acesso na relação de emprego ou a sua manutenção, em decorrência de sexo, origem, raça, cor, condição física, religião, estado civil, situação familiar ou qualquer outra condição.</p>
+<h2 id="12-compliance"><span class="lg-n">12.</span> Compliance</h2>
+<p><span class="lg-n">12.1.</span> A CONTRATADA assume que seus agentes, funcionários e subcontratados deverão cumprir durante a sua vigência todas as leis anticorrupção, incluindo o Foreign Corrupt Practices Act (FCPA), Lei Federal americana, Bribery Act 2010 of the United Kingdom (Lei Anticorrupção do Reino Unido) e a Lei Federal nº 12.846/2013. A CONTRATADA garante que não irá, em razão do presente instrumento, ou de quaisquer outras transações comerciais envolvendo qualquer das Partes, transferir qualquer coisa de valor, direta ou indiretamente, a qualquer pessoa do setor privado ou funcionários do governo ou de empresas controladas pelo governo, a fim de obter ou manter qualquer outro benefício ou vantagem indevida. A CONTRATADA garante que nenhum dinheiro pago ao mesmo será utilizado a título de compensação ou de outra forma será usado para pagar qualquer suborno ou propina em violação da lei aplicável. A CONTRATADA manterá uma contabilidade precisa e atualizada de todos os negócios que envolvem este instrumento. A CONTRATADA concorda em responder prontamente às dúvidas relacionadas com o programa anticorrupção e outros controles relacionados ao disposto nesta Cláusula e que cooperará plenamente em qualquer investigação de uma violação de suas disposições.</p>
+<p><span class="lg-n">12.1.1</span> A CONTRATADA cumpre todas as normas gerais e particulares sobre Prevenção a Lavagem de Dinheiro e Financiamento do Terrorismo.</p>
+<p><span class="lg-n">12.2.</span> Se alguma cláusula deste instrumento for considerada ilegal, nula ou incapaz de ser cumprida por qualquer motivo, esta previsão será considerada uma cláusula independente da parte remanescente deste documento e não afetará a validade ou a aplicabilidade do cumprimento dos termos do restante do presente.</p>
+<p><span class="lg-n">12.3.</span> Todas as disposições deste Termo que prevejam a observância de obrigações ou responsabilidades após a rescisão ou extinção deste Termo, subsistirão a sua rescisão ou extinção e continuarão em pleno vigor e efeito, em especial no que tange à propriedade intelectual, confidencialidade e privacidade de dados e informações.</p>
+<p><span class="lg-n">12.4.</span> Ambas as Partes expressamente reconhecem que o único vínculo jurídico entre elas resulta do presente Termo formalmente assinados entre elas. Nenhuma disposição no presente instrumento será interpretada de modo a colocar as Partes como sócias, associadas, consorciadas, comodatárias ou para com responsabilidade solidária ou subsidiária, de qualquer espécie, incluindo, mas não se limitando, a responsabilidade civil, administrativa, trabalhista e fiscal-tributária.</p>
+<p><span class="lg-n">12.5.</span> Este Termo vincula as Partes e seus sucessores, sejam eles a qualquer título.</p>
+<p><span class="lg-n">12.6.</span> As Partes declaram, sob as penas da Lei, que os signatários do presente instrumento são seus procuradores e/ou seus representantes legais, devidamente constituídos na forma dos respectivos atos constitutivos, com poderes para assumir as obrigações ora contraídas.</p>
+<h2 id="13-rescisao"><span class="lg-n">13.</span> Rescisão</h2>
+<p><span class="lg-n">13.1.</span> O presente Termo poderá ser rescindido a qualquer tempo e independente de qualquer notificação prévia, nas seguintes hipóteses:</p>
+<p class="lg-alpha"><span class="lg-n">a)</span> em caso de infração às suas cláusulas e condições;</p>
+<p class="lg-alpha"><span class="lg-n">b)</span> em caso de distribuição de pedido de recuperação judicial ou falência em relação a qualquer uma das partes;</p>
+<p class="lg-alpha"><span class="lg-n">c)</span> em caso de inadimplência por parte do CONTRATANTE em relação aos pagamentos devidos em razão deste Termo, por prazo superior a 40 (quarenta) dias, momento no qual os serviços serão integral e definitivamente interrompidos.</p>
+<p><span class="lg-n">13.2.</span> Para os Planos Anuais, caso o CONTRATANTE dê causa à rescisão deste instrumento, por algumas das razões previstas nesta cláusula, antes de decorridos os primeiros 12 (doze) meses de vigência do Termo, além do pagamento de aviso prévio (de 30 dias), também ficará sujeita à imposição de multa não compensatória no montante de 30% (trinta por cento) do valor total devido referente aos meses faltantes, na data da rescisão, ainda que a rescisão se dê antes do pagamento da primeira parcela.</p>
+<h2 id="14-disposicoes-gerais"><span class="lg-n">14.</span> Disposições Gerais</h2>
+<p><span class="lg-n">14.1.</span> Cessão: O CONTRATANTE não poderá ceder, sublicenciar, subcontratar, transferir ou dispor de quaisquer direitos e obrigações suas no âmbito deste Termo, salvo no caso de empresas filiais ou do mesmo grupo econômico, mediante comprovação através de apresentação dos documentos comprobatórios. A CONTRATADA poderá ceder este Termo ou os direitos dele decorrentes a qualquer uma das sociedades do grupo econômico do qual faz parte ou que possa vir a fazer parte no futuro, sendo reservado o direito do Cliente de rescindir o presente Termo sem quaisquer ônus adicionais, em até 05 (cinco) dias após o comunicado.</p>
+<p><span class="lg-n">14.1.1.</span> Em caso de cessão que altere o país cadastrado na conta, a CONTRATANTE concorda com a alteração de moeda para pagamento.</p>
+<p><span class="lg-n">14.2.</span> Notificações: Notificações podem ser dadas pelas Partes por e-mail. O endereço da CONTRATADA para este fim é Central de Ajuda e o do CONTRATANTE será o constante de seu cadastro.</p>
+<p><span class="lg-n">14.2.1.</span> Para facilitar a comunicação entre as partes, a CONTRATANTE está ciente que a CONTRATADA poderá utilizar de outros meios de contato, por exemplo, telefone ou aplicativos de mensagens instantâneas.</p>
+<p><span class="lg-n">14.3.</span> Alterações destas Condições Gerais de Contratação: A CONTRATADA poderá alterar qualquer das disposições deste Termo a qualquer momento. Realizando esta modificação, a CONTRATADA publicará os termos alterados em nossos Serviços e atualizaremos a versão. Neste caso, o CONTRATANTE poderá ser notificado das alterações que entrarão em vigor assim que forem publicadas, salvo comunicação do contrário.</p>
+<p><span class="lg-n">14.3.1.</span> A CONTRATADA se reserva ao direito de poder modificar as funcionalidades do Sistema a qualquer momento, incluindo, mas não se limitando, a alterações de configuração de funcionalidades, automações, layout, recursos técnicos, melhorias e limitações de configurações oferecidas, etc.</p>
+<p><span class="lg-n">14.3.2.</span> Caso o CONTRATANTE não concorde com uma das alterações contratuais, poderá, no prazo máximo de 10 (dez) dias após a alteração, rescindir, sem qualquer ônus, o presente Termo. Ultrapassado o referido prazo sem manifestação do CONTRATANTE as alterações passarão a integrar, para todos os efeitos legais, os termos deste Termo.</p>
+<h2 id="15-legislacao-aplicavel"><span class="lg-n">15.</span> Legislação Aplicável</h2>
+<p><span class="lg-n">15.1.</span> O presente Termo e o cumprimento das obrigações nele previstas, tendo em vista tratar-se de relação de natureza empresarial, serão regidos pelo Código Civil e demais leis civis em vigor na República Federativa do Brasil e interpretados de acordo suas disposições.</p>
+<p><span class="lg-n">15.2.</span> Fica eleito o Foro Comarca da Capital do Estado do Rio de Janeiro para dirimir qualquer controvérsia decorrente do presente Termo, com renúncia a qualquer outro, por mais privilegiado que seja.</p>
+<p>Este Termo considerar-se-á celebrado e obrigatório entre as Partes no momento em que o CONTRATANTE concluir o seu cadastro e o procedimento previsto no website <a href="https://www.segbox.com" target="_blank" rel="noopener">www.segbox.com</a>, sendo certo que, assim procedendo, o CONTRATANTE declara ter lido e compreendido todos os termos e condições deste Termo, razão pela qual é recomendável que o CONTRATANTE imprima uma cópia deste documento para futura referência.</p>
+</article>
+<nav class="lg-docs" aria-labelledby="lgDocsT"><h2 id="lgDocsT">Outros documentos</h2><ul><li><a href="politica-de-privacidade.html"><span>Política de Privacidade</span><svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li><li><a href="politica-anti-spam.html"><span>Política Anti-Spam</span><svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li><li><a href="politica-de-pagamento.html"><span>Política de Pagamento Otimize</span><svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li><li><a href="seguranca-da-informacao.html"><span>Política de Segurança de Informação para Clientes</span><svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li></ul></nav>
+</div>
+</div></div>
+</main>
+<a class="lg-top" id="lgTop" href="#top" aria-label="Voltar ao topo"><svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg><span class="lg-top-t">Topo</span></a>
+<footer class="site-foot" style="border-top:1px solid var(--line)">
+  <div class="container">
+    <div class="foot" style="border-top:0;padding-top:0">
+      <div><a class="logo" href="#top" style="font-size:1.6rem" aria-label="Segbox, voltar ao topo"><svg class="logo-svg" viewBox="0 0 2000 530" aria-hidden="true"><use href="#logo-word"/><rect class="logo-sq" x="1889" y="265" width="112" height="112"/></svg></a><p style="margin-top:12px;max-width:30ch">Tecnologia e inovação para o mercado de seguros.</p></div>
+      <div><h4>Soluções</h4><ul><li><a href="produto-otimize-whitelabel.html">Otimize White Label</a></li><li><a href="produto-segzap-whitelabel.html">SegZap White Label</a></li><li><a href="projetos-sob-medida.html">Projetos sob medida</a></li></ul></div>
+      <div><h4>Empresa</h4><ul><li><a href="sobre.html">Sobre</a></li><li><a href="index.html#cases">Cases</a></li><li><a href="seguranca-da-informacao.html">Segurança da informação</a></li></ul></div>
+      <div><h4>Conteúdo</h4><ul><li><a href="https://www.insurtalks.com.br/" target="_blank" rel="noopener">Insurtalks ↗</a></li><li><a href="https://www.insurtalks.com.br/cast" target="_blank" rel="noopener">InsurtalksCast ↗</a></li><li><a href="politica-de-privacidade.html">Privacidade</a></li></ul></div>
+      <div><h4>Iniciativas</h4><ul><li><a href="https://innovators.insurtalks.com.br/" target="_blank" rel="noopener">Insurance Innovators ↗</a></li><li><a href="https://insummit.online/" target="_blank" rel="noopener">INSUMMIT ↗</a></li><li><a href="https://reviewseguro.net" target="_blank" rel="noopener">ReviewSeguro ↗</a></li></ul></div><div><h4>Legal</h4><ul><li><a href="termos-de-uso.html" aria-current="page">Termos de Uso</a></li><li><a href="politica-de-privacidade.html">Política de Privacidade</a></li><li><a href="politica-anti-spam.html">Política Anti-Spam</a></li><li><a href="politica-de-pagamento.html">Política de Pagamento</a></li><li><a href="seguranca-da-informacao.html">Segurança da Informação</a></li></ul></div>
+      <div class="legal legal--seg"><span>Copyright © Segbox | ♡ Feito com muito carinho para o mercado de seguros | SEGBOX SERVICOS DE INTERNET LTDA.  I  CNPJ:  25.336.720/0001-53</span><span class="soc"><a href="https://www.youtube.com/@segbox-oficial" target="_blank" rel="noopener" aria-label="YouTube da Segbox"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .6 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-4.8 31 31 0 0 0-.4-4.8ZM9.8 15.1V8.9L15.6 12l-5.8 3.1Z"/></svg></a><a href="https://www.instagram.com/segbox/" target="_blank" rel="noopener" aria-label="Instagram da Segbox"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M7 2.5h10A4.5 4.5 0 0 1 21.5 7v10a4.5 4.5 0 0 1-4.5 4.5H7A4.5 4.5 0 0 1 2.5 17V7A4.5 4.5 0 0 1 7 2.5Z"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.6" cy="6.4" r="1.3" fill="currentColor"/></svg></a><a href="https://www.linkedin.com/company/segbox" target="_blank" rel="noopener" aria-label="LinkedIn da Segbox"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.8v1.5h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1v5.45h-4v-4.83c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.91h-3.98v-11Z"/></svg></a></span></div>
+    </div>
+  </div>
+</footer>
+<script>
+/* ===== PÁGINA LEGAL: dropdowns do header, índice (aberto no desktop, <details> no mobile), seção ativa, voltar ao topo ===== */
+(function(){
+  'use strict';
+  document.documentElement.classList.add('js');
+  var lgQ=function(s,r){return (r||document).querySelector(s)}, lgQA=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
+  var pjDds=lgQA('[data-dd]');
+  function pjCloseDD(ex){pjDds.forEach(function(d){if(d!==ex){d.classList.remove('open');lgQ('button',d).setAttribute('aria-expanded','false')}})}
+  pjDds.forEach(function(d){var b=lgQ('button',d);b.addEventListener('click',function(e){e.stopPropagation();var o=!d.classList.contains('open');pjCloseDD(d);d.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false')})});
+  document.addEventListener('click',function(){pjCloseDD()});document.addEventListener('keydown',function(e){if(e.key==='Escape')pjCloseDD()});
+  var toc=lgQ('#lgToc'), mq=window.matchMedia('(min-width:1000px)');
+  function syncToc(){if(toc)toc.open=mq.matches}
+  syncToc(); if(mq.addEventListener)mq.addEventListener('change',syncToc); else if(mq.addListener)mq.addListener(syncToc);
+  /* no mobile, fechar o índice depois de escolher uma seção */
+  lgQA('#lgToc a').forEach(function(a){a.addEventListener('click',function(){if(!mq.matches&&toc)toc.open=false})});
+  /* seção ativa no índice */
+  var links=lgQA('#lgToc a[href^="#"]'), map={};
+  links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});
+  var heads=lgQA('.lg-body h2[id],.lg-body h3[id]').filter(function(h){return map[h.id]});
+  function onScroll(){
+    var y=96, cur=null;
+    for(var i=0;i<heads.length;i++){if(heads[i].getBoundingClientRect().top-y<=4)cur=heads[i];else break}
+    links.forEach(function(a){a.classList.remove('is-on');a.removeAttribute('aria-current')});
+    if(cur){var a=map[cur.id];a.classList.add('is-on');a.setAttribute('aria-current','location')}
+    var t=lgQ('#lgTop'); if(t)t.classList.toggle('on',window.scrollY>window.innerHeight*0.9);
+  }
+  var tick=false; window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(function(){tick=false;onScroll()})}},{passive:true});
+  onScroll();
+})();
+</script>
+<!-- sgm:begin · menu móvel gerado a partir do menu desktop + revelar a UI-alvo no mobile. Bloco idêntico em todas as páginas. -->
+<style id="sgm-css">
+.sgm-ov{position:fixed;inset:0;z-index:250;visibility:hidden;pointer-events:none;transition:visibility 0s var(--t-slow,420ms)}
+.sgm-ov.open{visibility:visible;pointer-events:auto;transition-delay:0s}
+.sgm-scrim{position:absolute;inset:0;background:rgba(20,20,24,.38);opacity:0;transition:opacity var(--t-base,240ms) var(--ease-out,ease-out)}
+.sgm-ov.open .sgm-scrim{opacity:1}
+.sgm-dr{position:absolute;top:0;right:0;bottom:0;width:min(400px,100%);display:flex;flex-direction:column;background:#FBFAF8;color:#0B0B0D;border-left:1px solid rgba(0,0,0,.12);box-shadow:0 0 60px -20px rgba(0,0,0,.35);transform:translateX(100%);transition:transform var(--t-slow,420ms) var(--ease-drawer,cubic-bezier(.32,.72,0,1));overscroll-behavior:contain;outline:0}
+.sgm-ov.open .sgm-dr{transform:none}
+.sgm-hd{flex:none;display:flex;align-items:center;justify-content:space-between;gap:12px;height:68px;padding:0 12px 0 16px;border-bottom:1px solid rgba(0,0,0,.12)}
+.sgm-hd .logo-svg{height:26px}
+.sgm-x{display:inline-grid;place-items:center;width:44px;height:44px;padding:0;border:1px solid rgba(0,0,0,.14);border-radius:var(--r-2,6px);background:#fff;color:#0B0B0D;cursor:pointer}
+.sgm-x .ico{width:18px;height:18px}
+.sgm-bd{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:4px 16px 16px}
+.sgm-acc,.sgm-top{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-height:56px;padding:0 4px;margin:0;border:0;border-bottom:1px solid rgba(0,0,0,.12);background:none;color:#0B0B0D;font-family:var(--font-display,inherit);font-size:18px;font-weight:600;letter-spacing:-.015em;line-height:1.2;text-align:left;text-decoration:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.sgm-acc .ico{width:16px;height:16px;flex:none;color:#565660;transition:transform var(--t-base,240ms) var(--ease-out,ease-out)}
+.sgm-grp.open>.sgm-acc .ico{transform:rotate(180deg)}
+.sgm-top .ico{width:16px;height:16px;flex:none;color:#565660}
+.sgm-pn{display:grid;grid-template-rows:0fr;visibility:hidden;transition:grid-template-rows var(--t-base,240ms) var(--ease-out,ease-out),visibility 0s var(--t-base,240ms)}
+.sgm-grp.open>.sgm-pn{grid-template-rows:1fr;visibility:visible;transition-delay:0s}
+.sgm-pn>div{min-height:0;overflow:hidden}
+.sgm-grp.open>.sgm-pn>div{padding:6px 0 10px;border-bottom:1px solid rgba(0,0,0,.12)}
+.sgm-ln{display:flex;flex-direction:column;justify-content:center;gap:2px;min-height:48px;padding:8px 12px;border-radius:var(--r-2,6px);color:#0B0B0D;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.sgm-ln strong{font-weight:500;font-size:15.5px;line-height:1.3}
+.sgm-ln small{color:#565660;font-size:13px;line-height:1.35}
+.sgm-ln:active,.sgm-ln:hover{background:#E8E6E3}
+.sgm-ln[aria-current="page"]{background:#E8E6E3;box-shadow:inset 3px 0 0 #FF5047}
+.sgm-sep{height:1px;margin:6px 12px;background:rgba(0,0,0,.1)}
+.sgm-ft{flex:none;padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px));border-top:1px solid rgba(0,0,0,.12)}
+.sgm-ft .btn{display:flex;width:100%;min-height:48px;justify-content:center}
+.sgm-sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.sgm-ov :focus-visible{outline:2px solid #0B0B0D;outline-offset:2px}
+html.sgm-lock,html.sgm-lock body{overflow:hidden}
+@media (max-width:900px){[data-sgm-menu]{position:relative}[data-sgm-menu]::after{content:"";position:absolute;inset:-5px}}
+@media (min-width:901px){.sgm-ov{display:none}}
+
+.legal.legal--seg{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;white-space:pre-wrap}.legal--seg .soc{display:inline-flex;gap:14px}.legal--seg .soc a{display:inline-grid;place-items:center;width:32px;height:32px;color:inherit;opacity:.8;transition:opacity .2s ease}.legal--seg .soc a:hover{opacity:1}.legal--seg .soc svg{width:18px;height:18px}
+</style>
+<script id="sgm-js">
+/* sgm 1: drawer do menu móvel, montado a partir do menu desktop (.nav-links) para nunca divergir */
+(function(){
+  if(window.__sgmNav)return; window.__sgmNav=1;
+  var sgmBtn=document.querySelector('[data-sgm-menu]'); if(!sgmBtn)return;
+  var sgmSrc=document.querySelector(sgmBtn.getAttribute('data-sgm-menu')); if(!sgmSrc)return;
+  var sgmCta=document.querySelector(sgmBtn.getAttribute('data-sgm-cta')||'#sgm-none');
+  var sgmLogo=document.querySelector(sgmBtn.getAttribute('data-sgm-logo')||'#sgm-none');
+  var sgmMq=window.matchMedia('(max-width:900px)');
+  var sgmRoot=document.documentElement, sgmLast=null, sgmN=0;
+  function sgmEl(tag,cls,html){var e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e}
+  function sgmTxt(el,sel){var n=el.querySelector(sel);return n?n.textContent.replace(/\s+/g,' ').trim():''}
+  function sgmLink(a){
+    var l=sgmEl('a','sgm-ln'); l.href=a.getAttribute('href');
+    ['target','rel','aria-current'].forEach(function(k){if(a.hasAttribute(k))l.setAttribute(k,a.getAttribute(k))});
+    var t=sgmTxt(a,'strong')||a.textContent.replace(/\s+/g,' ').trim(), s=sgmTxt(a,'small');
+    l.appendChild(sgmEl('strong','',null)).textContent=t;
+    if(s)l.appendChild(sgmEl('small','',null)).textContent=s;
+    if(a.getAttribute('target')==='_blank')l.appendChild(sgmEl('span','sgm-sr',null)).textContent=' (abre em nova aba)';
+    return l;
+  }
+  var ov=sgmEl('div','sgm-ov'); ov.id='sgmOv'; ov.setAttribute('data-sgm',''); ov.setAttribute('aria-hidden','true');
+  var scrim=sgmEl('div','sgm-scrim'); ov.appendChild(scrim);
+  var dr=sgmEl('div','sgm-dr'); dr.id='sgmDr'; dr.setAttribute('role','dialog'); dr.setAttribute('aria-modal','true'); dr.setAttribute('aria-label','Menu'); dr.tabIndex=-1; ov.appendChild(dr);
+  var hd=sgmEl('div','sgm-hd'); dr.appendChild(hd);
+  if(sgmLogo){var lg=sgmLogo.cloneNode(true); lg.removeAttribute('id'); hd.appendChild(lg)} else hd.appendChild(sgmEl('span','',''));
+  var xb=sgmEl('button','sgm-x','<svg class="ico" aria-hidden="true"><use href="#i-x"/></svg>'); xb.type='button'; xb.setAttribute('aria-label','Fechar menu'); hd.appendChild(xb);
+  var bd=sgmEl('nav','sgm-bd'); bd.setAttribute('aria-label','Menu principal'); dr.appendChild(bd);
+  Array.prototype.forEach.call(sgmSrc.children,function(it){
+    if(it.matches('.dd')){
+      var b=it.querySelector('button'), m=it.querySelector('.dd-menu'); if(!b||!m)return;
+      var id='sgmG'+(++sgmN), g=sgmEl('div','sgm-grp');
+      var ab=sgmEl('button','sgm-acc'); ab.type='button'; ab.setAttribute('aria-expanded','false'); ab.setAttribute('aria-controls',id);
+      ab.appendChild(sgmEl('span','',null)).textContent=b.textContent.replace(/\s+/g,' ').trim();
+      ab.insertAdjacentHTML('beforeend','<svg class="ico" aria-hidden="true"><use href="#i-chevron"/></svg>');
+      var pn=sgmEl('div','sgm-pn'); pn.id=id; var inner=sgmEl('div','',null); pn.appendChild(inner);
+      Array.prototype.forEach.call(m.children,function(c){
+        if(c.matches('a'))inner.appendChild(sgmLink(c)); else if(c.matches('.dd-sep'))inner.appendChild(sgmEl('div','sgm-sep',null));
+      });
+      g.appendChild(ab); g.appendChild(pn); bd.appendChild(g);
+      if(m.querySelector('[aria-current="page"]')){g.classList.add('open');ab.setAttribute('aria-expanded','true')}
+      ab.addEventListener('click',function(){var o=!g.classList.contains('open');g.classList.toggle('open',o);ab.setAttribute('aria-expanded',o?'true':'false')});
+    } else if(it.matches('a')){
+      var tl=sgmEl('a','sgm-top'); tl.href=it.getAttribute('href');
+      ['target','rel','aria-current'].forEach(function(k){if(it.hasAttribute(k))tl.setAttribute(k,it.getAttribute(k))});
+      tl.appendChild(sgmEl('span','',null)).textContent=it.textContent.replace(/\s+/g,' ').trim();
+      tl.insertAdjacentHTML('beforeend','<svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg>');
+      bd.appendChild(tl);
+    }
+  });
+  if(sgmCta){var ft=sgmEl('div','sgm-ft'), cb=sgmEl('a','btn btn--lg',null); cb.href=sgmCta.getAttribute('href'); cb.textContent=sgmCta.textContent.replace(/\s+/g,' ').trim(); ft.appendChild(cb); dr.appendChild(ft)}
+  document.body.appendChild(ov);
+  sgmBtn.setAttribute('aria-controls','sgmDr'); sgmBtn.setAttribute('aria-expanded','false');
+  function sgmIsOpen(){return ov.classList.contains('open')}
+  function sgmFocusables(){return Array.prototype.filter.call(dr.querySelectorAll('a[href],button:not([disabled])'),function(e){return e.getClientRects().length&&getComputedStyle(e).visibility!=='hidden'})}
+  function sgmOpen(){
+    if(sgmIsOpen())return; sgmLast=document.activeElement&&document.activeElement!==document.body?document.activeElement:sgmBtn;
+    var sw=window.innerWidth-sgmRoot.clientWidth; if(sw>0)document.body.style.paddingRight=sw+'px';
+    ov.classList.add('open'); ov.removeAttribute('aria-hidden'); sgmRoot.classList.add('sgm-lock');
+    sgmBtn.setAttribute('aria-expanded','true');
+    requestAnimationFrame(function(){try{xb.focus({preventScroll:true})}catch(e){xb.focus()}});
+  }
+  function sgmClose(){
+    if(!sgmIsOpen())return;
+    ov.classList.remove('open'); ov.setAttribute('aria-hidden','true'); sgmRoot.classList.remove('sgm-lock'); document.body.style.paddingRight='';
+    sgmBtn.setAttribute('aria-expanded','false');
+    var f=sgmLast&&sgmLast.isConnected?sgmLast:sgmBtn; if(f.closest&&f.closest('#sgmOv'))f=sgmBtn;
+    try{f.focus({preventScroll:true})}catch(e){f.focus()}
+  }
+  sgmBtn.addEventListener('click',function(e){e.preventDefault();if(sgmIsOpen())sgmClose();else sgmOpen()});
+  xb.addEventListener('click',sgmClose);
+  scrim.addEventListener('click',sgmClose);
+  scrim.addEventListener('touchmove',function(e){e.preventDefault()},{passive:false});
+  dr.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(a)sgmClose()});
+  document.addEventListener('keydown',function(e){
+    if(!sgmIsOpen())return;
+    if(e.key==='Escape'||e.key==='Esc'){e.preventDefault();sgmClose();return}
+    if(e.key==='Tab'){var f=sgmFocusables();if(!f.length){e.preventDefault();dr.focus();return}
+      var first=f[0],last=f[f.length-1],act=document.activeElement;
+      if(!dr.contains(act)){e.preventDefault();(e.shiftKey?last:first).focus();return}
+      if(e.shiftKey&&act===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&act===last){e.preventDefault();first.focus()}}
+  });
+  function sgmMqChange(){if(!sgmMq.matches)sgmClose()}
+  if(sgmMq.addEventListener)sgmMq.addEventListener('change',sgmMqChange);else if(sgmMq.addListener)sgmMq.addListener(sgmMqChange);
+})();
+/* sgm 2: no mobile, ao tocar um controle marcado com data-scroll-target, rola até a UI que ele transforma se ela não estiver visível.
+   data-scroll-target: "#id" (querySelector, resolvido depois da troca), "<.sel" (closest a partir do controle), "@controls" (aria-controls do controle); vários alvos com "|".
+   data-scroll-ctl: seletor dos controles dentro do elemento marcado (padrão: botões, links, inputs, roles). data-scroll-delay: ms antes de medir (padrão 80). */
+(function(){
+  if(window.__sgmReveal)return; window.__sgmReveal=1;
+  var srvMq=window.matchMedia('(max-width:900px)'), srvRm=window.matchMedia('(prefers-reduced-motion: reduce)');
+  var SRV_CTL='button,a[href],input,select,textarea,label,summary,[role="button"],[role="tab"],[role="switch"],[role="radio"],[role="checkbox"],[role="option"],[tabindex]';
+  var srvTimer=0, SRV_GAP=12;
+  function srvHeader(){
+    var h=document.querySelector('[data-sgm-header]')||document.getElementById('snav'); if(!h)return 0;
+    var p=getComputedStyle(h).position; if(p!=='sticky'&&p!=='fixed')return 0;
+    return Math.max(0,h.getBoundingClientRect().bottom);
+  }
+  function srvRect(list){
+    var r=null; list.forEach(function(t){if(!t||!t.getClientRects().length)return;var b=t.getBoundingClientRect();if(!b.width&&!b.height)return;
+      if(!r)r={top:b.top,bottom:b.bottom};else{r.top=Math.min(r.top,b.top);r.bottom=Math.max(r.bottom,b.bottom)}});
+    return r;
+  }
+  function srvReveal(list,ctl){
+    var r=srvRect(list); if(!r)return;
+    var top=srvHeader()+SRV_GAP, bot=window.innerHeight-SRV_GAP, avail=bot-top, h=r.bottom-r.top, dy=0;
+    if(h>avail){if(Math.min(r.bottom,bot)-Math.max(r.top,top)>=avail*.8)return}
+    else if(r.top>=top-2&&r.bottom<=bot+2)return;
+    /* se couber, mantém o controle tocado na tela junto com o alvo */
+    var c=ctl&&ctl.isConnected?srvRect([ctl]):null;
+    if(c){var u={top:Math.min(r.top,c.top),bottom:Math.max(r.bottom,c.bottom)};if(u.bottom-u.top<=avail)r=u}
+    h=r.bottom-r.top;
+    if(h>avail||r.top<top-2){dy=r.top-top}else if(r.bottom>bot+2){dy=r.bottom-bot}
+    if(Math.abs(dy)<4)return;
+    window.scrollTo({top:Math.max(0,(window.pageYOffset||0)+dy),behavior:srvRm.matches?'instant':'smooth'});
+  }
+  function srvResolve(sel,ctl){
+    var out=[];
+    sel.split('|').forEach(function(s){s=s.trim();if(!s)return;var t=null;
+      try{
+        if(s==='@controls'){var id=ctl.getAttribute('aria-controls');t=id?document.getElementById(id.split(' ')[0]):null}
+        else if(s.charAt(0)==='<'){t=ctl.closest(s.slice(1))}
+        else{t=document.querySelector(s)}
+      }catch(e){t=null}
+      if(t)out.push(t)});
+    return out;
+  }
+  function srvHandle(e){
+    if(!e.isTrusted||!srvMq.matches)return;
+    var t=e.target; if(t&&t.nodeType!==1)t=t.parentElement; if(!t||!t.closest)return;
+    var host=t.closest('[data-scroll-target]'); if(!host||host.closest('[data-sgm]'))return;
+    var ctl=t.closest(host.getAttribute('data-scroll-ctl')||SRV_CTL); if(!ctl||(ctl!==host&&!host.contains(ctl)))return;
+    var tag=ctl.tagName, typ=(ctl.getAttribute('type')||'').toLowerCase();
+    if(e.type==='click'&&(tag==='SELECT'||tag==='TEXTAREA'||(tag==='INPUT'&&!/^(checkbox|radio|button|submit|reset)$/.test(typ))))return;
+    if(e.type==='change'&&!(tag==='SELECT'||(tag==='INPUT'&&typ==='range')))return;
+    if(e.type==='keydown'){if(e.key!=='Enter'&&e.key!==' ')return; if(/^(BUTTON|A|INPUT|SELECT|TEXTAREA|SUMMARY|LABEL)$/.test(tag))return}
+    var sel=host.getAttribute('data-scroll-target'), list0=srvResolve(sel,ctl);
+    var d=parseInt(host.getAttribute('data-scroll-delay')||'80',10);
+    clearTimeout(srvTimer); srvTimer=setTimeout(function(){var l=srvResolve(sel,ctl);srvReveal(l.length?l:list0,ctl)},isNaN(d)?80:d);
+  }
+  /* fase de captura: funciona mesmo quando o handler da página chama stopPropagation */
+  document.addEventListener('click',srvHandle,true);
+  document.addEventListener('change',srvHandle,true);
+  document.addEventListener('keydown',srvHandle,true);
+  window.sgmReveal=function(el,ctl){srvReveal([].concat(el),ctl)};
+})();
+</script>
+<!-- sgm:end -->
+</html>
