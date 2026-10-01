@@ -458,9 +458,9 @@ body{background:var(--bone-100)}
 }
 
 /* ===== CUBOS DO HERO ===== */
-.cubes{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden;background:#fff;mix-blend-mode:multiply}
+.cubes{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden;background:transparent;mix-blend-mode:normal}
 .cubes.top{z-index:90}
-.cubes img{position:absolute;left:0;top:0;width:400px;height:400px;mix-blend-mode:multiply;will-change:transform;user-select:none;-webkit-user-drag:none}
+.cubes img{position:absolute;left:0;top:0;width:400px;height:400px;mix-blend-mode:normal;will-change:transform;user-select:none;-webkit-user-drag:none}
 .js-cubes .snav .logo .logo-sq{opacity:0;transform:scale(.3)}
 .js-cubes.dot-on .snav .logo .logo-sq{opacity:1;transform:none;transition:opacity 160ms ease,transform 280ms var(--ease-out)}
 .js-cubes .compo .sq{display:none}
@@ -497,14 +497,14 @@ body{background:var(--bone-100)}
 
 /* ===================================================================
    SOBRE A SEGBOX · só design system Segbox (bone, quase preto, coral, laranja). Sem roxo.
-   Cubos de vidro: assets/cubo-coral.jpg e assets/cubo-obsidiana-preto.jpg (fundo branco, mix-blend multiply).
+   Cubos de vidro: assets/cubo-coral-t.webp e assets/cubo-obsidiana-preto-t.webp (fundo branco, mix-blend multiply).
    Cubo laranja = cubo coral com hue-rotate (sem asset novo).
    Hero: os cubos orbitam, se alinham no quadrado do logo e se fundem no quadrado do header (técnica da home).
    Trajetória: cada marco encaixa um cubo; a pirâmide cresce com a rolagem (palco fixo 560x560 escalado, sem loop infinito).
    =================================================================== */
 .draft-tag{display:inline-flex;align-items:center;height:20px;padding:0 6px;border:1px dashed currentColor;border-radius:4px;font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-3);vertical-align:middle;white-space:nowrap}
 .sq--coral{background:var(--coral)}.sq--ink{background:#0B0B0D}.sq--ember{background:var(--ember)}
-.sb-cube{mix-blend-mode:multiply;user-select:none;-webkit-user-drag:none;pointer-events:none}
+.sb-cube{mix-blend-mode:normal;user-select:none;-webkit-user-drag:none;pointer-events:none}
 .sb-em{filter:hue-rotate(26deg) saturate(1.15) brightness(1.04)}
 .sb-sec{padding-block:clamp(72px,10vw,128px);border-top:1px solid var(--line)}
 .sb-sec .sec-head{max-width:780px}
@@ -535,10 +535,10 @@ body{background:var(--bone-100)}
 .sb-static{position:absolute;inset:0}
 .sb-static img{position:absolute;width:40%;height:auto}
 /* camada fixa dos cubos (mesma técnica da home) */
-.cubes{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden;background:#fff;mix-blend-mode:multiply}
+.cubes{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden;background:transparent;mix-blend-mode:normal}
 .cubes.top{z-index:90}
 .cubes.off{visibility:hidden}
-.cubes img{position:absolute;left:0;top:0;width:400px;height:400px;mix-blend-mode:multiply;will-change:transform;user-select:none;-webkit-user-drag:none}
+.cubes img{position:absolute;left:0;top:0;width:400px;height:400px;mix-blend-mode:normal;will-change:transform;user-select:none;-webkit-user-drag:none}
 .js-sbh .snav .logo .logo-sq{opacity:0;transform:scale(.3)}
 .js-sbh.dot-on .snav .logo .logo-sq{opacity:1;transform:none;transition:opacity 160ms ease,transform 280ms var(--ease-out)}
 
@@ -587,7 +587,7 @@ body{background:var(--bone-100)}
 .tj-bl{position:absolute;left:40px;top:512px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-2);opacity:var(--b,0)}
 .tj-bl i{display:inline-block;width:7px;height:7px;background:var(--coral);margin-right:8px;vertical-align:0}
 .tj-br{position:absolute;right:40px;top:512px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-3)}
-.tj-c{position:absolute;left:0;top:0;width:180px;height:180px;mix-blend-mode:multiply;opacity:0;will-change:transform,opacity;transform:translate(calc(var(--x) * 1px - 90px),calc(var(--y) * 1px - 330px)) rotate(calc(var(--r) * 1deg + 40deg)) scale(var(--s))}
+.tj-c{position:absolute;left:0;top:0;width:180px;height:180px;mix-blend-mode:normal;opacity:0;will-change:transform,opacity;transform:translate(calc(var(--x) * 1px - 90px),calc(var(--y) * 1px - 330px)) rotate(calc(var(--r) * 1deg + 40deg)) scale(var(--s))}
 .tj-built .tj-c{opacity:1;transform:translate(calc(var(--x) * 1px - 90px),calc(var(--y) * 1px - 90px)) rotate(calc(var(--r) * 1deg)) scale(var(--s));transition:transform 820ms cubic-bezier(.34,1.3,.64,1) var(--d,0ms),opacity 300ms ease var(--d,0ms)}
 .tj-built{--b:1}
 .tj-built .tj-base{transition:transform 700ms var(--ease-out)}
@@ -786,10 +786,10 @@ body{background:var(--bone-100)}
 <section class="sb-sec" id="acreditamos"><div class="container">
 <div class="sec-head" data-rv><span class="label">[ 03 ] O que acreditamos</span><h2 class="t-h1 h-balance h-fade">Quatro coisas que guiam <span class="h-fade-2">cada projeto.</span></h2></div>
 <div class="bl-grid">
-<article class="bl" data-bl><div><span class="label n">001</span><h3 class="t-h3">Quem usa decide se funciona.</h3><p>Uma plataforma só dá certo se o corretor abre no dia seguinte. Desenhamos para a rotina real de quem vende, não para a apresentação da reunião.</p></div><span class="bl-cube" aria-hidden="true"><img class="sb-em sb-cube" src="assets/cubo-coral.jpg" alt="" width="720" height="720" loading="lazy" decoding="async" style="--r:-6deg"></span></article>
-<article class="bl" data-bl><div><span class="label n">002</span><h3 class="t-h3">Marca é responsabilidade, não detalhe.</h3><p>Quem responde pela marca precisa de controle sobre o que chega à rede. Por isso nossas plataformas dão liberdade ao corretor dentro de regras claras da seguradora.</p></div><span class="bl-cube" aria-hidden="true"><img class="sb-cube" src="assets/cubo-obsidiana-preto.jpg" alt="" width="720" height="720" loading="lazy" decoding="async" style="--r:8deg"></span></article>
-<article class="bl" data-bl><div><span class="label n">003</span><h3 class="t-h3">Lançar é o começo.</h3><p>Não entregamos código e vamos embora. Operamos, damos suporte, treinamos a rede e melhoramos o produto enquanto ele estiver no ar.</p></div><span class="bl-cube" aria-hidden="true"><img class="sb-cube sb-em" src="assets/cubo-coral.jpg" alt="" width="720" height="720" loading="lazy" decoding="async" style="--r:14deg"></span></article>
-<article class="bl" data-bl><div><span class="label n">004</span><h3 class="t-h3">Mercado forte é mercado que conversa.</h3><p>Inovação não acontece isolada. Por isso também criamos espaços para o setor trocar conhecimento, reconhecer quem inova e dar voz ao consumidor.</p></div><span class="bl-cube" aria-hidden="true"><img class="sb-em sb-cube" src="assets/cubo-coral.jpg" alt="" width="720" height="720" loading="lazy" decoding="async" style="--r:-18deg"></span></article>
+<article class="bl" data-bl><div><span class="label n">001</span><h3 class="t-h3">Quem usa decide se funciona.</h3><p>Uma plataforma só dá certo se o corretor abre no dia seguinte. Desenhamos para a rotina real de quem vende, não para a apresentação da reunião.</p></div><span class="bl-cube" aria-hidden="true"><img class="sb-em sb-cube" src="assets/cubo-coral-t.webp" alt="" width="720" height="720" loading="lazy" decoding="async" style="--r:-6deg"></span></article>
+<article class="bl" data-bl><div><span class="label n">002</span><h3 class="t-h3">Marca é responsabilidade, não detalhe.</h3><p>Quem responde pela marca precisa de controle sobre o que chega à rede. Por isso nossas plataformas dão liberdade ao corretor dentro de regras claras da seguradora.</p></div><span class="bl-cube" aria-hidden="true"><img class="sb-cube" src="assets/cubo-obsidiana-preto-t.webp" alt="" width="720" height="720" loading="lazy" decoding="async" style="--r:8deg"></span></article>
+<article class="bl" data-bl><div><span class="label n">003</span><h3 class="t-h3">Lançar é o começo.</h3><p>Não entregamos código e vamos embora. Operamos, damos suporte, treinamos a rede e melhoramos o produto enquanto ele estiver no ar.</p></div><span class="bl-cube" aria-hidden="true"><img class="sb-cube sb-em" src="assets/cubo-coral-t.webp" alt="" width="720" height="720" loading="lazy" decoding="async" style="--r:14deg"></span></article>
+<article class="bl" data-bl><div><span class="label n">004</span><h3 class="t-h3">Mercado forte é mercado que conversa.</h3><p>Inovação não acontece isolada. Por isso também criamos espaços para o setor trocar conhecimento, reconhecer quem inova e dar voz ao consumidor.</p></div><span class="bl-cube" aria-hidden="true"><img class="sb-em sb-cube" src="assets/cubo-coral-t.webp" alt="" width="720" height="720" loading="lazy" decoding="async" style="--r:-18deg"></span></article>
 </div>
 </div></section>
 
@@ -807,8 +807,8 @@ body{background:var(--bone-100)}
 .tz-st.on .tz-y{color:var(--label-accent)}
 .tz-st h3{margin-top:8px;font-family:var(--font-display);font-weight:600;font-size:clamp(1.35rem,2.4vw,1.9rem);line-height:1.08;letter-spacing:-.03em;text-wrap:balance}
 .tz-st p{margin-top:8px;color:var(--fg-2);max-width:44ch}
-.tz-mc{display:none;width:84px;height:84px;flex:none;margin:-6px -8px -6px 0;mix-blend-mode:multiply}
-.ld-ph .ld-cube{mix-blend-mode:multiply}.ld blockquote footer strong{color:var(--fg)}
+.tz-mc{display:none;width:84px;height:84px;flex:none;margin:-6px -8px -6px 0;mix-blend-mode:normal}
+.ld-ph .ld-cube{mix-blend-mode:normal}.ld blockquote footer strong{color:var(--fg)}
 html{background:var(--bg)}
 .js-sbh .sb-cap{top:auto;bottom:3%;transform:translateX(-50%)}
 .sb-frame .corner.bl{position:absolute;display:block;padding:0;border-radius:0;background:none;isolation:auto;width:10px;height:10px;border-style:solid;border-color:var(--fg);border-width:0 0 1px 1px;bottom:-1px;left:-1px}
@@ -816,7 +816,7 @@ html{background:var(--bg)}
 .tz-stick{position:sticky;top:96px;height:calc(100vh - 120px);min-height:460px;display:flex;align-items:center}
 .tz-stage{position:relative;isolation:isolate;width:100%;max-width:540px;aspect-ratio:1;margin-left:auto;border:1px solid var(--line);border-radius:var(--r-4);background:#fff;overflow:hidden}
 .tz-yr{position:absolute;right:5%;top:5%;font-family:var(--font-display);font-weight:600;font-size:clamp(2.4rem,4.5vw,4rem);line-height:1;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1.3px rgba(11,11,13,.24);font-variant-numeric:tabular-nums}
-.tz-c{position:absolute;left:var(--x);top:var(--y);width:28%;height:auto;mix-blend-mode:multiply;opacity:0;transform:translateY(-60px) rotate(var(--r,0deg)) scale(.9);transition:opacity 500ms ease,transform 820ms cubic-bezier(.34,1.3,.64,1)}
+.tz-c{position:absolute;left:var(--x);top:var(--y);width:28%;height:auto;mix-blend-mode:normal;opacity:0;transform:translateY(-60px) rotate(var(--r,0deg)) scale(.9);transition:opacity 500ms ease,transform 820ms cubic-bezier(.34,1.3,.64,1)}
 .tz-c.on{opacity:1;transform:rotate(var(--r,0deg))}
 @media (max-width:900px){
   .tz-g{grid-template-columns:minmax(0,1fr)}
@@ -996,7 +996,7 @@ html{background:var(--bg)}
   if(!sbhHero||!sbhStage)return;
   var sbhRM=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var sbhFine=window.matchMedia&&window.matchMedia('(hover:hover) and (pointer:fine) and (min-width:901px)');
-  var sbhSrc={co:'assets/cubo-coral.jpg',in:'assets/cubo-coral.jpg',ob:'assets/cubo-obsidiana-preto.jpg'};
+  var sbhSrc={co:'assets/cubo-coral-t.webp',in:'assets/cubo-coral-t.webp',ob:'assets/cubo-obsidiana-preto-t.webp'};
   // composição: fx/fy no palco (0..1), s = lado do cubo em fração do palco, dx/dy/r0 = ponto de partida espalhado
   var sbhDefs=[
     {k:'ob',fx:.50,fy:.52,s:.34,rot:-6,dep:10,par:-.06,dx:0,dy:-520,r0:-70},
