@@ -373,6 +373,9 @@ blockquote footer{margin-top:20px;display:flex;align-items:center;gap:12px;color
 /* ============ VIDRO ============ */
 .glass,.nav,.dd-menu,.win,.modal,.drawer{background:var(--glass);border:1px solid var(--glass-line);box-shadow:var(--glass-sh);backdrop-filter:blur(var(--blur)) saturate(1.7);-webkit-backdrop-filter:blur(var(--blur)) saturate(1.7)}
 .dd-menu{border-radius:var(--r-3)}
+/* dropdowns: fundo mais opaco + blur leve para ler sobre hero, fotos e cubos */
+.dd-menu{background:rgba(246,244,241,.85);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%)}
+[data-surface="ink"] .dd-menu{background:rgba(16,16,19,.85)}
 .glass{border-radius:var(--r-3)}
 .sq{position:absolute;display:block}
 .sq--coral{background:var(--coral)}.sq--indigo{background:var(--indigo)}.sq--ember{background:var(--ember)}.sq--ink{background:#0B0B0D}
@@ -407,7 +410,9 @@ blockquote footer{margin-top:20px;display:flex;align-items:center;gap:12px;color
 html{scroll-padding-top:84px}
 body{background:var(--bone-100)}
 .container{width:100%;max-width:1280px;margin-inline:auto;padding-inline:clamp(16px,4vw,48px)}
-.snav{position:sticky;top:0;z-index:80;background:rgba(246,244,241,.62);backdrop-filter:blur(20px) saturate(1.7);-webkit-backdrop-filter:blur(20px) saturate(1.7);border-bottom:1px solid var(--glass-line);box-shadow:0 1px 0 var(--line)}
+.snav{position:sticky;top:0;z-index:80;border-bottom:1px solid transparent;box-shadow:0 1px 0 var(--line)}
+/* vidro do header num pseudo-elemento: backdrop-filter no próprio .snav o torna "backdrop root" e o blur dos dropdowns filhos não enxerga a página */
+.snav::before{content:"";position:absolute;inset:0 0 -1px;z-index:-1;pointer-events:none;border-bottom:1px solid var(--glass-line);background:rgba(246,244,241,.62);backdrop-filter:blur(20px) saturate(1.7);-webkit-backdrop-filter:blur(20px) saturate(1.7)}
 .snav .in{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
 .snav .menu-btn{display:none}
 .snav .mpanel{display:none}
@@ -859,7 +864,7 @@ body{background:var(--bone-100)}
 .pj-case .go{margin-top:6px;justify-self:start}
 .pj-note{margin-top:14px;display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--fg-2);max-width:78ch}
 .pj-note i{width:7px;height:7px;background:var(--coral);flex:none;margin-top:7px}
-/* Suhai Capacita (só dentro das telas) */
+/* Consultor Suhai (só dentro das telas) */
 .ac{--ac-dark:#0b2116;--ac-green:#2f9e4f;--ac-lime:#86ff6b;--ac-bg:#f1f6f2;--ac-ink:#10261a;color:var(--ac-ink)}
 .ac-shell{position:absolute;inset:0;display:grid;grid-template-columns:150px minmax(0,1fr);background:var(--ac-bg)}
 .ac-side{background:#fff;border-right:1px solid #e0e8e2;padding:12px 10px;display:grid;gap:2px;align-content:start}
@@ -1261,7 +1266,7 @@ body{background:var(--bone-100)}
           <div class="dd-menu" role="menu">
             <a class="dd-item" role="menuitem" href="case-mapfre.html"><span><strong>MAPFRE +Digital</strong><small>Governança de marca para toda a rede</small></span></a>
             <a class="dd-item" role="menuitem" href="case-suhai.html"><span><strong>Venda+ Suhai</strong><small>Uma plataforma viva, ferramenta de growth</small></span></a>
-            <a class="dd-item" role="menuitem" href="case-suhai-academy-v2.html"><span><strong>Suhai Capacita</strong><small>Capacitação que libera a venda</small></span></a>
+            <a class="dd-item" role="menuitem" href="case-suhai-academy-v2.html"><span><strong>Consultor Suhai</strong><small>Capacitação que libera a venda</small></span></a>
             <a class="dd-item" role="menuitem" href="case-baeta.html"><span><strong>BaetaPRO</strong><small>Portal do corretor parceiro</small></span></a>
           </div></div>
         <div class="dd" data-dd><button type="button" aria-expanded="false" aria-haspopup="menu">Conteúdo <svg class="ico"><use href="#i-chevron"/></svg></button>
@@ -1291,7 +1296,7 @@ body{background:var(--bone-100)}
 <div class="row" data-in style="--i:3"><a class="btn btn--lg btn--liquid" href="#contato">Contar o desafio <svg class="ico ico-move"><use href="#i-arrow-right"/></svg></a><a class="btn btn--secondary btn--lg" href="#projetos">Ver projetos</a></div>
 <div class="pj-chips" data-in style="--i:4"><span class="tag tag--boxed">Portais</span><span class="tag tag--boxed">Capacitação</span><span class="tag tag--boxed">Integrações</span><span class="tag tag--boxed">IA</span></div>
 <p class="pj-micro" data-in style="--i:5">O mesmo time que já opera produtos com corretor real. Não entregamos protótipo nem só código.</p>
-<div class="wl-real" data-in style="--i:6"><i aria-hidden="true"></i><span>Projetos reais:</span><a href="case-suhai-academy-v2.html">Suhai Capacita<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></a><span aria-hidden="true">·</span><a href="case-baeta.html">BaetaPRO<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></a></div>
+<div class="wl-real" data-in style="--i:6"><i aria-hidden="true"></i><span>Projetos reais:</span><a href="case-suhai-academy-v2.html">Consultor Suhai<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></a><span aria-hidden="true">·</span><a href="case-baeta.html">BaetaPRO<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></a></div>
 </div>
 <div class="pj-hst" id="pjHst" data-in style="--i:2">
 <i class="sq sq--coral" style="width:176px;height:176px;right:-2%;top:-6px" data-depth="-18" aria-hidden="true"></i>
@@ -1431,7 +1436,7 @@ body{background:var(--bone-100)}
 </div>
 </div></div></div></div></div></div>
 </div></div>
-<div class="bl-cap"><div><h3>Capacitação e certificação</h3><p>Trilhas em sequência, avaliação, certificado e liberação de acesso por regra. O parceiro só avança quando estiver pronto.</p></div><span class="bl-real">Exemplo real: <a href="case-suhai-academy-v2.html">Suhai Capacita</a></span></div>
+<div class="bl-cap"><div><h3>Capacitação e certificação</h3><p>Trilhas em sequência, avaliação, certificado e liberação de acesso por regra. O parceiro só avança quando estiver pronto.</p></div><span class="bl-real">Exemplo real: <a href="case-suhai-academy-v2.html">Consultor Suhai</a></span></div>
 </div>
 
 <!-- cena 3: integrações -->
@@ -1460,7 +1465,7 @@ body{background:var(--bone-100)}
 </div></div>
 </div></div></div></div></div></div>
 </div></div>
-<div class="bl-cap"><div><h3>Integrações com os seus sistemas</h3><p>Login único via API, conexão com portal, sistema de vendas e soluções de parceiros. O usuário entra uma vez e usa tudo.</p></div><span class="bl-real">Exemplos reais: <a href="case-suhai-academy-v2.html">Suhai Capacita</a> · <a href="case-baeta.html">BaetaPRO</a></span></div>
+<div class="bl-cap"><div><h3>Integrações com os seus sistemas</h3><p>Login único via API, conexão com portal, sistema de vendas e soluções de parceiros. O usuário entra uma vez e usa tudo.</p></div><span class="bl-real">Exemplos reais: <a href="case-suhai-academy-v2.html">Consultor Suhai</a> · <a href="case-baeta.html">BaetaPRO</a></span></div>
 </div>
 
 <!-- cena 4: assistente de IA -->
@@ -1516,7 +1521,7 @@ body{background:var(--bone-100)}
 <div><span class="label" style="color:var(--label-accent)">White label ou sob medida</span><h3 style="margin-top:12px">Pronto, sob medida ou os dois.</h3><p>No white label, um produto que já existe ganha a marca da sua organização. No sob medida, o sistema nasce do zero para o seu desafio. Muitos projetos combinam os dois: partimos de uma plataforma nossa e construímos o que falta.</p></div>
 <div class="mx">
 <div><span class="viz" aria-hidden="true"><i class="f"></i><i class="f"></i><i class="f"></i></span><span class="label">White label</span><b>Produto pronto, com a sua marca.</b><p>Otimize e SegZap com o nome e a identidade da organização.</p><span class="lk"><a href="produto-otimize-whitelabel.html">Otimize White Label</a><a href="produto-segzap-whitelabel.html">SegZap White Label</a></span></div>
-<div class="both"><span class="viz" aria-hidden="true"><i class="f"></i><i class="f"></i><i class="d"></i></span><span class="label">Os dois</span><b>Parte pronta, parte construída.</b><p>A Suhai Capacita foi construída sobre a Otimize White Label. O BaetaPRO leva a Arina AI, o SegZap White Label da Baeta.</p><span class="lk"><a href="case-suhai-academy-v2.html">Suhai Capacita</a><a href="case-baeta.html">BaetaPRO</a></span></div>
+<div class="both"><span class="viz" aria-hidden="true"><i class="f"></i><i class="f"></i><i class="d"></i></span><span class="label">Os dois</span><b>Parte pronta, parte construída.</b><p>O Consultor Suhai foi construído sobre a Otimize White Label. O BaetaPRO leva a Arina AI, o SegZap White Label da Baeta.</p><span class="lk"><a href="case-suhai-academy-v2.html">Consultor Suhai</a><a href="case-baeta.html">BaetaPRO</a></span></div>
 <div><span class="viz" aria-hidden="true"><i class="d"></i><i class="d"></i><i class="d"></i></span><span class="label">Sob medida</span><b>Nasce do zero.</b><p>Desenhado para o seu desafio, com as suas regras e integrações.</p></div>
 </div>
 </div>
@@ -1527,16 +1532,16 @@ body{background:var(--bone-100)}
 <div class="sec-head" data-rv><span class="label">[ 04 ] Projetos</span><h2 class="t-h1 h-balance h-fade">O que já construímos <span class="h-fade-2">do zero.</span></h2><p class="t-lead">Dois projetos no ar, usados todos os dias pela rede de quem contratou.</p></div>
 <div class="cl">
 <article class="pj-case" data-rv>
-<div class="cv"><div class="pj-fit" style="--fw:560;--fh:440"><div class="pj-fix pj-ui" role="img" aria-label="Tela da Suhai Capacita: painel do consultor com a trilha em andamento e o sistema de vendas bloqueado até a avaliação. Ao lado, o fluxo depois da aprovação: trilha, avaliação, certificado e sistema de vendas liberado por login único.">
+<div class="cv"><div class="pj-fit" style="--fw:560;--fh:440"><div class="pj-fix pj-ui" role="img" aria-label="Tela do Consultor Suhai: painel do consultor com a trilha em andamento e o sistema de vendas bloqueado até a avaliação. Ao lado, o fluxo depois da aprovação: trilha, avaliação, certificado e sistema de vendas liberado por login único.">
 <div class="pj-win ac" style="width:540px;height:360px"><div class="pj-chr" aria-hidden="true"><i></i><i></i><i></i><span class="pj-url"><span><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg>capacita.suhai.exemplo/painel</span></span></div>
-<div class="pj-body" aria-hidden="true"><div class="ac-shell"><div class="ac-side"><div class="ac-brand"><i><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/></svg></i><span>Suhai<small>CAPACITA</small></span></div><span class="sep">Capacitação</span><a class="on">Dashboard</a><a>Trilha de Vídeos</a><a>Avaliação</a><a>Materiais</a><a>Aulas ao Vivo</a><span class="sep">Integrações</span><a>Sistema de Vendas</a><a>Venda+ Suhai</a></div>
+<div class="pj-body" aria-hidden="true"><div class="ac-shell"><div class="ac-side"><div class="ac-brand"><i><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/></svg></i><span>Suhai<small>CONSULTOR</small></span></div><span class="sep">Capacitação</span><a class="on">Dashboard</a><a>Trilha de Vídeos</a><a>Avaliação</a><a>Materiais</a><a>Aulas ao Vivo</a><span class="sep">Integrações</span><a>Sistema de Vendas</a><a>Venda+ Suhai</a></div>
 <div class="ac-main"><div class="ac-hero"><span class="chip">Fase 1 · Ativação</span><h4>Olá, consultor. Bem-vindo à sua trilha!</h4><p>Comece pelo próximo vídeo e libere a avaliação.</p><span class="ac-btn">Continuar trilha</span></div>
 <div class="ac-stats"><div class="ac-stat"><small>Progresso</small><b>17%</b><div class="ac-bar"><i style="width:17%"></i></div></div><div class="ac-stat"><small>Aulas</small><b>3/18</b></div><div class="ac-stat"><small>Avaliação</small><b style="font-size:13px">Pendente</b></div><div class="ac-stat"><small>Nota mínima</small><b>70%</b></div></div>
 <div class="ac-two"><div class="ac-card"><h5>Comece por aqui</h5><div class="ac-video"><svg viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M8 5l11 7-11 7z"/></svg></div></div><div class="ac-card"><h5>Sistema de Vendas</h5><div class="ac-lock"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg><span>Bloqueado até a avaliação</span></div></div></div>
 </div></div></div></div>
 <div class="cs-fl ac" style="left:312px;top:326px" aria-hidden="true"><div class="row"><i style="background:#d9efdf;color:#164d2b"><svg viewBox="0 0 24 24"><use href="#i-award"/></svg></i><span>Depois da avaliação<small>Aprovado, certificado e liberado</small></span></div><div class="cs-flow"><span>Trilha</span><svg viewBox="0 0 24 24"><use href="#i-chevron-r"/></svg><span>Avaliação</span><svg viewBox="0 0 24 24"><use href="#i-chevron-r"/></svg><span>Certificado</span><svg viewBox="0 0 24 24"><use href="#i-chevron-r"/></svg><span style="background:#0b2116;border-color:#0b2116;color:#86ff6b">Sistema de Vendas</span></div></div>
 </div></div></div>
-<div class="ct"><span class="label">Suhai Capacita</span><h3>Ninguém vende antes de aprender.</h3><div class="chips"><span class="tag tag--boxed">Capacitação e certificação</span><span class="tag tag--boxed">Login único</span><span class="tag tag--boxed">Sobre a Otimize White Label</span></div><p>A Suhai criou o programa de consultores. A Segbox construiu a plataforma que faz a regra valer: cadastro com aprovação, trilha em sequência, avaliação e, só depois, o sistema de vendas liberado por login único.</p><div class="facts"><span>18 aulas em sequência</span><span>3 fases de trilha</span><span>70% de nota mínima</span><span>1 login para vender</span></div><a class="link-arrow go" href="case-suhai-academy-v2.html">Ver case Suhai Capacita <svg class="ico"><use href="#i-arrow-right"/></svg></a></div>
+<div class="ct"><span class="label">Consultor Suhai</span><h3>Ninguém vende antes de aprender.</h3><div class="chips"><span class="tag tag--boxed">Capacitação e certificação</span><span class="tag tag--boxed">Login único</span><span class="tag tag--boxed">Sobre a Otimize White Label</span></div><p>A Suhai criou o programa de consultores. A Segbox construiu a plataforma que faz a regra valer: cadastro com aprovação, trilha em sequência, avaliação e, só depois, o sistema de vendas liberado por login único.</p><div class="facts"><span>18 aulas em sequência</span><span>3 fases de trilha</span><span>70% de nota mínima</span><span>1 login para vender</span></div><a class="link-arrow go" href="case-suhai-academy-v2.html">Ver case Consultor Suhai <svg class="ico"><use href="#i-arrow-right"/></svg></a></div>
 </article>
 
 <article class="pj-case rev" data-rv>
@@ -1645,7 +1650,7 @@ body{background:var(--bone-100)}
 <div>
 <div class="sec-head" data-rv><span class="label">[ 07 ] Integração e segurança</span><h2 class="t-h1 h-balance h-fade">Conecta com o que a sua organização <span class="h-fade-2">já usa.</span></h2><p class="t-lead">O sistema novo entra na sua operação sem pedir que a rede troque de ferramenta ou decore mais uma senha.</p></div>
 <div class="list3" data-rv>
-<div><svg class="ico" aria-hidden="true"><use href="#i-key"/></svg><span><strong>Login único via API.</strong><span>O usuário entra pelo portal da organização, já autenticado, sem cadastro novo. É assim na Suhai Capacita e no BaetaPRO.</span></span></div>
+<div><svg class="ico" aria-hidden="true"><use href="#i-key"/></svg><span><strong>Login único via API.</strong><span>O usuário entra pelo portal da organização, já autenticado, sem cadastro novo. É assim no Consultor Suhai e no BaetaPRO.</span></span></div>
 <div><svg class="ico" aria-hidden="true"><use href="#i-plug"/></svg><span><strong>Soluções de parceiros no mesmo acesso.</strong><span>Ferramentas de terceiros abrem dentro do portal.</span></span></div>
 <div><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg><span><strong>Acesso por perfil e por regra.</strong><span>Cada usuário vê o que pode ver, e áreas ficam travadas até cumprir a etapa anterior.</span></span></div>
 </div>

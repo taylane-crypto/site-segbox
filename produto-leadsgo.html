@@ -372,6 +372,9 @@ blockquote footer{margin-top:20px;display:flex;align-items:center;gap:12px;color
 /* ============ VIDRO ============ */
 .glass,.nav,.dd-menu,.win,.modal,.drawer{background:var(--glass);border:1px solid var(--glass-line);box-shadow:var(--glass-sh);backdrop-filter:blur(var(--blur)) saturate(1.7);-webkit-backdrop-filter:blur(var(--blur)) saturate(1.7)}
 .dd-menu{border-radius:var(--r-3)}
+/* dropdowns: fundo mais opaco + blur leve para ler sobre hero, fotos e cubos */
+.dd-menu{background:rgba(246,244,241,.85);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%)}
+[data-surface="ink"] .dd-menu{background:rgba(16,16,19,.85)}
 .glass{border-radius:var(--r-3)}
 .sq{position:absolute;display:block}
 .sq--coral{background:var(--coral)}.sq--indigo{background:var(--indigo)}.sq--ember{background:var(--ember)}.sq--ink{background:#0B0B0D}
@@ -406,7 +409,9 @@ blockquote footer{margin-top:20px;display:flex;align-items:center;gap:12px;color
 html{scroll-padding-top:84px}
 body{background:var(--bone-100)}
 .container{width:100%;max-width:1280px;margin-inline:auto;padding-inline:clamp(16px,4vw,48px)}
-.snav{position:sticky;top:0;z-index:80;background:rgba(246,244,241,.62);backdrop-filter:blur(20px) saturate(1.7);-webkit-backdrop-filter:blur(20px) saturate(1.7);border-bottom:1px solid var(--glass-line);box-shadow:0 1px 0 var(--line)}
+.snav{position:sticky;top:0;z-index:80;border-bottom:1px solid transparent;box-shadow:0 1px 0 var(--line)}
+/* vidro do header num pseudo-elemento: backdrop-filter no próprio .snav o torna "backdrop root" e o blur dos dropdowns filhos não enxerga a página */
+.snav::before{content:"";position:absolute;inset:0 0 -1px;z-index:-1;pointer-events:none;border-bottom:1px solid var(--glass-line);background:rgba(246,244,241,.62);backdrop-filter:blur(20px) saturate(1.7);-webkit-backdrop-filter:blur(20px) saturate(1.7)}
 .snav .in{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
 .snav .menu-btn{display:none}
 .snav .mpanel{display:none}
@@ -1093,7 +1098,7 @@ a.lgr-c:hover .go{transform:translate(2px,-2px);color:var(--fg)}
           <div class="dd-menu" role="menu">
             <a class="dd-item" role="menuitem" href="case-mapfre.html"><span><strong>MAPFRE +Digital</strong><small>Governança de marca para toda a rede</small></span></a>
             <a class="dd-item" role="menuitem" href="case-suhai.html"><span><strong>Venda+ Suhai</strong><small>Uma plataforma viva, ferramenta de growth</small></span></a>
-            <a class="dd-item" role="menuitem" href="case-suhai-academy-v2.html"><span><strong>Suhai Capacita</strong><small>Capacitação que libera a venda</small></span></a>
+            <a class="dd-item" role="menuitem" href="case-suhai-academy-v2.html"><span><strong>Consultor Suhai</strong><small>Capacitação que libera a venda</small></span></a>
             <a class="dd-item" role="menuitem" href="case-baeta.html"><span><strong>BaetaPRO</strong><small>Portal do corretor parceiro</small></span></a>
           </div></div>
         <div class="dd" data-dd><button type="button" aria-expanded="false" aria-haspopup="menu">Conteúdo <svg class="ico"><use href="#i-chevron"/></svg></button>
