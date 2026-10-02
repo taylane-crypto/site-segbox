@@ -504,6 +504,107 @@ body{background:var(--bone-100)}
   .cta-s form{grid-template-columns:1fr}
 }
 
+/* ===== HERO · panorama do ecossistema (hx) ===== */
+.compo .win.hx{top:60px}
+.hx .chrome{gap:8px}
+.hx .chrome .url{flex:0 1 auto}
+.hx-sso{margin-left:auto;flex:none;display:inline-flex;align-items:center;gap:5px;height:22px;padding:0 8px;border-radius:var(--r-1);background:#0B0B0D;color:#F4F3F0;font-family:var(--font-mono);font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.hx-sso .ico{width:12px;height:12px;stroke-width:1.8}
+.hx-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 12px;padding:10px 14px;border-bottom:1px solid var(--line)}
+.hx-brand{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:13px;letter-spacing:-.01em}
+.hx-brand i{width:16px;height:16px;border-radius:4px;background:linear-gradient(135deg,var(--coral),var(--ember))}
+.hx-cap{font-size:11px;color:var(--fg-2)}
+.hx-eco{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"m1 m2" "hub hub" "m3 m4";column-gap:12px;padding:14px}
+.hx-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible;z-index:0;pointer-events:none}
+.hx-ln{stroke:var(--line-strong);stroke-width:1.25;stroke-dasharray:3 4;transition:stroke 300ms ease}
+.hx-ln.on{stroke:var(--coral);stroke-dasharray:none}
+.hx-flow{stroke:var(--coral);stroke-width:3.5;stroke-linecap:round;stroke-dasharray:10 200;stroke-dashoffset:10;opacity:0}
+.hx-flow.go{opacity:1;stroke-dashoffset:-100;transition:stroke-dashoffset 1000ms cubic-bezier(.45,0,.25,1)}
+.hx-hub{grid-area:hub;justify-self:center;position:relative;z-index:2;display:flex;align-items:center;gap:10px;margin:14px 0;padding:7px 12px 7px 7px;border-radius:12px;background:#0B0B0D;color:#F4F3F0;box-shadow:0 14px 28px -16px rgba(0,0,0,.55)}
+.hx-hub::after{content:"";position:absolute;inset:-1px;border-radius:inherit;border:1.5px solid var(--coral);opacity:0;pointer-events:none}
+.hx-hub.hx-ping::after{animation:hx-ping 900ms var(--ease-out) 1}
+@keyframes hx-ping{0%{opacity:.9;transform:none}100%{opacity:0;transform:scale(1.12,1.5)}}
+.hx-hub-i{display:grid;place-items:center;width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--coral),var(--ember));color:#0B0B0D}
+.hx-hub-i .ico{width:18px;height:18px;stroke-width:1.8}
+.hx-hub-t strong{display:block;font-family:var(--font-display);font-weight:600;font-size:14px;line-height:1.15;letter-spacing:-.01em}
+.hx-hub-t small{display:block;font-size:11px;line-height:1.3;color:var(--ink-300)}
+.hx-av{display:flex;padding-left:6px}
+.hx-av i{width:18px;height:18px;border-radius:50%;border:2px solid #0B0B0D;margin-left:-6px;background:var(--bone-300)}
+.hx-av i:nth-child(2){background:var(--coral)}.hx-av i:nth-child(3){background:var(--ember)}.hx-av i:nth-child(4){background:var(--bone-100)}
+.hx-m{position:relative;z-index:1;display:grid;gap:10px;align-content:start;min-width:0;padding:12px;border-radius:12px;background:#FDFCFB;border:1px solid var(--line);transition:box-shadow 360ms ease,transform 420ms var(--ease-out),border-color 360ms ease}
+.hx-m1{grid-area:m1}.hx-m2{grid-area:m2}.hx-m3{grid-area:m3}.hx-m4{grid-area:m4}
+.hx-h{display:flex;align-items:flex-start;gap:8px;min-width:0}
+.hx-n{flex:none;padding:1px 5px;border:1px solid var(--line-strong);border-radius:var(--r-1);font-family:var(--font-mono);font-size:10.5px;line-height:1.35;color:var(--fg-2);transition:background 300ms ease,border-color 300ms ease,color 300ms ease}
+.hx-tt{min-width:0}
+.hx-tt strong{display:block;font-family:var(--font-display);font-weight:600;font-size:14px;line-height:1.2;letter-spacing:-.01em}
+.hx-tt small{display:block;margin-top:1px;font-size:11px;line-height:1.3;color:var(--fg-2)}
+.hx-run .hx-m.is-on{border-color:transparent;box-shadow:0 0 0 1.5px var(--coral),0 18px 32px -22px rgba(255,80,71,.75);transform:translateY(-2px)}
+.hx-run .hx-m.is-on .hx-n{background:var(--coral);border-color:var(--coral);color:#0B0B0D}
+.hx-b{min-width:0;font-size:12px;line-height:1.35}
+.hx-b1{display:flex;align-items:center;gap:10px}
+.hx-pc{flex:none;display:flex;flex-direction:column;justify-content:space-between;width:44px;height:56px;padding:6px;border-radius:6px;background:linear-gradient(160deg,var(--coral),var(--ember));box-shadow:0 8px 14px -8px rgba(255,80,71,.8)}
+.hx-pc-m{display:block;width:18px;height:5px;background:linear-gradient(90deg,#0B0B0D 0 5px,transparent 5px 7px,rgba(11,11,13,.5) 7px)}
+.hx-pc b{font-family:var(--font-display);font-size:9.5px;line-height:1;font-weight:700;color:#0B0B0D}
+.hx-pc-c{display:block;width:24px;height:6px;border-radius:2px;background:#0B0B0D}
+.hx-fl{display:grid;gap:4px;min-width:0}
+.hx-ok{display:flex;align-items:center;gap:5px}
+.hx-ok .ico{width:13px;height:13px;stroke-width:2.2;color:var(--label-accent,#C4352A)}
+.hx-fl .hx-s2{font-weight:500}
+.hx-pg{display:block;height:4px;border-radius:2px;background:var(--bone-200);overflow:hidden}
+.hx-pg>i{display:block;height:100%;border-radius:2px;background:linear-gradient(90deg,var(--coral),var(--ember));transform-origin:left;transition:transform 900ms var(--ease-out) 150ms}
+.hx-b2{display:grid;gap:6px;font-size:11.5px}
+.hx-bq{justify-self:end;max-width:90%;padding:6px 8px;border-radius:10px 10px 2px 10px;background:var(--bone-200)}
+.hx-ans{display:grid;justify-items:start}
+.hx-ans>*{grid-area:1/1}
+.hx-ba{max-width:94%;padding:6px 8px;border-radius:10px 10px 10px 2px;background:#fff;border:1px solid var(--line)}
+.hx-ba em{font-style:normal;font-family:var(--font-mono);font-size:9.5px;letter-spacing:.06em;padding:1px 4px;margin-right:5px;border-radius:2px;background:#0B0B0D;color:#F4F3F0;vertical-align:1px}
+.hx-typ{display:inline-flex;gap:3px;padding:9px 10px;border-radius:10px 10px 10px 2px;background:#fff;border:1px solid var(--line);opacity:0}
+.hx-typ i{width:4px;height:4px;border-radius:50%;background:var(--fg-3)}
+.hx-typ i:nth-child(2){opacity:.7}.hx-typ i:nth-child(3){opacity:.45}
+.hx-b3{display:grid;gap:7px;justify-items:start}
+.hx-sg{justify-self:stretch;display:grid;grid-template-columns:repeat(4,1fr);gap:3px}
+.hx-sg i{position:relative;height:5px;border-radius:2px;background:var(--bone-200);overflow:hidden}
+.hx-sg i::after{content:"";position:absolute;inset:0;background:#0B0B0D;transform-origin:left;transition:transform 260ms ease-out}
+.hx-sg i:nth-child(2)::after{transition-delay:110ms}.hx-sg i:nth-child(3)::after{transition-delay:220ms}.hx-sg i:nth-child(4)::after{transition-delay:330ms}
+.hx-lib{display:inline-flex;align-items:center;gap:6px;height:22px;padding:0 8px;border-radius:var(--r-1);background:var(--ember);color:#0B0B0D;font-family:var(--font-mono);font-size:10.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.hx-b4{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.hx-k+.hx-k{padding-left:8px;border-left:1px solid var(--line)}
+.hx-k b{display:block;font-family:var(--font-display);font-weight:600;font-size:18px;line-height:1.1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.hx-k small{display:block;margin-top:2px;font-size:10.5px;line-height:1.25;color:var(--fg-2)}
+/* estados do ciclo: só valem com JS ativo (.hx-run); sem JS ou com reduced motion fica o estado completo */
+.hx-run .hx-s1,.hx-run .hx-s2{transition:opacity 320ms ease,transform 420ms var(--ease-out)}
+.hx-run .hx-typ{transition:opacity 200ms ease}
+.hx-run .hx-m[data-s="0"] .hx-s1,.hx-run .hx-m:not([data-s="2"]) .hx-s2{opacity:0;transform:translateY(5px)}
+.hx-run .hx-m:not([data-s="2"]) .hx-pg>i{transform:scaleX(0);transition:none}
+.hx-run .hx-m2[data-s="1"] .hx-typ{opacity:1;transition-delay:380ms}
+.hx-run .hx-m3[data-s="0"] .hx-sg i::after{transform:scaleX(0);transition:none}
+.hx-run .hx-m3[data-s="1"] .hx-s1{transition-delay:480ms}
+@media (max-width:1240px) and (min-width:901px){.compo .win.hx{width:100%}.hx-b2{font-size:11px}}
+@media (max-width:560px){
+  .hx .chrome{padding:10px 12px}
+  .hx .chrome span{display:none}
+  .hx .chrome .url{margin-left:0;font-size:10.5px}
+  .hx-top{padding:9px 12px}
+  .hx-eco{grid-template-columns:minmax(0,1fr);grid-template-rows:none;grid-template-areas:"hub" "m1" "m2" "m3" "m4";row-gap:8px;padding:12px}
+  .hx-eco::before{content:"";position:absolute;left:27px;top:40px;bottom:44px;width:1.5px;background:var(--line-strong)}
+  .hx-lines{display:none}
+  .hx-hub{justify-self:stretch;margin:0 0 4px}
+  .hx-av{margin-left:auto}
+  .hx-m{grid-template-columns:104px minmax(0,1fr);align-items:center;gap:10px;margin-left:26px;padding:10px}
+  .hx-m::before{content:"";position:absolute;left:-12px;top:50%;width:11px;height:1.5px;background:var(--line-strong);transition:background 300ms ease}
+  .hx-run .hx-m.is-on::before{background:var(--coral)}
+  .hx-run .hx-m.is-on{transform:none}
+  .hx-h{flex-direction:column;gap:5px}
+  .hx-tt strong{font-size:13px}
+  .hx-pc{width:36px;height:46px;padding:5px}
+  .hx-pc b{font-size:8px}
+  .hx-b{font-size:11.5px}
+  .hx-b2{font-size:11px}
+  .hx-k b{font-size:15px}
+  .hx-k small{font-size:10px}
+  .hx-b4{gap:6px}.hx-k+.hx-k{padding-left:6px}
+}
+
 /* ===== CUBOS DO HERO ===== */
 .cubes{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden;background:transparent;mix-blend-mode:normal}
 .cubes.top{z-index:90}
@@ -679,16 +780,26 @@ body{background:var(--bone-100)}
         <p class="lead" data-in style="--i:2">A Segbox é uma empresa de tecnologia e inovação para o mercado de seguros. Criamos plataformas white label, projetos sob medida e produtos próprios que já operam com milhares de corretores.</p>
         <div class="row" data-in style="--i:3"><a class="btn btn--lg" href="#contato">Fale com a gente <svg class="ico ico-move"><use href="#i-arrow-ur"/></svg></a><a class="btn btn--secondary btn--lg" href="#solucoes">O que fazemos</a></div>
       </div>
-      <div class="compo" data-in style="--i:2" aria-label="Exemplo ilustrativo da plataforma Otimize White Label">
+      <div class="compo" data-in style="--i:2" role="img" aria-label="Exemplo ilustrativo: portal da Sua Seguradora com login único, conectando marketing, assistente de IA, capacitação e painel da seguradora a toda a rede de corretores">
         <i class="sq sq--coral" style="width:210px;height:210px;right:6%;top:0"></i>
         <i class="sq sq--indigo" style="width:120px;height:120px;right:-2%;top:206px"></i>
         <i class="sq sq--ember" style="width:58px;height:58px;left:8%;top:12px"></i>
         <i class="sq sq--ink" style="width:34px;height:34px;left:2%;bottom:132px"></i>
-        <div class="win"><div class="chrome"><span></span><span></span><span></span><div class="url">hub.suaseguradora.com.br/corretor</div></div>
-          <div class="app" style="min-height:280px"><aside><div class="b"><i></i>Sua Seguradora</div><a class="on">Peças aprovadas</a><a>Landing pages</a><a>Meus leads</a><a>Agenda</a></aside>
-            <div class="main"><div class="flex" style="justify-content:space-between"><strong>Campanha do mês</strong><span class="tag tag--ok"><i class="dot"></i>Aprovada</span></div>
-              <div class="thumbs"><div class="thumb"><span class="tag">Travado</span></div><div class="thumb"><span class="tag">Travado</span></div><div class="thumb"><span class="tag">Editável</span></div><div class="thumb"><span class="tag">Travado</span></div></div>
-              <span class="label" style="color:var(--fg-3)">Exemplo ilustrativo</span></div></div></div>
+        <div class="win hx" id="hxWin"><div class="chrome"><span></span><span></span><span></span><div class="url">portal.suaseguradora.com.br</div><b class="hx-sso"><svg class="ico"><use href="#i-lock"/></svg>Login único</b></div>
+          <div class="hx-top"><span class="hx-brand"><i></i>Sua Seguradora</span><span class="hx-cap">Exemplo ilustrativo · dados fictícios</span></div>
+          <div class="hx-eco">
+            <svg class="hx-lines" aria-hidden="true"><line class="hx-ln" x1="25%" y1="18%" x2="50%" y2="50%"/><line class="hx-ln" x1="75%" y1="18%" x2="50%" y2="50%"/><line class="hx-ln" x1="25%" y1="82%" x2="50%" y2="50%"/><line class="hx-ln" x1="75%" y1="82%" x2="50%" y2="50%"/><line class="hx-flow" pathLength="100" x1="25%" y1="18%" x2="50%" y2="50%"/><line class="hx-flow" pathLength="100" x1="75%" y1="18%" x2="50%" y2="50%"/><line class="hx-flow" pathLength="100" x1="25%" y1="82%" x2="50%" y2="50%"/><line class="hx-flow" pathLength="100" x1="50%" y1="50%" x2="75%" y2="82%"/></svg>
+            <div class="hx-hub"><span class="hx-hub-i"><svg class="ico"><use href="#i-users"/></svg></span><span class="hx-hub-t"><strong>Sua rede</strong><small>1.240 corretores</small></span><span class="hx-av"><i></i><i></i><i></i><i></i></span></div>
+            <div class="hx-m hx-m1" data-s="2"><div class="hx-h"><span class="hx-n">01</span><span class="hx-tt"><strong>Marketing</strong><small>Otimize White Label</small></span></div>
+              <div class="hx-b hx-b1"><span class="hx-pc"><i class="hx-pc-m"></i><b>Seguro<br>Auto</b><i class="hx-pc-c"></i></span>
+                <span class="hx-fl"><span class="hx-s1 hx-ok"><svg class="ico"><use href="#i-check"/></svg>Campanha aprovada</span><span class="hx-s2">Enviada a 1.240 corretores</span><i class="hx-s2 hx-pg"><i></i></i></span></div></div>
+            <div class="hx-m hx-m2" data-s="2"><div class="hx-h"><span class="hx-n">02</span><span class="hx-tt"><strong>Assistente de IA</strong><small>SegZap White Label</small></span></div>
+              <div class="hx-b hx-b2"><span class="hx-s1 hx-bq">Como emito a 2ª via do boleto?</span><span class="hx-ans"><span class="hx-typ"><i></i><i></i><i></i></span><span class="hx-s2 hx-ba"><em>IA</em>No portal, em Financeiro › Boletos. Mando o link?</span></span></div></div>
+            <div class="hx-m hx-m3" data-s="2"><div class="hx-h"><span class="hx-n">03</span><span class="hx-tt"><strong>Capacitação</strong><small>Trilha Seguro Auto</small></span></div>
+              <div class="hx-b hx-b3"><span class="hx-sg"><i></i><i></i><i></i><i></i></span><span class="hx-s1 hx-ok"><svg class="ico"><use href="#i-check"/></svg>Trilha concluída</span><span class="hx-s2 hx-lib"><i class="dot"></i>Vendas liberadas</span></div></div>
+            <div class="hx-m hx-m4" data-s="2"><div class="hx-h"><span class="hx-n">04</span><span class="hx-tt"><strong>Painel da seguradora</strong><small>Visão de toda a rede</small></span></div>
+              <div class="hx-b hx-b4"><span class="hx-k"><b data-hx-n="986">986</b><small>corretores ativos</small></span><span class="hx-k"><b data-hx-n="3418">3.418</b><small>peças usadas</small></span><span class="hx-k"><b data-hx-n="7205">7.205</b><small>conversas</small></span></div></div>
+          </div></div>
       </div>
     </div>
   </section>
@@ -883,10 +994,7 @@ body{background:var(--bone-100)}
   var layer=document.createElement('div'); layer.className='cubes'; layer.setAttribute('aria-hidden','true'); document.body.insertBefore(layer,document.body.firstChild);
   var src={ob:'assets/cubo-obsidiana-preto-t.webp',co:'assets/cubo-coral-t.webp',in:'assets/cubo-obsidiana-preto-t.webp'};
   var defs=[
-    {k:'ob',fx:.97,fy:.08,size:290,par:-.10,rot:-8,rs:1,ph:0},
     {k:'co',fx:.03,fy:.09,size:160,par:.16,rot:12,rs:-1.3,ph:1.4},
-    {k:'in',fx:1.0,fy:.70,size:150,par:-.18,rot:-14,rs:1.2,ph:2.6},
-    {k:'co',fx:.56,fy:-.04,size:70,par:.10,rot:24,rs:1.8,ph:3.3},
     {k:'ob',fx:.04,fy:.82,size:90,par:.22,rot:30,rs:-1.5,ph:4.1},
     {k:'in',fx:.62,fy:1.0,size:80,par:-.12,rot:-20,rs:1.4,ph:5.2}
   ];
@@ -995,6 +1103,48 @@ body{background:var(--bone-100)}
     steps.forEach(function(s){var sr=s.getBoundingClientRect();var x=(sr.left-br.left+18)/br.width;s.classList.toggle('on',p>=x-0.001||p>.98)});
   }
   var q=false;addEventListener('scroll',function(){if(q)return;q=true;requestAnimationFrame(function(){q=false;tick()})},{passive:true});addEventListener('resize',tick);tick();
+})();
+</script>
+<script id="hx-js">
+/* hx: ciclo do panorama do hero (4 módulos acendem em sequência). Só timeouts + transform/opacity; pausa fora da tela e com aba oculta. */
+(function(){
+  var hxWin=document.getElementById('hxWin'); if(!hxWin)return;
+  var hxMods=[].slice.call(hxWin.querySelectorAll('.hx-m')), hxLns=[].slice.call(hxWin.querySelectorAll('.hx-ln')), hxFlows=[].slice.call(hxWin.querySelectorAll('.hx-flow'));
+  var hxHub=hxWin.querySelector('.hx-hub'), hxNums=[].slice.call(hxWin.querySelectorAll('[data-hx-n]'));
+  var hxRm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)');
+  var hxIdx=-1, hxTimers=[], hxRaf=0, hxOn=false, hxSeen=false, HX_STEP=3400;
+  function hxFmt(n){return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,'.')}
+  function hxLater(fn,ms){hxTimers.push(setTimeout(fn,ms))}
+  function hxFinal(){hxMods.forEach(function(m){m.setAttribute('data-s','2')});hxNums.forEach(function(el){el.textContent=hxFmt(+el.getAttribute('data-hx-n'))})}
+  function hxRestart(el,cls){el.classList.remove(cls);void el.getBoundingClientRect();el.classList.add(cls)}
+  function hxCount(){
+    var t0=0; hxNums.forEach(function(el){el.textContent=hxFmt(+el.getAttribute('data-hx-n')*.9)});
+    function hxTickN(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/1300),e=1-Math.pow(1-k,3);
+      hxNums.forEach(function(el){var v=+el.getAttribute('data-hx-n');el.textContent=hxFmt(v*(.9+.1*e))});
+      hxRaf=k<1?requestAnimationFrame(hxTickN):0}
+    hxRaf=requestAnimationFrame(hxTickN);
+  }
+  function hxStep(){
+    hxIdx=(hxIdx+1)%hxMods.length;
+    var i=hxIdx, m=hxMods[i];
+    hxMods.forEach(function(x,k){x.classList.toggle('is-on',k===i)});
+    hxLns.forEach(function(x,k){x.classList.toggle('on',k===i)});
+    hxFlows.forEach(function(x){x.classList.remove('go')});
+    m.setAttribute('data-s','0');
+    if(i===3){hxNums.forEach(function(el){el.textContent=hxFmt(+el.getAttribute('data-hx-n')*.9)})}
+    hxLater(function(){m.setAttribute('data-s','1');if(hxFlows[i])hxRestart(hxFlows[i],'go');if(i===3)hxCount()},320);
+    hxLater(function(){m.setAttribute('data-s','2');if(i!==3)hxRestart(hxHub,'hx-ping')},1250);
+    hxLater(hxStep,HX_STEP);
+  }
+  function hxStart(){if(hxOn)return;hxOn=true;hxIdx=hxIdx<0?-1:hxIdx-1;hxLater(hxStep,hxSeen?200:900);hxSeen=true}
+  function hxStop(){if(!hxOn)return;hxOn=false;hxTimers.forEach(clearTimeout);hxTimers=[];if(hxRaf){cancelAnimationFrame(hxRaf);hxRaf=0}hxFinal()}
+  var hxVis=false;
+  function hxSync(){if(hxVis&&!document.hidden&&!(hxRm&&hxRm.matches))hxStart();else hxStop()}
+  function hxMode(){if(hxRm&&hxRm.matches){hxStop();hxWin.classList.remove('hx-run');hxMods.forEach(function(x){x.classList.remove('is-on')});hxLns.forEach(function(x){x.classList.remove('on')})}else{hxWin.classList.add('hx-run');hxSync()}}
+  if('IntersectionObserver' in window){new IntersectionObserver(function(es){hxVis=es[es.length-1].isIntersecting;hxSync()},{threshold:.25}).observe(hxWin)}else{hxVis=true}
+  document.addEventListener('visibilitychange',hxSync);
+  if(hxRm){if(hxRm.addEventListener)hxRm.addEventListener('change',hxMode);else if(hxRm.addListener)hxRm.addListener(hxMode)}
+  hxMode();
 })();
 </script>
 <!-- sgm:begin · menu móvel gerado a partir do menu desktop + revelar a UI-alvo no mobile. Bloco idêntico em todas as páginas. -->
