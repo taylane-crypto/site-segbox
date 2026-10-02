@@ -1620,11 +1620,12 @@ body{background:var(--bone-100)}
 <div class="cg">
 <div><span class="label">[ 08 ] Contato</span><h2 class="t-display h-balance" style="margin-top:14px">Leve o SegZap para a sua rede.</h2><p class="t-lead" style="margin-top:16px;max-width:40ch">Conte sobre a sua operação. A Segbox responde com uma proposta de implantação para a sua organização.</p></div>
 <form class="glass" id="leadForm" novalidate>
-<div class="field"><label class="label" for="f1">Nome<span class="req" aria-hidden="true">*</span></label><input class="input" id="f1" name="nome" autocomplete="name" placeholder="Seu nome" required aria-describedby="f1e"><span class="hint err" id="f1e" hidden><svg class="ico"><use href="#i-alert"/></svg>Informe seu nome.</span></div>
+<div class="field"><label class="label" for="f1">Nome<span class="req" aria-hidden="true">*</span></label><input class="input" id="f1" name="nome" autocomplete="given-name" placeholder="Seu nome" required aria-describedby="f1e"><span class="hint err" id="f1e" hidden><svg class="ico"><use href="#i-alert"/></svg>Informe seu nome.</span></div>
+<div class="field"><label class="label" for="f1s">Sobrenome<span class="req" aria-hidden="true">*</span></label><input class="input" id="f1s" name="sobrenome" autocomplete="family-name" placeholder="Seu sobrenome" required aria-describedby="f1se"><span class="hint err" id="f1se" hidden><svg class="ico"><use href="#i-alert"/></svg>Informe seu sobrenome.</span></div>
+<div class="field" style="grid-column:1/-1"><label class="label" for="f4">E-mail corporativo<span class="req" aria-hidden="true">*</span></label><input class="input" id="f4" name="email" type="email" autocomplete="email" placeholder="voce@empresa.com.br" required aria-describedby="f4e"><span class="hint err" id="f4e" hidden><svg class="ico"><use href="#i-alert"/></svg>Informe um e-mail completo.</span></div>
 <div class="field"><label class="label" for="f2">Cargo</label><input class="input" id="f2" name="cargo" autocomplete="organization-title" placeholder="Ex.: Gerente de Canais"></div>
 <div class="field"><label class="label" for="f3">Empresa<span class="req" aria-hidden="true">*</span></label><input class="input" id="f3" name="empresa" autocomplete="organization" placeholder="Nome da organização" required aria-describedby="f3e"><span class="hint err" id="f3e" hidden><svg class="ico"><use href="#i-alert"/></svg>Informe a organização.</span></div>
 <div class="field"><label class="label" for="f5">Tipo de organização</label><select class="select" id="f5" name="tipo"><option>Seguradora</option><option>Assessoria</option><option>Entidade do setor</option><option>Outro</option></select></div>
-<div class="field"><label class="label" for="f4">E-mail corporativo<span class="req" aria-hidden="true">*</span></label><input class="input" id="f4" name="email" type="email" autocomplete="email" placeholder="voce@empresa.com.br" required aria-describedby="f4e"><span class="hint err" id="f4e" hidden><svg class="ico"><use href="#i-alert"/></svg>Informe um e-mail completo.</span></div>
 <div class="field"><label class="label" for="f6">Tamanho da rede</label><select class="select" id="f6" name="rede"><option value="">Opcional</option><option>Até 100 corretores</option><option>101 a 1.000</option><option>1.001 a 10.000</option><option>Mais de 10.000</option></select></div>
 <input type="hidden" name="interesse" value="SegZap White Label">
 <div style="grid-column:1/-1;display:flex;flex-wrap:wrap;gap:12px;align-items:center"><button class="btn btn--lg" type="submit" id="fBtn"><span>Levar o SegZap para a minha rede</span></button><span class="hint" id="fMsg" role="status"></span></div>
@@ -1664,7 +1665,7 @@ body{background:var(--bone-100)}
   document.addEventListener('click',function(){closeDD()}); document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDD()});
   /* menu móvel: drawer no bloco sgm *//* ---------- formulário: erro só aparece depois da primeira tentativa de envio ---------- */
   var lf=$('#leadForm'), fm=$('#fMsg'), fb=$('#fBtn'), tried=false;
-  var RULES=[['#f1',function(v){return v.trim().length>1}],['#f3',function(v){return v.trim().length>1}],['#f4',function(v){return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim())}]];
+  var RULES=[['#f1',function(v){return v.trim().length>1}],['#f1s',function(v){return v.trim().length>1}],['#f3',function(v){return v.trim().length>1}],['#f4',function(v){return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim())}]];
   function check(show){var bad=null;RULES.forEach(function(r){var el=$(r[0]),ok=r[1](el.value),h=$(r[0]+'e');
     if(show){el.classList.toggle('is-error',!ok);h.hidden=ok;if(ok)el.removeAttribute('aria-invalid');else el.setAttribute('aria-invalid','true')}
     if(!ok&&!bad)bad=el});return bad}

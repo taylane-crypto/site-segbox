@@ -918,11 +918,12 @@ html{background:var(--bg)}
 <div class="cg">
 <div><span class="label">[ 09 ] Contato</span><h2 class="t-display h-balance" style="margin-top:14px">Agora que você conhece a gente, conte o desafio da sua rede.</h2><p class="t-lead" style="margin-top:16px;max-width:40ch">Uma conversa curta para entender o que a sua organização precisa: uma plataforma pronta ou algo feito do zero.</p></div>
 <form class="glass" id="sbForm" novalidate>
-<div class="field"><label class="label" for="sbF_n">Nome<span class="req" aria-hidden="true">*</span></label><input class="input" id="sbF_n" name="nome" autocomplete="name" placeholder="Seu nome" required aria-describedby="sbF_ne"><span class="hint err" id="sbF_ne" hidden><svg class="ico"><use href="#i-alert"/></svg>Informe seu nome.</span></div>
+<div class="field"><label class="label" for="sbF_n">Nome<span class="req" aria-hidden="true">*</span></label><input class="input" id="sbF_n" name="nome" autocomplete="given-name" placeholder="Seu nome" required aria-describedby="sbF_ne"><span class="hint err" id="sbF_ne" hidden><svg class="ico"><use href="#i-alert"/></svg>Informe seu nome.</span></div>
+<div class="field"><label class="label" for="sbF_s">Sobrenome<span class="req" aria-hidden="true">*</span></label><input class="input" id="sbF_s" name="sobrenome" autocomplete="family-name" placeholder="Seu sobrenome" required aria-describedby="sbF_se"><span class="hint err" id="sbF_se" hidden><svg class="ico"><use href="#i-alert"/></svg>Informe seu sobrenome.</span></div>
 <div class="field"><label class="label" for="sbF_c">Cargo</label><input class="input" id="sbF_c" name="cargo" autocomplete="organization-title" placeholder="Ex.: Diretor de Canais"></div>
 <div class="field"><label class="label" for="sbF_o">Empresa<span class="req" aria-hidden="true">*</span></label><input class="input" id="sbF_o" name="empresa" autocomplete="organization" placeholder="Nome da organização" required aria-describedby="sbF_oe"><span class="hint err" id="sbF_oe" hidden><svg class="ico"><use href="#i-alert"/></svg>Informe a organização.</span></div>
+<div class="field"><label class="label" for="sbF_e">E-mail corporativo<span class="req" aria-hidden="true">*</span></label><input class="input" id="sbF_e" name="email" type="email" autocomplete="email" placeholder="voce@empresa.com.br" required aria-describedby="sbF_ee"><span class="hint err" id="sbF_ee" hidden><svg class="ico"><use href="#i-alert"/></svg>Informe um e-mail completo.</span></div>
 <div class="field"><label class="label" for="sbF_i">Interesse</label><select class="select" id="sbF_i" name="interesse"><option>Otimize White Label</option><option>SegZap White Label</option><option>Projeto sob medida</option><option selected>Ainda não sei</option></select></div>
-<div class="field full"><label class="label" for="sbF_e">E-mail corporativo<span class="req" aria-hidden="true">*</span></label><input class="input" id="sbF_e" name="email" type="email" autocomplete="email" placeholder="voce@empresa.com.br" required aria-describedby="sbF_ee"><span class="hint err" id="sbF_ee" hidden><svg class="ico"><use href="#i-alert"/></svg>Informe um e-mail completo.</span></div>
 <div style="grid-column:1/-1;display:flex;flex-wrap:wrap;gap:12px;align-items:center"><button class="btn btn--lg" type="submit" id="sbFBtn"><span>Enviar</span></button><span class="hint" id="sbFMsg" role="status"></span></div>
 <p class="micro" style="grid-column:1/-1">Retornamos pelo e-mail informado.</p>
 </form>
@@ -977,7 +978,7 @@ html{background:var(--bg)}
 (function(){
   var f=document.getElementById('sbForm');if(!f)return;
   var msg=document.getElementById('sbFMsg');
-  var req=[['sbF_n',function(v){return v.trim().length>1}],['sbF_o',function(v){return v.trim().length>1}],['sbF_e',function(v){return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim())}]];
+  var req=[['sbF_n',function(v){return v.trim().length>1}],['sbF_s',function(v){return v.trim().length>1}],['sbF_o',function(v){return v.trim().length>1}],['sbF_e',function(v){return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim())}]];
   f.addEventListener('submit',function(ev){
     ev.preventDefault();var first=null;
     req.forEach(function(r){var el=document.getElementById(r[0]),ok=r[1](el.value),h=document.getElementById(r[0]+'e');el.classList.toggle('is-error',!ok);el.setAttribute('aria-invalid',ok?'false':'true');if(h)h.hidden=ok;if(!ok&&!first)first=el;});

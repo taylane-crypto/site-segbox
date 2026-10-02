@@ -1115,14 +1115,15 @@ blockquote footer{margin-top:20px;display:flex;align-items:center;gap:12px;color
       </div>
 
       <div class="spec" id="s-form">
-        <header><h3>Formulário de contato</h3><p>Pede cargo e empresa, porque quem preenche é decisor. Tente enviar vazio para ver o erro; com dados, para ver o carregamento e o sucesso.</p><code>.field · .input · .select · .btn</code></header>
+        <header><h3>Formulário de contato</h3><p>Pede nome e sobrenome em campos separados, cargo e empresa, porque quem preenche é decisor. Tente enviar vazio para ver o erro; com dados, para ver o carregamento e o sucesso.</p><code>.field · .input · .select · .btn</code></header>
         <div class="stage" data-surface="paper">
           <form id="leadForm" novalidate style="display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:760px">
-            <div class="field"><label class="label" for="f1">Nome</label><input class="input" id="f1" autocomplete="name" placeholder="Seu nome"></div>
+            <div class="field"><label class="label" for="f1">Nome</label><input class="input" id="f1" name="nome" autocomplete="given-name" placeholder="Seu nome" required aria-describedby="f1e"><span class="hint err" id="f1e" hidden><svg class="ico"><use href="#i-alert"/></svg>Informe seu nome.</span></div>
+            <div class="field"><label class="label" for="f1s">Sobrenome</label><input class="input" id="f1s" name="sobrenome" autocomplete="family-name" placeholder="Seu sobrenome" required aria-describedby="f1se"><span class="hint err" id="f1se" hidden><svg class="ico"><use href="#i-alert"/></svg>Informe seu sobrenome.</span></div>
             <div class="field"><label class="label" for="f2">Cargo</label><input class="input" id="f2" placeholder="Ex.: Gerente de Canais"></div>
             <div class="field"><label class="label" for="f3">Empresa</label><input class="input" id="f3" autocomplete="organization" placeholder="Nome da seguradora"></div>
             <div class="field"><label class="label" for="f4">E-mail corporativo</label><input class="input" id="f4" type="email" autocomplete="email" placeholder="voce@empresa.com.br"><span class="hint err" id="f4e" hidden><svg class="ico"><use href="#i-alert"/></svg>Informe um e-mail completo, como ana@empresa.com.br.</span></div>
-            <div class="field" style="grid-column:1/-1"><label class="label" for="f5">Interesse</label><select class="select" id="f5"><option>Otimize White Label</option><option>SegZap White Label</option><option>Projeto sob medida</option><option>Ainda não sei</option></select></div>
+            <div class="field"><label class="label" for="f5">Interesse</label><select class="select" id="f5"><option>Otimize White Label</option><option>SegZap White Label</option><option>Projeto sob medida</option><option>Ainda não sei</option></select></div>
             <div style="grid-column:1/-1;display:flex;flex-wrap:wrap;gap:12px;align-items:center"><button class="btn" type="submit" id="fBtn"><span>Enviar</span></button><span class="hint" id="fMsg" role="status"></span></div>
           </form>
         </div>
@@ -1138,9 +1139,10 @@ blockquote footer{margin-top:20px;display:flex;align-items:center;gap:12px;color
             <div><span class="label">Contato</span><h3 class="t-display h-balance" style="margin-top:14px">Conte o desafio da sua rede de corretores.</h3><p class="t-lead" style="margin-top:16px;max-width:40ch">Uma conversa curta para entender o que sua seguradora precisa: uma plataforma pronta ou algo feito do zero.</p></div>
             <form class="glass" data-demo novalidate>
               <div class="field"><label class="label" for="dc1">Nome</label><input class="input" id="dc1" placeholder="Seu nome"></div>
+              <div class="field"><label class="label" for="dc1s">Sobrenome</label><input class="input" id="dc1s" placeholder="Seu sobrenome"></div>
               <div class="field"><label class="label" for="dc2">Cargo</label><input class="input" id="dc2" placeholder="Ex.: Gerente de Canais"></div>
               <div class="field"><label class="label" for="dc3">Empresa</label><input class="input" id="dc3" placeholder="Nome da seguradora"></div>
-              <div class="field"><label class="label" for="dc4">E-mail corporativo</label><input class="input" id="dc4" type="email" placeholder="voce@empresa.com.br"></div>
+              <div class="field" style="grid-column:1/-1"><label class="label" for="dc4">E-mail corporativo</label><input class="input" id="dc4" type="email" placeholder="voce@empresa.com.br"></div>
               <div style="grid-column:1/-1"><button class="btn btn--lg" type="submit" style="width:100%">Enviar</button></div>
             </form>
           </div>
@@ -1331,11 +1333,13 @@ blockquote footer{margin-top:20px;display:flex;align-items:center;gap:12px;color
   $$('form[data-demo]').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();toast('ok')})});
 
   /* formulário */
-  var lf=$('#leadForm'), fm=$('#fMsg'), fb=$('#fBtn'), f4=$('#f4'), f4e=$('#f4e');
+  var lf=$('#leadForm'), fm=$('#fMsg'), fb=$('#fBtn'), f4=$('#f4'), f4e=$('#f4e'), f1=$('#f1'), f1e=$('#f1e'), f1s=$('#f1s'), f1se=$('#f1se');
   lf.addEventListener('submit',function(e){
-    e.preventDefault(); var ok=/^\S+@\S+\.\S+$/.test(f4.value.trim());
-    f4.classList.toggle('is-error',!ok); f4e.hidden=ok; fm.className='hint';
-    if(!ok){fm.textContent='Corrija o campo destacado.';fm.className='hint err';f4.focus();return}
+    e.preventDefault(); var bad=null, nb=0;
+    [[f1,f1e,f1.value.trim().length>1],[f1s,f1se,f1s.value.trim().length>1],[f4,f4e,/^\S+@\S+\.\S+$/.test(f4.value.trim())]].forEach(function(c){
+      c[0].classList.toggle('is-error',!c[2]); c[1].hidden=c[2]; if(c[2])c[0].removeAttribute('aria-invalid'); else c[0].setAttribute('aria-invalid','true'); if(!c[2]){nb++; if(!bad)bad=c[0]}});
+    var ok=!bad; fm.className='hint';
+    if(!ok){fm.textContent=nb>1?'Corrija os campos destacados.':'Corrija o campo destacado.';fm.className='hint err';bad.focus();return}
     fb.classList.add('is-loading');fb.setAttribute('aria-busy','true');fb.innerHTML='<span class="spin"></span><span>Enviando</span>';fm.textContent='';
     setTimeout(function(){fb.classList.remove('is-loading');fb.removeAttribute('aria-busy');fb.innerHTML='<span>Enviar</span>';fm.textContent='Prévia: o formulário não envia dados de verdade.';toast('ok')},1400);
   });

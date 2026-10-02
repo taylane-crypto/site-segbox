@@ -460,9 +460,8 @@ body{background:var(--bone-100)}
 .contact-d .cg{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,56px);align-items:center}
 .contact-d .label{color:var(--fg-2)}
 .contact-d .t-lead{color:var(--fg-2)}
-.contact-d form{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:22px;border-radius:12px}
-.contact-d .select option{background:#18181C;color:#F4F3F0}
-@media (max-width:900px){.contact-d .cg{grid-template-columns:1fr}.contact-d form{grid-template-columns:1fr}}
+.contact-d .cg--solo{grid-template-columns:1fr}.contact-d .cg--solo>div{max-width:min(100%,680px)}
+@media (max-width:900px){.contact-d .cg{grid-template-columns:1fr}}
 /* ============ BOTÃO COM DEGRADÊ EM MOVIMENTO ============ */
 .btn--liquid{position:relative;isolation:isolate;overflow:hidden;--grad-liquid:linear-gradient(110deg,#FF5047 0%,#FF8308 28%,#FF5047 52%,#0B0B0D 78%,#FF5047 100%);transition:color 320ms ease 80ms}
 .btn--liquid::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--grad-liquid);background-size:300% 100%;opacity:0;transition:opacity 480ms var(--ease-out);animation:liquid-flow 3s linear infinite;animation-play-state:paused}
@@ -973,9 +972,6 @@ a.lgr-c:hover .go{transform:translate(2px,-2px);color:var(--fg)}
 .lgct-l .lg-by{color:#C9CBD3}
 .lgct-l .lg-by b{color:#fff}
 .lgct-l .draft-tag{color:#C9CBD3}
-.contact-d form h3{grid-column:1/-1;font-family:var(--font-display);font-weight:600;font-size:1.2rem;letter-spacing:-.02em}
-.contact-d form>p.t-small{grid-column:1/-1;color:#B8BAC4;margin-top:-6px}
-.contact-d .radio{font-size:14px}
 
 /* ---------- RESPONSIVO ---------- */
 .lg-hero .grid2>*,.lg-two>*,.lg-top2>*,.lgj-grid>*,.lgcr-g>*,.lg-faq .g>*,.lgx-g>*{min-width:0}
@@ -1113,7 +1109,7 @@ a.lgr-c:hover .go{transform:translate(2px,-2px);color:var(--fg)}
           </div></div>
         <a href="sobre.html">Sobre</a>
       </nav>
-      <div class="flex" style="gap:8px"><a class="btn btn--sm cta-d" href="#contato">Fale com a gente</a><button class="btn btn--secondary btn--icon btn--sm menu-btn" type="button" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-haspopup="dialog" data-sgm-menu="#snav .nav-links" data-sgm-cta="#snav .cta-d" data-sgm-logo="#snav .logo"><svg class="ico"><use href="#i-menu"/></svg></button></div>
+      <div class="flex" style="gap:8px"><a class="btn btn--sm cta-d" href="https://app.leadsgo.online" target="_blank" rel="noopener">Comprar leads</a><button class="btn btn--secondary btn--icon btn--sm menu-btn" type="button" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-haspopup="dialog" data-sgm-menu="#snav .nav-links" data-sgm-cta="#snav .cta-d" data-sgm-logo="#snav .logo"><svg class="ico"><use href="#i-menu"/></svg></button></div>
     </div>
   </div>
 </header>
@@ -1390,27 +1386,18 @@ a.lgr-c:hover .go{transform:translate(2px,-2px);color:var(--fg)}
 </div>
 </div></section>
 
-<!-- [10] PRÓXIMO PASSO · CTA para o portal + formulário de dúvidas -->
-<section class="sect" id="contato" style="padding-top:clamp(40px,6vw,72px)"><div class="container">
+<!-- [10] PRÓXIMO PASSO · bloco final de CTA para o portal (sem formulário: decisão 2026-10-02) -->
+<section class="sect" id="comecar" style="padding-top:clamp(40px,6vw,72px)"><div class="container">
 <div class="contact-d" data-surface="ink">
 <i class="sq sq--coral" style="width:150px;height:150px;right:7%;top:26px" aria-hidden="true"></i>
 <i class="sq sq--v" style="width:60px;height:60px;right:1.5%;bottom:34px" aria-hidden="true"></i>
 <i class="sq sq--ember" style="width:40px;height:40px;right:36%;top:16px" aria-hidden="true"></i>
-<div class="cg">
+<div class="cg cg--solo">
 <div class="lgct-l"><span class="label">[ 10 ] Próximo passo</span><h2 class="t-display h-balance h-fade" style="margin-top:14px">Pare de esperar indicação. <span class="h-fade-2">Escolha seu próximo cliente.</span></h2><p class="t-lead" style="margin-top:16px;max-width:40ch">Cadastre-se no portal, abra a Vitrine e capte o primeiro lead hoje.</p>
 <div class="row"><a class="btn btn--lg btn--liquid" href="https://app.leadsgo.online" target="_blank" rel="noopener">Comprar leads <svg class="ico ico-move"><use href="#i-arrow-ur"/></svg></a></div>
 <p class="lg-micro">Sem assinatura. Compre só os leads que quiser.</p>
 <p class="lg-by"><span>Um produto <b>Segbox</b>.</span></p>
 </div>
-<form class="glass" id="lgForm" novalidate>
-<h3>Ficou alguma dúvida?</h3>
-<p class="t-small">Deixe seu WhatsApp e a Segbox te chama.</p>
-<div class="field"><label class="label" for="lgF1">Nome</label><input class="input" id="lgF1" autocomplete="name" placeholder="Seu nome"></div>
-<div class="field"><label class="label" for="lgF2">WhatsApp</label><input class="input" id="lgF2" type="tel" inputmode="tel" autocomplete="tel" placeholder="(62) 90000-0000" aria-describedby="lgF2e" required><span class="hint err" id="lgF2e" hidden><svg class="ico"><use href="#i-alert"/></svg>Informe o WhatsApp com DDD.</span></div>
-<div class="field" style="grid-column:1/-1"><label class="label" for="lgF3">Nome da corretora</label><input class="input" id="lgF3" autocomplete="organization" placeholder="Nome da sua corretora"></div>
-<fieldset class="field" style="grid-column:1/-1;border:0;padding:0;margin:0"><legend class="label" style="color:var(--fg-2);margin-bottom:8px">Ramo que mais te interessa</legend><div style="display:flex;gap:20px;flex-wrap:wrap"><label class="radio"><input type="radio" name="lgRamo" value="auto" checked><span class="box"></span>Auto</label><label class="radio"><input type="radio" name="lgRamo" value="saude"><span class="box"></span>Saúde</label><label class="radio"><input type="radio" name="lgRamo" value="consorcio"><span class="box"></span>Consórcio</label></div></fieldset>
-<div style="grid-column:1/-1;display:flex;flex-wrap:wrap;gap:12px;align-items:center"><button class="btn btn--secondary" type="submit" id="lgFBtn"><span>Quero que me chamem</span></button><span class="hint" id="lgFMsg" role="status"></span></div>
-</form>
 </div>
 </div>
 </div></section>
@@ -1503,7 +1490,7 @@ window.lgKit=window.lgKit||(function(){
 })();
 </script>
 <script>
-/* LEADSGO! · base: menu, dropdowns, FAQ, formulário, entrada ao rolar. Prefixo lgb. */
+/* LEADSGO! · base: menu, dropdowns, FAQ, entrada ao rolar. Prefixo lgb. */
 (function(){
   var lgbQ=function(s,r){return (r||document).querySelector(s)}, lgbQA=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
   var lgbDds=lgbQA('[data-dd]');
@@ -1512,14 +1499,9 @@ window.lgKit=window.lgKit||(function(){
   document.addEventListener('click',function(){lgbCloseDD()});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')lgbCloseDD()});
   /* menu móvel: drawer no bloco sgm */
+  /* menu móvel: o CTA do drawer (clonado do header pelo bloco sgm) abre o app em nova aba, como o do header */
+  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('.sgm-ft a[href^="http"]');if(a){a.target='_blank';a.rel='noopener'}},true);
   lgbQA('.acc-h').forEach(function(h){h.addEventListener('click',function(){var it=h.closest('.acc-item'),o=!it.classList.contains('open');it.classList.toggle('open',o);h.setAttribute('aria-expanded',o?'true':'false')})});
-  var lgbF=lgbQ('#lgForm'),lgbMsg=lgbQ('#lgFMsg'),lgbBtn=lgbQ('#lgFBtn'),lgbWa=lgbQ('#lgF2'),lgbWaE=lgbQ('#lgF2e');
-  if(lgbF)lgbF.addEventListener('submit',function(e){
-    e.preventDefault();var ok=lgbWa.value.replace(/\D/g,'').length>=10;lgbWa.classList.toggle('is-error',!ok);lgbWa.setAttribute('aria-invalid',ok?'false':'true');lgbWaE.hidden=ok;
-    if(!ok){lgbMsg.textContent='Corrija o campo destacado.';lgbWa.focus();return}
-    lgbBtn.classList.add('is-loading');lgbBtn.innerHTML='<span class="spin"></span><span>Enviando</span>';lgbMsg.textContent='';
-    setTimeout(function(){lgbBtn.classList.remove('is-loading');lgbBtn.innerHTML='<span>Quero que me chamem</span>';lgbMsg.textContent='Recebido. A Segbox te chama no WhatsApp. (Prévia: nada foi enviado.)'},1200);
-  });
   var lgbRv=lgbQA('[data-rv]');
   if(window.lgKit.reduced()){lgbRv.forEach(function(e){e.classList.add('in')});return}
   function lgbRvTick(){var vh=innerHeight;lgbRv.forEach(function(e){if(!e.classList.contains('in')&&e.getBoundingClientRect().top<vh*.92)e.classList.add('in')})}

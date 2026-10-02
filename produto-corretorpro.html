@@ -460,9 +460,8 @@ body{background:var(--bone-100)}
 .contact-d .cg{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,56px);align-items:center}
 .contact-d .label{color:var(--fg-2)}
 .contact-d .t-lead{color:var(--fg-2)}
-.contact-d form{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:22px;border-radius:12px}
-.contact-d .select option{background:#18181C;color:#F4F3F0}
-@media (max-width:900px){.contact-d .cg{grid-template-columns:1fr}.contact-d form{grid-template-columns:1fr}}
+.contact-d .cg--solo{grid-template-columns:1fr}.contact-d .cg--solo>div{max-width:min(100%,680px)}
+@media (max-width:900px){.contact-d .cg{grid-template-columns:1fr}}
 /* ============ BOTÃO COM DEGRADÊ EM MOVIMENTO ============ */
 .btn--liquid{position:relative;isolation:isolate;overflow:hidden;--grad-liquid:linear-gradient(110deg,#FF5047 0%,#FF8308 28%,#FF5047 52%,#0B0B0D 78%,#FF5047 100%);transition:color 320ms ease 80ms}
 .btn--liquid::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--grad-liquid);background-size:300% 100%;opacity:0;transition:opacity 480ms var(--ease-out);animation:liquid-flow 3s linear infinite;animation-play-state:paused}
@@ -1015,9 +1014,6 @@ button.cpp-btn:focus-visible{outline:2px solid var(--cp-nv);outline-offset:2px}
 .contact-d .micro{font-size:12.5px;color:#B8BDD6}
 .cpc-l .row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:26px}
 .cpc-l .cp-micro{color:#C4C8DC}
-.contact-d form h3{grid-column:1/-1;font-family:var(--font-display);font-weight:600;font-size:1.2rem;letter-spacing:-.02em}
-.contact-d form>p.t-small{grid-column:1/-1;color:#B8BDD6;margin-top:-6px}
-.contact-d .radio{font-size:14px}
 .cp-oz{margin-top:18px;font-size:14px;color:var(--fg-2)}
 .cp-oz a{color:var(--fg);border-bottom:1px solid var(--line-strong);text-decoration:none}
 .cp-oz a:hover{border-color:var(--fg)}
@@ -1159,7 +1155,7 @@ button.cpp-btn:focus-visible{outline:2px solid var(--cp-nv);outline-offset:2px}
           </div></div>
         <a href="sobre.html">Sobre</a>
       </nav>
-      <div class="flex" style="gap:8px"><a class="btn btn--sm cta-d" href="#contato">Fale com a gente</a><button class="btn btn--secondary btn--icon btn--sm menu-btn" type="button" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-haspopup="dialog" data-sgm-menu="#snav .nav-links" data-sgm-cta="#snav .cta-d" data-sgm-logo="#snav .logo"><svg class="ico"><use href="#i-menu"/></svg></button></div>
+      <div class="flex" style="gap:8px"><a class="btn btn--sm cta-d" href="https://app.corretorpro.online/login" target="_blank" rel="noopener">Monte seu site</a><button class="btn btn--secondary btn--icon btn--sm menu-btn" type="button" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-haspopup="dialog" data-sgm-menu="#snav .nav-links" data-sgm-cta="#snav .cta-d" data-sgm-logo="#snav .logo"><svg class="ico"><use href="#i-menu"/></svg></button></div>
     </div>
   </div>
 </header>
@@ -1495,26 +1491,17 @@ button.cpp-btn:focus-visible{outline:2px solid var(--cp-nv);outline-offset:2px}
 </div>
 </div></section>
 
-<!-- [11] PRÓXIMO PASSO · CTA direto para o app + formulário de dúvidas -->
-<section class="sect" id="contato" style="padding-top:clamp(40px,6vw,72px)"><div class="container">
+<!-- [11] PRÓXIMO PASSO · bloco final de CTA direto para o app (sem formulário: decisão 2026-10-02) -->
+<section class="sect" id="comecar" style="padding-top:clamp(40px,6vw,72px)"><div class="container">
 <div class="contact-d" data-surface="ink">
 <i class="sq sq--cp" style="width:150px;height:150px;right:7%;top:26px" aria-hidden="true"></i>
 <i class="sq sq--coral" style="width:84px;height:84px;right:1.5%;bottom:34px" aria-hidden="true"></i>
 <i class="sq sq--ember" style="width:40px;height:40px;right:36%;top:16px" aria-hidden="true"></i>
-<div class="cg">
+<div class="cg cg--solo">
 <div class="cpc-l"><span class="label">[ 11 ] Próximo passo</span><h2 class="t-display h-balance h-fade" style="margin-top:14px">Monte agora. <span class="h-fade-2">Publique quando gostar.</span></h2><p class="t-lead" style="margin-top:16px;max-width:40ch">Crie a conta, escolha o template e veja o site pronto antes de assinar.</p>
 <div class="row"><a class="btn btn--lg btn--liquid" href="https://app.corretorpro.online/login" target="_blank" rel="noopener">Monte seu site <svg class="ico ico-move"><use href="#i-arrow-right"/></svg></a></div>
-<p class="cp-micro">Veja a prévia antes de assinar.</p>
+<p class="cp-micro">Na tela de entrada, clique em “Criar uma Conta”. Veja a prévia antes de assinar.</p>
 </div>
-<form class="glass" id="cpForm" novalidate>
-<h3>Ficou alguma dúvida?</h3>
-<p class="t-small">Deixe seu WhatsApp e a Segbox te chama.</p>
-<div class="field"><label class="label" for="cpF1">Nome</label><input class="input" id="cpF1" autocomplete="name" placeholder="Seu nome"></div>
-<div class="field"><label class="label" for="cpF2">WhatsApp</label><input class="input" id="cpF2" type="tel" inputmode="tel" autocomplete="tel" placeholder="(19) 90000-0000" aria-describedby="cpF2e" required><span class="hint err" id="cpF2e" hidden><svg class="ico"><use href="#i-alert"/></svg>Informe o WhatsApp com DDD.</span></div>
-<div class="field" style="grid-column:1/-1"><label class="label" for="cpF3">Nome da corretora</label><input class="input" id="cpF3" autocomplete="organization" placeholder="Nome da sua corretora"></div>
-<fieldset class="field" style="grid-column:1/-1;border:0;padding:0;margin:0"><legend class="label" style="color:var(--fg-2);margin-bottom:8px">Já tem domínio?</legend><div style="display:flex;gap:20px;flex-wrap:wrap"><label class="radio"><input type="radio" name="cpDom" value="sim"><span class="box"></span>Sim</label><label class="radio"><input type="radio" name="cpDom" value="nao" checked><span class="box"></span>Ainda não</label></div></fieldset>
-<div style="grid-column:1/-1;display:flex;flex-wrap:wrap;gap:12px;align-items:center"><button class="btn btn--secondary" type="submit" id="cpFBtn"><span>Quero que me chamem</span></button><span class="hint" id="cpFMsg" role="status"></span></div>
-</form>
 </div>
 </div>
 <p class="cp-oz">Quer posts, e-mail marketing e mais? <a href="produto-otimize.html">Conheça a Otimize</a></p>
@@ -1558,7 +1545,7 @@ window.cpKit=window.cpKit||(function(){
 })();
 </script>
 <script>
-/* CORRETORPRO · base: menu, dropdowns, FAQ, formulário de dúvidas, entrada ao rolar. Prefixo cpb. */
+/* CORRETORPRO · base: menu, dropdowns, FAQ, entrada ao rolar. Prefixo cpb. */
 (function(){
   var cpbQ=function(s,r){return (r||document).querySelector(s)}, cpbQA=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
   var cpbDds=cpbQA('[data-dd]');
@@ -1567,14 +1554,9 @@ window.cpKit=window.cpKit||(function(){
   document.addEventListener('click',function(){cpbCloseDD()});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')cpbCloseDD()});
   /* menu móvel: drawer no bloco sgm */
+  /* menu móvel: o CTA do drawer (clonado do header pelo bloco sgm) abre o app em nova aba, como o do header */
+  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('.sgm-ft a[href^="http"]');if(a){a.target='_blank';a.rel='noopener'}},true);
   cpbQA('.acc-h').forEach(function(h){h.addEventListener('click',function(){var it=h.closest('.acc-item'),o=!it.classList.contains('open');it.classList.toggle('open',o);h.setAttribute('aria-expanded',o?'true':'false')})});
-  var cpbF=cpbQ('#cpForm'),cpbMsg=cpbQ('#cpFMsg'),cpbBtn=cpbQ('#cpFBtn'),cpbWa=cpbQ('#cpF2'),cpbWaE=cpbQ('#cpF2e');
-  if(cpbF)cpbF.addEventListener('submit',function(e){
-    e.preventDefault();var ok=cpbWa.value.replace(/\D/g,'').length>=10;cpbWa.classList.toggle('is-error',!ok);cpbWa.setAttribute('aria-invalid',ok?'false':'true');cpbWaE.hidden=ok;
-    if(!ok){cpbMsg.textContent='Corrija o campo destacado.';cpbWa.focus();return}
-    cpbBtn.classList.add('is-loading');cpbBtn.innerHTML='<span class="spin"></span><span>Enviando</span>';cpbMsg.textContent='';
-    setTimeout(function(){cpbBtn.classList.remove('is-loading');cpbBtn.innerHTML='<span>Quero que me chamem</span>';cpbMsg.textContent='Recebido. A Segbox te chama no WhatsApp. (Prévia: nada foi enviado.)'},1200);
-  });
   var cpbRv=cpbQA('[data-rv]');
   if(window.cpKit.reduced()){cpbRv.forEach(function(e){e.classList.add('in')});return}
   function cpbRvTick(){var vh=innerHeight;cpbRv.forEach(function(e){if(!e.classList.contains('in')&&e.getBoundingClientRect().top<vh*.92)e.classList.add('in')})}

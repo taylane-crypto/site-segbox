@@ -1684,11 +1684,12 @@ body{background:var(--bone-100)}
 <div class="cg">
 <div><span class="label">[ 10 ] Contato</span><h2 class="t-display h-balance" style="margin-top:14px">Leve a Otimize para a sua rede.</h2><p class="t-lead" style="margin-top:16px;max-width:40ch">Conte sobre a sua operação. A Segbox responde com uma proposta de implantação para a sua organização.</p></div>
 <form class="glass" id="owForm" novalidate>
-<div class="field"><label class="label" for="owF_n">Nome<span class="req" aria-hidden="true">*</span></label><input class="input" id="owF_n" name="nome" autocomplete="name" placeholder="Seu nome" required aria-describedby="owF_ne"><span class="hint err" id="owF_ne" hidden><svg class="ico"><use href="#i-alert"/></svg>Informe seu nome.</span></div>
+<div class="field"><label class="label" for="owF_n">Nome<span class="req" aria-hidden="true">*</span></label><input class="input" id="owF_n" name="nome" autocomplete="given-name" placeholder="Seu nome" required aria-describedby="owF_ne"><span class="hint err" id="owF_ne" hidden><svg class="ico"><use href="#i-alert"/></svg>Informe seu nome.</span></div>
+<div class="field"><label class="label" for="owF_s">Sobrenome<span class="req" aria-hidden="true">*</span></label><input class="input" id="owF_s" name="sobrenome" autocomplete="family-name" placeholder="Seu sobrenome" required aria-describedby="owF_se"><span class="hint err" id="owF_se" hidden><svg class="ico"><use href="#i-alert"/></svg>Informe seu sobrenome.</span></div>
+<div class="field" style="grid-column:1/-1"><label class="label" for="owF_e">E-mail corporativo<span class="req" aria-hidden="true">*</span></label><input class="input" id="owF_e" name="email" type="email" autocomplete="email" placeholder="voce@empresa.com.br" required aria-describedby="owF_ee"><span class="hint err" id="owF_ee" hidden><svg class="ico"><use href="#i-alert"/></svg>Informe um e-mail corporativo completo.</span></div>
 <div class="field"><label class="label" for="owF_c">Cargo</label><input class="input" id="owF_c" name="cargo" autocomplete="organization-title" placeholder="Ex.: Gerente de Marketing"></div>
 <div class="field"><label class="label" for="owF_o">Empresa<span class="req" aria-hidden="true">*</span></label><input class="input" id="owF_o" name="empresa" autocomplete="organization" placeholder="Nome da organização" required aria-describedby="owF_oe"><span class="hint err" id="owF_oe" hidden><svg class="ico"><use href="#i-alert"/></svg>Informe a organização.</span></div>
 <div class="field"><label class="label" for="owF_t">Tipo de organização</label><select class="select" id="owF_t" name="tipo"><option>Seguradora</option><option>Assessoria</option><option>Entidade do setor</option><option>Outro</option></select></div>
-<div class="field"><label class="label" for="owF_e">E-mail corporativo<span class="req" aria-hidden="true">*</span></label><input class="input" id="owF_e" name="email" type="email" autocomplete="email" placeholder="voce@empresa.com.br" required aria-describedby="owF_ee"><span class="hint err" id="owF_ee" hidden><svg class="ico"><use href="#i-alert"/></svg>Informe um e-mail corporativo completo.</span></div>
 <div class="field"><label class="label" for="owF_r">Tamanho da rede</label><select class="select" id="owF_r" name="rede"><option value="">Opcional</option><option>Até 100 corretores</option><option>101 a 1.000</option><option>1.001 a 10.000</option><option>Mais de 10.000</option></select></div>
 <input type="hidden" name="interesse" value="Otimize White Label">
 <div style="grid-column:1/-1;display:flex;flex-wrap:wrap;gap:12px;align-items:center"><button class="btn btn--lg" type="submit" id="owFBtn"><span>Levar a Otimize para a minha rede</span></button><span class="hint" id="owFMsg" role="status"></span></div>
@@ -1731,7 +1732,7 @@ body{background:var(--bone-100)}
 
   /* ---------- formulário: erro só depois da primeira tentativa de envio ---------- */
   var owForm=owQ('#owForm'), owFMsg=owQ('#owFMsg'), owFBtn=owQ('#owFBtn'), owTried=false;
-  var owRules=[['#owF_n',function(v){return v.trim().length>1}],['#owF_o',function(v){return v.trim().length>1}],['#owF_e',function(v){return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim())}]];
+  var owRules=[['#owF_n',function(v){return v.trim().length>1}],['#owF_s',function(v){return v.trim().length>1}],['#owF_o',function(v){return v.trim().length>1}],['#owF_e',function(v){return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim())}]];
   function owCheck(show){var bad=null;owRules.forEach(function(r){var el=owQ(r[0]),ok=r[1](el.value),h=owQ(r[0]+'e');
     if(show){el.classList.toggle('is-error',!ok);h.hidden=ok;if(ok)el.removeAttribute('aria-invalid');else el.setAttribute('aria-invalid','true')}
     if(!ok&&!bad)bad=el});return bad}
