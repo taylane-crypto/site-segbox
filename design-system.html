@@ -244,6 +244,14 @@ code,.mono{font-family:var(--font-mono)}
 .logo-sq{fill:#FF5047;transform-box:fill-box;transform-origin:center}
 .logo--branco{color:#fff}.logo--branco .logo-sq{fill:#fff}
 .logo--cinza{color:#565660}
+/* logo com palavra: o quadrado pula, gira 90° e troca de cor; a palavra entra embaixo */
+.lw{position:relative;width:min(80%,440px);container-type:inline-size;color:var(--fg)}
+.lw .logo-svg{height:auto;width:100%}
+.lw-hop{position:absolute;left:94.45%;top:50%;width:5.6%;height:21.132%;will-change:transform}
+.lw-sq{width:100%;height:100%;background:var(--coral);will-change:transform}
+.lw-words{position:absolute;right:0;top:calc(100% + 1.2cqw);height:9cqw;width:100%}
+.lw-w{position:absolute;right:0;top:0;font-family:var(--font-body);font-weight:500;font-size:7.6cqw;line-height:1;letter-spacing:-.015em;white-space:nowrap}
+.lw-stage{place-items:center;min-height:260px;padding-bottom:48px}
 .nav-links{display:flex;gap:2px;align-items:center}
 .nav-links .dd>button,.nav-links>a{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border:0;background:transparent;border-radius:var(--r-2);cursor:pointer;text-decoration:none;font-size:14.5px;color:var(--fg-2);transition:color var(--t-fast) ease,background var(--t-fast) ease}
 .nav-links .dd>button:hover,.nav-links>a:hover,.nav-links .dd.open>button{color:var(--fg);background:var(--surface-2)}
@@ -527,7 +535,7 @@ blockquote footer{margin-top:20px;display:flex;align-items:center;gap:12px;color
 <div class="cat" id="top">
   <nav class="cat-nav" aria-label="Catálogo">
     <h4>Fundamentos</h4>
-    <a href="#logotipo">Logotipo</a><a href="#favicon">Favicon</a><a href="#cores">Cores</a><a href="#tipografia">Tipografia</a><a href="#espaco">Espaço, raios e sombras</a><a href="#grid">Grid e moldura</a><a href="#vidro">Vidro</a><a href="#icones">Ícones</a><a href="#movimento">Movimento</a>
+    <a href="#logotipo">Logotipo</a><a href="#logo-palavra">Logo com palavra</a><a href="#favicon">Favicon</a><a href="#cores">Cores</a><a href="#tipografia">Tipografia</a><a href="#espaco">Espaço, raios e sombras</a><a href="#grid">Grid e moldura</a><a href="#vidro">Vidro</a><a href="#icones">Ícones</a><a href="#movimento">Movimento</a>
     <h4>Componentes básicos</h4>
     <a href="#botoes">Botões</a><a href="#liquido">Botão com degradê</a><a href="#tags">Tags e status</a><a href="#campos">Campos</a><a href="#selecao">Seleção e ajuste</a><a href="#tooltip-dd">Tooltip e dropdown</a><a href="#acc-tabs">Accordion e tabs</a><a href="#nav-pag">Breadcrumbs e paginação</a><a href="#feedback">Alerta e toast</a><a href="#overlays">Modal e drawer</a><a href="#estados">Vazio e skeleton</a>
     <h4>Componentes do site</h4>
@@ -559,8 +567,34 @@ blockquote footer{margin-top:20px;display:flex;align-items:center;gap:12px;color
           <div class="grid g3">
             <div><span class="stage-h">Tamanho mínimo</span><p class="t-small" style="margin-top:8px">24 px de altura em tela (o quadrado fica com 5 px). Abaixo disso, use só o quadrado coral.</p></div>
             <div><span class="stage-h">Área de proteção</span><p class="t-small" style="margin-top:8px">Livre em todos os lados a uma distância igual à altura do quadrado do logotipo, no mínimo.</p></div>
-            <div><span class="stage-h">Não fazer</span><p class="t-small" style="margin-top:8px">Não recolorir o quadrado, não usar gradiente, sombra ou contorno no logotipo, e não separar o quadrado do wordmark, exceto na animação do hero.</p></div>
+            <div><span class="stage-h">Não fazer</span><p class="t-small" style="margin-top:8px">Não recolorir o quadrado, não usar gradiente, sombra ou contorno no logotipo, e não separar o quadrado do wordmark, exceto na animação do hero e no logo com palavra.</p></div>
           </div>
+        </div>
+      </div>
+
+      <div class="spec" id="logo-palavra">
+        <header><h3>Logo com palavra</h3><p>Animação de assinatura. O quadrado do logotipo pula, gira 90° e troca de cor no topo do arco. Ao pousar, uma palavra entra embaixo na mesma cor. Depois da última palavra ele volta ao coral e o logo fica limpo. O quadrado nunca estica nem amassa. Usar em abertura de vídeo, hero, tela de carregamento e fechamento de apresentação, uma vez por tela.</p><code>.lw · .lw-hop · .lw-sq · .lw-words · data-lw-words</code></header>
+        <div class="grid g2">
+          <div class="stage lw-stage" data-surface="paper"><div class="lw" role="img" aria-label="segbox" data-lw-words="tecnologia, inovação, white label, projetos exclusivos"><svg class="logo-svg" viewBox="0 0 2000 530" aria-hidden="true"><use href="#logo-word"/></svg><div class="lw-hop"><div class="lw-sq"></div></div><div class="lw-words"></div></div><span class="stage-h" style="position:absolute;left:16px;top:14px">Fundo claro</span></div>
+          <div class="stage lw-stage" data-surface="ink"><div class="lw" role="img" aria-label="segbox" data-lw-words="tecnologia, inovação, white label, projetos exclusivos"><svg class="logo-svg" viewBox="0 0 2000 530" aria-hidden="true"><use href="#logo-word"/></svg><div class="lw-hop"><div class="lw-sq"></div></div><div class="lw-words"></div></div><span class="stage-h" style="position:absolute;left:16px;top:14px">Fundo escuro</span></div>
+        </div>
+        <div class="stage" data-surface="paper">
+          <div class="scroll-x"><table class="tbl">
+            <tr><th>Parte</th><th>Regra</th><th>Valor</th></tr>
+            <tr><td>Ciclo por palavra</td><td>pulo + pausa com a palavra na tela</td><td>560 + 640 ms</td></tr>
+            <tr><td>Pulo</td><td>sobe 1,7× o lado do quadrado, sem deformar</td><td>subida (0.25, 0.6, 0.35, 1) · queda (0.55, 0, 0.75, 0.3)</td></tr>
+            <tr><td>Giro</td><td>+90° por pulo, acumulado</td><td>(0.45, 0, 0.2, 1)</td></tr>
+            <tr><td>Troca de cor</td><td>no topo do arco, sem transição</td><td>laranja → tinta → coral</td></tr>
+            <tr><td>Palavra entra</td><td>sobe 45% da altura e tira 4 px de desfoque</td><td>280 ms · (0.2, 0.8, 0.2, 1)</td></tr>
+            <tr><td>Palavra sai</td><td>sobe 35% e desfoca 3 px</td><td>180 ms · (0.4, 0, 1, 1)</td></tr>
+            <tr><td>Logo limpo</td><td>volta ao coral e segura antes de repetir</td><td>1600 ms</td></tr>
+          </table></div>
+          <div class="grid g3">
+            <div><span class="stage-h">Palavras</span><p class="t-small" style="margin-top:8px">Minúsculas, uma ou duas palavras, sobre o que a Segbox faz: tecnologia, inovação, white label, projetos exclusivos. No máximo cinco por ciclo.</p></div>
+            <div><span class="stage-h">Tamanho</span><p class="t-small" style="margin-top:8px">Palavra com 7,6% da largura do logotipo, peso 500, alinhada à direita do quadrado. Logotipo com pelo menos 160 px de largura.</p></div>
+            <div><span class="stage-h">Não fazer</span><p class="t-small" style="margin-top:8px">Não esticar ou amassar o quadrado, não usar roxo, não colocar duas animações dessas na mesma tela e não usar palavra em laranja como texto de leitura.</p></div>
+          </div>
+          <p class="note">Com movimento reduzido ligado, o quadrado não pula: só troca de cor e a palavra aparece com fade.</p>
         </div>
       </div>
 
@@ -1537,3 +1571,38 @@ html.sgm-lock,html.sgm-lock body{overflow:hidden}
 })();
 </script>
 <!-- sgm:end -->
+<script>
+/* logo com palavra */
+(()=>{
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const HOP=560,HOLD=640,REST=1600,ORDER=['ember','ink','coral'];
+  document.querySelectorAll('.lw').forEach(lw=>{
+    const hop=lw.querySelector('.lw-hop'),sq=lw.querySelector('.lw-sq'),box=lw.querySelector('.lw-words');
+    const words=(lw.dataset.lwWords||'').split(',').map(w=>w.trim()).filter(Boolean);
+    const col=k=>k==='coral'?'#FF5047':k==='ember'?'#FF8308':getComputedStyle(lw).color;
+    let rot=0,cur=null,i=-1;
+    function swap(text,color){
+      if(cur){const o=cur;cur=null;o.animate([{opacity:1,transform:'translateY(0)',filter:'blur(0)'},{opacity:0,transform:'translateY(-35%)',filter:'blur(3px)'}],{duration:reduce?120:180,easing:'cubic-bezier(.4,0,1,1)',fill:'forwards'}).finished.then(()=>o.remove())}
+      if(!text)return;
+      const w=document.createElement('span');w.className='lw-w';w.textContent=text;w.style.color=color;box.appendChild(w);cur=w;
+      w.animate(reduce?[{opacity:0},{opacity:1}]:[{opacity:0,transform:'translateY(45%)',filter:'blur(4px)'},{opacity:1,transform:'translateY(0)',filter:'blur(0)'}],{duration:280,delay:reduce?0:40,easing:'cubic-bezier(.2,.8,.2,1)',fill:'backwards'});
+    }
+    function jump(k,text){
+      const c=col(k);
+      if(reduce){sq.style.background=c;swap(text,c);return}
+      const r0=rot;rot+=90;
+      hop.animate([{transform:'translateY(0)',easing:'cubic-bezier(.25,.6,.35,1)'},{transform:'translateY(-170%)',offset:.5,easing:'cubic-bezier(.55,0,.75,.3)'},{transform:'translateY(0)'}],{duration:HOP});
+      sq.getAnimations().forEach(a=>a.cancel());
+      sq.animate([{transform:`rotate(${r0}deg)`},{transform:`rotate(${rot}deg)`}],{duration:HOP,easing:'cubic-bezier(.45,0,.2,1)',fill:'forwards'});
+      setTimeout(()=>{sq.style.background=c},HOP*.52);
+      setTimeout(()=>swap(text,c),HOP*.6);
+    }
+    function step(){
+      i++;
+      if(i>=words.length){jump('coral','');i=-1;setTimeout(step,HOP+REST);return}
+      jump(ORDER[i%3],words[i]);setTimeout(step,HOP+HOLD);
+    }
+    if(words.length)setTimeout(step,900);
+  });
+})();
+</script>

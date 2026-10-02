@@ -1,1 +1,0 @@
-- [Case thumbs da home](project_case-thumbs.md) — como os mockups dos cards de case foram gerados; KPIs MAPFRE "a confirmar" fora da thumb
