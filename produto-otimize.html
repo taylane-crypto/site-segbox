@@ -2486,12 +2486,20 @@ button.ot-btn.gh:hover{border-color:var(--ob);color:var(--ob)}
   ];
   var ozDomCur=0, ozDomTouched=false, ozDomVis=false, ozDomAuto=0, CH='abcdefghijklmnopqrstuvwxyz.';
   function ozDomScr(el,to){
-    clearInterval(el.__ozS); var from=el.textContent;
+    if(el.textContent===to)return;
     if(ozDomReduce){el.textContent=to;return}
-    el.classList.remove('dom-flash');void el.offsetWidth;el.classList.add('dom-flash');
-    var n=0, L=Math.max(from.length,to.length), steps=14;
-    el.__ozS=setInterval(function(){n++;var k=Math.floor(L*n/steps),o='';for(var i=0;i<L;i++){if(i<k)o+=to.charAt(i);else if(i<to.length)o+=(to.charAt(i)===' '?' ':CH.charAt(Math.floor(Math.random()*CH.length)));}el.textContent=o;if(n>=steps){clearInterval(el.__ozS);el.textContent=to}},32);
+    el.classList.add('dom-swap');
+    clearTimeout(el.__ozS); el.__ozS=setTimeout(function(){el.textContent=to;el.classList.remove('dom-swap')},140);
   }
+  /* altura estável: o card fica com a altura da etapa mais alta (sem pulos ao trocar) */
+  function ozDomFit(){
+    ozDomP.style.minHeight='';
+    var keep={},h=0;['url','mail','site','lp','card'].forEach(function(k){keep[k]=ozDomEls[k].textContent});
+    OZ_DOM.forEach(function(d){['url','mail','site','lp','card'].forEach(function(k){ozDomEls[k].textContent=d[k]});h=Math.max(h,ozDomP.offsetHeight)});
+    ['url','mail','site','lp','card'].forEach(function(k){ozDomEls[k].textContent=keep[k]});
+    ozDomP.style.minHeight=h+'px';
+  }
+  ozDomFit(); var ozDomRz=0; addEventListener('resize',function(){clearTimeout(ozDomRz);ozDomRz=setTimeout(ozDomFit,150)});
   function ozDomSet(i,focus){
     ozDomCur=i; var d=OZ_DOM[i];
     ozDomTabs.forEach(function(t,k){var on=k===i;t.setAttribute('aria-selected',on?'true':'false');t.tabIndex=on?0:-1});
@@ -2647,6 +2655,9 @@ html.sgm-lock,html.sgm-lock body{overflow:hidden}
 @media (min-width:901px){.sgm-ov{display:none}}
 
 .legal.legal--seg{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;white-space:pre-wrap}.legal--seg .soc{display:inline-flex;gap:14px}.legal--seg .soc a{display:inline-grid;place-items:center;width:32px;height:32px;color:inherit;opacity:.8;transition:opacity .2s ease}.legal--seg .soc a:hover{opacity:1}.legal--seg .soc svg{width:18px;height:18px}
+
+/* domínio: troca sem tremor */
+#ozDomP [id],#ozDomP [data-dom-k]{transition:opacity 140ms ease}#ozDomP .dom-swap{opacity:0}#ozDomP .dom-url,#ozDomP .dom-mail b,#ozDomP .dom-uses b{overflow-wrap:anywhere}
 </style>
 <script id="sgm-js">
 /* sgm 1: drawer do menu móvel, montado a partir do menu desktop (.nav-links) para nunca divergir */
